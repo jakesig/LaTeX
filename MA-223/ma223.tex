@@ -1,0 +1,185 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{MA-223 Review}
+\author{Jacob Sigman}
+\date{}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+\part*{Chapter 15: Multiple Integrals}
+\addcontentsline{toc}{part}{Chapter 15: Multiple Integrals}
+\section*{15.1: Double and Iterated Integrals over Rectangles}
+\addcontentsline{toc}{section}{15.1: Double and Iterated Integrals over Rectangles}
+\subsection*{Double Integrals}
+Subdivide a region \(R\) into \(n\) rectangular pieces. The rectangular pieces have an area of 
+\[\Delta A=\Delta x \Delta y\]
+Then, a sample point \((x_k, y_k)\) is picked. To obtain the Reimann sum, you multiply the area by the function evaluated at the sample point.
+\[S_n = \sum_{k=1}^{n}f(x_k, y_k)\Delta A_k\]
+Using this sum, a double integral can be taken over a rectangle using the form below.
+\[\iint\limits_{R}\,f(x, y) \,dA\hspace{5mm} \text{or}\hspace{5mm} \iint\limits_{R}\,f(x, y) \,dx\,dy\]
+\subsection*{Fubini's Theorem}
+Fubini's Theorem states that the double integration over a region will evaluate to the same numerical value regardless of the order of integration.
+\[\iint\limits_{R}\,f(x, y) \,dA = \int_c^d\int_a^b\,f(x, y) \,dx\,dy\ = \int_a^b\int_c^d\,f(x, y) \,dy\,dx\]
+\section*{15.2: Double Integrals over General Regions}
+\addcontentsline{toc}{section}{15.2: Double Integrals over General Regions}
+\subsection*{Double Integrals over Bounded, Nonrectangular Regions}
+The double integral can be taken over any region \(R\) with area \(A\) using the formula from the previous section.
+\[\iint\limits_{R}\,f(x, y) \,dA\]
+\subsection*{Volumes}
+Firstly, determine the area of the solid. This would be done by taking a single integral between two curves \(y=g_1(x)\) and \(y=g_2(x)\)
+\[A(x)=\int_{g_1(x)}^{g_2(x)}f(x,y)dy\]
+Then, integrate the area from \(x=a\) to \(x=b\) to get a double integral for volume.
+\[V=\int_{a}^{b}A(x)\,dx=\int_{a}^{b}\int_{g_1(x)}^{g_2(x)}f(x,y)\,dy\,dx\]
+Fubini's Theorem also applies to Volume, and therefore the order of integration doesn't matter, and the region can be defined in any way.
+\section*{15.3: Area by Double Integration}
+\addcontentsline{toc}{section}{15.3: Area by Double Integration}
+\subsection*{Areas of Bounded Regions in the Plane}
+If we take \(f(x, y) = 1\) in the definition of the double integral over a region \(R\), the Reimann sum reduces to
+\[S_n = \sum_{k=1}^{n}\Delta A_k\]
+Hence, the area of a closed, bounded plane region \(R\) is
+\[A=\iint\limits_{R}dA\]
+\subsection*{Average Value}
+The average value of \(f\) over \(R\) is
+\[\text{Average Value} = \frac{1}{\text{Area of }R}\iint\limits_Rf\,dA\]
+\section*{15.4: Double Integrals in Polar Form}
+\addcontentsline{toc}{section}{15.4: Double Integrals in Polar Form}
+\subsection*{Area in Polar Coordinates}
+There's no proof here for how it came to be, but when taking an area in polar coordinates, the integral looks as follows.
+\[\iint\limits_{R}r\,dr\,d\theta\]
+\subsection*{Changing Cartesian Integrals into Polar Integrals}
+Recall that \(x=r\sin\theta\) and \(y=r\cos\theta\). The transformation for a Cartesian integral is as follows.
+\[\iint\limits_{R}f(x, y)\,dx\,dy=\iint\limits_{G}f(r\cos\theta,\, r\sin\theta)\,r\,dr\,d\theta\]
+\section*{15.5: Triple Integrals in Rectangular Coordinates}
+\addcontentsline{toc}{section}{15.5: Triple Integrals in Rectangular Coordinates}
+\subsection*{Triple Integrals}
+Similar to double integrals, a triple integral for volume can be written for a sample point \((x_k, y_k, z_k)\) as follows.
+\[S_n = \sum_{k=1}^{n}f(x_k, y_k, z_k)\Delta V_k\]
+\subsection*{Volume of a Region in Space}
+The volume of a closed, bounded region \(D\) in space is
+\[V = \iiint\limits_D dV\]
+\subsection*{Average Value of a Function in Space}
+The average value of a function \(F\) over a region \(D\) is
+\[\text{Average Value} = \frac{1}{\text{Volume of }D}\iiint\limits_DF\,dV\]
+\section*{15.6: Moments and Centers of Mass}
+\addcontentsline{toc}{section}{15.6: Moments and Centers of Mass}
+\subsection*{Masses and First Moments}
+If \(\delta(x,y,z)\) is the density of an object occupying a region \(D\) in space, the integral of \(\delta\) over \(D\) gives the mass of the object, which is as follows.
+\[\iiint\limits_D\delta(x,y,z)\,dV\]
+The first moment of a solid region \(D\) about a coordinate plane is the triple integral over \(D\) of the distance from a point \((x, y, z)\) in \(D\) to the plane multiplied by the density of the solid at that point. The moment about the coordinate planes are as follows.
+\[M_{yz}=\iiint\limits_Dx\,\delta(x,y,z)\,dV\hspace{7 mm}M_{xz}=\iiint\limits_Dy\,\delta(x,y,z)\,dV\hspace{7 mm}M_{xy}=\iiint\limits_Dz\,\delta(x,y,z)\,dV\]
+The center of mass can be found from the first moments. The coordinates for the center of mass are as follows.
+\[\bar{x}=\frac{M_{yz}}{M}\hspace{7 mm}\bar{y}=\frac{M_{xz}}{M}\hspace{7 mm}\bar{z}=\frac{M_{xy}}{M}\]
+These formulas can also be applied in two dimensions.
+\[M=\iint\limits_R\delta(x,y)\,dA\]
+\[M_y=\iint\limits_Rx\,\delta(x,y)\,dA\hspace{7 mm}M_x=\iint\limits_Ry\,\delta(x,y)\,dA\]
+\[\bar{x}=\frac{M_y}{M}\hspace{7 mm}\bar{y}=\frac{M_x}{M}\]
+\subsection*{Moments of Inertia}
+If \(r\) is the distance from the point \((x,y,z)\), then the moment of inertia about the line \(L\) of the mass with linear density \(\delta\) is
+\[I_L=\iiint\limits_Dr^2\delta\,dV\]
+The line \(L\) can be any coordinate axis to give the moment of inertia about that axis. The moments of inertia about each coordinate axis are as follows.
+\[I_x=\iiint\limits_D(y^2+z^2)\,\delta(x,y,z)\,dV\hspace{5 mm}I_y=\iiint\limits_D(x^2+z^2)\,\delta(x,y,z)\,dV\hspace{5 mm}I_z=\iiint\limits_D(x^2+y^2)\,\delta(x,y,z)\,dV\]
+These formulas can also be applied in two dimensions.
+\[I_x=\iint\limits_Ry^2\,\delta(x,y)\,dA\hspace{7 mm}I_y=\iint\limits_Rx^2\,\delta(x,y)\,dA\]
+\[I_L=\iint\limits_Rr^2\,\delta(x,y)\,dA\hspace{7 mm}\]
+The polar moment of inertia, or the moment of inertia about the origin, is as follows.
+\[I_0=\iint\limits_R(x^2+y^2)\,\delta(x,y)\,dA=I_x+I_y\]
+\section*{15.7: Triple Integrals in Cylindrical and Spherical Coordinates}
+\addcontentsline{toc}{section}{15.7: Triple Integrals in Cylindrical and Spherical Coordinates}
+\subsection*{Integration in Cylindrical Coordinates}
+In cylindrical coordinates, \(r\) and \(\theta\) are polar coordinates on the \(xy\)-plane and \(z\) is the rectangular vertical coordinate. Conversions between rectangular and cylindrical coordinates can be done as follows.
+\[x=r\cos\theta\hspace{5 mm}y=r\sin\theta\hspace{5 mm}z=z\]
+\[r^2=x^2+y^2\hspace{5 mm}\tan\theta=\frac{y}{x}\]
+The triple integral in cylindrical coordinates of a function \(f\) over a region \(D\) is as follows.
+\[\iiint\limits_Df(r,\theta,z)\,dz\,r\,dr\,d\theta\]
+\subsection*{Spherical Coordinates and Integration}
+Spherical coordinates locate points in space with two angles (\(\theta \text{ and } \phi\)) and a distance (\(\rho\)). \(\rho\) is the distance from the point in space to the origin. \(\phi\) is the angle the line formed between the point and the origin makes with the positive \(z\)-axis. \(\theta\) is the angle from cylindrical coordinates. Spherical coordinates can be related to rectangular and cylindrical coordinates as follows.
+\[r=\rho\sin\phi\hspace{7 mm}x=r\cos\theta=\rho\sin\phi\cos\theta\]
+\[z=\rho\sin\phi\hspace{7 mm}y=r\sin\theta=\rho\sin\phi\sin\theta\]
+\[\rho=\sqrt{x^2+y^2+x^2}=\sqrt{r^2+z^2}\]
+The triple integral in spherical coordinates of a function \(f\) over a region \(D\) is as follows.
+\[\iiint\limits_Df(\rho,\phi,\theta)\,\rho^2\sin\phi\,d\rho\,d\phi\,d\theta\]
+\section*{15.8: Substitutions in Multiple Integrals}
+\addcontentsline{toc}{section}{15.8: Substitutions in Multiple Integrals}
+\subsection*{Substitutions in Double Integrals}
+Suppose that region \(G\) in the \(uv\)-plane is transformed one-to-one into the region \(R\) in the \(xy\)-plane by equations of the form \(x=g(u,v)\) and \(y=h(u,v)\). The transformed integral can be written as follows.
+\[\iint\limits_Rf(x,y)\,dx\,dy=\iint\limits_Gf(g(u,v),h(u,v))\,|J(u,v)|\,du\,dv\]
+\(J(u, v)\) is the Jacobian and is defined as
+\[J(u,v)=\begin{vmatrix}
+\frac{\partial x}{\partial u} & \frac{\partial x}{\partial v}\\\\
+\frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}
+\end{vmatrix}=\frac{\partial x}{\partial u}\,\frac{\partial y}{\partial v}-\frac{\partial y}{\partial u}\,\frac{\partial x}{\partial v}\]
+\part*{Chapter 16: Integration in Vector Fields}
+\addcontentsline{toc}{part}{Chapter 16: Integration in Vector Fields}
+\section*{16.1: Line Integrals}
+\addcontentsline{toc}{section}{16.1: Line Integrals}
+If \(f\) is defined on a curve \(C\) given parametrically by \(\textbf{r}(t)=g(t)\textbf{i}\,+\,h(t)\textbf{j}\,+\,k(t)\textbf{k}\) and \(a\leq t\leq b\), the line integral of \(C\) can be taken as
+\[\int\limits_Cf(x,y,z)\,ds=\int_a^bf(g(t), h(t), k(t))\,|\textbf{v}(t)|\,dt\]
+The mass and moment formulas for anything lying along a smooth cuve \(C\) in space are as follows. Note that \(dm\) is equivalent to \(\delta\,ds\).
+\[M=\int\limits_C\delta\,ds\]
+\[M_{yz}=\int\limits_Cx\,\delta\,ds\hspace{7 mm}M_{xz}=\int\limits_Cy\,\delta\,ds\hspace{7 mm}M_{xy}=\int\limits_Cz\,\delta\,ds\]
+\[\bar{x}=\frac{M_{yz}}{M}\hspace{7 mm}\bar{y}=\frac{M_{xz}}{M}\hspace{7 mm}\bar{z}=\frac{M_{xy}}{M}\]
+\[I_x=\int\limits_C(y^2+z^2)\,\delta\,ds\hspace{7 mm}I_y=\int\limits_C(x^2+z^2)\,\delta\,ds\hspace{7 mm}I_z=\int\limits_C(x^2+y^2)\,\delta\,ds\]
+\[I_L=\int\limits_Cr^2\delta\,ds\]
+\section*{16.2: Vector Fields and Line Integrals - Work, Circulation, and Flux}
+\addcontentsline{toc}{section}{16.2: Vector Fields and Line Integrals - Work, Circulation, and Flux}
+\subsection*{Vector Fields}
+A vector field is a function that assigns a vector to each point in its domain. The field is continuous if it's component functions are continuous. The field is differentiable if it's component functions are differentiable. A three-dimensional vector field looks as follows.
+\[\textbf{F}(x,y,z)=M(x,y,z)\textbf{i}+N(x,y,z)\textbf{j}+P(x,y,z)\textbf{k}\]
+\subsection*{Gradient Fields}
+The gradient field of a differentiable function \(f(x,y,z)\) is defined as
+\[\nabla f=\frac{\partial f}{\partial x}\textbf{i}+\frac{\partial f}{\partial y}\textbf{j}+\frac{\partial f}{\partial z}\textbf{k}\]
+\subsection*{Line Integrals of Vector Fields}
+If \textbf{F} is a vector field with continuous components defined along a smooth curve \(C\) parameterized by \(\textbf{r}(t)\) and \(a\leq t\leq b\), then the line integral of \textbf{F} along \(C\) is
+\[\int\limits_C\textbf{F}\cdot\textbf{T}\,ds=\int\limits_C\left[\textbf{F}\cdot\frac{d\textbf{r}}{ds}\right]ds=\int\limits_C\textbf{F}\cdot d\textbf{r}=\int_a^b\textbf{F}(\textbf{r}(t))\cdot \frac{d\textbf{r}}{dt}\,dt\]
+Line integrals can also be written in differential form, which is as follows.
+\[\int\limits_CM(x,y,z)\,dx+\int\limits_CN(x,y,z)\,dy+\int\limits_CP(x,y,z)\,dz=\int\limits_CM\,dx+N\,dy+P\,dz\]
+\subsection*{Work Done by a Force over a Curve in Space}
+If \textbf{F} is a continuous force field along a smooth curve \(C\) parameterized by \(\textbf{r}(t)\) and \(a\leq t\leq b\), then the work done along \(C\) is
+\[W=\int\limits_C\textbf{F}\cdot\textbf{T}\,ds=\int_a^b\textbf{F}(\textbf{r}(t))\cdot \frac{d\textbf{r}}{dt}\,dt\]
+\subsection*{Flow Integrals and Circulation for Velocity Fields}
+If \(\textbf{r}(t)\) parameterizes a smooth curve \(C\) in the domain of a continuous velocity field \textbf{F}, the flow along the curve is
+\[\text{Flow}=\int\limits_C\textbf{F}\cdot\textbf{T}\,ds\]
+This is called a flow integral, if the curve starts and ends at the same point, the flow is called the circulation around the curve.
+\subsection*{Flux Across a Simple Plane Curve}
+A curve is simple if it does not cross itself. When a curve starts and ends at the same point, it is closed. The flux along a simple, closed curve, is the line integral of the scalar component of the velocity field in the direction of the curve's outward-pointing normal vector, which can be written as
+\[\text{Flux of }\textbf{F}\text{ across }C=\int\limits_C\textbf{F}\cdot\textbf{n}\,ds\]
+Flux can also be calculated across a smooth, closed plane curve. This is done by letting \(\textbf{F}=M\textbf{i}+N\textbf{j}\). This makes the flux integral
+\[\text{Flux of }\textbf{F}\text{ across }C=\int\limits_C\textbf{F}\cdot\textbf{n}\,ds=\oint\limits_CM\,dy-N\,dx\]
+\section*{16.3: Path Independence, Conservative Fields, and Potential Functions}
+\addcontentsline{toc}{section}{16.3: Path Independence, Conservative Fields, and Potential Functions}
+\subsection*{Path Independence}
+Let \textbf{F} be a vector field defined on an open region \(D\) in space. If the line integral along any two paths are the same, the line integrals are path independent and \textbf{F} is conservative on \(D\).\\\\
+If \textbf{F} is a vector field defined on \(D\) and \(\textbf{F}=\nabla f\) for some scalar function \(f\) on \(D\), then \(f\) is called a potential function for \textbf{F}.
+\subsection*{Line Integrals in Conservative Fields}
+Let \(C\) be a smooth curve parameterized by \textbf{r}\((t)\) joining the points \(A\) and \(B\) in space. If \(f\) is a differentiable function with a continuous gradient \(\textbf{F}=\nabla f\) on a domain \(D\) containing \(C\), then
+\[\int\limits_C\textbf{F}\cdot d\textbf{r}=f(B)-f(A)\]
+If \(\textbf{F}=M\textbf{i}+N\textbf{j}+P\textbf{k}\) is a vector field whose components are continuous throughout an open connected region \(D\) in space, then \textbf{F} is conservative if and only if \textbf{F} is a gradient field \(\nabla f\) for a differentiable function \(f\).
+\subsection*{Exact Differential Forms}
+A differential form is exact if for some scalar function \(f\) on \(D\) is as follows.
+\[M\,dx+N\,dy+P\,dz=\frac{\partial f}{\partial x}\,dx+\frac{\partial f}{\partial y}\,dy+\frac{\partial f}{\partial z}\,dz=df\]
+A differential form is exact on a connected and simply connected domain if and only if
+\[\frac{\partial P}{\partial y}=\frac{\partial N}{\partial z}\hspace{7 mm}\frac{\partial M}{\partial z}=\frac{\partial P}{\partial x}\hspace{7 mm}\frac{\partial N}{\partial x}=\frac{\partial M}{\partial y}\]
+\section*{16.4: Green's Theorem in the Plane}
+\addcontentsline{toc}{section}{16.4: Green's Theorem in the Plane}
+\subsection*{Divergence}
+The divergence (flux density) of a vector field \(\textbf{F}=M\textbf{i}+N\textbf{j}\) at the point \((x,y)\) is
+\[\textnormal{div }\textbf{F}=\frac{\partial M}{\partial x}+\frac{\partial N}{\partial y}\]
+\subsection*{Spin Around an Axis}
+The circulation density, or the k-component of the curl, of a vector field \(\textbf{F}=M\textbf{i}+N\textbf{j}\) at the point \((x,y)\) is the scalar expression
+\[(\textnormal{curl }\textbf{F})\cdot \textbf{k}=\frac{\partial N}{\partial x}-\frac{\partial M}{\partial y}\]
+\subsection*{Two Forms for Green's Theorem}
+Let \(C\) be a piecewise smooth, simple closed curve enclosing a region \(R\) in the plane. Let \(\textbf{F}=M\textbf{i}+N\textbf{j}\) be a vector field with \(M\) and \(N\) having continuous first partial derivatives in an open region containing \(R\). Then the outward flux of \textbf{F} across \(C\) equals the double integral of div \textbf{F} over the region \(R\) enclosed \(C\).
+\[\oint\limits_C\textbf{F}\cdot\textbf{n}\,ds=\oint\limits_CM\,dy-N\,dx=\iint\limits_R\left(\frac{\partial M}{\partial x}+\frac{\partial N}{\partial y}\right)dx\,dy\]
+Let \(C\) be a piecewise smooth, simple closed curve enclosing a region \(R\) in the plane. Let \(\textbf{F}=M\textbf{i}+N\textbf{j}\) be a vector field with \(M\) and \(N\) having continuous first partial derivatives in an open region containing \(R\). Then the counterclockwise circulation of \textbf{F} around \(C\) equals the double integral of (curl \textbf{F}) \(\cdot\) \textbf{k} over \(R\).
+\[\oint\limits_C\textbf{F}\cdot\textbf{T}\,ds=\oint\limits_CM\,dx+N\,dy=\iint\limits_R\left(\frac{\partial N}{\partial x}-\frac{\partial M}{\partial y}\right)dx\,dy\]
+\end{document}

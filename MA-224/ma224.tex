@@ -1,0 +1,116 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{cancel}
+
+\title{MA-224 Review}
+\author{Jacob Sigman}
+\date{}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+\section{Probability}
+\subsection{Basic Concepts}
+\begin{description}
+\item[Statistics] The study of collected data.
+\item[Data] Qualitative or quantitative information that you obtain through experiments.
+\item[Experiment] An unbiased, random, planned activity. Outcomes are simple, events are more complex.
+\item[Frequency] The number of times that something occurs. There are three ways to display frequency: A frequency table, a bar graph, and a relative frequency table.
+\item[Probability] Experimental and theoretical are two types. Theoretical is if an experiment is done many times. It is equivalent to \(\frac{\textnormal{\# of times event occurs}}{\textnormal{Total}}\).
+\item[Probability Mass Function] A way of defining the relative frequency with a function.
+\end{description}
+\subsection{Properties of Probability}
+A \textbf{set} is a group or collection of well-defined objects. The set of all possible outcomes is called the \textbf{sample space} and is denoted by \(\Omega\) or \(S\).
+\subsubsection*{Operations of Sets}
+\begin{description}
+\item[Union] \(A \cup B=\{x\,\,|\,\,x\,\in\,A\,\,\&\,\,x\,\in\,B\}\)
+\item[Intersection] \(A \cap B=\{x\,\,|\,\,x\,\in\,A\,\,\ \textnormal{or}\,\,x\,\in\,B\}\)
+\item[Complement] \(\bar{A} \textnormal{ or } A^C=\{x\,\,|\,\,x\,\in\,A\,\,\&\,\,x\,\cancel{\in}\,A\}\)
+\end{description}
+\subsubsection*{Special Sets}
+\begin{description}
+\item[Universal Set] Set of all events, denoted by \(U\).
+\item[Empty Set] Nothing in this set, denoted by \(\cancel{0}\).
+\item[Singleton] A set with one element.
+\item[Mutually Exclusive Sets] \(A \cap B = \cancel{0}\)
+\item[Exhaustive Sets] Mutually exclusive but the union covers \(U\).
+\item[Equally Likely Events] Events that have the same probability of happening.
+\end{description}
+\subsection{Methods of Enumeration}
+\subsubsection*{Multiplication Principle}
+If one experiment has \(n_1\) outcomes, and another experiment has \(n_2\) outcomes, the composite experiment will have \(n_1n_2\) outcomes.
+\subsubsection*{Permutations}
+Now suppose that that \(n\) positions are to be filled with \(n\) objects. There are \((n)(n-1)\hdots(2)(1)\) or \(n!\) possible arrangements. Each of these arrangements is called a \textbf{permutation}. A permutation of \(n\) objects with \(r\) taken at a time is denoted as follows.
+\[_n\textnormal{P}_r=\frac{n!}{(n-r)!}\]
+\subsubsection*{Combinations}
+The number of ways in which \(r\) objects can be selected without replacement from \(n\) objects is called a \textbf{combination}. A combination of \(n\) objects with \(r\) taken at a time is denoted as follows.
+\[\left(\begin{matrix}n\\r\end{matrix}\right)=_n\!\!\textnormal{C}_r=\frac{n!}{r!\,(n-r)!}\]
+\subsection{Conditional Probability}
+The \textbf{conditional probability} of an event, or the probability of \(A\) occurring given that \(B\) will occur is denoted as follows.
+\[P(A\,|\,B)=\frac{P(A\,\cap\,B)}{P(B)}\]
+By rearranging the above equation, the probability of both \(A\) and \(B\) occuring can be denoted as follows.
+\[P(A\,\cap\,B)=P(A\,|\,B)*P(B)\]
+\[P(A\,\cap\,B)=P(B\,|\,A)*P(A)\]
+\subsection{Independent Events}
+If the occurrence of one event will not change the probability of the occurrence of another event, these events are \textbf{independent}. Properties of independent events are as follows.
+\[P(B\,|\,A)=P(B)\hspace{7 mm}P(A\,|\,B)=P(A)\]
+\[P(A\,\cap\,B)=P(A)\,P(B)=P(B)\,P(A)\]
+If an event does not satisfy these properties, the events are called \textbf{dependent}. Below are other sets that are independent if \(A\) and \(B\) are independent.
+\begin{center}
+    \(A\) and \(B'\)\hspace{7 mm}
+    \(A'\) and \(B\)\hspace{7 mm}
+    \(A'\) and \(B'\)
+\end{center}
+\subsection{Bayes's Theorem}
+The probability of an event \(A\) can be calculated as follows.
+\[P(A)=\sum_{i=1}^{m}P(B_i\,\cap\,A)=\sum_{i=1}^{m}P(B_i)\,P(A\,|\,B_i)\]
+To determine the probability of a specific outcome \(B_k\), the equation for conditional probability can be used to obtain \textbf{Bayes's Theorem}, which is as follows.
+\[P(B_k\,|\,A)=\frac{P(B_k)P(A\,|\,B_k)}{\sum\limits_{i=1}^{m}P(B_i)\,P(A\,|\,B_i)}\hspace{7 mm}\textnormal{for }k=1,2,3\hdots m\]
+\section{Discrete Distributions}
+\subsection{Random Variables of the Discrete Type}
+Given a random experiment with outcome space \(S\), a function \(X\) that assigns one real number to each element int \(S\) is called a \textbf{random variable}. If \(S\) contains a finite number of points, or the points of \(S\) can be put into a one-to-one correspondence with positive integers, \(X\) becomes a random variable of the \textbf{discrete type}. A probability mass function of a discrete random variable satisfies the following properties.
+\[f(x)>0\hspace{10mm}\sum\limits_{x\,\in\,S}f(x)=1\hspace{10 mm}P(X\,\in\,A)=\sum\limits_{x\,\in\,A}f(x)\]
+There are two ways of representing a probability mass function. One way is with a \textbf{bar graph}, in which \(f(x)\) is represented with a vertical line segment. Another way  of representing a probability mass function is with a \textbf{probability histogram}, where each probability is depicted by a rectangle with base length 1.
+\subsection{Mathematical Expectation}
+There are many important characteristics of a discrete distribution. One is the \textbf{mathematical expectation}. The mathematical expectation of a function of \(X\) is as follows.
+\[E[X]=\sum\limits_{x\,\in\,S}x\,f(x)\]
+Below are some properties of the expected value of a function, \(E\).
+\[E(c)=c\hspace{10 mm}E[cX]=cE[X]\]
+\[E[c_1X+c_2X]=c_1E[X]+c_2E[X]\]
+\subsection{The Mean, Variance, and Standard Deviation}
+The \textbf{mean} of a random variable \(X\) is as follows.
+\[\mu=\sum\limits_{x\in S}x\,f(x)=E[X]\]
+The \textbf{variance} of the random variable \(X\), or of the distribution of \(X\) is as follows.
+\[\sigma^2=\sum\limits_{x\in S}(x-\mu)^2\,f(x)=E([(X-\mu)]^2=E[X^2]-\mu^2\]
+The \textbf{standard deviation} is the square root of the variance.
+\[\sigma=\sqrt{\sigma^2}\]
+The \(r^\textnormal{th}\) \textbf{moment} of the distribution about \(b\) is
+\[E[(X-b)^r]=\sum\limits_{x\in S}(x-b)^rf(x)\]
+The \(r^\textnormal{th}\) \textbf{factorial moment} is
+\[E[(X)_r]=E[X(X-1)(X-2)\hdots (X-r+1)]\]
+\subsection{Bernoulli Trials and the Binomial Distribution}
+A \textbf{Bernoulli experiment} is a random experiment, the outcome of which can be classified as a success or a failure. A sequence of \textbf{Bernoulli trials} occurs when a Bernoulli experiment is performed several independent times so that the probability of success reminds the same from trial to trial. Let the probability of success be \(p\) and the probability of failure be \(q=1-p\).\\\\
+If there are only outcomes of success and failure, we can say that \(X\) has a \textbf{Bernoulli distribution}. The expected value of \(X\) can be written as follows.
+\[\mu=E[X]=\sum\limits_{x=0}^1xp^x(1-p)^{1-x}=p\]
+The variance of \(X\) can be written as follows.
+\[\sigma^2=\sum\limits_{x=0}^1(x-p)^2p^x(1-p)^{1-x}=\sqrt{pq}\]
+If the trials are independent, and the probabilities of success and failure on each trial are \(p\) and \(q\) respectively, \(X\) has a \textbf{binomial distribution}, and the probability mass function of \(X\) is as follows.
+\[f(x)=\left(\begin{matrix}n\\x\end{matrix}\right)p^x(1-p)^{n-x}\]
+\subsection{The Moment-Generating Function}
+\subsection{The Poisson Distribution}
+\section{Continuous Distributions}
+\subsection{Continuous-Type Data}
+\subsection{Exploratory Data Analysis}
+\subsection{Random Variables of the Continuous Type}
+\subsection{The Uniform and Exponential Distributions}
+\subsection{The Gamma and Chi-Squared Distributions}
+\subsection{The Normal Distribution}
+\end{document}
