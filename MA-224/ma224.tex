@@ -105,9 +105,27 @@ The variance of \(X\) can be written as follows.
 If the trials are independent, and the probabilities of success and failure on each trial are \(p\) and \(q\) respectively, \(X\) has a \textbf{binomial distribution}, and the probability mass function of \(X\) is as follows.
 \[f(x)=\left(\begin{matrix}n\\x\end{matrix}\right)p^x(1-p)^{n-x}\]
 \subsection{The Moment-Generating Function}
+Let \(X\) be a discrete random variable with probability mass function \(f(x)\) and space \(S\). If there is a positive number \(h\) such that \(-h \leq t \leq h\), the \textbf{Moment-Generating function} can be defined as follows.
+\[E[e^{tX}]=\sum\limits_{x\in S}e^{tx}f(x)\]
+The Moment-Generating function can be related to the mean and variance of a distribution.
+\[\mu=M'(0)=E[X]\hspace{7 mm}\sigma^2=M''(0)-[M'(0)]^2=E[X^2]-E[X]^2\]
+A \textbf{negative binomial distribution} has a probability mass function defined as follows.
+\[f(x)=\left(\begin{matrix}x-1\\r-1\end{matrix}\right)\,p^r\,q^{x-r}\]
+If a negative binomial distribution has an \(r\) value of 1, the distribution is said to be a \textbf{geometric distribution} which has a probability mass function as follows.
+\[f(x)=p(1-p)^{x-1}\]
 \subsection{The Poisson Distribution}
+Let the number of changes that occur over a continuous interval be counted. We can then define an \textbf{approximate Poisson process} with a parameter \(\lambda>0\) if the following conditions are satified.
+\begin{itemize}
+    \item The number of changes occuring on nonoverlapping intervals are independent.
+    \item The probability of exactly one change occuring in a sufficiently short interval of length \(h\) is about \(\lambda h\).
+    \item The probability of two or more changes occuring in a sufficiently short interval is essentially zero.
+\end{itemize}
+We say that the random variable \(X\) has a \textbf{Poisson distribution} if its probability mass function is of the form
+\[f(x)=\frac{\lambda^xe^{-\lambda}}{x!}\]
+The mean (\(\mu\)) and variance (\(\sigma^2\)) of a Poisson distribution are both equal to \(\lambda\).
 \section{Continuous Distributions}
 \subsection{Continuous-Type Data}
+Many experiments do not have integers as outcomes. If the measurements could come from an interval of possible outcomes, this data would be of the \textbf{continuous type}. For this type of data, group the data into classes and construct a histogram from these classes.
 \subsection{Exploratory Data Analysis}
 \subsection{Random Variables of the Continuous Type}
 \subsection{The Uniform and Exponential Distributions}
