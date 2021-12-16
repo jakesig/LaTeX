@@ -125,10 +125,46 @@ We say that the random variable \(X\) has a \textbf{Poisson distribution} if its
 The mean (\(\mu\)) and variance (\(\sigma^2\)) of a Poisson distribution are both equal to \(\lambda\).
 \section{Continuous Distributions}
 \subsection{Continuous-Type Data}
-Many experiments do not have integers as outcomes. If the measurements could come from an interval of possible outcomes, this data would be of the \textbf{continuous type}. For this type of data, group the data into classes and construct a histogram from these classes.
+Many experiments do not have integers as outcomes. If the measurements could come from an interval of possible outcomes, this data would be of the \textbf{continuous type}. For this type of data, group the data into classes and construct a histogram from these classes. The interval with the largest class height is called the \textbf{modal class} and the respective class mark is called the \textbf{mode}. There's more here but it wasn't really covered that much in class.
 \subsection{Exploratory Data Analysis}
+This really wasn't covered much either, but some notable things are the idea of \textbf{percentiles}. The 50th percentile of a distribution is known as the \textbf{median}, the 25th percentile of a distribution is known as the \textbf{first quartile}, and the 75th percentile of a distribution is known as the \textbf{third quartile}. The distance between the first and third quartile is called the \textbf{interquartile range (IQR)}. You can make something called a \textbf{box plot} summarizing the minimum, first quartile, median, third quartile, and maximum. This is called a \textbf{five-number summary}.
 \subsection{Random Variables of the Continuous Type}
+The relative frequency histogram \(h(x)\) associated with \(n\) observations of a random variable of the continuous type is a nonnegative function defined so that the total area between its graph and the x-axis equals 1. The probability over an interval given as \(P(a<X<b)\) is given as
+\[\int_a^bf(x)\,dx\]
+This means that the probability is the area bounded by the graph of \(f(x)\), the x-axis, and the lines \(x=a\) and \(x=b\). The \textbf{probability density function} of a random variable \(X\) of the \textbf{continuous type} with space \(S\) that is an interval or a union of integrals, is an integrable function of \(f(x)\) satisfying the following conditions.
+\begin{itemize}
+    \item \(f(x)>0\hspace{5 mm}x\in S\)
+    \item \(\int_Sf(x)\,dx=1\)
+    \item \(P(a<X<b)=\int_a^bf(x)\,dx\)
+\end{itemize}
+The \textbf{cumulative distribution function} of a random variable \(X\) of continuous type is as follows.
+\[F(x)=P(X\leq x)=\int_{-\infty}^xf(t)\,dt\hspace{5 mm}-\infty <x<\infty\]
+The mean, variance, and the moment-generating function of a continuous variable with a probability density function \(f(x)\).
+\[\mu=E[X]=\int_{-\infty}^{\infty}x\,f(x)\,dx\]
+\[\sigma^2=E[(X-\mu)^2]=\int_{-\infty}^{\infty}(x-\mu)^2\,f(x)\,dx\]
+\[M(t)=\int_{-\infty}^{\infty}e^{tx}\,f(x)\,dx\]
 \subsection{The Uniform and Exponential Distributions}
+The random variable \(X\) has a \textbf{uniform distribution} if its probability density function is equal to a constant on its support. If the support is on the interval \([a,b]\), then
+\[f(x)=\frac{1}{b-a}\hspace{5 mm}a \leq x \leq b\]
+The mean, variance and moment-generating function of \(X\) are as follows.
+\[\mu=\frac{a+b}{2}\hspace{8 mm}\sigma^2=\frac{(b-a)^2}{12}\hspace{8 mm}M(t)=\left\{\begin{matrix}\frac{e^{tb}-e^{ta}}{t(b-a)} & t \neq 0\\1 & t=0\end{matrix}\]
+Sometimes in the Poisson process, we let \(\lambda=\frac{1}{\theta}\) and we say that random variable \(X\) has an \textbf{exponential distribution} if its probability density function is defined by
+\[f(x)=\frac{1}{\theta}e^{\frac{-x}{\theta}}\]
+The moment-generating function, mean, and variance of \(X\) are as follows.
+\[M(t)=\int_0^{\infty}e^{tx}\left(\frac{1}{\theta}\right)e^{-\frac{x}{\theta}}\,dx\]
+\[\mu=M'(0)=\theta\hspace{7 mm}\sigma^2=M''(0)-[M'(0)]^2=\theta^2\]
 \subsection{The Gamma and Chi-Squared Distributions}
+Chi-Squared distributions were not covered in class, so I'm only doing gamma. The \textbf{gamma function} is defined by
+\[\Gamma(t)=\int_0^{\infty}y^{t-1}e^{-y}\,dy\]
+The random variable \(X\) has a \textbf{gamma distribution} if its probability density function is defined by
+\[f(x)=\frac{1}{\Gamma(\alpha)\theta^\alpha}\,x^{\alpha-1}e^{-\frac{x}{\theta}}\]
+The mean and variance are
+\[\mu=\alpha\theta\hspace{7 mm}\sigma^2=\alpha\theta^2\]
 \subsection{The Normal Distribution}
+The random variable \(X\) has a \textbf{normal distribution} if it's probability density function is
+\[f(x)=\frac{1}{\sigma\sqrt(2\pi)}\,\textnormal{exp}\left[-\frac{(x-\mu)^2}{2\sigma^2}\right]\]
+The moment-generating function, mean, and variance are as follows.
+\[M(t)=\textnormal{exp}\left[\mu t + \frac{\sigma^2t^2}{2}\right]\]
+\[\mu=E[X]=\mu\]
+\[\sigma^2=M''(0)-[M'(0)]^2=\sigma^2\]
 \end{document}
