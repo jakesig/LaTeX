@@ -1,2 +1,6 @@
-# LaTeX
-A Git repository my LaTeX documents.
+## LaTeX
+
+**Author:** Jake Sigman  
+**Email:** <jsigman04@gmail.com>  
+
+A Git repository of my LaTeX documents.
