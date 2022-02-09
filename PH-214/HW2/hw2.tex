@@ -1,0 +1,35 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{cancel}
+
+\title{PH-214 Homework 2}
+\author{Jacob Sigman}
+\date{}
+
+\begin{document}
+\maketitle
+\section*{Problem 1}
+Radiation occurs.
+\section*{Problem 2}
+\[P=\frac{q^2\,a^2}{6\pi\epsilon_0c^3}\hspace{7 mm}a=\frac{1.6*10^6 \textnormal{ m/s}}{2 \textnormal{ s}}=8*10^5 \textnormal{ m/}\textnormal{s}^2\hspace{7 mm}q=1.6*10^-19 \textnormal{ C}\]
+\[P=\frac{\left(1.6*10^{-19}\right)^2*\left(8*10^5\right)^2}{6\pi*\left(8.85*10^{-12}\right)*\left(3*10^8\right)^3}=\boxed{3.63*10^{-42} \textnormal{ W}}\]
+\section*{Problem 3}
+\[\epsilon_0=\frac{\textnormal{C}^2}{\textnormal{N}\cdot\textnormal{m}^2}\hspace{7 mm}q=\textnormal{C}\hspace{7 mm}a=\frac{\textnormal{m}}{\textnormal{s}^2}\hspace{7 mm}c=\frac{\textnormal{m}}{\textnormal{s}}\]
+\[P=\frac{q^2\,a^2}{6\pi\epsilon_0c^3}=\frac{\textnormal{C}^2*\frac{\textnormal{m}^2}{\textnormal{s}^4}}{\frac{\textnormal{C}^2}{\textnormal{N}\cdot\textnormal{m}^2}*\frac{\textnormal{m}^3}{\textnormal{s}^3}}=\textnormal{C}^2*\frac{\textnormal{m}^2}{\textnormal{s}^4}*\frac{\textnormal{N}\cdot\textnormal{m}^2}{\textnormal{C}^2}*\frac{\textnormal{s}^3}{\textnormal{m}^3}=\boxed{\frac{\textnormal{N}\cdot\textnormal{m}}{\textnormal{s}}=\textnormal{W}}\]
+\section*{Problem 4}
+\[v=7.5*10^{14}\textnormal{ Hz}\hspace{7 mm}\theta=30^{\circ}\hspace{7 mm}E_0=10^3 \textnormal{ V/m}\]
+\[\omega=v*2\pi=4.71*10^{15}\textnormal{ rad/s}\hspace{7 mm}\omega=ck\hspace{7 mm}k=1.57*10^7\,\hat{x}\]
+\[\overrightarrow{E}=E_0e^{i(k\cdot r-\omega t)}\]
+\[\overrightarrow{E_0}=10^3*\left<0,\,\sin30^{\circ},\,\cos30^{\circ}\right>=\left<0,\,866,\,500\right>\hspace{7 mm}\]
+\[\overrightarrow{E}=\boxed{(866\hat{y}+500\hat{z})\,e^{i(1.57*10^7\,\hat{x}\cdot r-4.71*10^{15} t)}}\]
+\[\overrightarrow{B}=B_0e^{i(k\cdot r-\omega t)}\]
+\[\overrightarrow{B_0}=\frac{1}{c}*10^3*\left<0,\,\sin120^{\circ},\,\cos120^{\circ}\right>=\left<0,-1.66*10^{-6},\,2.88*10^{-6}\right>\]
+\[\overrightarrow{B}=\boxed{(-1.66*10^{-6}\hat{y}+2.88*10^{-6}\hat{z})\,e^{i(1.57*10^7\,\hat{x}\cdot r-4.71*10^{15} t)}}\]
+\end{document}
