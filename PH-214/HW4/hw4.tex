@@ -1,0 +1,38 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{cancel}
+
+\title{PH-214 Homework 4}
+\author{Jacob Sigman}
+\date{}
+
+\begin{document}
+\maketitle
+\section*{Problem 1}
+\[k=\left<0,2,0\right>\boxed{\textnormal{Positive y-direction}}\]
+\[\frac{1}{c_0}\frac{\partial^2\overrightarrow{E}}{\partial t^2}=\frac{\partial^2\overrightarrow{E}}{\partial y^2}\]
+\[\frac{\partial\overrightarrow{E}}{\partial t}=-\omega E_0\cos(2y-\omega t)\hspace{5 mm}\frac{\partial^2\overrightarrow{E}}{\partial t^2}=-\omega^2 E_0\sin(2y-\omega t)\]
+\[\frac{\partial\overrightarrow{E}}{\partial y}=2E_0\cos(2y-\omega t)\hspace{5 mm}\frac{\partial^2\overrightarrow{E}}{\partial y^2}=-4E_0\sin(2y-\omega t)\]
+\[\frac{-\omega^2}{c_0}=-4\hspace{4 mm}\rightarrow\hspace{4 mm}\omega^2=4c_0\]
+\[\omega=ck\hspace{4 mm}\rightarrow\hspace{4 mm}\boxed{c^2k^2\neq4c}\]
+\[\overrightarrow{E_0}=\left<1,0,-1\right>\hspace{7 mm}\overrightarrow{B_0}=\left<\frac{-\sqrt2}{2},0,\frac{-\sqrt2}{2}\right>\]
+\[||\overrightarrow{E_0}||=\sqrt2\hspace{7 mm}\frac{E_0}{c}=B_0\hspace{7 mm}B_0=\frac{\sqrt2}{c}\]
+\[\boxed{\overrightarrow{B}=\left<-\frac{1}{c},0,\frac{1}{c}\right>\sin(2y-\omega t)}\]
+\[\overrightarrow{s}=\frac{1}{\mu_0}\overrightarrow{E}\times\overrightarrow{B}=\boxed{\frac{1}{\mu_0}\left<0,6.66*10^{-9},0\right>}\]
+\section*{Problem 2}
+\[\nabla\times\overrightarrow{E}=i\overrightarrow{k}\times\overrightarrow{E}=<0,3\pi i,0>\times\left<e^{i(3\pi y-\omega t)},0,0\right>=\left<0,0,-3\pi e^{i(3\pi y-\omega t)}\right>\]
+\[\overrightarrow{B_0}=\left<0,0,-\frac{1}{c}\right>\hspace{7 mm}\overrightarrow{B}=-\frac{1}{c}\hat{\textnormal{z}}e^{i(3\pi y-\omega t)}\]
+\[\frac{\partial\overrightarrow{B}}{\partial t}=\frac{1}{c}*-i\omega\hat{\textnormal{z}}e^{i(3\pi y-\omega t)}\]
+\section*{Problem 3}
+\[\sigma_\textnormal{Ray}=\sigma_\textnormal{Th}\left(\frac{\omega^2}{\omega^2-\omega_0^2}\right)^2\hspace{7 mm}\omega_0 >> \omega^2=\frac{\omega^2}{\omega_0^2}\]
+\[\frac{\left<P_{\textnormal{Scat720}}\right>}{\left<P_{\textnormal{Scat500}}\right>}=\left(\frac{\omega_{720}}{\omega_{500}}\right)^4=\left(\frac{720}{500}\right)^4=\boxed{4.3}\]
+\section*{Problem 4}
+\[\phi_E=\frac{1}{4\pi\epsilon_0}*\frac{qdr\cos\theta}{r^3}=\frac{1}{4\pi\epsilon_0}*\frac{1.6*10^{-19}*1*10^{-9}}{1}=\boxed{1.43*10^{-18}\textnormal{ V}}\]
+\end{document}
