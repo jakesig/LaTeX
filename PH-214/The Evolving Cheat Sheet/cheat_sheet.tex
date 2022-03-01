@@ -2,7 +2,7 @@
 
 \usepackage[english]{babel}
 
-\usepackage[letterpaper,top=1.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+\usepackage[letterpaper,top=1cm,bottom=2.5cm,left=1.8cm,right=1.8cm,marginparwidth=1.75cm]{geometry}
 
 \usepackage{amsmath}
 \usepackage{graphicx}
@@ -15,10 +15,16 @@
 
 \begin{document}
 \maketitle
-\section*{Constants}
-\[\mu_0=12.57*10^7\textnormal{ H/m}\hspace{7 mm}\epsilon_0=8.85*10^{-12}\textnormal{ C}^2/\textnormal{Nm}^2}\hspace{7 mm}m_{\textnormal{Proton}}=1.67*10^{-27}\textnormal{ kg}\hspace{7 mm}m_{\textnormal{Electron}}=9.11*10^-31\textnormal{ kg}\]
-\[q=1.60*10^{-19} \textnormal{ C}\]
-\section*{Maxwell's Equations}
+
+\subsection*{Constants}
+\[\mu_0=12.57*10^7\,\frac{\textnormal{T}\cdot\textnormal{m}}{\textnormal{A}}\hspace{7 mm}\epsilon_0=8.85*10^{-12}\frac{\textnormal{ C}^2}{\textnormal{N}\cdot\textnormal{m}^2}\hspace{7 mm}m_{\textnormal{Proton}}=1.67*10^{-27}\textnormal{ kg}\]
+\[m_{\textnormal{Electron}}=9.11*10^-31\textnormal{ kg}\hspace{7 mm}q=1.60*10^{-19} \textnormal{ C}\]
+\subsection*{Vector Derivatives}
+\[\textnormal{Gradient: }\nabla t = \frac{\partial t}{\partial x}\hat{\textbf{x}}+\frac{\partial t}{\partial y}\hat{\textbf{y}}+\frac{\partial t}{\partial z}\hat{\textbf{z}}\hspace{7 mm}\textnormal{Divergence: }\nabla\cdot \textbf{v}=\frac{\partial v_x}{\partial x}+\frac{\partial v_y}{\partial y}+\frac{\partial v_z}{\partial z}\hspace{7 mm}\textnormal{Laplacian: }\nabla^2t=\frac{\partial^2t}{\partial x^2}+\frac{\partial^2y}{\partial y^2}+\frac{\partial^2z}{\partial z^2}\]
+\[\textnormal{Curl: }\nabla\times \textbf{v} = \left(\frac{\partial v_z}{\partial y}-\frac{\partial v_y}{\partial z}\right)\hat{\textbf{x}}+\left(\frac{\partial v_x}{\partial z}-\frac{\partial v_z}{\partial x}\right)\hat{\textbf{y}}+\left(\frac{\partial v_y}{\partial x}-\frac{\partial v_x}{\partial y}\right)\hat{\textbf{z}}\]
+\subsection*{Vector Identities}
+\[\textbf{A}\cdot(\textbf{B}\times\textbf{C})=\textbf{B}\cdot(\textbf{C}\times\textbf{A})=\textbf{C}\cdot(\textbf{A}\times\textbf{B})\hspace{7 mm}\textbf{A}\times(\textbf{B}\times\textbf{C})=\textbf{B}(\textbf{A}\cdot\textbf{C})-\textbf{C}(\textbf{A}\cdot\textbf{B})\]
+\subsection*{Maxwell's Equations}
 \begin{center}
 \begin{tabular}{|| c c c c c ||}
 \hline
@@ -28,12 +34,14 @@
 \hline
 \end{tabular}
 \end{center}
-\[\nabla^2\overrightarrow{B}=\mu_0\epsilon_0\frac{\partial^2\overrightarrow{B}}{\partial t^2}\hspace{7 mm}\nabla^2\overrightarrow{E}=\mu_0\epsilon_0\frac{\partial^2\overrightarrow{E}}{\partial t^2}\hspace{7 mm}\frac{1}{c_0}\frac{\partial^2\overrightarrow{E}}{\partial t^2}=\nabla^2\overrightarrow{E}\hspace{7 mm}\frac{1}{c_0}\frac{\partial^2\overrightarrow{B}}{\partial t^2}=\nabla^2\overrightarrow{B}\]
-\[\overrightarrow{E}=\overrightarrow{E_0}e^{i(k\cdot r-\omega t)}\hspace{7 mm}\overrightarrow{B}=\overrightarrow{B_0}e^{i(k\cdot r-\omega t)}\hspace{7 mm}\mu_E=\frac{1}{2}\epsilon_0\left|\overrightarrow{E}\right|^2\hspace{7 mm}\mu_B=\frac{1}{2\mu_0}\epsilon_0\left|\overrightarrow{B}\right|^2\]
-\section*{Radiation}
-\[\overrightarrow{s}=\frac{1}{\mu_0}\overrightarrow{E}\times\overrightarrow{B}\hspace{7 mm}P=\frac{q^2a^2}{6\pi\epsilon_0c^3}\hspace{7 mm}\sigma_{\textnormal{Th}}=\frac{8\pi}{3}\left(\frac{q^2}{4\pi\epsilon_0m_ec^2}\right)^2\]
-\[E_\theta=\frac{a\sin\theta\,q}{4\pi\,c^2\epsilon_0R}\hspace{7 mm}E_R=\frac{a\,T\sin\theta\,q}{4\pi c\,\epsilon_0R^2}\]
-\[\]
-
-
+\subsubsection*{Wave Equations for \(\overrightarrow{E}\) and \(\overrightarrow{B}\)}
+\[\overrightarrow{E}=\overrightarrow{E_0}e^{i(k\cdot r-\omega t)}=\overrightarrow{E_0}\cos\left(\omega t -kx\right)\hspace{7 mm}\overrightarrow{B}=\overrightarrow{B_0}e^{i(k\cdot r-\omega t)}=\overrightarrow{B_0}\cos\left(\omega t -kx\right)\]
+\[\frac{1}{c_0}\frac{\partial^2\overrightarrow{E}}{\partial t^2}=\frac{\partial^2\overrightarrow{E}}{\partial x^2}\hspace{7 mm}\frac{1}{c_0}\frac{\partial^2\overrightarrow{B}}{\partial t^2}=\frac{\partial^2\overrightarrow{B}}{\partial x^2}\hspace{7 mm}\omega=ck\]
+\subsubsection*{Energy Density}
+\[u_E=\frac{1}{2}\epsilon_0\left|\overrightarrow{E}\right|^2\hspace{7 mm}u_B=\frac{1}{2\mu_0}\epsilon_0\left|\overrightarrow{B}\right|^2\hspace{7 mm}u_T=\epsilon_0\left|\overrightarrow{E}\right|^2=\frac{1}{\mu_0}\left|\overrightarrow{B}\right|^2\]
+\subsection*{Radiation}
+\[\overrightarrow{s}=\frac{1}{\mu_0}\overrightarrow{E}\times\overrightarrow{B}\hspace{7 mm}\frac{E}{B}=c\hspace{7 mm}P=\frac{q^2a^2}{6\pi\epsilon_0c^3}\hspace{7 mm}\sigma_{\textnormal{Th}}=\frac{8\pi}{3}\left(\frac{q^2}{4\pi\epsilon_0m_ec^2}\right)^2\hspace{7 mm}\left<P\right>=\frac{q^4E_0^2}{12\pi\epsilon_0m^2c^3}\]
+\[E_\theta=\frac{a\sin\theta\,q}{4\pi\,c^2\epsilon_0R}\hspace{7 mm}E_R=\frac{a\,T\sin\theta\,q}{4\pi c\,\epsilon_0R^2}\hspace{7 mm}\sigma_\textnormal{Ray}=\sigma_\textnormal{Th}\left(\frac{\omega^2}{\omega^2-\omega_0^2}\right)^2\]
+\subsection*{Potential for a Dipole}
+\[\phi_E=\frac{1}{4\pi\epsilon_0}*\frac{qdr\cos\theta}{r^3}\]
 \end{document}
