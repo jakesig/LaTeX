@@ -1,0 +1,215 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{bm}
+\usepackage{booktabs, tabularx}
+
+\title{MA-240 Review}
+\author{Jacob Sigman}
+\date{}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+\part*{Chapter 1: Introduction to Differential Equations}
+\addcontentsline{toc}{part}{Chapter 1: Introduction to Differential Equations}
+\section*{1.1: Definitions and Terminology}
+\addcontentsline{toc}{section}{1.1: Definitions and Terminology}
+\begin{description}
+    \item [Differential Equation] An equation containing the derivatives of one or more dependent variables with respect to one or more independent variables.
+    \item [Classification by Order] The order of the highest derivative in the equation.
+    \item [Classification by Type] Whether the differential equation has partial derivatives in it. If it does, it's called a \underline{Partial Differential Equation}, otherwise it's called an \underline{Ordinary Differential Equation}.
+    \item [Classification By Linearity] A differential equation is linear if it can be put in the form \[a_n(x)\frac{d^ny}{dx^n}+a_{n-1}(x)\frac{d^{n-1}y}{dx^{n-1}}+\cdots+a_0y=g(x)\] where \(a_i(x)\) and \(g(x)\) depend at most on the independent variable.
+    \item [Solutions] Suppose \(\phi\) is a function defined on some interval. If substituting \(\phi\) into the ODE reduces the equation to an identity, then \(\phi\) solves the ODE on the interval. The graph of \(\phi\) is called a \underline{Solution Curve}.
+    \item [Particular Solution] In general, an \(n^\textnormal{th}\) order Ordinary Differential Equation will be solved by an \(n\)-parameter family of solutions. A solution of a differential equation that is free of arbitrary parameters is said to be particular.
+    \item [Singular Solution] A particular solution which does not belong to an \(n\)-parameter family of solutions.
+    \item [General Solution] If the \(n\)-parameter family contains all the solutions, then the \(n\)-parameter family is said to be the general solution.
+\end{description}
+\section*{1.2: Initial-Value Problems}
+\addcontentsline{toc}{section}{1.2: Initial-Value Problems}
+An \underline{Initial-Value Problem} is an \(n^{\textnormal{th}}\) order Ordinary Differential Equation paired with conditions for the solution and it's first \((n-1)\) derivatives. Below is an example of an Initial-Value Problem.
+\[y''+3y'-y=\sin x\hspace{7 mm}y(\pi)=1\hspace{7 mm}y'(\pi)=3\]
+\underline{Picard's Theorem} discusses the existence of a unique solution. Suppose R is a region in the \(xy\)-plane containing \((x_0,y_0)\). If \(f(x,y)\) and \(\frac{\partial f}{\partial y}\) are continuous on R, there exists some interval I which belongs to \(x_0\) such that \(\frac{dy}{dx}=f(x,y)\) has one and only one solution passing through \(x_0\).
+\section*{1.3: Differential Equations as Mathematical Models}
+\addcontentsline{toc}{section}{1.3: Differential Equations as Mathematical Models}
+\begin{description}
+    \item [Population Dynamics] The rate at which population grows at a certain time is proportional to the total population of the country at that time: \(\frac{dP}{dt}=kP\)
+    \item [Radioactive Decay] The rate at which the nuclei of a substance decays is proportional to the amount of substance remaining at a given time: \(\frac{dA}{dt}=kA\)
+    \item [Newton's Law of Cooling] The rate at which the temperature of a body changes is proportional to the difference between the temperature of the body and the temperature of the surrounding medium: \(\frac{dT}{dt}=k(T-T_m)\)
+    \item [Mixtures] The mixing of two salt solutions of differing concentrations results in a first-order differential equation for the amount of salt contained in a mixture: \(\frac{dA}{dt}=R_{in}-R_{out}\)
+\end{description}
+\part*{Chapter 2: First-Order Differential Equations}
+\addcontentsline{toc}{part}{Chapter 2: First-Order Differential Equations}
+\section*{2.1: Solution Curves Without a Solution}
+\addcontentsline{toc}{section}{2.1: Solution Curves Without a Solution}
+It's not always easy to solve a differential equation, we may just want to know what they look like. This is where \underline{Direction Fields} come in. They provide a visual representation of solutions. Evaluate some \(y'=f(x,y)\) on a dense grid.\\\\
+An \underline{Autonomous} first-order differential equation is a differential equation which is only a function of \(y\): \(y'=f(x,y)=f(y)\). The points at which \(f(x,y)=0\) are called \underline{Critical Points}. A constant solution of an Autonomous differential equation is called an \underline{Equilibrium Solution}. A \underline{Phase Portrait} depicts the behavior of the differential equation on certain intervals. When two arrowheads of a phase portrait point towards eachother, it is said to be an \underline{attractor}, which is stable. When two arrowheads of a phase portrait point away from eachother, it is said to be a \underline{repeller}.
+\section*{2.2: Seperable Equations}
+\addcontentsline{toc}{section}{2.2: Seperable Equations}
+A first-order equation of the following form is said to be \underline{separable}.
+\[\frac{dy}{dx}=g(x)h(y)\]
+This equation can be solved by integration.
+\[\int p(y)y'dx=\int g(x)dx \hspace{2 mm}\rightarrow\hspace{2 mm}\int p(y)dy=\int g(x)dx\]
+\section*{2.3: Linear Equations}
+\addcontentsline{toc}{section}{2.3: Linear Equations}
+Recall that a differential equation is linear if it can be put in the following form:
+\[a_n(x)\frac{d^ny}{dx^n}+a_{n-1}(x)\frac{d^{n-1}y}{dx^{n-1}}+\cdots+a_0y=g(x)\,\,\textnormal{where}\,\,y'=P(x)y\]
+We look for a function \(\mu\) by multiplying by \(\mu\) on both sides of \(y'\). We will get a derivative on one side.
+\[\textnormal{Let }\mu(x)=e^{\int\!P(x)dx}\hspace{2 mm}\rightarrow\hspace{2 mm}\frac{d}{dx}\left[\mu(x)y\right]=f(x)e^{\int\!P(x)dx}\]
+For a linear differential equation, if \(f(x)=0\) we call the differential equation \underline{homogeneous}, \(f(x)\) is sometimes called a \underline{forcing function}.\\\\
+The error function and complimentary error function are defined as follows.
+\[\textnormal{erf}(x)=\frac{2}{\sqrt{\pi}}\int_0^xe^{-t^2}dt\hspace{7 mm}\textnormal{erfc}(x)=\frac{2}{\sqrt{\pi}}\int_x^\infty e^{-t^2}dt\]
+\section*{2.4: Exact Equations}
+\addcontentsline{toc}{section}{2.4: Exact Equations}
+Consider a differential equation of the following form:
+\[\textbf{M}(x,y)dx+\textbf{N}(x,y)dy=0\hspace{3 mm}\rightarrow\hspace{3 mm}\textbf{M}(x,y)+\textbf{N}(x,y)y'=0\]
+If \(z=f(x,y)\) is a 2-variable function with continuous partials in some region R, then on R, then on R, the \underline{total differential} of \(z\) is said to be:
+\[dz=f_xdx+f_ydy\]
+of particular interest to us is the case where \(f(x,y)=c\) so \(f_xdx+f_ydy=0\). \(f(x,y)=c\) is a family of functions defined by the parameter \(c\). \\\\
+An expression \(\textbf{M}dx+\textbf{N}dy\) is an \underline{exact differential form} if there exists a function on a region R such that \(\textbf{M}=f_x\) and \(\textbf{N}=f_y\) are continuous. A differential equation is exact if:
+\[\frac{\partial\textbf{M}}{\partial y}=\frac{\partial\textbf{N}}{\partial x}\]
+If \(\textbf{M}_y\neq\textbf{N}_x\), then multiply both sides by a factor \(\mu\) such that \((\mu\textbf{M})_y=(\mu\textbf{N})_x\).
+\[\mu_x+\left(\frac{\textbf{N}_x-\textbf{M}_y}{\textbf{N}}\right)\mu=0\hspace{3 mm}\textnormal{or}\hspace{3 mm}\mu_y+\left(\frac{\textbf{M}_y-\textbf{N}_x}{\textbf{M}}\right)\mu=0\]
+\section*{2.5: Solutions by Substitutions}
+\addcontentsline{toc}{section}{2.5: Solutions by Substitutions}
+A function \(f\) is \underline{homogeneous} if \(f(tx,ty)=t^\alpha f(x,y)\) for all \(t,x,y\) of degree \(\alpha\). A differential equation \(\textbf{M}dx+\textbf{N}dy=0\) is homogeneous if \textbf{M} and \textbf{N} are homogeneous of the same degree. Substitutions for \(y\) and \(x\) are made as follows:
+\[y=ux\hspace{3 mm}\textnormal{or}\hspace{3 mm}x=vy\]
+\underline{Bernoulli's Equation} is as follows.
+\[y'+P(x)y=f(x)y^n\hspace{5 mm}\textnormal{ Substitution: }u=y^{1-n}\]
+\part*{Chapter 3: Modeling with First-Order Differential Equations}
+\addcontentsline{toc}{part}{Chapter 3: Modeling with First-Order Differential Equations}
+\section*{3.1: Linear Models}
+\addcontentsline{toc}{section}{3.1: Linear Models}
+\begin{center}
+\begin{multicols}{3}
+    \textbf{Growth and Decay}
+    \[\frac{dx}{dt}=kx\]
+    \textbf{Newton's Law of Cooling}
+    \[\frac{dT}{dt}=k(T-T_m)\]
+    \textbf{Mixtures}
+    \[\frac{dA}{dt}=R_{in}-R_{out}\]
+\end{multicols}
+\vspace{5 mm}
+\textbf{Series Circuits}
+\[L\frac{di}{dt}+Ri=E(t)\hspace{7 mm}R\frac{dq}{dt}+\frac{1}{C}q=E(t)\]
+\end{center}
+\newpage
+\part*{Chapter 4: Higher-Order Differential Equations}
+\addcontentsline{toc}{part}{Chapter 4: Higher-Order Differential Equations}
+\section*{4.1: Preliminary Theory - Linear Equations}
+\addcontentsline{toc}{section}{4.1: Preliminary Theory - Linear Equations}
+An \underline{\(n^{\textnormal{th}}\)-order Initial-Value Problem} is defined as
+\[\sum_{i=0}^na_i(x)y^{(i)}(x)=g(x)\textnormal{ such that }y(x_0)=y_0, y'(x_0)=y_1,\cdots,y^{(n-1)}(x_0)=y_{(n-1)}\]
+Let \(a_i\) be continuous on I. \(a_n(x)\neq 0\) for all \(x\in I\), then there is a unique solution to the \(n^{\textnormal{th}}\)-order Initial-Value Problem on I.
+A \underline{boundary-value problem} is defined as
+\[a_2(x)y''+a_1(x)y'+a_0(x)y=g(x)\textnormal{ such that }y(c)=y_0\textnormal{ and }y(b)=y_1\]
+If \(g(x)=0\) in an \(n^{\textnormal{th}}\)-order Initial-Value Problem, the differential equation is homogeneous. Otherwise, it's not homogeneous. The \underline{differential operator} is defined as follows:
+\[Df=f'\]
+If \(\left\{y_i\right\}_{i=1}^k\) are solutions to the homogeneous \(n^{\textnormal{th}}\)-order Initial-Value Problem, then \[\sum_{i=1}^kc_iy_i\]
+is also a solution to the homogeneous \(n^{\textnormal{th}}\)-order Initial-Value Problem. This is called the \underline{superposition principle}.\\\\
+A set of functions \(\left\{f_i\right\}_{i=1}^n\) is \underline{linearly independent} if
+\[\sum_{i=1}^nc_if_i(x)=0\]
+This implies \(c_i=0\) for all \(i\) otherwise it's \underline{linearly dependent}. This means that there exists a set of constants \(\left\{c_i\right\}\) that are not all zero such that
+\[\sum_{i=1}^nc_if_i(x)=0\].\\\\
+Let \(F\) be a set of functions. If \(0\in F\), then \(F\) is linearly dependent. \(F=\left\{f_1,f_2\right\}\) is linearly dependent if and only if \(f_1=kf_2\). The \underline{Wronskian} of a set of functions \(\left\{f_i\right\}_{i=1}^n\) where \(f_i\) are differentiable up to \(n-1\) degrees is:
+\[W(f_1,\cdots,f_n)=
+\begin{vmatrix}
+	f_1 & f_2 & \cdots & f_n \\
+	f_1' & f_2' & \cdots & f_n' \\
+	\vdots & \vdots & \ddots & \vdots \\
+  f_1^{(n-1)} & f_2^{(n-1)} & \cdots & f_n^{(n-1)}
+\end{vmatrix}
+\]
+A set of \(n\) solutions to the homogeneous \(n^{\textnormal{th}}\)-order Initial-Value Problem is linearly independent if and only if the Wronskian is nonzero everywhere. If \(\left\{y_i\right\}_{i=1}^n\) are solutions to the homogeneous \(n^{\textnormal{th}}\)-order Initial-Value Problem, then \(W(y_1,\cdots,y_n)\) is always or never zero on I. A set of linearly independent solutions to the homogeneous \(n^{\textnormal{th}}\)-order Initial-Value Problem \(\left\{y_i\right\}_{i=1}^n\) is called a \underline{fundamental set}. There is always a fundamental set for the homogeneous \(n^{\textnormal{th}}\)-order Initial-Value Problem.\\\\
+If \(\left\{y_i\right\}_{i=1}^n\) are solutions to the homogeneous \(n^{\textnormal{th}}\)-order Initial-Value Problem and \(y_p\) is a solution to the non-homogeneous \(n^{\textnormal{th}}\)-order Initial-Value Problem then
+\[\sum_{i=1}^nc_iy_i+y_p\]
+is a solution to the non-homogeneous \(n^{\textnormal{th}}\)-order Initial-Value Problem. If \(\left\{y_i\right\}_{i=1}^n\) are a fundamental set for the homogeneous \(n^{\textnormal{th}}\)-order Initial-Value Problem and \(y_p\) solves the non-homogeneous \(n^{\textnormal{th}}\)-order Initial-Value Problem, then the \underline{general solution} of the non-homogeneous \(n^{\textnormal{th}}\)-order Initial-Value Problem is
+\[y=\sum_{i=1}^nc_iy_i+y_p\]
+To solve a non-homogeneous \(n^{\textnormal{th}}\)-order Initial-Value Problem, solve for the homogeneous case first, find the particular solution, then find the general solution. Say that \(y_{p_j}\) solves
+\[\sum_{i=0}^na_i(x)y_i^{(i)}=g_j(x)\textnormal{ for }j=1,\cdots,m\]
+\begin{center}then\end{center}
+\[\sum_{j=1}^my_{p_j}\textnormal{ solves }\sum_{i=0}^na_i(x)y_i^{(i)}=\sum_{j=1}^mg_j(x)\]
+\section*{4.2: Reduction of Order}
+\addcontentsline{toc}{section}{4.2: Reduction of Order}
+Say \(y_1\) is a known solution of
+\[y''+P(x)y'+Q(x)y=f(x)\]
+If \(y_2\) is another solution and \(\left\{y_1,y_2\right\}\) is a fundamental set, then we've found our solution. Use the following to find the second solution.
+\[y_2(x)=u(x)y_1(x)\]
+Below is the formula the textbook provides for reduction of order.
+\[y_2(x)=y_1(x)\int\frac{e^{-\int P(x)dx}}{y_1(x)^2}dx\]
+\section*{4.3: Homogeneous Linear Equations with Constant Coefficients}
+\addcontentsline{toc}{section}{4.3: Homogeneous Linear Equations with Constant Coefficients}
+The equation that is trying to be solved is
+\[ay''+by'+cy=0\]
+The \underline{characteristic equation} of the above equation can be written as follows
+\[am^2+bm+c=0\]
+There are three cases that can be analyzed based on the discriminant \((b^2-4ac)\) of the above characteristic equation. The first case is when the discriminant is greater than zero, and the characteristic equation has two distinct real roots \(m_1\) and \(m_2\).
+\[y=c_1e^{m_1x}+c_2e^{m_2x}\]
+The second case is when the discriminant is equal to zero, and the characteristic equation has a repeated root \(m\).
+\[y=c_1e^{mx}+c_2xe^{mx}\]
+The third case is when the discriminant is less than zero, and the characteristic equation has complex conjugate roots \(m_1=\alpha+i\beta\) and \(m_2=\alpha-i\beta\).
+\[y=e^{\alpha x}(c_1\cos(\beta x))+c_2\sin(\beta x))\]
+\section*{4.4: Undetermined Coefficients - Superposition Approach}
+\addcontentsline{toc}{section}{4.4: Undetermined Coefficients - Superposition Approach}
+The \underline{Method of Undetermined Coefficients} is one way of determining a particular solution. In solving differential equations, find the complementary solution, then find the particular solution, then put them both together using the superposition principle. \\\\
+Guess a solution based on the non-homogeneous component of the differential equation and determine the coefficients of the guessed particular solution. Below are some examples of some guesses.\\\\
+\def\arraystretch{1.5}%
+\begin{tabularx}{\textwidth}{l X X r}
+\toprule
+\(\bm{g(x)}\) &&& \textbf{Form of} \(\bm{y_p}\) \\
+\midrule
+1 &&& \(A\) \\
+\(5x+7\) &&& \(Ax+B\) \\
+\(3x^2-2\) &&& \(Ax^2+Bx+C\) \\
+\(\sin(4x)\) &&& \(A\cos(4x)+B\sin(4x)\) \\
+\(e^{5x}\) &&& \(Ae^{5x}\) \\
+\((9x-2)e^{5x}\) &&& \((Ax+B)e^{5x}\) \\
+\((x^2)e^{5x}\) &&& \((Ax^2+Bx+C)e^{5x}\) \\
+\(e^{3x}\sin(4x)\) &&& \(Ae^{3x}\cos(4x)+Be^{3x}\sin(4x)\) \\
+\(xe^{3x}\sin(4x)\) &&& \((Ax+B)e^{3x}\cos(4x)+(Cx+D)e^{3x}\sin(4x)\) \\
+\bottomrule
+\end{tabularx}
+\section*{4.6: Variation of Parameters}
+\addcontentsline{toc}{section}{4.6: Variation of Parameters}
+\underline{Variation of Parameters} is another approach to determining a particular solution. The formula below is used:
+\[y_p=y_1\int\frac{y_1f(x)}{W(y_1,y_2)}dx+y_2\int\frac{y_2f(x)}{W(y_1,y_2)}dx\]
+A more general form:
+\[y_p=\sum_{i=1}^nu_iy_i\hspace{3 mm}\textnormal{where}\hspace{3 mm}u_i'=\frac{\Delta_i}{W(y_1,\cdots,y_n)}\]
+\[\textnormal{Where } \Delta_i = W(y_1,\cdots,y_2) \text{ where the } i^\textnormal{th} \textnormal{ column is }
+\begin{bmatrix}
+0 \\
+\vdots \\
+f(x)
+\end{bmatrix}
+\]
+\section*{4.7: Cauchy-Euler Equation}
+\addcontentsline{toc}{section}{4.7: Cauchy-Euler Equation}
+The \underline{Cauchy-Euler Equation} is a linear differential equation of the following form:
+\[\sum_{i=0}^na_ix^iy^{(i)}(x)=g(x)\]
+The characteristic equation for a Cauchy-Euler Equation is
+\[am(m-1)+bm+c=0\]
+There are three cases that can be analyzed based on the discriminant \((b^2-4ac)\) of the above characteristic equation. The first case is when the discriminant is greater than zero, and the characteristic equation has two distinct real roots \(m_1\) and \(m_2\).
+\[y=c_1x^{m_1}+c_2x^{m_2}\]
+The second case is when the discriminant is equal to zero, and the characteristic equation has a repeated root \(m\).
+\[y=c_1x^{m}+c_2x^{m}\ln x\]
+The third case is when the discriminant is less than zero, and the characteristic equation has complex conjugate roots \(m_1=\alpha+i\beta\) and \(m_2=\alpha-i\beta\).
+\[y=x^{\alpha}(c_1\cos(\beta\ln x))+c_2\sin(\beta\ln x))\]
+\part*{Chapter 5: Modeling with Higher-Order Differential Equations}
+\addcontentsline{toc}{part}{Chapter 5: Modeling with Higher-Order Differential Equations}
+\section*{5.1: Linear Models: Initial-Value Problems}
+\addcontentsline{toc}{section}{5.1: Linear Models: Initial-Value Problems}
+Linear models can describe \underline{simple harmonic motion}. The equation for the oscillator below is said to be \underline{undamped}.
+\[\frac{d^2x}{dt^2}+\omega^2x=0\textnormal{ where }\omega^2=\frac{k}{m}\]
+Sometimes, damping forces act on an oscillator. The equation for a \underline{damped} oscillator with damping constant \(\beta\) is
+\[\frac{d^2x}{dt^2}+2\lambda\frac{dx}{dt}+\omega^2x=0\textnormal{ where }2\lambda=\frac{\beta}{m}\textnormal{ and }\omega^2=\frac{k}{m}\]
+Sometimes, driving forces act on an oscillator. The equation for a \underline{driven} oscillator with driving force \(f(t)\) is
+\[\frac{d^2x}{dt^2}+2\lambda\frac{dx}{dt}+\omega^2x=F(t)\textnormal{ where }2\lambda=\frac{\beta}{m}\textnormal{, }\omega^2=\frac{k}{m}\textnormal{, and }F(t)=\frac{f(t)}{m}\]
+\end{document}
