@@ -74,7 +74,7 @@ Substitute partial fraction decomposition into seperable equations.
 \newpage
 \subsection*{Part 2}
 \addcontentsline{toc}{section}{Part 2}
-\[y^{(5)}-9y^{(4)}-y^{(3)}-8y''-90y'=-\sin(3x)\]
+\[y^{(5)}-9y^{(4)}-y^{(3)}-81y''-90y'=-\sin(3x)\]
 \[\textnormal{Auxillary Equation: }m^5-9m^4-m^3-81m^2-90m=0\]
 \[m(m-1)(m+10)(m-3i)(m+3i)=0\hspace{7 mm}m=0,\,1,\,-10,\,\pm\sqrt{3}i\]
 \[y_c=c_1+c_2e^x+c_3e^{-10x}+c_4\sin\left(3x\right)+c_5\cos\left(3x\right)\]
@@ -87,11 +87,11 @@ Substitute partial fraction decomposition into seperable equations.
 \[y_p^{(4)}=(81Ax+108B)\sin(3x)+(81Bx-108A)\cos(3x)\]
 \[y_p^{(5)}=-3(81Bx-108A)\sin(3x)+81A\sin(3x)+3(81Ax+108B)\cos(3x)+81B\cos(3x)\]
 \[y_p^{(5)}=(405A-243Bx)\sin(3x)+(243Ax+405B)\cos(3x)\]
-\[405A+27A-90A+48B-972B=-1\hspace{7 mm}342A-924B=-1\]
-\[405B+27B-90B-48A+972A=0\hspace{7 mm}342B+924A=0\]
-\[A=-\frac{342}{924}B\hspace{7 mm}B=\frac{77}{80895}\]
-\[A=-\frac{342}{924}B\hspace{7 mm}A=-\frac{26334}{74744208}\]
-\[\boxed{y=c_1+c_2e^x+c_3e^{-10x}+c_4\sin(3x)+c_5\cos(3x)-\frac{26334x}{74744208}\sin(3x)+\frac{77x}{80895}\cos(3x)\hspace{3 mm}x\in{\rm I\!R}}\]
+\[405A+27A-90A+486B-972B=-1\hspace{7 mm}342A-486B=-1\]
+\[405B+27B-90B-486A+972A=0\hspace{7 mm}342B+486A=0\]
+\[A=-\frac{342}{486}B=-\frac{19}{27}B\hspace{7 mm}B=\frac{3}{2180}\]
+\[A=-\frac{342}{486}B\hspace{7 mm}A=-\frac{57}{58860}\]
+\[\boxed{y=c_1+c_2e^x+c_3e^{-10x}+c_4\sin(3x)+c_5\cos(3x)-\frac{57x}{58860}\sin(3x)+\frac{3x}{2180}\cos(3x)\hspace{3 mm}x\in{\rm I\!R}}\]
 \subsection*{Part 3}
 \addcontentsline{toc}{section}{Part 3}
 \[y'=\frac{y}{e^{-y}\sin(2y)-(1+y)x}\]
@@ -185,7 +185,7 @@ x_p''=4e^{-4t}\left(\left(\sqrt{10}B+4A\right)\sin\left(\sqrt{10}t\right)+\left(
 \end{center}
 \[x_p''=\left(8\sqrt{10}B+6A\right)e^{-4t}\sin\left(\sqrt{10}t\right)+\left(6B-8\sqrt{10}A\right)e^{-4t}\cos\left(\sqrt{10}t\right)\]
 \[8\sqrt{10}B+6A-32A-8\sqrt{10}B+10A=F_0\]
-\[6B-8\sqrt{10}A+8\sqrt{10}A-32B=0\]
+\[6B-8\sqrt{10}A+8\sqrt{10}A-32B+10B=0\]
 \[A=-\frac{F_0}{16}\hspace{7 mm}B=0\]
 \[\boxed{x=c_1e^{\left(-4+\sqrt{6}\right)t}+c_2e^{\left(-4-\sqrt{6}\right)t}-\frac{F_0}{16}e^{-4t}\sin\left(\sqrt{10}t\right)\hspace{3 mm}t\in{\rm I\!R}}\]
 \begin{center}
@@ -225,7 +225,7 @@ An approximation for \(\arctan\) can be used as follows:
 \[\frac{y}{x}=c\hspace{7 mm}c\in\left(-\frac{\pi}{2},\,\frac{\pi}{2}\right)\]
 \[\boxed{y=c\,x\hspace{3 mm}x\in{\rm I\!R}}\]
 \subsection*{Part (d)}
-The answers to (a), (b), and (c) are the same.
+The answers to (a), (b), and (c) are the same. Since it's the same differential equation, different methods of solving will lead to the same general solution. Initial/Boundary conditions would lead to different answers. Despite them being the same, there are some domain restrictions with each solution since the methods used involve approximations and may not be the best way of solving a differential equation. However, they give the same solution nonetheless, despite the domain restrictions on the three solutions, even though they were not solved using the same method.
 \addcontentsline{toc}{section}{Part (d)}
 \section*{Question 8}
 \addcontentsline{toc}{part}{Question 8}
@@ -257,4 +257,5 @@ Since the Wronskian of the two functions is 0, the functions are linearly depend
 =3x^2|x|^3-3x^4|x|=\boxed{0}\]
 \subsection*{Part (c)}
 \addcontentsline{toc}{section}{Part (c)}
+
 \end{document}
