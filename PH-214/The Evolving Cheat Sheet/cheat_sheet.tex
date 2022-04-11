@@ -17,7 +17,7 @@
 \maketitle
 
 \subsection*{Constants}
-\[\mu_0=12.57*10^7\,\frac{\textnormal{T}\cdot\textnormal{m}}{\textnormal{A}}\hspace{7 mm}\epsilon_0=8.85*10^{-12}\frac{\textnormal{ C}^2}{\textnormal{N}\cdot\textnormal{m}^2}\hspace{7 mm}m_{\textnormal{Proton}}=1.67*10^{-27}\textnormal{ kg}\]
+\[\mu_0=12.57*10^7\,\frac{\textnormal{T}\cdot\textnormal{m}}{\textnormal{A}}\hspace{7 mm}\varepsilon_0=8.85*10^{-12}\frac{\textnormal{ C}^2}{\textnormal{N}\cdot\textnormal{m}^2}\hspace{7 mm}m_{\textnormal{Proton}}=1.67*10^{-27}\textnormal{ kg}\]
 \[m_{\textnormal{Electron}}=9.11*10^-31\textnormal{ kg}\hspace{7 mm}q=1.60*10^{-19} \textnormal{ C}\]
 \subsection*{Vector Derivatives}
 \[\textnormal{Gradient: }\nabla t = \frac{\partial t}{\partial x}\hat{\textbf{x}}+\frac{\partial t}{\partial y}\hat{\textbf{y}}+\frac{\partial t}{\partial z}\hat{\textbf{z}}\hspace{7 mm}\textnormal{Divergence: }\nabla\cdot \textbf{v}=\frac{\partial v_x}{\partial x}+\frac{\partial v_y}{\partial y}+\frac{\partial v_z}{\partial z}\hspace{7 mm}\textnormal{Laplacian: }\nabla^2t=\frac{\partial^2t}{\partial x^2}+\frac{\partial^2y}{\partial y^2}+\frac{\partial^2z}{\partial z^2}\]
@@ -29,19 +29,36 @@
 \begin{tabular}{|| c c c c c ||}
 \hline
 &&&&\\
-\textbf{Integral Form} & \(\oint\overrightarrow{E}\cdot d\overrightarrow{A}=\frac{q_{\textnormal{enc}}}{\epsilon_0}\) & \(\oint\overrightarrow{B}\cdot d\overrightarrow{A}=0\) & \(\oint\overrightarrow{E}\cdot d\overrightarrow{s}=-\frac{d\phi_B}{dt}\) & \(\oint\overrightarrow{B}\cdot d\overrightarrow{s}=\mu_0\epsilon_0\frac{d\phi_B}{dt}+\mu_0i_{\textnormal{enc}}\) \\[10pt]
-\textbf{Differential Form} & \(\nabla\cdot\overrightarrow{E}=0\) & \(\nabla\cdot\overrightarrow{B}=0\) & \(\nabla\times\overrightarrow{E}=-\frac{\partial\overrightarrow{B}}{\partial t}\) & \(\nabla\times\overrightarrow{B}=\mu_0\epsilon_0\frac{\partial\overrightarrow{E}}{\partial t}\)\\[10pt]
+\textbf{Integral Form} & \(\oint\overrightarrow{E}\cdot d\overrightarrow{A}=\frac{q_{\textnormal{enc}}}{\varepsilon_0}\) & \(\oint\overrightarrow{B}\cdot d\overrightarrow{A}=0\) & \(\oint\overrightarrow{E}\cdot d\overrightarrow{s}=-\frac{d\phi_B}{dt}\) & \(\oint\overrightarrow{B}\cdot d\overrightarrow{s}=\mu_0\varepsilon_0\frac{d\phi_B}{dt}+\mu_0i_{\textnormal{enc}}\) \\[10pt]
+\textbf{Differential Form} & \(\nabla\cdot\overrightarrow{E}=0\) & \(\nabla\cdot\overrightarrow{B}=0\) & \(\nabla\times\overrightarrow{E}=-\frac{\partial\overrightarrow{B}}{\partial t}\) & \(\nabla\times\overrightarrow{B}=\mu_0\varepsilon_0\frac{\partial\overrightarrow{E}}{\partial t}\)\\[10pt]
 \hline
 \end{tabular}
 \end{center}
 \subsubsection*{Wave Equations for \(\overrightarrow{E}\) and \(\overrightarrow{B}\)}
 \[\overrightarrow{E}=\overrightarrow{E_0}e^{i(k\cdot r-\omega t)}=\overrightarrow{E_0}\cos\left(\omega t -kx\right)\hspace{7 mm}\overrightarrow{B}=\overrightarrow{B_0}e^{i(k\cdot r-\omega t)}=\overrightarrow{B_0}\cos\left(\omega t -kx\right)\]
-\[\frac{1}{c_0}\frac{\partial^2\overrightarrow{E}}{\partial t^2}=\frac{\partial^2\overrightarrow{E}}{\partial x^2}\hspace{7 mm}\frac{1}{c_0}\frac{\partial^2\overrightarrow{B}}{\partial t^2}=\frac{\partial^2\overrightarrow{B}}{\partial x^2}\hspace{7 mm}\omega=ck\]
+\[\frac{1}{c_0^2}\frac{\partial^2\overrightarrow{E}}{\partial t^2}=\frac{\partial^2\overrightarrow{E}}{\partial x^2}\hspace{7 mm}\frac{1}{c_0^2}\frac{\partial^2\overrightarrow{B}}{\partial t^2}=\frac{\partial^2\overrightarrow{B}}{\partial x^2}\hspace{7 mm}\omega=ck\hspace{7 mm}\overrightarrow{B}=\frac{1}{c}\hat{k}\times\overrightarrow{E}\]
+\[\nabla\cdot[\,\,]=i\overrightarrow{k}\cdot[\,\,]\hspace{7 mm}\nabla\times=i\overrightarrow{k}\times[\,\,]\hspace{7 mm}\frac{\partial}{\partial t}[\,\,]=i\omega*[\,\,]\hspace{7 mm}\frac{\partial^2}{\partial t^2}[\,\,]=-\omega^2*[\,\,]\]
 \subsubsection*{Energy Density}
-\[u_E=\frac{1}{2}\epsilon_0\left|\overrightarrow{E}\right|^2\hspace{7 mm}u_B=\frac{1}{2\mu_0}\epsilon_0\left|\overrightarrow{B}\right|^2\hspace{7 mm}u_T=\epsilon_0\left|\overrightarrow{E}\right|^2=\frac{1}{\mu_0}\left|\overrightarrow{B}\right|^2\]
+\[u_E=\frac{1}{2}\varepsilon_0\left|\overrightarrow{E}\right|^2\hspace{7 mm}u_B=\frac{1}{2\mu_0}\varepsilon_0\left|\overrightarrow{B}\right|^2\hspace{7 mm}u_T=\varepsilon_0\left|\overrightarrow{E}\right|^2=\frac{1}{\mu_0}\left|\overrightarrow{B}\right|^2\]
 \subsection*{Radiation}
-\[\overrightarrow{s}=\frac{1}{\mu_0}\overrightarrow{E}\times\overrightarrow{B}\hspace{7 mm}\frac{E}{B}=c\hspace{7 mm}P=\frac{q^2a^2}{6\pi\epsilon_0c^3}\hspace{7 mm}\sigma_{\textnormal{Th}}=\frac{8\pi}{3}\left(\frac{q^2}{4\pi\epsilon_0m_ec^2}\right)^2\hspace{7 mm}\left<P\right>=\frac{q^4E_0^2}{12\pi\epsilon_0m^2c^3}\]
-\[E_\theta=\frac{a\sin\theta\,q}{4\pi\,c^2\epsilon_0R}\hspace{7 mm}E_R=\frac{a\,T\sin\theta\,q}{4\pi c\,\epsilon_0R^2}\hspace{7 mm}\sigma_\textnormal{Ray}=\sigma_\textnormal{Th}\left(\frac{\omega^2}{\omega^2-\omega_0^2}\right)^2\]
+\[\overrightarrow{s}=\frac{1}{\mu_0}\overrightarrow{E}\times\overrightarrow{B}\hspace{7 mm}\frac{E}{B}=c\hspace{7 mm}P=\frac{q^2a^2}{6\pi\varepsilon_0c^3}\hspace{7 mm}\sigma_{\textnormal{Th}}=\frac{8\pi}{3}\left(\frac{q^2}{4\pi\varepsilon_0m_ec^2}\right)^2\hspace{7 mm}\left<P\right>=\frac{q^4E_0^2}{12\pi\varepsilon_0m^2c^3}\]
+\[E_\theta=\frac{a\sin\theta\,q}{4\pi\,c^2\varepsilon_0R}\hspace{7 mm}E_R=\frac{a\,T\sin\theta\,q}{4\pi c\,\varepsilon_0R^2}\hspace{7 mm}\sigma_\textnormal{Ray}=\sigma_\textnormal{Th}\left(\frac{\omega^2}{\omega^2-\omega_0^2}\right)^2\]
 \subsection*{Potential for a Dipole}
-\[\phi_E=\frac{1}{4\pi\epsilon_0}*\frac{qdr\cos\theta}{r^3}\]
+\[\phi_E=\frac{1}{4\pi\varepsilon_0}*\frac{qdr\cos\theta}{r^3}\]
+\subsection*{Electric and Magnetic Fields in Materials}
+\[\overrightarrow{D}=\varepsilon_0(1+\chi_e)\overrightarrow{E}=\varepsilon\overrightarrow{E}\hspace{7 mm}\varepsilon=\varepsilon_0(1+\chi_e)=\varepsilon_0\varepsilon_r\hspace{7 mm}\varepsilon_r=\frac{\varepsilon_m}{\varepsilon_0}\]
+\[\overrightarrow{B}=\mu_0(1+\chi_m)\overrightarrow{H}=\mu\overrightarrow{H}\hspace{7 mm}\mu=\mu_0(1+\chi_m)=\mu_0\mu_r\hspace{7 mm}\mu_r=\frac{\mu_m}{\mu_0}\]
+\subsection*{Maxwell's Equations in Materials}
+\begin{center}
+\begin{tabular}{|| c c c c ||}
+\hline
+&&&\\
+\(\nabla\cdot\overrightarrow{D}=0\) & \(\nabla\cdot\overrightarrow{B}=0\) & \(\nabla\times\overrightarrow{E}=-\frac{\partial\overrightarrow{B}}{\partial t}\) & \(\nabla\times\overrightarrow{H}=\frac{\partial\overrightarrow{D}}{\partial t}\)\\[10pt]
+\hline
+\end{tabular}
+\end{center}
+\subsection*{Boundary Conditions}
+\[E_1^{||}=E_2^{||}\hspace{7 mm}\varepsilon_1\hspace{7 mm}E_1^\perp=\varepsilon_2E_2^\perp\hspace{7 mm}B_1^\perp=B_2^\perp\hspace{7 mm}\frac{B_1^{||}}{\mu_1}=\frac{B_2^{||}}{\mu_2}\]
+\subsection*{Wave Impedance}
+\[Z=\sqrt{\frac{\mu}{\varepsilon}}\hspace{7 mm}E=ZH\hspace{7 mm}v=\frac{1}{\sqrt{\mu\epsilon}}\hspace{7 mm}n=\frac{c}{v}\hspace{7 mm}c^2=\frac{1}{\mu_0\varepsilon_0}\hspace{7 mm}v=\frac{1}{\varepsilon\mu}\]
 \end{document}
