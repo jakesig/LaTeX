@@ -18,7 +18,7 @@
 
 \subsection*{Constants}
 \[\mu_0=12.57*10^7\,\frac{\textnormal{T}\cdot\textnormal{m}}{\textnormal{A}}\hspace{7 mm}\varepsilon_0=8.85*10^{-12}\frac{\textnormal{ C}^2}{\textnormal{N}\cdot\textnormal{m}^2}\hspace{7 mm}m_{\textnormal{Proton}}=1.67*10^{-27}\textnormal{ kg}\]
-\[m_{\textnormal{Electron}}=9.11*10^-31\textnormal{ kg}\hspace{7 mm}q=1.60*10^{-19} \textnormal{ C}\]
+\[m_{\textnormal{Electron}}=9.11*10^-31\textnormal{ kg}\hspace{7 mm}q=1.60*10^{-19} \textnormal{ C}\hspace{7 mm}\sigma=5.67*10^{-8}\textnormal{W}\textnormal{m}^{-2}\textnormal{K}^{-4}\]
 \subsection*{Vector Derivatives}
 \[\textnormal{Gradient: }\nabla t = \frac{\partial t}{\partial x}\hat{\textbf{x}}+\frac{\partial t}{\partial y}\hat{\textbf{y}}+\frac{\partial t}{\partial z}\hat{\textbf{z}}\hspace{7 mm}\textnormal{Divergence: }\nabla\cdot \textbf{v}=\frac{\partial v_x}{\partial x}+\frac{\partial v_y}{\partial y}+\frac{\partial v_z}{\partial z}\hspace{7 mm}\textnormal{Laplacian: }\nabla^2t=\frac{\partial^2t}{\partial x^2}+\frac{\partial^2y}{\partial y^2}+\frac{\partial^2z}{\partial z^2}\]
 \[\textnormal{Curl: }\nabla\times \textbf{v} = \left(\frac{\partial v_z}{\partial y}-\frac{\partial v_y}{\partial z}\right)\hat{\textbf{x}}+\left(\frac{\partial v_x}{\partial z}-\frac{\partial v_z}{\partial x}\right)\hat{\textbf{y}}+\left(\frac{\partial v_y}{\partial x}-\frac{\partial v_x}{\partial y}\right)\hat{\textbf{z}}\]
@@ -61,4 +61,33 @@
 \[E_1^{||}=E_2^{||}\hspace{7 mm}\varepsilon_1\hspace{7 mm}E_1^\perp=\varepsilon_2E_2^\perp\hspace{7 mm}B_1^\perp=B_2^\perp\hspace{7 mm}\frac{B_1^{||}}{\mu_1}=\frac{B_2^{||}}{\mu_2}\]
 \subsection*{Wave Impedance}
 \[Z=\sqrt{\frac{\mu}{\varepsilon}}\hspace{7 mm}E=ZH\hspace{7 mm}v=\frac{1}{\sqrt{\mu\epsilon}}\hspace{7 mm}n=\frac{c}{v}\hspace{7 mm}c^2=\frac{1}{\mu_0\varepsilon_0}\hspace{7 mm}v=\frac{1}{\varepsilon\mu}\]
+\subsection*{Separations Between Media}
+\[\textnormal{Snell's Law: }n_1\sin(\theta_1)=n_2\sin(\theta_2)\]
+\begin{center}
+\begin{tabular}{|| c c ||}
+\hline
+&\\
+\textbf{P Polarization} & \textbf{S Polarization} \\[10pt]
+\(\overrightarrow{E}\) is in the incidence plane. & \(\overrightarrow{E}\) is perpendicular to the incidence plane.\\[10pt]
+\(\frac{E_{0r}}{E_{0i}}=\frac{\left(\frac{n_2}{n_1}\right)^2\cos(\theta_i)-\sqrt{\left(\frac{n_2}{n_1}\right)^2-\sin^2(\theta_i)}}{\left(\frac{n_2}{n_1}\right)^2\cos(\theta_i)+\sqrt{\left(\frac{n_2}{n_1}\right)^2-\sin^2(\theta_i)}}\) & \(\frac{E_{0r}}{E_{0i}}=-\frac{\cos(\theta_i)-\sqrt{\left(\frac{n_2}{n_1}\right)^2-\sin^2(\theta_i)}}{\cos(\theta_i)+\sqrt{\left(\frac{n_2}{n_1}\right)^2-\sin^2(\theta_i)}}\)\\[15pt]
+\(\frac{E_{0t}}{E_{0i}}=\frac{n_1}{n_2}\left(1+\frac{E_{0r}}{E_{0i}}\right)\) & \(\frac{E_{0t}}{E_{0i}}=1-\frac{E_{0r}}{E_{0i}}\) \\[10pt]
+\hline
+\end{tabular}
+\end{center}
+\[\textnormal{Reflection Coefficient: }R=\frac{\left|E_{0r}\right|^2}{\left|E_{0i}\right|^2}\hspace{7 mm}\textnormal{Transmission Coefficient: }T=\frac{\left|E_{0t}\right|^2}{\left|E_{0i}\right|^2}\frac{n_2\cos(\theta_2)}{n_1\cos(\theta_1)}\]
+\[\textnormal{Brewster Angle (P waves with no reflection): } \theta_B=\arctan\left(\frac{n_2}{n_1}\right)\]
+\[\textnormal{Total internal reflection: }k=k_R+ik_I\hspace{7 mm}\textnormal{Factor changing the amplitude: }e^{\frac{z}{z_0}}\hspace{7 mm}\textnormal{e-folding length: }z_0\]
+\subsection*{Normal Incidence}
+\[\frac{E_{0t}}{E_{0i}}=\frac{n_2-n_1}{n_2+n_1}\hspace{7 mm}\frac{E_{0r}}{E_{0i}}=\frac{2n_1}{n_2+n_1}\]
+\subsection*{Conductors}
+\begin{center}
+\begin{tabular}{|| c c c c ||}
+\hline
+&&&\\
+\(\nabla\cdot\varepsilon\overrightarrow{E}=0\) & \(\nabla\cdot\overrightarrow{B}=0\) & \(\nabla\times\overrightarrow{E}=-\frac{\partial\overrightarrow{B}}{\partial t}\) & \(\nabla\times\frac{\overrightarrow{B}}{\mu}=\frac{\partial(\varepsilon\overrightarrow{E})}{\partial t}+\sigma_c\overrightarrow{E}\)\\[10pt]
+\hline
+\end{tabular}
+\end{center}
+\subsection*{Quantum Mechanics}
+\[I=\sigma T^4\hspace{7 mm}\lambda_{\textnormal{max}}=\frac{2.898*10^{-3}}{T}\]
 \end{document}
