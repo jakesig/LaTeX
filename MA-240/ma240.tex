@@ -10,6 +10,9 @@
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage{bm}
 \usepackage{booktabs, tabularx}
+\usepackage[scr]{rsfso}
+
+\newcommand{\lpl}{\mathscr{L}}
 
 \title{MA-240 Review}
 \author{Jacob Sigman}
@@ -212,4 +215,129 @@ Sometimes, damping forces act on an oscillator. The equation for a \underline{da
 \[\frac{d^2x}{dt^2}+2\lambda\frac{dx}{dt}+\omega^2x=0\textnormal{ where }2\lambda=\frac{\beta}{m}\textnormal{ and }\omega^2=\frac{k}{m}\]
 Sometimes, driving forces act on an oscillator. The equation for a \underline{driven} oscillator with driving force \(f(t)\) is
 \[\frac{d^2x}{dt^2}+2\lambda\frac{dx}{dt}+\omega^2x=F(t)\textnormal{ where }2\lambda=\frac{\beta}{m}\textnormal{, }\omega^2=\frac{k}{m}\textnormal{, and }F(t)=\frac{f(t)}{m}\]
+\part*{Chapter 6: Series Series Solutions of Linear Equations}
+\addcontentsline{toc}{part}{Chapter 6: Series Series Solutions of Linear Equations}
+\section*{6.1: Review of Power Series}
+\addcontentsline{toc}{section}{6.1: Review of Power Series}
+A \underline{power series} centered at \(a\) is a series in the form:
+\[\sum_{n=0}^{\infty}c_n(x-a)^n\]
+\begin{description}
+    \item [Convergence] A power series is \underline{convergent} if it's sequence of partial sums converges. The limit of the partial sums is: \(\lim_{N\rightarrow\infty}\,\sum_{n=0}^Nc_n(x-a)^n\) If this limit doesn't exist, the power series is \underline{divergent}.
+    \item [Interval of Convergence] The set of all real numbers \(x\) for which the series converges. The center of this interval is the center \(a\) of the series.
+    \item [Radius of Convergence] The radius \(R\) of the interval of convergence. If the series only converges at it's center, \(R=0\), otherwise, a power series will converge for \(|x-a|<R\) and will diverge for \(|x-a|>R\).
+    \item [Absolute Convergence] Within the interval of convergence, the power series converges absolutely.
+\end{description}
+One can test the convergence of a power series using the ratio test. Use the following limit:
+\[\lim_{n\rightarrow\infty}\left|\frac{c_{n+1}(x-a)^{n+1}}{c_n(x-a)^n}\right|=L\]
+If \(L<1\), the series converges absolutely, if \(L>1\) the series diverges, and if \(L=1\) the test is inconclusive.
+\newline
+\newline
+The derivatives of power series are defined as follows.
+\[y'=\sum_{n=1}^{\infty}c_nnx^{n-1}\hspace{7 mm}y''=\sum_{n=2}^{\infty}c_nn(n-1)x^{n-2}\]
+If a power series is 0 for all numbers \(x\) in some open interval, then \(c_n=0\) for all \(n\). A function is \underline{analytic} at \(a\) if it has a power series representation at \(a\). Power series can also be combined through addition, multiplication, and division. You would do these as you would with polynomials. Below are some Maclaurin Series representations of common functions.\\\\
+\def\arraystretch{1.5}%
+\begin{tabularx}{\textwidth}{l X X r}
+\toprule
+\(\bm{f(x)}\) &&& \textbf{Maclaurin Series Representation} \\
+\midrule
+\(e^x\) &&& \(\sum\limits_{n=0}^\infty\frac{1}{n!}x^n\) \\
+\(cos x\) &&& \(\sum\limits_{n=0}^\infty\frac{(-1)^n}{(2n)!}x^{2n}\) \\
+\(\sin x\) &&& \(\sum\limits_{n=0}^\infty\frac{(-1)^n}{(2n+1)!}x^{2n+1}\) \\
+\(\arctan x\) &&& \(\sum\limits_{n=0}^\infty\frac{(-1)^n}{2n+1}x^{2n+1}\) \\
+\(\cosh x\) &&& \(\sum\limits_{n=0}^\infty\frac{1}{(2n)!}x^{2n}\) \\
+\(\sinh x\) &&& \(\sum\limits_{n=0}^\infty\frac{1}{(2n+1)!}x^{2n+1}\) \\
+\(\ln(1+x)\) &&& \(\sum\limits_{n=1}^\infty\frac{(-1)^{n+1}}{n}x^{n}\) \\
+\(\frac{1}{1-x}\) &&& \(\sum\limits_{n=0}^\infty x^n\) \\
+\bottomrule
+\end{tabularx}
+\section*{6.2: Solutions about Ordinary Points}
+\addcontentsline{toc}{section}{6.2: Solutions about Ordinary Points}
+A point \(x=x_0\) is said to be an \underline{ordinary point} of a differential equation if both \(P(x)\) and \(Q(x)\) are analytic at \(x_0\) in the differential equation below. A point that is not ordinary is said to be a \underline{singular point}.
+\[y''+P(x)y'+Q(x)y=0\]
+If \(x_0\) is an ordinary point of the above equation, then we can always find two linearly independent solutions of the above equation on an interval containing \(x_0\) of the form
+\[y=\sum_{n=0}^\infty c_n(x-x_0)^n\textnormal{ on }|x-x_0|<R\]
+Where the radius of convergence is the distance from \(x_0\) to the closest singular point. The general process is to combine all the series in a differential equation then to solve the recurrence relation once it's obtained.
+\section*{6.3: Solutions about Singular Points}
+\addcontentsline{toc}{section}{6.3: Solutions about Singular Points}
+There are two types of singular points. A singular point is said to be a \underline{regular singular point} if \((x-x_0)P(x)\) and \((x-x_0)^2Q(x)\) are both analytic at \(x_0\). Otherwise, the point is said to be an \underline{irregular singular point}.
+\newline
+\newline
+\underline{Frobenius's Theorem} states that if \(x=x_0\) is a regular singular point of the standard form of a differential equation then there exists at least one solution of the form
+\[y=(x-x_0)^r\sum_{n=0}^\infty c_n(x-x_0)^n\]
+Where \(r\) is some constant. After substituting the power series solution into the differential equation and simplifying, the \underline{indicial equation} is a quadratic equation in \(r\) that results from equating the total coefficient of the lowest power of \(x\) to zero. The values of \(r\), or the \underline{indicial roots} can be obtained and plugged into the recurrence relation.
+\part*{Chapter 7: The Laplace Transform}
+\addcontentsline{toc}{part}{Chapter 7: The Laplace Transform}
+\section*{7.1: Definition of the Laplace Transform}
+\addcontentsline{toc}{section}{7.1: Definition of the Laplace Transform}
+Let \(k\) be a continuous function of two real variables, and \(g\) be a continuous function of one real variable. The \underline{integral transform} with \underline{kernel} \(k\) is defined as follows.
+\[I_k(g)=\int_a^bk(s,t)g(t)dt=f(s)\]
+Let \(f\) be a function defined for \(t\geq 0\). The \underline{Laplace transform} of \(f\) is
+\[\lpl\{f(t)\}=\int_0^\infty e^{-st}f(t)dt\]
+The Laplace transform is a \underline{linear transform}. A function \(f\) is said to be of \underline{exponential order} if there exist constants \(c\), \(M>0\), and \(T>0\) such that \(|f(t)|\leq Me^{ct}\) for all \(t>T\). If \(f\) is piecewise continuous on \([0, \infty)\) and of exponential order, then \(\lim_{s\rightarrow\infty}=0\). Below are some common Laplace transforms.
+\newline
+\newline
+\def\arraystretch{1.5}%
+\begin{tabularx}{\textwidth}{l X X r}
+\toprule
+\(\bm{f(t)}\) &&& \(\bm{\lpl\{s\}}\) \\
+\midrule
+\(1\) &&& \(\frac{1}{s}\) \\
+\(t^n\) &&& \(\frac{n!}{s^{n+1}}\) \\
+\(e^{at}\) &&& \(\frac{1}{s-a}\) \\
+\(\sin kt\) &&& \(\frac{k}{s^2+k^2}\)\\
+\(\cos kt\) &&& \(\frac{s}{s^2+k^2}\)\\
+\(\sinh kt\) &&& \(\frac{k}{s^2-k^2}\)\\
+\(\cosh kt\) &&& \(\frac{s}{s^2-k^2}\)\\
+\bottomrule
+\end{tabularx}
+\section*{7.2: Inverse Transforms and Transforms of Derivatives}
+\addcontentsline{toc}{section}{7.2: Inverse Transforms and Transforms of Derivatives}
+The Laplace transform can also be applied in reverse. Partial fractions play a key role in determining inverse Laplace transforms so that each term can be factored into distinct linear factors. Below are some common inverse Laplace transforms.
+\newline
+\newline
+\def\arraystretch{1.5}%
+\begin{tabularx}{\textwidth}{l X X r}
+\toprule
+\(\bm{\lpl\{s\}}\) &&& \(\bm{f(t)}\) \\
+\midrule
+\(\frac{1}{s}\) &&& \(1\) \\
+\(\frac{n!}{s^{n+1}}\) &&& \(t^n\) \\
+\(\frac{1}{s-a}\) &&& \(e^{at}\) \\
+\(\frac{k}{s^2+k^2}\) &&& \(\sin kt\)\\
+\(\frac{s}{s^2+k^2}\) &&& \(\cos kt\)\\
+\(\frac{k}{s^2-k^2}\) &&& \(\sinh kt\)\\
+\(\frac{s}{s^2-k^2}\) &&& \(\cosh kt\)\\
+\bottomrule
+\end{tabularx}
+\newline
+\newline
+\newline
+The transform of a derivative can be determined as well. If \(f, f',\,\hdots\,, f^{(n-1)}\) are continuous on \([0, \infty)\) and are of exponential order, and if \(f^{(n)}(t)\) is piecewise continuous on \([0,\infty)\), then
+\[\lpl\{f^{(n)}(t)\}=s^nF(s)-s^{n-1}f(0)-s^{n-2}f'(0)-\cdots-f^{(n-1)}(0)\]
+\section*{7.3: Operational Properties I}
+\addcontentsline{toc}{section}{7.3: Operational Properties I}
+\section*{7.4: Operational Properties II}
+\addcontentsline{toc}{section}{7.4: Operational Properties II}
+\section*{7.5: The Dirac Delta Function}
+\addcontentsline{toc}{section}{7.5: The Dirac Delta Function}
+\part*{Chapter 11: Fourier Series}
+\addcontentsline{toc}{part}{Chapter 11: Fourier Series}
+\section*{11.1: Orthogonal Functions}
+\addcontentsline{toc}{section}{11.1: Orthogonal Functions}
+\section*{11.2: Fourier Series}
+\addcontentsline{toc}{section}{11.2: Fourier Series}
+\section*{11.3: Fourier Cosine and Sine Series}
+\addcontentsline{toc}{section}{11.3: Fourier Cosine and Sine Series}
+\part*{Chapter 12: Boundary-Value Problems in Rectangular Coordinates}
+\addcontentsline{toc}{part}{Chapter 12: Boundary-Value Problems in Rectangular Coordinates}
+\section*{12.1: Seperable Partial Differential Equations}
+\addcontentsline{toc}{section}{12.1: Seperable Partial Differential Equations}
+\section*{12.2: Classical PDEs and Boundary-Value Problems}
+\addcontentsline{toc}{section}{12.2: Classical PDEs and Boundary-Value Problems}
+\section*{12.3: Heat Equation}
+\addcontentsline{toc}{section}{12.3: Heat Equation}
+\section*{12.4: Wave Equation}
+\addcontentsline{toc}{section}{12.4: Wave Equation}
+\section*{12.5: Laplace's Equation}
+\addcontentsline{toc}{section}{12.5: Laplace's Equation}
 \end{document}
