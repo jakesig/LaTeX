@@ -290,6 +290,7 @@ The Laplace transform is a \underline{linear transform}. A function \(f\) is sai
 \(\cosh kt\) &&& \(\frac{s}{s^2-k^2}\)\\
 \bottomrule
 \end{tabularx}
+\newpage
 \section*{7.2: Inverse Transforms and Transforms of Derivatives}
 \addcontentsline{toc}{section}{7.2: Inverse Transforms and Transforms of Derivatives}
 The Laplace transform can also be applied in reverse. Partial fractions play a key role in determining inverse Laplace transforms so that each term can be factored into distinct linear factors. Below are some common inverse Laplace transforms.
@@ -316,14 +317,75 @@ The transform of a derivative can be determined as well. If \(f, f',\,\hdots\,, 
 \[\lpl\{f^{(n)}(t)\}=s^nF(s)-s^{n-1}f(0)-s^{n-2}f'(0)-\cdots-f^{(n-1)}(0)\]
 \section*{7.3: Operational Properties I}
 \addcontentsline{toc}{section}{7.3: Operational Properties I}
+It is possible to compute the Laplace transform of an exponential multiple of \(f\) by shifting the Laplace transform. If \(\lpl\{f(t)\}=F(s)\) and \(a\) is any real number, then the \underline{first shifting theorem} states that
+\[\lpl\{e^{at}f(t)\}=F(s-a)\]
+The \underline{unit step function} is defined as follows
+\begin{equation*}
+\mathscr{U}(t-a)=\mathscr{U}_a(t)=
+    \begin{cases}
+        0, &  0\leq t<a\\
+        1, & t\geq a
+    \end{cases}
+\end{equation*}
+Let \(F(s)=\lpl\{f(t)\}\). The properties of the unit step function with regard to Laplace transforms are as follows
+\[\lpl\{\mathscr{U}_a(t)\}=\frac{e^{-sa}}{s}\hspace{7 mm}\lpl\{f(t-a)\,\mathscr{U}(t-a)\}=e^{-sa}F(s)\]
 \section*{7.4: Operational Properties II}
 \addcontentsline{toc}{section}{7.4: Operational Properties II}
+The Laplace transform of the product of a function \(f(t)\) with \(t\) raised to a numerical exponent. This gives the derivative of a transform. If \(F(s)=\lpl\{f(t)\}\) then
+\[\lpl\{t^nf(t)\}=(-1)^n\frac{d^n}{ds^n}F(s)\]
+If functions \(f\) and \(g\) are piecewise continuous on the interval \([0,\infty)\), then the \underline{convolution} of \(f\) and \(g\) is defined by
+\[f*g=\int_0^tf(\tau)\,g(t-\tau)d\tau\]
+The \underline{convolution theorem} states that if \(f(t)\) and \(g(t)\) are piecewise continuous on \([0,\infty)\) and of exponential order, then
+\[\lpl\{f*g\}=\lpl\{f(t)\}\,\lpl\{g(t)\}=F(s)\,G(s)\]
+A \underline{Volterra integral equation} for \(f(t)\) is as follows
+\[f(t)=g(t)+\int_0^tf(\tau)\,h(t-\tau)d\tau\]
+A function is periodic with period \(T\) if \(f(t+T)=f(t)\) for all \(t\). If \(f(t)\) is piecewise continuous on \([0,\infty)\), of exponential order, and periodic with period \(T\), then
+\[\lpl\{f(t)\}=\frac{1}{1-e^{-sT}}\int_0^Te^{-st}f(t)dt\]
 \section*{7.5: The Dirac Delta Function}
 \addcontentsline{toc}{section}{7.5: The Dirac Delta Function}
+A function that is a \underline{unit impulse} is defined as follows
+\begin{equation*}
+\delta_a(t-t_0)=
+    \begin{cases}
+        0, &  0\leq t<t_0-a\\
+        \frac{1}{2a}, & t_0-a\leq t < t_0+a\\
+        0, & t\geq t_0+a
+    \end{cases}
+\end{equation*}
+Typically it's convenient to work with another type of unit impulse called the \underline{Dirac delta function}, which can be characterized by two properties:
+\begin{equation*}
+\delta(t-t_0)=
+    \begin{cases}
+        \infty, &  t=t_0\\
+        0, & t\neq t_0
+    \end{cases}
+    \hspace{10 mm}\int_0^\infty\delta(t-t_0)\,dt=1
+\end{equation*}
+The Laplace transform of the Dirac delta function is
+\[\lpl\{\delta(t-t_0)\}=e^{-st_0}\]
 \part*{Chapter 11: Fourier Series}
 \addcontentsline{toc}{part}{Chapter 11: Fourier Series}
 \section*{11.1: Orthogonal Functions}
 \addcontentsline{toc}{section}{11.1: Orthogonal Functions}
+An \underline{inner product} is a function \((\textbf{u},\textbf{v})\) such that
+\begin{center}
+\begin{multicols}{2}
+    \((\textbf{u},\textbf{v})=(\textbf{v},\textbf{u})\)\\
+    \((k\textbf{u},\textbf{v})=k(\textbf{u},\textbf{v})\)
+    \((\textbf{u},\textbf{u})=0\textnormal{ if }\textbf{u}=0\textnormal{ and }(\textbf{u},\textbf{u})>0\textnormal{ if }u\neq 0\)
+    \((\textbf{u}+\textbf{v},\textbf{w})=(\textbf{u},\textbf{w})+(\textbf{v},\textbf{w})\)
+\end{multicols}
+\end{center}
+It's defined as the number
+\[(f_1, f_2)=\int_a^bf_1(x)\,f_2(x)\,dx\]
+The two functions \(f_1\) and \(f_2\) are \underline{orthogonal} if their inner product is 0. A set of real-valued functions \(\{\phi_i\}_{i=1}^n\) is said to be orthogonal if
+\[(\phi_m,\phi_n)=\int_a^b\phi_m(x)\,\phi_n(x)\,dx=0\]
+Additionally, if \((\phi_m, \phi_m)=1\), the set is said to be \underline{orthonormal}. The value \(\sqrt{(\phi_m,\phi_m)}\) denoted by \(||\phi_m||\) is called the \underline{norm} of \(\phi_m\) induced by the inner product. Any orthogonal set of nonzero functions can be made into an orthonormal set by \underline{normalizing} each function, dividing each function by its norm. It's also possible to represent funcitons in the form of a series. Given a function, when we can find \(\{\phi_n\}_{n=0}^\infty\) and \(\{c_n\}_{n=0}^\infty\) such that
+\[f(x)=\sum_{n=0}^\infty c_n\phi_n(x)\]
+If we can find \(\{\phi_n\}_{n=0}^\infty\), then
+\[c_n=\frac{(f, \phi_n)}{||\phi_n||^2}\textnormal{ and }f(x)=\sum_{n=0}^\infty\frac{(f, \phi_n)}{||\phi_n||^2}\,\phi_n(x)\]
+A set of real-valued functions is said to be \underline{orthogonal with respect to a weight function} on an interval if
+\[\int_a^bw(x)\,\phi_m(x)\,\phi_n(x)\,dx=0\]
 \section*{11.2: Fourier Series}
 \addcontentsline{toc}{section}{11.2: Fourier Series}
 \section*{11.3: Fourier Cosine and Sine Series}
