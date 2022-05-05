@@ -388,19 +388,63 @@ A set of real-valued functions is said to be \underline{orthogonal with respect 
 \[\int_a^bw(x)\,\phi_m(x)\,\phi_n(x)\,dx=0\]
 \section*{11.2: Fourier Series}
 \addcontentsline{toc}{section}{11.2: Fourier Series}
-
+The \underline{Fourier series} of a function \(f\) on an interval \((-p, p)\) is given by
+\[f(x)=\frac{a_0}{2}+\sum_{n=1}^\infty\left[a_n\sin\left(\frac{n\pi x}{p}\right)+b_n\cos\left(\frac{n\pi x}{p}\right)\right]\]
+\[a_0=\frac{1}{p}\int_{-p}^pf(x)dx\hspace{7 mm}a_n=\frac{1}{p}\int_{-p}^pf(x)\cos\left(\frac{n\pi x}{p}\right)dx\hspace{7 mm}b_n=\frac{1}{p}\int_{-p}^pf(x)\sin\left(\frac{n\pi x}{p}\right)dx\]
+Let \(f\) and \(f'\) be piecewise continuous on \([-p, p]\), then for all \(x\) on the interval for which \(f\) is continuous, the Fourier series of \(f\) converges to \(f(x)\). At points of discontinuity
+\[f_s(x)=\frac{f(x^+)+f(x^-)}{2}\]
+Where \(f(x^+)\) and \(f(x^-)\) are the right-hand and left-hand limits of \(f\) at \(x\), respectively.
 \section*{11.3: Fourier Cosine and Sine Series}
 \addcontentsline{toc}{section}{11.3: Fourier Cosine and Sine Series}
+An \underline{even function} is a function such that
+\[f(-x)=f(x)\]
+An \underline{odd function} is a function such that
+\[f(-x)=-f(x)\]
+The Fourier series of an even function \(f\) defined on the interval \((-p, p)\) is a \underline{cosine series}
+\[f(x)=\frac{a_0}{2}+\sum_{n=1}^\infty\left[a_n\cos\left(\frac{n\pi x}{p}\right)\right]\]
+\[a_0=\frac{2}{p}\int_{0}^pf(x)dx\hspace{7 mm}a_n=\frac{2}{p}\int_{0}^pf(x)\cos\left(\frac{n\pi x}{p}\right)dx\]
+The Fourier series of an odd function \(f\) defined on the interval \((-p, p)\) is a \underline{sine series}
+\[f(x)=\sum_{n=1}^\infty\left[b_n\sin\left(\frac{n\pi x}{p}\right)\right]\]
+\[b_n=\frac{2}{p}\int_{0}^pf(x)\sin\left(\frac{n\pi x}{p}\right)dx\]
 \part*{Chapter 12: Boundary-Value Problems in Rectangular Coordinates}
 \addcontentsline{toc}{part}{Chapter 12: Boundary-Value Problems in Rectangular Coordinates}
 \section*{12.1: Seperable Partial Differential Equations}
 \addcontentsline{toc}{section}{12.1: Seperable Partial Differential Equations}
+The general form of a \underline{linear second-order partial differential equation} is given by
+\[A\frac{\partial^2u}{\partial x^2}+B\frac{\partial^2u}{\partial x\partial y}+C\frac{\partial^2u}{\partial y^2}+D\frac{\partial u}{\partial x}+E\frac{\partial u}{\partial y}+Fu=G\]
+If \(G=0\) the equation is said to be \underline{homogeneous}, otherwise it's said to be \underline{non-homogeneous}. Separation of variables is the primary technique used in partial differential equations. Consider the following guess
+\[u(x,y)=X(x)\,Y(y)\hspace{7 mm}\frac{\partial u}{\partial x}=X'Y\hspace{7 mm}\frac{\partial u}{\partial y}=XY'\hspace{7 mm}\frac{\partial^2u}{\partial x^2}=X''Y\hspace{7 mm}\frac{\partial^2u}{\partial x^2}=XY''\]
+Additionally, it's practice to equate the differential equation to a \underline{separation constant} \(-\lambda\). There are three cases that must be analyzed, the first case being if \(\lambda=0\), the second case being if \(\lambda=-\alpha^2\), and the third case being if \(\lambda=\alpha^2\). The superposition principle also applies.
+\newline
+\newline
+There are three ways of classifying partial differential equations. A partial differential equation is \underline{hyperbolic} if \(B^2-4AC>0\), \underline{parabolic} if \(B^2-4AC=0\), and \underline{elliptic} if \(B^2-4AC<0\).
 \section*{12.2: Classical PDEs and Boundary-Value Problems}
 \addcontentsline{toc}{section}{12.2: Classical PDEs and Boundary-Value Problems}
+\begin{center}
+\begin{multicols}{3}
+    \textbf{Heat Equation}
+    \[k\frac{\partial^2u}{\partial x^2}=\frac{\partial u}{\partial t}\]
+    \textbf{Wave Equation}
+    \[a^2\frac{\partial^2 u}{\partial x^2}=\frac{\partial^2 u}{\partial t^2}\]
+    \textbf{Laplace's Equation}
+    \[\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}=0\]
+\end{multicols}
+\end{center}
+\vspace{5 mm}
+There are three types of \underline{boundary conditions} as follows
+\[u(L, t)=u_0\hspace{7 mm}u_x(L, t)=0\hspace{7 mm}u_x(L, t)=-h(u(L, t)-u_m)\]
 \section*{12.3: Heat Equation}
 \addcontentsline{toc}{section}{12.3: Heat Equation}
+This section of the textbook solves the heat equation. The solution is as follows
+\[u(x,t)=\frac{2}{L}\sum_{n=1}^\infty\left[\int_0^Lf(x)\sin\left(\frac{n\pi x}{L}\right)dx\right]e^{-k\left(\frac{n^2\pi^2}{L^2}\right)t}\sin\left(\frac{n\pi x}{L}\right)\]
 \section*{12.4: Wave Equation}
 \addcontentsline{toc}{section}{12.4: Wave Equation}
+This section of the textbook solves the wave equation. The solution is as follows
+\[u(x,t)=\sum_{n=1}^\infty\left[A_n\cos\left(\frac{n\pi a}{L}t\right)+B_n\sin\left(\frac{n\pi a}{L}t\right)\right]\sin\left(\frac{n\pi x}{L}\right)\]
+\[A_n=\frac{2}{L}\int_0^Lf(x)\sin\left(\frac{n\pi x}{L}\right)dx\hspace{7 mm}B_n=\frac{2}{n\pi a}\int_0^Lg(x)\sin\left(\frac{n\pi x}{L}\right)dx\]
 \section*{12.5: Laplace's Equation}
 \addcontentsline{toc}{section}{12.5: Laplace's Equation}
+This section of the textbook solves Laplace's equation. The solution is as follows
+\[u(x,y)=A_0y+\sum_{n=1}^\infty A_n\sinh\left(\frac{n\pi y}{a}\right)\cos\left(\frac{n\pi x}{a}\right)\]
+\[A_0=\frac{1}{ab}\int_0^af(x)dx\hspace{7 mm}A_n=\frac{2}{a\sinh\left(\frac{n\pi b}{a}\right)}\int_0^af(x)\cos\left(\frac{n\pi x}{a}\right)dx\]
 \end{document}
