@@ -55,7 +55,7 @@ An \underline{Initial-Value Problem} is an \(n^{\textnormal{th}}\) order Ordinar
 \addcontentsline{toc}{section}{2.1: Solution Curves Without a Solution}
 It's not always easy to solve a differential equation, we may just want to know what they look like. This is where \underline{Direction Fields} come in. They provide a visual representation of solutions. Evaluate some \(y'=f(x,y)\) on a dense grid.\\\\
 An \underline{Autonomous} first-order differential equation is a differential equation which is only a function of \(y\): \(y'=f(x,y)=f(y)\). The points at which \(f(x,y)=0\) are called \underline{Critical Points}. A constant solution of an Autonomous differential equation is called an \underline{Equilibrium Solution}. A \underline{Phase Portrait} depicts the behavior of the differential equation on certain intervals. When two arrowheads of a phase portrait point towards eachother, it is said to be an \underline{attractor}, which is stable. When two arrowheads of a phase portrait point away from eachother, it is said to be a \underline{repeller}.
-\section*{2.2: Seperable Equations}
+\section*{2.2: Separable Equations}
 \addcontentsline{toc}{section}{2.2: Seperable Equations}
 A first-order equation of the following form is said to be \underline{separable}.
 \[\frac{dy}{dx}=g(x)h(y)\]
@@ -389,7 +389,7 @@ A set of real-valued functions is said to be \underline{orthogonal with respect 
 \section*{11.2: Fourier Series}
 \addcontentsline{toc}{section}{11.2: Fourier Series}
 The \underline{Fourier series} of a function \(f\) on an interval \((-p, p)\) is given by
-\[f(x)=\frac{a_0}{2}+\sum_{n=1}^\infty\left[a_n\sin\left(\frac{n\pi x}{p}\right)+b_n\cos\left(\frac{n\pi x}{p}\right)\right]\]
+\[f(x)=\frac{a_0}{2}+\sum_{n=1}^\infty\left[a_n\cos\left(\frac{n\pi x}{p}\right)+b_n\sin\left(\frac{n\pi x}{p}\right)\right]\]
 \[a_0=\frac{1}{p}\int_{-p}^pf(x)dx\hspace{7 mm}a_n=\frac{1}{p}\int_{-p}^pf(x)\cos\left(\frac{n\pi x}{p}\right)dx\hspace{7 mm}b_n=\frac{1}{p}\int_{-p}^pf(x)\sin\left(\frac{n\pi x}{p}\right)dx\]
 Let \(f\) and \(f'\) be piecewise continuous on \([-p, p]\), then for all \(x\) on the interval for which \(f\) is continuous, the Fourier series of \(f\) converges to \(f(x)\). At points of discontinuity
 \[f_s(x)=\frac{f(x^+)+f(x^-)}{2}\]
