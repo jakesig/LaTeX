@@ -7,7 +7,7 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
-\usepackage{cancel}
+\usepackage{cancel, soul}
 
 \title{PH-214 Cheat Sheet}
 \author{Jacob Sigman}
@@ -18,77 +18,35 @@
 
 \subsection*{Constants}
 \[\mu_0=12.57*10^7\,\frac{\textnormal{T}\cdot\textnormal{m}}{\textnormal{A}}\hspace{7 mm}\varepsilon_0=8.85*10^{-12}\frac{\textnormal{ C}^2}{\textnormal{N}\cdot\textnormal{m}^2}\hspace{7 mm}m_{\textnormal{Proton}}=1.67*10^{-27}\textnormal{ kg}\]
-\[m_{\textnormal{Electron}}=9.11*10^-31\textnormal{ kg}\hspace{7 mm}q=1.60*10^{-19} \textnormal{ C}\hspace{7 mm}\sigma=5.67*10^{-8}\textnormal{W}\textnormal{m}^{-2}\textnormal{K}^{-4}\]
-\subsection*{Vector Derivatives}
-\[\textnormal{Gradient: }\nabla t = \frac{\partial t}{\partial x}\hat{\textbf{x}}+\frac{\partial t}{\partial y}\hat{\textbf{y}}+\frac{\partial t}{\partial z}\hat{\textbf{z}}\hspace{7 mm}\textnormal{Divergence: }\nabla\cdot \textbf{v}=\frac{\partial v_x}{\partial x}+\frac{\partial v_y}{\partial y}+\frac{\partial v_z}{\partial z}\hspace{7 mm}\textnormal{Laplacian: }\nabla^2t=\frac{\partial^2t}{\partial x^2}+\frac{\partial^2y}{\partial y^2}+\frac{\partial^2z}{\partial z^2}\]
-\[\textnormal{Curl: }\nabla\times \textbf{v} = \left(\frac{\partial v_z}{\partial y}-\frac{\partial v_y}{\partial z}\right)\hat{\textbf{x}}+\left(\frac{\partial v_x}{\partial z}-\frac{\partial v_z}{\partial x}\right)\hat{\textbf{y}}+\left(\frac{\partial v_y}{\partial x}-\frac{\partial v_x}{\partial y}\right)\hat{\textbf{z}}\]
-\subsection*{Vector Identities}
-\[\textbf{A}\cdot(\textbf{B}\times\textbf{C})=\textbf{B}\cdot(\textbf{C}\times\textbf{A})=\textbf{C}\cdot(\textbf{A}\times\textbf{B})\hspace{7 mm}\textbf{A}\times(\textbf{B}\times\textbf{C})=\textbf{B}(\textbf{A}\cdot\textbf{C})-\textbf{C}(\textbf{A}\cdot\textbf{B})\]
-\subsection*{Maxwell's Equations}
-\begin{center}
-\begin{tabular}{|| c c c c c ||}
-\hline
-&&&&\\
-\textbf{Integral Form} & \(\oint\overrightarrow{E}\cdot d\overrightarrow{A}=\frac{q_{\textnormal{enc}}}{\varepsilon_0}\) & \(\oint\overrightarrow{B}\cdot d\overrightarrow{A}=0\) & \(\oint\overrightarrow{E}\cdot d\overrightarrow{s}=-\frac{d\phi_B}{dt}\) & \(\oint\overrightarrow{B}\cdot d\overrightarrow{s}=\mu_0\varepsilon_0\frac{d\phi_B}{dt}+\mu_0i_{\textnormal{enc}}\) \\[10pt]
-\textbf{Differential Form} & \(\nabla\cdot\overrightarrow{E}=0\) & \(\nabla\cdot\overrightarrow{B}=0\) & \(\nabla\times\overrightarrow{E}=-\frac{\partial\overrightarrow{B}}{\partial t}\) & \(\nabla\times\overrightarrow{B}=\mu_0\varepsilon_0\frac{\partial\overrightarrow{E}}{\partial t}\)\\[10pt]
-\hline
-\end{tabular}
-\end{center}
-\subsubsection*{Wave Equations for \(\overrightarrow{E}\) and \(\overrightarrow{B}\)}
-\[\overrightarrow{E}=\overrightarrow{E_0}e^{i(k\cdot r-\omega t)}=\overrightarrow{E_0}\cos\left(\omega t -kx\right)\hspace{7 mm}\overrightarrow{B}=\overrightarrow{B_0}e^{i(k\cdot r-\omega t)}=\overrightarrow{B_0}\cos\left(\omega t -kx\right)\]
-\[\frac{1}{c_0^2}\frac{\partial^2\overrightarrow{E}}{\partial t^2}=\frac{\partial^2\overrightarrow{E}}{\partial x^2}\hspace{7 mm}\frac{1}{c_0^2}\frac{\partial^2\overrightarrow{B}}{\partial t^2}=\frac{\partial^2\overrightarrow{B}}{\partial x^2}\hspace{7 mm}\omega=ck\hspace{7 mm}\overrightarrow{B}=\frac{1}{c}\hat{k}\times\overrightarrow{E}\]
-\[\nabla\cdot[\,\,]=i\overrightarrow{k}\cdot[\,\,]\hspace{7 mm}\nabla\times=i\overrightarrow{k}\times[\,\,]\hspace{7 mm}\frac{\partial}{\partial t}[\,\,]=i\omega*[\,\,]\hspace{7 mm}\frac{\partial^2}{\partial t^2}[\,\,]=-\omega^2*[\,\,]\]
-\subsubsection*{Energy Density}
-\[u_E=\frac{1}{2}\varepsilon_0\left|\overrightarrow{E}\right|^2\hspace{7 mm}u_B=\frac{1}{2\mu_0}\varepsilon_0\left|\overrightarrow{B}\right|^2\hspace{7 mm}u_T=\varepsilon_0\left|\overrightarrow{E}\right|^2=\frac{1}{\mu_0}\left|\overrightarrow{B}\right|^2\]
-\subsection*{Radiation}
-\[\overrightarrow{s}=\frac{1}{\mu_0}\overrightarrow{E}\times\overrightarrow{B}\hspace{7 mm}\frac{E}{B}=c\hspace{7 mm}P=\frac{q^2a^2}{6\pi\varepsilon_0c^3}\hspace{7 mm}\sigma_{\textnormal{Th}}=\frac{8\pi}{3}\left(\frac{q^2}{4\pi\varepsilon_0m_ec^2}\right)^2\hspace{7 mm}\left<P\right>=\frac{q^4E_0^2}{12\pi\varepsilon_0m^2c^3}\]
-\[E_\theta=\frac{a\sin\theta\,q}{4\pi\,c^2\varepsilon_0R}\hspace{7 mm}E_R=\frac{a\,T\sin\theta\,q}{4\pi c\,\varepsilon_0R^2}\hspace{7 mm}\sigma_\textnormal{Ray}=\sigma_\textnormal{Th}\left(\frac{\omega^2}{\omega^2-\omega_0^2}\right)^2\]
-\subsection*{Potential for a Dipole}
-\[\phi_E=\frac{1}{4\pi\varepsilon_0}*\frac{qdr\cos\theta}{r^3}\]
-\subsection*{Electric and Magnetic Fields in Materials}
-\[\overrightarrow{D}=\varepsilon_0(1+\chi_e)\overrightarrow{E}=\varepsilon\overrightarrow{E}\hspace{7 mm}\varepsilon=\varepsilon_0(1+\chi_e)=\varepsilon_0\varepsilon_r\hspace{7 mm}\varepsilon_r=\frac{\varepsilon_m}{\varepsilon_0}\]
-\[\overrightarrow{B}=\mu_0(1+\chi_m)\overrightarrow{H}=\mu\overrightarrow{H}\hspace{7 mm}\mu=\mu_0(1+\chi_m)=\mu_0\mu_r\hspace{7 mm}\mu_r=\frac{\mu_m}{\mu_0}\]
-\subsection*{Maxwell's Equations in Materials}
-\begin{center}
-\begin{tabular}{|| c c c c ||}
-\hline
-&&&\\
-\(\nabla\cdot\overrightarrow{D}=0\) & \(\nabla\cdot\overrightarrow{B}=0\) & \(\nabla\times\overrightarrow{E}=-\frac{\partial\overrightarrow{B}}{\partial t}\) & \(\nabla\times\overrightarrow{H}=\frac{\partial\overrightarrow{D}}{\partial t}\)\\[10pt]
-\hline
-\end{tabular}
-\end{center}
-\subsection*{Boundary Conditions}
-\[E_1^{||}=E_2^{||}\hspace{7 mm}\varepsilon_1\hspace{7 mm}E_1^\perp=\varepsilon_2E_2^\perp\hspace{7 mm}B_1^\perp=B_2^\perp\hspace{7 mm}\frac{B_1^{||}}{\mu_1}=\frac{B_2^{||}}{\mu_2}\]
-\subsection*{Wave Impedance}
-\[Z=\sqrt{\frac{\mu}{\varepsilon}}\hspace{7 mm}E=ZH\hspace{7 mm}\hspace{7 mm}n=\frac{c}{v}\hspace{7 mm}c^2=\frac{1}{\mu_0\varepsilon_0}\hspace{7 mm}v^2=\frac{1}{\varepsilon\mu}\]
-\subsection*{Separations Between Media}
-\[\textnormal{Snell's Law: }n_1\sin(\theta_1)=n_2\sin(\theta_2)\]
-\begin{center}
-\begin{tabular}{|| c c ||}
-\hline
-&\\
-\textbf{P Polarization} & \textbf{S Polarization} \\[10pt]
-\(\overrightarrow{E}\) is in the incidence plane. & \(\overrightarrow{E}\) is perpendicular to the incidence plane.\\[10pt]
-\(\frac{E_{0r}}{E_{0i}}=\frac{\left(\frac{n_2}{n_1}\right)^2\cos(\theta_i)-\sqrt{\left(\frac{n_2}{n_1}\right)^2-\sin^2(\theta_i)}}{\left(\frac{n_2}{n_1}\right)^2\cos(\theta_i)+\sqrt{\left(\frac{n_2}{n_1}\right)^2-\sin^2(\theta_i)}}\) & \(\frac{E_{0r}}{E_{0i}}=-\frac{\cos(\theta_i)-\sqrt{\left(\frac{n_2}{n_1}\right)^2-\sin^2(\theta_i)}}{\cos(\theta_i)+\sqrt{\left(\frac{n_2}{n_1}\right)^2-\sin^2(\theta_i)}}\)\\[15pt]
-\(\frac{E_{0t}}{E_{0i}}=\frac{n_1}{n_2}\left(1+\frac{E_{0r}}{E_{0i}}\right)\) & \(\frac{E_{0t}}{E_{0i}}=1-\frac{E_{0r}}{E_{0i}}\) \\[10pt]
-\hline
-\end{tabular}
-\end{center}
-\[\textnormal{Reflection Coefficient: }R=\frac{\left|E_{0r}\right|^2}{\left|E_{0i}\right|^2}\hspace{7 mm}\textnormal{Transmission Coefficient: }T=\frac{\left|E_{0t}\right|^2}{\left|E_{0i}\right|^2}\frac{n_2\cos(\theta_2)}{n_1\cos(\theta_1)}\]
-\[\textnormal{Brewster Angle (P waves with no reflection): } \theta_B=\arctan\left(\frac{n_2}{n_1}\right)\]
-\[\textnormal{Total internal reflection: }k=k_R+ik_I\hspace{4 mm}\theta_\textnormal{crit}=\arcsin\left(\frac{n_2}{n_1}\right)\hspace{7 mm}\textnormal{Factor changing the amplitude: }e^{\frac{z}{z_0}}\hspace{7 mm}\]
-\[\textnormal{e-folding length: }z_0\]
-\subsection*{Normal Incidence}
-\[\frac{E_{0t}}{E_{0i}}=\frac{n_2-n_1}{n_2+n_1}\hspace{7 mm}\frac{E_{0r}}{E_{0i}}=\frac{2n_1}{n_2+n_1}\]
-\subsection*{Conductors}
-\begin{center}
-\begin{tabular}{|| c c c c ||}
-\hline
-&&&\\
-\(\nabla\cdot\varepsilon\overrightarrow{E}=0\) & \(\nabla\cdot\overrightarrow{B}=0\) & \(\nabla\times\overrightarrow{E}=-\frac{\partial\overrightarrow{B}}{\partial t}\) & \(\nabla\times\frac{\overrightarrow{B}}{\mu}=\frac{\partial(\varepsilon\overrightarrow{E})}{\partial t}+\sigma_c\overrightarrow{E}\)\\[10pt]
-\hline
-\end{tabular}
-\end{center}
+\[m_{\textnormal{Electron}}=9.11*10^{-31}\textnormal{ kg}\hspace{7 mm}q=1.60*10^{-19} \textnormal{ C}\hspace{7 mm}\sigma=5.67*10^{-8}\textnormal{W}\textnormal{m}^{-2}\textnormal{K}^{-4}\]
+\[h=6.62*10^{-34}\textnormal{ m}^2\textnormal{ kg}\textnormal{ s}^{-1}\hspace{7 mm}\hbar=\frac{h}{2\pi}=1.05*10^{-34}\textnormal{ m}^2\textnormal{ kg}\textnormal{ s}^{-1}\]
 \subsection*{Quantum Mechanics}
-\[I=\sigma T^4\hspace{7 mm}\lambda_{\textnormal{max}}=\frac{2.898*10^{-3}}{T}\]
+\[\textnormal{Stefan-Boltzmann: }I=\sigma T^4\hspace{7 mm}\textnormal{Wien: }\lambda_{\textnormal{max}}=\frac{2.898*10^{-3}}{T}\hspace{7 mm}E=h\nu=\hbar\omega\hspace{7 mm}\textnormal{De Broglie: }\lambda=\frac{h}{p}=\frac{h}{mv}\]
+\subsection*{Wave Function}
+\[\psi(x,t)=e^{i\frac{px-Et}{\hbar}}\hspace{7 mm}\textnormal{Probabilistic Representation: }\int_{-\infty}^\infty\psi^{*}(x)\,\psi(x)\,dx=1\]
+\subsection*{Schrödinger Equation}
+\[-\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2}+V(x)\,\psi(x)=E\,\psi(x)\textnormal{ where }V\textnormal{ is the potential and }E\textnormal{ is the energy.}\]
+\subsection*{Expectation Value}
+\[\left<f(x)\right>=\int_{-\infty}^\infty=\psi^{*}(x)\,f(x)\,\psi(x)\,dx\]
+\subsection*{Operators}
+\[\textnormal{Position: }\hat{x}=x\hspace{7 mm}\textnormal{Momentum: }\hat{p}=-i\hbar\frac{\partial}{\partial x}\hspace{7 mm}\textnormal{Energy: }\hat{H}=\frac{\hat{p}^2}{2m}+V(x)\hspace{7 mm}\]
+\[\textnormal{Commutator: }[\hat{a},\hat{b}]=\hat{a}\hat{b}-\hat{b}\hat{a}=-[\hat{b},\hat{a}]\hspace{7 mm}\textnormal{Simpler Schrödinger Equation: }i\hbar\frac{\partial\psi}{\partial t}=\hat{H}\psi=E\psi\]
+\subsection*{Orthogonality}
+\[\int_{-\infty}^\infty\mathcal{U}_n^{*}\,\mathcal{U}_m(x)\,dx=\delta_{nm}=\left<\mathcal{U}_n\,|\,\mathcal{U}_m\right>\]
+\[f(x)=\sum_{n=1}^{\infty}c_n\,\mathcal{U}_n\hspace{7 mm}c_n=\left<\mathcal{U}_n\,|\,f(x)\right>=\int_{-\infty}^\infty\mathcal{U}_n^{*}(x)\,f(x)\,dx\]
+\[|c_1|^2+|c_2|^2+|c_3|^2+\cdots=1\]
+\subsection*{Addendums on Quantum Mechanics}
+\begin{description}
+    \item [Blackbody] A blackbody is an object with absorption power equal to 1. The energy density of a black-body can be computed by computing the number of modes and energy per mode using quantum mechanics. The number of modes remains the same, but the energy per mode is different. Quantum mechanics and classical mechanics can be used.
+    \item [Stefan-Boltzmann's Law] This law gives the \underline{total intensity} at all wavelengths.
+    \item [Wein's Law] This law gives the wavelength at which the intensity peaks.
+    \item [Double-Slit Experiment] Determined that the interference pattern of an electron beam gun shot through two slits shows a wave-particle duality. Electromagnetic waves cannot have whatever energy they want, there is a minimum energy, and a minimum st)ep to increase energy. It is in this sense that one can determine that energy is \underline{quantized}.
+    \item [De Broglie's Principle] This principle shows that the frequency of a wave can be related to it's momentum, using Planck's constant. All particles are wave-like, and from this a wave function can be determined (see above).
+    \item [Wave Function] The wave function contains all the information about the system and determines the \ul{position of the particle with respect to time}.
+    \item [Probabilistic Description] You can determine the \ul{probability that a particle is at a certain place} with a probability density function (see above).
+    \item [Schrödinger] Using quantum mechanics, one can determine that a particle can be in more than one state at a given time. Hence, Schrödinger and his cat. Measuring a particle's position can also change it's state. Making a measurement changes the system. The objective of Schrödinger's Equation is to determine the wave function at different energies and potentials. Note that there is no time dependence. This allows us to look at the time evolution of the wave function. Desipte this, you can never know with certainty both the position and the momentum of a particle at the same time: \(\Delta x\Delta p\geq\frac{\hbar}{2}\)
+    \item[Applications of Schrödinger's Equation] Schrödinger's equation can be evaluated at various potentials, including the infinite square well, finite square well, steps, and a quadratic equation. The equation will have a set of solutions, which are eigenfunctions corresponding to different energy levels.
+    \item [Operators] An operator stands for an observable quantity and a measurement is applying this operator to a state. Making this measurement changes the system.
+
+\end{description}
 \end{document}
