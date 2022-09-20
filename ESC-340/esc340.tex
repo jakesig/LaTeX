@@ -1,0 +1,91 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+
+\usepackage[letterpaper,top=1cm,bottom=2cm,left=1.5cm,right=1.5cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{cancel, soul}
+\renewcommand\arraystretch{1.5}
+
+\title{ESC-340 Cheat Sheet}
+\author{Jacob Sigman}
+\date{}
+
+\begin{document}
+\begin{center}
+    {\large{\bf Fundamental Concepts\\}}
+    \vspace{3 mm}
+    \begin{tabular}{|l r|l r|l r|}
+        \hline
+        Density: & \(\rho=\frac{m}{V}\) & Specific Weight: & \(\gamma=\rho g\) & Bulk Modulus: & \(E_v=\frac{dp}{\frac{d\rho}{\rho}}\)\\ 
+        Specific Gravity: & \(SG=\frac{\rho}{\rho_w}\) & Pressure: & \(\tau=\frac{F}{A}=\mu\left(\frac{du}{dy}\right)\) & Capillary Action: & \(h=\frac{2\sigma\cos\theta}{\gamma r}\) \\ 
+        Viscosity: & \(\mu=p\times t\) & Kinematic Viscosity: & \(v=\frac{\mu}{\rho}\) & Ideal Gas Law:  & \(\rho=\rho RT\) \\
+        \hline
+    \end{tabular}
+    \vspace{5 mm}
+    {\large{\bf \\Measurement of Pressure}}
+    \begin{description}
+        \item[Piezometer Tube] This tube is open to the top so that the top pressure can be set for zero gage pressure. \(p=\gamma h\)
+        \item[U-Tube Manometer] Two different fluids. Pressure remains the same horizontally. \(p=\gamma_1h_1-\gamma_2h_2\)
+        \item[Differential U-Tube Manometer] Measures pressure differences between two points. \(p_A-p_B=\gamma_2h_2+\gamma_3h_3-\gamma_1h_1\)
+        \item[Inclined-Tube Manometer] Used to measure small pressure changes. \(p_A-p_B=\gamma_2l_2\sin\theta+\gamma_3h_3-\gamma_1h_1\)
+        \item[Pitot Static Tube] Converts velocity into pressure. \(V=\sqrt{\frac{2(p_3-p_4)}{\rho}}\)
+    \end{description}
+    {\large{\bf Hydrostatics\\}}
+    \vspace{3 mm}
+    \[\textbf{Resultant Force: }F_R=\gamma Ay_c\sin\theta=\gamma h_cA\hspace{2 mm}\textnormal{where}\hspace{2 mm}y_R=\frac{I_{xc}}{y_cA}+y_c\hspace{2 mm}\textnormal{and}\hspace{2 mm}x_R=\frac{I_{xyc}}{y_cA}+x_c\]
+    \[\textbf{Pressure Force: }F_R=\gamma\frac{h}{2}A\hspace{7 mm}\textbf{Curved Surface: }F_R=\sqrt{F_H^2+F_V^2}\hspace{7 mm}\textbf{Buoyancy: }F_B=\gamma V_d\]
+    {\large{\bf Rigid Body Motion\\}}
+    \vspace{3 mm}
+    \[\frac{\partial p}{\partial y}=-\rho a_y\hspace{7 mm}\frac{\partial p}{\partial z}=-\rho(g+a_z)\hspace{7 mm}dp=\frac{\partial p}{\partial y}dy+\frac{\partial p}{\partial z}dz\hspace{7 mm}\frac{dz}{dr}=\frac{r\omega^2}{g}\hspace{7 mm}z=\frac{\omega^2r^2}{2g}+c\hspace{7 mm}a_s=V\frac{\partial V}{\partial s}\hspace{7 mm}a_n=\frac{V^2}{R}\]
+    \[-\gamma\sin\theta-\frac{\partial p}{\partial s}=\rho V\left(\frac{\partial V}{\partial s}\right)=\rho a_s\hspace{7mm}\textnormal{Bernoulli: }p+\frac{1}{2}\rho V^2+\gamma z = c\hspace{7mm}\textnormal{Bernoulli (head): } \frac{p}{\gamma}+\frac{V^2}{2g}+z=c\]
+    \[\textnormal{Free Jet: }\gamma h = \frac{1}{2}\rho V^2\hspace{7mm}V=\sqrt{2g(h+H)}\]
+    {\large{\bf Flow\\}}
+    \vspace{3 mm}
+    \[Q=VA\hspace{7mm}\rho_1A_1V_1=\rho_2A_2V_2\hspace{7mm}Q=\sqrt{\frac{2(p_1-p_2)}{\rho_1\left(1-\left(\frac{A_2}{A_1}\right)^2\right)}}\hspace{7mm}\frac{dy}{dx}=\frac{v}{u}\]
+    \[\textnormal{Velocity Field: }V=u(x,y,z,t)\,\hat{\textbf{i}}+v(x,y,z,t)\,\hat{\textbf{j}}+w(x,y,z,t)\,\hat{\textbf{k}}\hspace{7 mm}|V|=\sqrt{u^2+v^2+w^2}\]
+    \[\textnormal{Material Derivative: }V=V_A(x_A(t),y_A(t),z_A(t),t)\hspace{7 mm}a_A=\frac{\partial V_a}{\partial t}+\left(\frac{\partial V_a}{\partial x}\right)\left(\frac{dx_A}{dt}\right)+\left(\frac{\partial V_a}{\partial y}\right)\left(\frac{dy_A}{dt}\right)+\left(\frac{\partial V_a}{\partial z}\right)\left(\frac{dz_A}{dt}\right)\]
+    {\large{\bf Reynold's Transport Theorem and Flowrate\\}}
+    \vspace{3 mm}
+    \[B_{\textnormal{sys}}=\int_{\textnormal{sys}}pb\,dV\hspace{4 mm}\textnormal{where }b\textnormal{ is any fluid parameter}\]
+    \[\frac{DB_{\textnormal{sys}}}{Dt}=\frac{\partial B_{\textnormal{cv}}}{\partial t}+\rho_2A_2V_2b_2-\rho_1A_1V_1b_1\hspace{7mm}B_\textnormal{sys}=B_\textnormal{cv}\hspace{7mm}\textnormal{Continuity Equation: }\frac{\partial}{\partial t}\int_{\textnormal{cv}}\rho\,dV+\int_{\textnormal{cs}}\rho V\cdot\hat{n}\,dA=0\]
+    \[\textnormal{Mass Flowrate: }\dot{m}=\rho Q=\rho AV\hspace{7mm}\textnormal{Steady: }\sum\dot{m}_{\textnormal{out}}-\sum\dot{m}_\textnormal{in}=0\hspace{7mm}\textnormal{Incompressible: }\sum\dot{Q}_{\textnormal{out}}-\sum\dot{Q}_\textnormal{in}=0\]
+    \[\textnormal{Uniformly Distributed: }\dot{m}=\rho AV\hspace{7mm}\textnormal{Not Uniform: }\dot{m}=\rho AV_\textnormal{avg}\textnormal{ where }V_\textnormal{avg}=\frac{\int_{A}\rho V\cdot\hat{n}\,dA}{dA}\]
+    \[\textnormal{First Law of Thermodynamics: }\dot{Q}_{\textnormal{in1}}+\dot{W}_{\textnormal{in1}}=\dot{Q}_{\textnormal{in2}}+\dot{W}_{\textnormal{in2}}\]
+\end{center}
+\newpage
+{\large{\bf \noindent Definitions\\}}
+\begin{description}
+    \item[Density] Mass per unit volume.
+    \item[Specific Weight] Weight per unit volume.
+    \item[Specific Gravity] Ratio to density of water.
+    \item[Pressure] Normal force per unit area acting on a fluid. Measured in \ul{absolute} pressure (relative to absolute zero) or \ul{gage} pressure (relative to local atmospheric pressure).
+    \item[Viscosity] Liquid's resistance to flow due to internal friction.
+    \item[Kineamtic Viscosity] Ratio of absolute Viscosity to fluid density.
+    \item[Bulk Modulus] How compressible a fluid is.
+    \item[Vapor Pressure] Pressure exerted by vapor on the liquid surface.
+    \item[Surface Tension] Property of hte surface of a liquid that allows it to resist external force.
+    \item[Stability] A body is stable if when displaced it will return to equilibrium.
+    \item[Streamline] A line perpendicular to the velocity vector of a fluid in a flow field.
+    \item[Bernoulli Assumptions] Viscous effects are negligible, flow is steady and incompressible, and the equation is applicable along the streamline.
+    \item[Work-Energy Principle] The work done on a particle is equivalent to the change in kinetic energy of that particle.
+    \item[Pressure Heads] There are three types of pressure heads. The elevation head represents potential energy. The pressure head represents the height of the fluid. The velocity head represents the vertical distance needed to reach velocity \(v\) from rest if falling freely.
+    \item[Types of Pressure] Static pressure is the measurement of the pressure of the fluid as it flows. The hydrostatic pressure is the change in pressure due to potential energy variation. Lastly is the dynamic pressure. Sum of the three is the total pressure.
+    \item[Stagnation Point] Velocity of fluid is zero.
+    \item[Free Jet] Created by a small opening in a large reservoir.
+    \item{Vena Contracta Effect} The inability of a fluid to turn a sharp corner.
+    \item[Cavitation] Pressure is reduced to the vapor pressure.
+    \item[Sluice Gate] Used to measure and regulate flow in an open channel. Popular in dams. Flow rate depends on the water depths on each side of the gate.
+    \item[Weir] Used to measure flow in an open channel. Flow rate dependent on weir height, width of channel, and head of water.
+    \item[Energy Line and Hydraulic Grade Line] Energy grade line is the total head available. Hydraulic grade line shows water level in an open channel or pipe partially full.
+    \item[Material Derivative] Describes the time rates of change for a given particle.
+    \item[Convective Derivative] Part of the material derivative represented by spatial derivatives.
+    \item[Control Volume] Volume in space through which fluid may flow.
+    \item[Control System] A collection of matter of fixed identity which may move, flow, and interact with it's surroundings.
+    \item[Newton's Second Law] The time rate of change of the linear momentum of a system is equal to the sum of the external forces acting on the system.
+    \item[Fluid Reaction Forces] Linear momentum flow variation, fluid pressure forces, fluid friction forces, fluid weight.
+\end{description}
+\end{document}
