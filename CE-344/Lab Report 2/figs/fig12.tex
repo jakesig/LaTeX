@@ -1,0 +1,42 @@
+\documentclass[tikz]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\begin{document}
+\begin{tikzpicture}
+    \pgfplotsset{
+        xmin=0, xmax=16,
+        xtick={0,4,8,12,16},
+        width=13cm,
+        legend pos = north west,
+        legend cell align={left}
+    }
+    
+    \begin{axis}[
+        title={\textbf{Figure 12: GAC vs. Color and Color Removal}},
+        axis y line*=left,
+        ymin=0, ymax=300,
+        xlabel=GAC (g),
+        ylabel=Color(CU),
+        ytick={100,200,300},
+        grid style=dashed, 
+    ]
+    \addplot[only marks, red] table [x=g, y=cu] {9.csv};\label{plot_one}
+    \addplot[smooth, red, domain=0:16] {0.6303*x^2 - 24.583*x + 256.82};
+    \end{axis}
+    
+    \begin{axis}[
+        axis y line*=right,
+        axis x line=none,
+        ymin=0, ymax=100,
+        grid style=dashed,
+        ytick={20,40,60,80,100},
+        ylabel=Color Removed (\%),
+    ]
+    \addlegendimage{/pgfplots/refstyle=plot_one}\addlegendentry{Color}
+    \addplot[only marks, blue] table [x=g, y=removed] {9.csv};
+    \addplot[smooth, blue, domain=0:16] {-0.444316*x^2 + 12.490317*x};
+    \addlegendentry{Color Removal}
+    \end{axis}
+    
+    \end{tikzpicture}
+\end{document}

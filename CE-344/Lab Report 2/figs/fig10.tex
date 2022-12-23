@@ -1,0 +1,26 @@
+\documentclass[tikz]{standalone}
+\usepackage{pgfplots}
+\begin{document}
+\pgfplotsset{width=8cm}
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+    \addcontentsline{lof}{figure}{Figure 10: Flow Rate vs. Color (GAC Filter)}
+    \begin{axis}[
+        title={\textbf{Figure 10: Flow Rate vs. Color (GAC)}},
+        xlabel={Flow Rate (mL/s)},
+        ylabel={Color (CU)},
+        xmin=0, xmax=7,
+        ymin=0, ymax=50,
+        xtick={0,1,2,3,4,5,6,7},
+        ytick={0,10,20,30,40,50},
+        ymajorgrids=true,
+        grid style=dashed,
+        legend pos = north east,
+        legend cell align={left}
+    ]
+    
+    \addplot[only marks, red] table [x=mL/s, y=cu] {7.csv};
+    \addplot[smooth, red, domain=0:90] {-0.1685*x^2 + 6.0138*x + 6.802};
+    \end{axis}
+\end{tikzpicture}
+
+\end{document}

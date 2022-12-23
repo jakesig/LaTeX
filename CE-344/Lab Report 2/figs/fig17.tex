@@ -1,0 +1,31 @@
+\documentclass[tikz]{standalone}
+\usepackage{pgfplots}
+\begin{document}
+\pgfplotsset{width=8cm}
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+    \addcontentsline{lof}{figure}{Figure 17: Turbidity Dilutions}
+    \begin{axis}[
+        title={\textbf{Figure 17: Turbidity Dilutions}},
+        xlabel={Sample Dilution (\%)},
+        ylabel={Turbidity (NTU)},
+        xmin=0, xmax=100,
+        ymin=0, ymax=4,
+        xtick={0,20,40,60,80,100},
+        ytick={0,1,2,3,4},
+        ymajorgrids=true,
+        grid style=dashed,
+        legend pos = north west,
+        legend cell align={left}
+    ]
+    
+    
+    \addplot[only marks, red] table [x=sample, y=ntu] {11.csv};
+    \addlegendentry{Experimental}
+    \addplot[dashed,red,domain=0:100] {0.0358*x};
+    \addlegendentry{Experimental Fit}
+    \addplot[dashed,blue, domain=0:100] {0.0277*x};
+    \addlegendentry{Theoretical Fit}
+    
+    \end{axis}
+\end{tikzpicture}
+\end{document}

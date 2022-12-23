@@ -1,0 +1,29 @@
+\documentclass[tikz]{standalone}
+\usepackage{pgfplots}
+\begin{document}
+\pgfplotsset{width=8cm}
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+    \addcontentsline{lof}{figure}{Figure 3: Color (Plant B)}
+    \begin{axis}[
+        title={\textbf{Figure 3: Color (Plant B)}},
+        xlabel={Ozone Dosage (ppm)},
+        ylabel={Color (CU)},
+        xmin=0, xmax=4,
+        ymin=0, ymax=12,
+        xtick={0,1,2,3,4},
+        ytick={0,4,8,12},
+        ymajorgrids=true,
+        grid style=dashed,
+        legend pos = north east,
+        legend cell align={left}
+    ]
+    
+    \addplot[only marks, red] table [x=mg, y=ap] {2.csv};
+    \addplot[only marks, blue] table [x=mg, y=tr] {2.csv};
+    \addplot[smooth, red, domain=0:4] {-0.5984*x^3 + 4.8425*x^2 - 12.523*x + 16.48};
+    \addplot[smooth, blue, domain=0:4] {-0.3002*x^3 + 2.4804*x^2 - 6.537*x + 8.4997};
+    \addlegendentry{Apparent}
+    \addlegendentry{True}
+    \end{axis}
+\end{tikzpicture}
+\end{document}

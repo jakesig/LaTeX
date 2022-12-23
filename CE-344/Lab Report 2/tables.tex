@@ -1,0 +1,327 @@
+\pgfplotsset{width=13cm, compat=1.18}
+\strutlongstacks{T}
+\renewcommand\arraystretch{1.5}
+\subsection{Ozonation}
+\begin{center}
+
+% Table 1
+
+{\large{\bf Table 1: Raw Water Quality\\}}
+\addcontentsline{lot}{table}{Table 1: Raw Water Quality}
+\vspace{3 mm}
+\begin{tabular}{|l | l r |}
+    \hline
+    \multirow{2}{*}{\textbf{Color (CU)}} & Plant A & 31\\
+    & Plant B & 11.3 \\\hline
+    \multirow{2}{*}{\textbf{Turbidity (NTU)}} & Plant A & 0.7\\
+    & Plant B & 1.5 \\\hline
+    \multirow{2}{*}{\textbf{Temperature (\(\bm{^{\circ}}\)C)}} & Plant A & 7.2\\
+    & Plant B & 6\\\hline
+\end{tabular}
+\vspace{6 mm}
+
+% Table 2
+
+{\large{\bf Table 2: Plant A Data\\}}
+\addcontentsline{lot}{table}{Table 2: Plant A Data}
+\vspace{3 mm}
+\begin{tabular}{|c c c c c|}
+    \hline
+    \Centerstack{\textbf{Ozone Dose} \\ \textbf{(PPM)}} & \Centerstack{\textbf{Apparent Color} \\ \textbf{(CU)}} & \Centerstack{\textbf{True Color} \\ \textbf{(CU)}} & \Centerstack{\textbf{Apparent Color} \\ \textbf{Removed}} & \Centerstack{\textbf{True Color} \\ \textbf{Removed}}\\\hline
+    0.7 & 19 & 15 & 38.71\% & 51.61\% \\
+    1.1 & 14.5 & 11 & 53.23\% & 64.52\% \\
+    1.7 & 10.5 & 8.5 & 66.13\% & 72.58\% \\
+    2.05 & 9.5 & 7.5 & 69.35\% & 75.81\% \\\hline
+\end{tabular}
+\vspace{6 mm}
+
+% Figures 1 and 2
+
+\pgfplotsset{width=8cm}
+
+\begin{minipage}{.5\textwidth}
+    \centering
+    \addcontentsline{lof}{figure}{Figure 1: Color (Plant A)}
+    \includegraphics*[page=1]{figs/fig1.pdf}
+    \end{minipage}%
+    \begin{minipage}{.5\textwidth}
+    \centering
+    \addcontentsline{lof}{figure}{Figure 2: Color Removal (Plant A)}
+    \includegraphics*[page=1]{figs/fig2.pdf}
+    \end{minipage}
+    \vspace{6mm}
+    \newpage
+
+% Table 3
+
+{\large{\bf Table 3: Plant B Data\\}}
+\addcontentsline{lot}{table}{Table 3: Plant B Data}
+\vspace{3 mm}
+\begin{tabular}{|c c c c c|}
+    \hline
+    \Centerstack{\textbf{Ozone Dose} \\ \textbf{(PPM)}} & \Centerstack{\textbf{Apparent Color} \\ \textbf{(CU)}} & \Centerstack{\textbf{True Color} \\ \textbf{(CU)}} & \Centerstack{\textbf{Apparent Color} \\ \textbf{Removal}} & \Centerstack{\textbf{True Color} \\ \textbf{Removal}}\\\hline
+    0.7 & 10 & 5 & 11.50\% & 55.75\% \\
+    1.1 & 7.5 & 4 & 33.63\% & 64.60\% \\
+    1.7 & 6.5 & 3 & 42.48\% & 73.45\% \\
+    2.5 & 6 & 3 & 46.90\% & 73.45\% \\
+    3.8 & 6 & 3 & 46.90\% & 73.45\% \\\hline
+\end{tabular}
+\vspace{6 mm}
+
+% Figures 3 and 4
+
+\begin{minipage}{.5\textwidth}
+    \centering
+    \addcontentsline{lof}{figure}{Figure 3: Color (Plant B)}
+    \includegraphics*[page=1]{figs/fig3.pdf}
+    \end{minipage}%
+    \begin{minipage}{.5\textwidth}
+    \centering
+    \addcontentsline{lof}{figure}{Figure 4: Color Removal (Plant B)}
+    \includegraphics*[page=1]{figs/fig4.pdf}
+    \end{minipage}
+    \vspace{6mm}
+
+% Table 4
+
+{\large{\bf Table 4: Ozonation\\}}
+{800 mg/hr Dosage\\}
+\addcontentsline{lot}{table}{Table 4: Ozonation}
+\vspace{3 mm}
+\begin{tabular}{|c c c c|}
+    \hline
+    \textbf{Time (min)} & \textbf{Ozone Dose (mg)} & \textbf{Color (CU)} & \textbf{Color Removal}\\\hline
+    0  & 0      & 280 & N/A                     \\
+    5  & 66.67  & 212 & 24.29\%                 \\
+    10 & 133.33 & 162 & 42.14\%                 \\
+    15 & 200.00 & 116 & 58.57\%                 \\
+    20 & 266.67 & 75  & 73.21\%                 \\
+    25 & 333.33 & 48  & 82.86\%                 \\
+    30 & 400.00 & 28  & 90.00\%                 \\\hline
+\end{tabular}
+
+% Figure 5
+\addcontentsline{lof}{figure}{Figure 5: Ozone Dose vs. Color and Color Removal}
+\includegraphics*[page=1]{figs/fig5.pdf}
+
+\end{center}
+\subsection{Coagulation, Flocculation, and Settling}
+\begin{center}
+
+% Table 5
+
+{\large{\bf Table 5: Data Following Coagulation and Flocculation\\}}
+\addcontentsline{lot}{table}{Table 5: Data Following Coagulation and Flocculation}
+\vspace{3 mm}
+\begin{tabular}{|c c c c c|}
+    \hline
+    \textbf{Beaker} & \textbf{Amount of Alum (mL)} & \textbf{Color (CU)} & \textbf{Turbidity (NTU)} & \textbf{Dosage (mg/L)}\\\hline
+    1 & 1.6 & 368 & 9.68 & 20 \\
+    2 & 2.4 & 331 & 21.4 & 30 \\
+    3 & 3.2 & 386 & 25.2 & 40 \\
+    4 & 4   & 334 & 23.8 & 50 \\
+    5 & 4.4 & 30  & 21.2 & 55 \\
+    6 & 4.8 & 28  & 20.1 & 60 \\\hline
+\end{tabular}
+\vspace{6 mm}
+
+% Figures 6 and 7
+
+
+
+\begin{minipage}{.5\textwidth}
+    \centering
+    \addcontentsline{lof}{figure}{Figure 6: Alum Color Following Coagulation and Flocculation}
+    \includegraphics*[page=1]{figs/fig6.pdf}
+    \end{minipage}%
+    \begin{minipage}{.5\textwidth}
+    \centering
+    \addcontentsline{lof}{figure}{Figure 7: Alum Turbidity Following Coagulation and Flocculation}
+    \includegraphics*[page=1]{figs/fig7.pdf}
+    \end{minipage}
+    \vspace{6mm}
+
+% Table 6
+
+{\large{\bf Table 6: Data Following Settling\\}}
+\addcontentsline{lot}{table}{Table 6: Data Following Settling}
+\vspace{3 mm}
+\begin{tabular}{|c c c c c|}
+    \hline
+    \textbf{Beaker} & \textbf{Amount of Alum (mL)} & \textbf{Color (CU)} & \textbf{Turbidity (NTU)} & \textbf{Dosage (mg/L)}\\\hline
+    1 & 1.6 & 274 & 15.4  & 35 \\
+    2 & 2.4 & 317 & 19.5  & 45 \\
+    3 & 3.2 & 99  & 3     & 55 \\
+    4 & 4   & 79  & 2.6   & 65 \\
+    5 & 4.4 & 84  & 8.4   & 75 \\
+    6 & 4.8 & 104 & 13.15 & 85 \\\hline
+\end{tabular}
+\vspace{6mm}
+
+% Figures 8 and 9
+
+\begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics*[page=1]{figs/fig8.pdf}
+    \end{minipage}%
+    \begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics*[page=1]{figs/fig9.pdf}
+    \end{minipage}
+    \vspace{6mm}
+
+\end{center}
+\subsection{Activated Carbon Adsorption}
+\begin{center}
+    
+
+% Table 7
+
+\vspace{3mm}
+{\large{\bf Table 7: GAC Column Filtration\\}}
+\addcontentsline{lot}{table}{Table 7: GAC Column Filtration}
+\vspace{3 mm}
+\begin{tabular}{|c c c c c|}
+    \hline
+    \textbf{Volume (mL)} & \textbf{Height (cm)} & \textbf{Flow Rate (mL/s)} & \textbf{Turbidity (NTU)} & \textbf{Color (CU)} \\\hline
+    300 & 13 & 1.24 & 1.87 & 14 \\
+    450 & 19 & 4.4 & 2.9 & 30 \\
+    600 & 24 & 6.3 & 3.65 & 38 \\\hline
+\end{tabular}
+\vspace{6mm}
+
+% Figures 10 and 11
+
+\pgfplotsset{width=8cm}
+
+\begin{minipage}{.5\textwidth}
+    \centering
+    \addcontentsline{lof}{figure}{Figure 10: Flow Rate vs. Color (GAC Filter)}
+    \includegraphics*[page=1]{figs/fig10.pdf}
+    \end{minipage}%
+    \begin{minipage}{.5\textwidth}
+    \centering
+    \addcontentsline{lof}{figure}{Figure 11: Flow Rate vs. Turbidity (GAC Filter)}
+    \includegraphics*[page=1]{figs/fig11.pdf}
+    \end{minipage}
+    \vspace{6mm}
+
+% Table 8
+
+{\large{\bf Table 8: Slurry Test\\}}
+\addcontentsline{lot}{table}{Table 8: Slurry Test}
+\vspace{3 mm}
+\begin{tabular}{|c c c c|}
+    \hline
+    \textbf{Sample} & \textbf{GAC (g)} & \textbf{Color Remaining (CU)} & \textbf{Color Removal} \\\hline
+    Raw & 0  & 312 & N/A \\
+    1 & 0.52 & 249 & 20\% \\
+    2 & 2.18 & 203 & 35\% \\
+    3 & 5.07 & 142 & 54\% \\
+    4 & 9.26 & 85  & 73\% \\
+    5 & 11.1 & 68  & 78\% \\
+    6 & 15.1 & 26  & 92\% \\\hline
+\end{tabular}
+
+% Figure 12
+
+\addcontentsline{lof}{figure}{Figure 12: GAC vs. Color and Color Removal}
+\includegraphics*[page=1]{figs/fig12.pdf}
+
+\end{center}
+\newpage
+\subsection{Sand Filtration}
+\begin{center}
+
+% Table 9
+
+{\large{\bf Table 9: Sand Column Filtration\\}}
+\addcontentsline{lot}{table}{Table 9: Sand Column Filtration}
+\vspace{3 mm}
+\begin{tabular}{|c c c c c|}
+    \hline
+    \textbf{Volume (mL)} & \textbf{Height (cm)} & \textbf{Flow Rate (mL/s)} & \textbf{Turbidity (NTU)} & \textbf{Color (CU)} \\\hline
+    250 & 26.1 & 0.66 & 1.2 & 2 \\
+    400 & 34.1 & 0.96 & 4 & 7 \\
+    600 & 41 & 1.21 & 6 & 21 \\\hline
+\end{tabular}
+\vspace{6mm}
+
+% Figures 13 and 14
+
+\pgfplotsset{width=8cm}
+
+\begin{minipage}{.5\textwidth}
+    \centering
+    \addcontentsline{lof}{figure}{Figure 13: Flow Rate vs. Color (Sand Filter)}
+    \includegraphics*[page=1]{figs/fig13.pdf}
+    \end{minipage}%
+    \begin{minipage}{.5\textwidth}
+    \centering
+    \addcontentsline{lof}{figure}{Figure 14: Flow Rate vs. Turbidity (Sand Filter)}
+    \includegraphics*[page=1]{figs/fig14.pdf}
+    \end{minipage}
+    \vspace{6mm}
+
+% Figure 15
+\addcontentsline{lof}{figure}{Figure 15: Flow Rate vs. Filtration Height}
+\includegraphics*[page=1]{figs/fig15.pdf}
+
+\end{center}
+\subsection{Dilution}
+\begin{center}
+
+% Table 10 and Figure 16
+
+\pgfplotsset{width=8cm}
+
+\begin{minipage}{.5\textwidth}
+\centering
+{\large{\bf Table 10: Color Dilutions\\}}
+\addcontentsline{lot}{table}{Table 10: Color Dilutions}
+\vspace{3 mm}
+\begin{tabular}{|c c|}
+    \hline
+    \textbf{Sample Dilution} & \textbf{Color (CU)} \\\hline
+    Raw (100\%)  & 282 \\
+    50\% & 129 \\
+    40\% & 67  \\
+    30\% & 35  \\
+    20\% & 6   \\
+    10\% & 0   \\
+    5\%  & 0   \\\hline
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+    \centering
+    \addcontentsline{lof}{figure}{Figure 16: Color Dilutions}
+    \includegraphics*[page=1]{figs/fig16.pdf}
+\end{minipage}
+\vspace{20mm}
+
+% Table 11 and Figure 17
+
+\begin{minipage}{.5\textwidth}
+\centering
+{\large{\bf Table 11: Turbidity Dilutions\\}}
+\addcontentsline{lot}{table}{Table 11: Turbidity Dilutions}
+\vspace{3 mm}
+\begin{tabular}{|c c|}
+    \hline
+    \textbf{Sample Dilution} & \textbf{Turbidity (NTU)} \\\hline
+    Raw (100\%)  & 2.77 \\
+    50\% & 1.79 \\
+    40\% & 1.38  \\
+    30\% & 1.12  \\
+    20\% & 0.96   \\
+    10\% & 0.76   \\
+    5\%  & 0.64   \\\hline
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+\centering
+\addcontentsline{lof}{figure}{Figure 17: Turbidity Dilutions}
+\includegraphics*[page=1]{figs/fig17.pdf}
+\end{minipage}
+
+\end{center}

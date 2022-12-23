@@ -1,0 +1,87 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath, graphicx, tikz, pgfplots, multirow, newlfont, gensymb, indentfirst, bm}
+\usepackage[usestackEOL]{stackengine}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Jacob Sigman\\10/25/22}
+\lhead{CE-344\\Environmental Systems Engineering}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{1.5pt}
+\setlength{\headheight}{22.6pt}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\setlength\parindent{24pt}
+
+\begin{document}
+    \include{cover.tex}
+    \tableofcontents
+    \newpage
+    \listoftables
+    \addcontentsline{toc}{section}{List of Tables}
+    \listoffigures
+    \addcontentsline{toc}{section}{List of Figures}
+    \newpage
+    \section{Purpose of the Experiment}
+    \indent The purpose of this lab is to determine the best treatment method for the optimized removal of color and turbidity from water samples. There are five treatment methods to be tested in this experiment: ozonation, coagulation/flocculation/settling, active carbon adsorption, sand filtration, and dilution. Ozone, aluminum sulfate, and activated carbon are used in the reduction of the turbidity and color of the sample. Data for the color and turbidity were recorded throughout the five treatment methods to determine the best treatment method. 
+    \newpage
+    \section{Procedure}
+    \subsection{Ozonation}
+    \indent Two samples are used for ozonation. The first sample was treated with various ozone dosages over a period of five minutes. The data was divided amongst two plants, with each collecting the apparent color and true color readings of the samples intermittently. The second sample was treated with a constant 800 mg/hr dose of ozone. This sample was read over a period of thirty minutes every five minutes. 
+    \subsection{Coagulation, Flocculation, and Settling}
+    \indent This experiment determined the effectiveness of the color and turbidity removal of a 1\% solution of Alum (\(\text{Al}_2(\text{SO}_4)_3\cdot 18\text{H}_2\text{O}\)). The first process consisted of coagulation and flocculation. The coagulation was done at 280 rpm for three minutes then the flocculation was done at 40 rpm for twenty minutes. The concentrations color and turbidity were recorded at were 20 mg/L, 30 mg/L, 40 mg/L, 50 mg/L, 55 mg/L, and 60 mg/L. \\
+    \indent Following the coagulation and flocculation the alum was left to settle for one hour and fifteen minutes. However this group was flocculated at a different speed (270 rpm). The concentrations for this group at which color and turbidity were measured were 35 mg/L, 45 mg/L, 55 mg/L, 65 mg/L, 75 mg/L, and 85 mg/L.
+    \subsection{Activated Carbon Adsorption}
+    \indent There were two methods used for activated carbon adsorption. The first method was with a Granular Activated Column. Three water levels of 300 mL, 450 mL, and 600 mL were tested. Flow rates at these water levels were recorded. Following the filtration, color and turbidity were measured for each sample.\\
+    \indent The second method was with a powdered activated carbon slurry. A singular water level of 500 mL was used and six samples were taken. Various dosages of the powdered activated carbon slurry were added and mixed at 200 rpm for fifteen minutes. Following the mixing, each sample was tested for color.
+    \subsection{Sand Filtration}
+    \indent This experiment was to be compared to the Granular Activated Column. Three similar water levels of 300 mL, 600 mL, 1000 mL were tested. Flow rates at these water levels were recorded. Following the filtration, color and turbidity were measured for each sample.
+    \subsection{Dilution}
+    This experiment was performed through the analysis of dilutions for both turbidity and color. The samples were 100\% (raw sample), 50\%, 40\%, 30\%, 20\%, 10\%, and 5\%. Turbidity and color were measured for each sample and dilution respectively.
+    \newpage
+    \section{Data and Results}
+    \input{tables.tex}
+    \newpage
+    \section{Sample Calculations}
+    \subsection{Flow Rate}
+    \[Q=\frac{V}{t}\]
+    \[Q=\frac{58\text{ mL}}{88\text{ s}}=\boxed{0.66 \text{ mL/s}}\]
+    \subsection{Color Removal}
+    \[\%_\text{Removal}=\frac{|C_i-C_f|}{C_i}\times 100\%\]
+    \[\%_\text{Removal}=\frac{|\text{280 CU}-\text{212 CU}|}{\text{280 CU}}\times 100\%=\boxed{24.29\%}\]
+    \subsection{Aluminum Solution Concentration}
+    \[1\% \text{ Al}=\frac{\text{1 g}}{\text{100 mL}}\times\frac{\text{1000 mg}}{\text{1 g}}=\frac{\text{10 mg}}{\text{1 mL}}=\boxed{\text{10 mg}}\]
+    \subsection{Amount of Alum}
+    \[\text{Concentration of Alum}=\frac{20\text{ mg/L}}{\text{10 mg}\times 1.25}=\boxed{\text{1.6\text{ mL}}}\]
+    \newpage
+    \section{Discussion}
+    \subsection{Theory}
+    \indent The purpose of this experiment was to determine the best treatment method for the optimized removal of color and turbidity from water samples. Overall, the color and turbidity of water are very important, as they can indicate the presence of hazardous chemicals to both the environment and the human population. The encounter of any hazardous chemicals is disconcerting, but important, especially since they have effects that can devastate various species. After this metal is found, it can be treated in a wastewater facility. It's very important to treat wastewater as the water will remain hazardous otherwise.\\
+    \indent Two key quantities are being measured in this experiment: color and turbidity. Firstly, it is important to understand the significance of color. Color is a key measurement of the quality of water. Color can indicate various substances that are in water. One cause of coloration in water is algae growth. As algae decomposes, it releases a green color into the water. Algae is common near bodies of water and in large quantities, may be harmful for any consumer. Another cause of coloration in water is the presence of minerals. Different colors can correspond to different minerals. For example, if iron is in water, it will appear red or brown. If there's any organic matter in water, it will appear black. If there are tannins in water, it will appear yellow. If a water is colorless, it's considered pure. However, even though there's no color, it's not safe to assume that the water is safe to drink. \\
+    \indent Next, it is important to understand the significance of turbidity. Turbidity is another key quantity in the measurement of water. Turbidity is the intensity of any light that would pass through water. A high turbidity means that a small amount of light is passing through the water, indicating the presence of many particles. A low turbidity means that a larger amount of light is passing through the water, indicating the presence of few particles. There are various causes of turbidity. Many sorts of particles could be suspended in the water. In addition to the particles suspended in the discussion of color, mud, clay, or algae can all be suspended in the water. All of these are harmful in excessive amounts. However, sometimes non-harmful chemicals such as calcium and oxygen affect the turbidity. However, most likely, it should not be assumed that the water is safe to consume.\\
+    \indent The first component of the experiment was ozonation. Ozonation is the gradual addition of ozone to a sample in order to remove any color and turbidity. The primary reason ozone is used is because it acts as a strong oxidizing agent, and can remove any organic material. Despite this, it works better in removing color than turbidity.\\
+    \indent The second component of the experiment was coagulation, flocculation, and settling. Coagulation involves the adding of a coagulant and mixing at a high speed for a short duration to produce a specific chemical reaction. The chemical used for this component was alum or aluminum sulfate. Flocculation is the opposite of coagulation, mixing at a low speed for a long period of time. Following these two processes, excess particles are extracted from the water and settle over time. Throughout settling, the sample is not mixed.\\
+    \indent The third component of the experiment was activated carbon adsorption. This process involves mixing, but instead uses activated carbon. The samples are mixed slowly and gradually as the activated carbon adsorbs smaller particles that may be suspended in the sample. As the activated carbon is filtered out, the color and turbidity of the sample is left reduced. Carbon is a very practical way of filtering water as it has made its way into many homes and home water filtration systems.\\
+    \indent The fourth component of the experiment was filtration. This simply involves the passing of a sample through a standard filter, which filters out any larger particles. The primary objective in performing a standard filtration was to determine the optimal height at which the filtration was to be performed. Two types of columns were used, a Granular Activated Column and a sand column. The flow rates, turbidity, and color, were all compared to determine which one was more effective.\\
+    \indent The final component of the experiment was dilution. Dilution is the process of diluting water with clean water to reduce the concentration of whatever hazardous chemicals there may be in the water. As the water is diluted, the color and turbidity are reduced.
+    \newpage
+    \subsection{Experimental}
+    \indent The ozonation data in both plants A and B showed a significant decrease of both the ozone dosage and the color in the sample. As the color decreased, the color removal increased. However, since the curve fits for each set of data are polynomial fits, this means that ozonation will only take you so far in the reduction of color in water. Both sets showed that the most effective dose of ozone to use in ozonation was approximately 2 ppm, with the ability to remove over 70\% of the color from any sample. The ozonation performed in the lab showed a reduction of 90\% of the color in the water over the thirty-minute interval. \\
+    \indent The data from coagulation, flocculation, and settling showed a quadratic correlation between color, turbidity, and the concentration of alum in the sample. This means that for both sets of data, there is a peak optimal value. For the data following coagulation and flocculation, the parabola has a maximum vertex. However, the data after settling is what is crucial in determining the optimal dose for color and turbidity removal. It was found that optimal dose of alum for color removal is 65 mg/L. It was also found that the optimal dose of alum for turbidity removal is approximately 65 mg/L.\\
+    \indent The data from the GAC column filtration showed a significant decrease in color. As the color decreased, the color removal increased. The maximum removal of color from the sample was 92\% with 15.1 g of GAC.\\
+    \indent In the comparison of GAC filtration and sand filtration, it is found that the filtration flow rate increases as the height above the filter increases, as more pressure is being applied. It was found in \emph{Figure 15} that the GAC filter filtered much quicker than the sand filter. However, for both filters, as the flow rate increased, the color and turbidity of the sample increased, which means that the filtration was ineffective at removing the color and turbidity of the water.\\
+    \indent The data from the dilution shows that the dilutions are similar to the theoretical dilutions, with the color dilution outperforming the theoretical dilution. However, the turbidity dilution slightly underperformed the theoretical dilution.
+    \newpage
+    \section{Conclusions}
+    \indent The purpose of this experiment was to determine the best treatment method for the optimized removal of color and turbidity from water samples. There are five treatment methods to be tested in this experiment: ozonation, coagulation/flocculation/settling, active carbon adsorption, sand filtration, and dilution. In conclusion, there isn't a preferable method of removal of color and turbidity in water. Rather, the methods can be used in sequence with each other.\\
+    \indent Firstly, ozonation and the GAC slurry demonstrated that they were both incredibly effective in the removal of color, however, these methods do not remove turbidity at all. However, they can be used with other methods that can treat turbidity of the sample. Using coagulation/flocculation/settling, the removal of color and turbidity using the 1\% alum was found to be 65 mg/L. The other filtration methods increased the color and turbidity with a higher flow rate, so it's important to ensure that a low flow rate is used.The dilution process was able to effectively reduce color and turbidity.
+    \newpage
+    \section{References}
+    \begin{enumerate}
+        \item Prof. C. Yapijakis, Lecture Notes, CE-344: The Cooper Union School of Engineering.
+        \item Mark J. Hammer, \emph{Water and Wastewater Technology}, 7th ed., Pearson, 2015.
+    \end{enumerate}
+    \newpage    
+\end{document}

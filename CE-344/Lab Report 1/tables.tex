@@ -1,0 +1,498 @@
+\begin{center}
+    \pgfplotsset{width=13cm, compat=1.18}
+    \begin{tikzpicture}
+            \addcontentsline{lof}{figure}{Figure 1: Percent Solids of Sludge}
+            \begin{axis}[
+                title={\textbf{Figure 1: Percent Solids of Sludge}},
+                ybar stacked,
+                bar width=45pt,
+                symbolic x coords={Raw, Freeze/Thaw, Acid, Centrifuge},
+                ymin=-15, ymax=115,
+                point meta=explicit symbolic,
+                legend style={cells={anchor=west}, legend pos=north east},
+                width=\textwidth,
+                height=0.7\textwidth,
+                xtick=data
+                ]
+            \addplot [fill=red!15] coordinates {
+                (Raw,100) [100\%] 
+                (Freeze/Thaw,35) [35\%]
+                (Acid,15.75) [45\%]
+                (Centrifuge,3.9375) [25\%]
+                };
+            \addlegendentry{Sludge Remaining}
+            \addplot [fill=blue!15,nodes near coords] coordinates {
+                (Raw, 0) 
+                (Freeze/Thaw,65) [65\%]
+                (Acid,19.25) [55\%]
+                (Centrifuge,11.8125) [75\%]
+                };
+            \addlegendentry{Percent Supernatent Poured Off}
+            \renewcommand\arraystretch{.6}
+            \node [below] at (axis cs:  Raw,  0) {\begin{tabular}{c} 98\% W \\ 2\% S \end{tabular}};
+            \node [above] at (axis cs:  Freeze/Thaw,  100) {\begin{tabular}{c} 99.6\% W \\ 0.4\% S \end{tabular}};
+            \node [above] at (axis cs:  Acid, 35) {\begin{tabular}{c} 96.4\% W \\ 3.6\% S \end{tabular}};
+            \node [above] at (axis cs:  Centrifuge, 15.75) {\begin{tabular}{c} 96.9\% W \\ 3.1\% S \end{tabular}};
+            \node [below] at (axis cs:  Freeze/Thaw,  0) {\begin{tabular}{c} 94.9\% W \\ 5.1\% S \end{tabular}};
+            \node [below] at (axis cs:  Acid, 0) {\begin{tabular}{c} 91.7\% W \\ 8.3\% S \end{tabular}};
+            \node [below] at (axis cs:  Centrifuge, 0) {\begin{tabular}{c} 76\% W \\ 24\% S \end{tabular}};
+            \end{axis}
+        \end{tikzpicture}
+        \pgfplotsset{width=10cm}
+\end{center}
+    \subsection{Acidification}
+\begin{center}
+        {\large{\bf Table 1: Acidification of Sulfuric Acid\\}}
+        \addcontentsline{lot}{table}{Table 1: Acidification of Sulfuric Acid}
+        \vspace{2 mm}
+        {\begin{tabular}{ l r  l r  l r }
+            \underline{Beaker:} & 7C &  \underline{Solid Volume:} & 110 mL & \underline{Total Volume:} & 155 mL
+        \end{tabular}}
+        \vspace{10mm}
+        \renewcommand\arraystretch{1.5}
+        \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \addcontentsline{lof}{figure}{Figure 2: Titration Curve of Sulfuric Acid}
+            \begin{axis}[
+                title={\textbf{Figure 2: Titration Curve of Sulfuric Acid}},
+                xlabel={mL acid/L},
+                ylabel={pH},
+                xmin=0, xmax=1.4,
+                ymin=0, ymax=10,
+                xtick={0,0.2,0.4,0.6,0.8,1.0,1.2,1.4},
+                ytick={0,1,2,3,4,5,6,7,8,9,10},
+                ymajorgrids=true,
+                grid style=dashed,
+            ]
+            
+            \addplot[only marks, red] table [x=mL, y=pH] {7c.csv};
+            \addplot[no markers, red, domain=0:1.27] {8.8656*x*x*x-17.653*x*x+3.6097*x+7.385};
+            \end{axis}
+        \end{tikzpicture}\hspace{5mm}
+        \begin{tabular}{|l c r|}
+            \hline
+            \textbf{mL acid/L} & \textbf{pH} & \textbf{N} \\ \hline
+            0 & 7.7 & 0\\
+            0.1 & 7.4 & 0.06\\ 
+            0.21 & 7 & 0.14\\ 
+            0.31 & 6.8 & 0.2\\ 
+            0.43 & 6.7 & 0.28\\ 
+            0.54 & 6.3 & 0.35\\ 
+            0.64 & 4.7 & 0.41\\ 
+            0.87 & 2.5 & 0.56\\ 
+            0.97 & 2.2 & 0.63\\ 
+            1.07 & 2.1 & 0.69\\ 
+            1.17 & 1.8 & 0.76\\ 
+            1.27 & 1.6 & 0.82\\ \hline
+        \end{tabular}\\
+        \newpage
+    %     {\large{\bf Table 2: Acidification of Beaker 8C\\}}
+    %     \addcontentsline{lot}{table}{Table 2: Acidification of Beaker 8C}
+    %     \vspace{2 mm}
+    %     {\begin{tabular}{ l r  l r  l r }
+    %         \underline{Acid Used:} & \(\textnormal{H}_2\textnormal{SO}_4\) &  \underline{Solid Volume:} & 95 mL & \underline{Total Volume:} & 145 mL
+    %     \end{tabular}}
+    %     \vspace{10mm}
+    %     \begin{tikzpicture}[baseline=(current bounding box.center)]
+    %         \addcontentsline{lof}{figure}{Figure 2: Titration Curve of Beaker 8C}
+    %         \begin{axis}[
+    %             title={\textbf{Figure 2: Titration Curve of Beaker 8C}},
+    %             xlabel={mL acid/L},
+    %             ylabel={pH},
+    %             xmin=0, xmax=1.2,
+    %             ymin=0, ymax=11,
+    %             xtick={0,0.2,0.4,0.6,0.8,1.0,1.2},
+    %             ytick={0,1,2,3,4,5,6,7,8,9,10,11},
+    %             ymajorgrids=true,
+    %             grid style=dashed,
+    %         ]
+    %         \addplot[only marks, red] table [x=mL, y=pH] {8c.csv};
+    %         \addplot[no markers, red, domain=0:1.16] {-61.918*x*x*x*x + 169.93*x*x*x - 147.9*x*x + 34.151*x + 7.7018};
+    %         \end{axis}
+    %     \end{tikzpicture}\hspace{5mm}
+    %     \begin{tabular}{|l c r|}
+    %         \hline
+    %         \textbf{mL acid/L} & \textbf{pH} & \textbf{N} \\ \hline
+    %         0 & 7.7 & 0\\ 
+    %         0.45 & 6.1 & 0.31\\ 
+    %         0.67 & 2.7 & 0.46\\ 
+    %         0.77 & 2.2 & 0.53\\ 
+    %         0.92 & 2 & 0.63\\ 
+    %         1.07 & 1.8 & 0.74\\ 
+    %         1.16 & 1.5 & 0.8\\ \hline
+    %     \end{tabular}\\
+    %     \vspace{2 mm}
+    % \end{center}
+    % \begin{center}
+        \addcontentsline{lot}{table}{Table 2: Acidification of Nitric Acid}
+        {\large{\bf Table 2: Acidification of Nitric Acid\\}}
+        \vspace{2 mm}
+        {\begin{tabular}{ l r  l r  l r }
+            \underline{Beaker Used:} & 10C &  \underline{Solid Volume:} & 95 mL & \underline{Total Volume:} & 125 mL
+        \end{tabular}}
+        \vspace{10mm}
+        \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \addcontentsline{lof}{figure}{Figure 3: Titration Curve of Nitric Acid}
+            \begin{axis}[
+                title={\textbf{Figure 3: Titration Curve of Nitric Acid}},
+                xlabel={mL acid/L},
+                ylabel={pH},
+                xmin=0, xmax=1.865,
+                ymin=0, ymax=10,
+                xtick={0,0.2,0.4,0.6,0.8,1.0,1.2,1.4,1.6,1.8,2.0},
+                ytick={0,1,2,3,4,5,6,7,8,9,10},
+                ymajorgrids=true,
+                grid style=dashed,
+            ]
+            
+            \addplot[only marks, red] table [x=mL, y=pH] {10c.csv};
+            \addplot[no markers, red, domain=0:1.865] {5.989*x*x*x*x - 20.914*x*x*x + 19.643*x*x - 5.8151*x + 7.2926};
+            \end{axis}
+        \end{tikzpicture}\hspace{5mm}
+        \begin{tabular}{|l c r|}
+            \hline
+            \textbf{mL acid/L} & \textbf{pH} & \textbf{N}\\ \hline
+            0 & 7.1 & 0\\ 
+            0.13 & 7 & 0.1\\ 
+            0.235 & 7 & 0.19\\ 
+            0.385 & 6.95 & 0.31\\ 
+            0.525 & 6.85 & 0.42\\ 
+            0.715 & 6.75 & 0.57\\ 
+            0.915 & 6.5 & 0.73\\ 
+            1.115 & 6.3 & 0.89\\ 
+            1.465 & 2.2 & 1.17\\ 
+            1.565 & 1.9 & 1.25\\ 
+            1.665 & 1.75 & 1.33\\ 
+            1.765 & 1.6 & 1.41\\ 
+            1.865 & 1.45 & 1.49\\ \hline
+        \end{tabular}
+        \vspace{15mm}
+        \addcontentsline{lot}{table}{Table 3: Acidification of Acetic Acid}
+        {\large{\\\bf Table 3: Acidification of Acetic Acid\\}}
+        \vspace{2 mm}
+        {\begin{tabular}{ l r  l r  l r }
+            \underline{Beaker Used:} & 11C &  \underline{Solid Volume:} & 75 mL & \underline{Total Volume:} & 110 mL
+        \end{tabular}}
+        \vspace{10mm}
+        \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \addcontentsline{lof}{figure}{Figure 4: Titration Curve of Acetic Acid}
+            \begin{axis}[
+                title={\textbf{Figure 4: Titration Curve of Acetic Acid}},
+                xlabel={mL acid/L},
+                ylabel={pH},
+                xmin=0, xmax=7.7,
+                ymin=0, ymax=10,
+                xtick={0,1,2,3,4,5,6,7,8},
+                ytick={0,1,2,3,4,5,6,7,8,9,10},
+                ymajorgrids=true,
+                grid style=dashed,
+            ]
+            
+            \addplot[only marks, red] table [x=mL, y=pH] {11c.csv};
+            \addplot[no markers, red, domain=0:7.7] {-0.0379*x*x*x + 0.5475*x*x - 2.467*x + 7.3595};
+            \end{axis}
+        \end{tikzpicture}\hspace{5mm}
+        \begin{tabular}{|l c r|}
+            \hline
+            \textbf{mL acid/L} & \textbf{pH} & \textbf{N} \\ \hline
+            0 & 7.6 & 0 \\ 
+            0.35 & 6.6 & 0.32\\ 
+            0.7 & 5.8 & 0.64\\ 
+            1 & 5.1 & 0.91\\ 
+            1.25 & 4.9 & 1.14\\ 
+            1.65 & 4.5 & 1.5\\ 
+            2.2 & 4.3 & 2\\ 
+            2.7 & 4.2 & 2.45\\ 
+            3.7 & 4 & 3.36\\ 
+            5.7 & 3.8 & 5.18\\ 
+            7.7 & 3.6 & 7\\ \hline
+        \end{tabular}
+        \newpage
+\end{center}
+        \subsection{Centrifugation}
+\begin{center}
+        \renewcommand\arraystretch{1.5}
+        \vspace{2 mm}
+        \addcontentsline{lot}{table}{Table 4: Centrifugation of Group A}
+        {\large{\bf Table 4: Centrifugation of Group A\\}}
+        \vspace{2 mm}
+        \underline{pH:} 1.5\hspace{5mm}\underline{Acid:} Sulfuric\\
+        \vspace{2 mm}
+        \begin{tabular}{|l c c r|}
+            \hline
+            \textbf{Beaker} & \textbf{Mixing Time (hours)} & \textbf{Concentration (mg/L)} & \textbf{Percent Removed} \\ \hline
+            F-SL     & \multirow{2}{*}{2}  & 292  & \multirow{2}{*}{78\%}   \\
+            F-SN     &  & 405  &    \\\hline
+            B-SL     & \multirow{2}{*}{10}  & 277  & \multirow{2}{*}{50.1\%} \\
+            B-SN     &  & 220  &  \\\hline
+            Z-SL     & \multirow{2}{*}{13}  & 169  & \multirow{2}{*}{51.8\%} \\
+            Z-SN     &  & 150  &  \\\hline
+            W-SL     & \multirow{2}{*}{17}  & 429  & \multirow{2}{*}{50.1\%} \\
+            W-SN     &  & 141  &  \\\hline
+            W-SL DUP & \multirow{2}{*}{17} & 579  & \multirow{2}{*}{54.6\%} \\
+            W-SN DUP &  & 232  &  \\\hline
+            H-SL     & \multirow{2}{*}{20} & 780  & \multirow{2}{*}{83.8\%} \\
+            H-SN     &  & 1125 &  \\\hline
+        \end{tabular}
+        \pgfplotsset{width=8cm}
+        \begin{minipage}{.5\textwidth}
+            \vspace{30mm}
+            \begin{tikzpicture}[baseline=(current bounding box.center)]
+                \addcontentsline{lof}{figure}{Figure 5: Percent Removal vs. Time (Group A)}
+                \begin{axis}[
+                    title={\textbf{Figure 5: Percent Removal vs. Time (A)}},
+                    xlabel={Hours},
+                    ylabel={\%},
+                    xmin=5, xmax=25,
+                    ymin=0, ymax=100,
+                    xtick={5,10,15,20,25},
+                    ytick={0,20,40,60,80,100},
+                    legend style={cells={anchor=west}, legend pos=north east},
+                    ymajorgrids=true,
+                    grid style=dashed,
+                ]
+                \addlegendentry{Supernatent}
+                \addplot[only marks, red] table [x=hr, y=conc] {a.csv};
+                \addplot[no markers, red, domain=6:20] {-0.2645*x*x+8.3517*x};
+                \end{axis}
+            \end{tikzpicture}
+        \end{minipage}%
+        \begin{minipage}{.5\textwidth}
+            \vspace{30mm}
+            \begin{tikzpicture}[baseline=(current bounding box.center)]
+                \addcontentsline{lof}{figure}{Figure 6: Concentration vs. Time (Group A)}
+                \begin{axis}[
+                    title={\textbf{Figure 6: Concentration vs. Time (A)}},
+                    xlabel={Hours},
+                    ylabel={mg/L},
+                    xmin=5, xmax=25,
+                    ymin=0, ymax=1500,
+                    xtick={5,10,15,20,25},
+                    ytick={0,500,1000,1500},
+                    legend style={cells={anchor=west}, legend pos=north east},
+                    ymajorgrids=true,
+                    grid style=dashed,
+                ]
+                
+                \addplot[only marks, red] table [x=hr, y=sl] {a.csv};
+                \addplot[only marks, blue] table [x=hr, y=sn] {a.csv};
+                \addlegendentry{Sludge}
+                \addlegendentry{Supernatent}
+                % \addplot[no markers, red, domain=0:1.27] {8.8656*x*x*x-17.653*x*x+3.6097*x+7.385};
+                \end{axis}
+            \end{tikzpicture}
+        \end{minipage}
+        \newpage
+        \addcontentsline{lot}{table}{Table 5: Centrifugation of Group B}
+        {\large{\bf Table 5: Centrifugation of Group B\\}}
+        \vspace{2 mm}
+        \underline{pH:} 2\hspace{5mm}\underline{Acid:} Sulfuric\\
+        \vspace{2 mm}
+        \begin{tabular}{|l c c r|}
+            \hline
+            \textbf{Beaker} & \textbf{Mixing Time (hours)} & \textbf{Concentration (mg/L)} & \textbf{Percent Removed} \\ \hline
+            C-SL     & \multirow{2}{*}{10} & 940  & \multirow{2}{*}{51.6\%} \\
+            C-SN     &  & 106  &  \\\hline
+            N-SL     & \multirow{2}{*}{13} & 406  & \multirow{2}{*}{72.5\%} \\
+            N-SN     &  & 1080 & \\\hline
+            T-SL     & \multirow{2}{*}{17} & 614  & \multirow{2}{*}{60.2\%} \\
+            T-SN     &  & 128  & \\\hline
+            T-SL DUP & \multirow{2}{*}{17} & 831  & \multirow{2}{*}{53.4\%} \\
+            T-SN DUP &  & 128  & \\\hline
+            G-SL     & \multirow{2}{*}{20} & 1200 & \multirow{2}{*}{42.8\%} \\
+            G-SN     &  & 98.3 & \\\hline
+            H-SL     & \multirow{2}{*}{20} & 780  & \multirow{2}{*}{83.8\%} \\
+            H-SN     &  & 1125 & \\\hline
+        \end{tabular}
+        \pgfplotsset{width=8cm}
+        \begin{minipage}{.5\textwidth}
+            \vspace{30mm}
+            \begin{tikzpicture}[baseline=(current bounding box.center)]
+                \addcontentsline{lof}{figure}{Figure 7: Percent Removal vs. Time (Group B)}
+                \begin{axis}[
+                    title={\textbf{Figure 7: Percent Removal vs. Time (B)}},
+                    xlabel={Hours},
+                    ylabel={\%},
+                    xmin=5, xmax=25,
+                    ymin=0, ymax=100,
+                    xtick={5,10,15,20,25},
+                    ytick={0,20,40,60,80,100},
+                    legend style={cells={anchor=west}, legend pos=north east},
+                    ymajorgrids=true,
+                    grid style=dashed
+                ]
+                \addlegendentry{Supernatent}
+                \addplot[only marks, red] table [x=hr, y=conc] {b.csv};
+                \addplot[no markers, red, domain=10:20] {-0.377*x*x+9.7609*x};
+                \end{axis}
+            \end{tikzpicture}
+        \end{minipage}%
+        \begin{minipage}{.5\textwidth}
+            \vspace{30mm}
+            \begin{tikzpicture}[baseline=(current bounding box.center)]
+                \addcontentsline{lof}{figure}{Figure 8: Concentration vs. Time (Group B)}
+                \begin{axis}[
+                    title={\textbf{Figure 8: Concentration vs. Time (B)}},
+                    xlabel={Hours},
+                    ylabel={mg/L},
+                    xmin=5, xmax=25,
+                    ymin=0, ymax=2000,
+                    xtick={5,10,15,20,25},
+                    ytick={0,500,1000,1500,2000},
+                    legend style={cells={anchor=west}, legend pos=north east},
+                    ymajorgrids=true,
+                    grid style=dashed,
+                ]
+                
+                \addplot[only marks, red] table [x=hr, y=sn] {b.csv};
+                \addplot[only marks, blue] table [x=hr, y=sl] {b.csv};
+                \addlegendentry{Sludge}
+                \addlegendentry{Supernatent}
+                % \addplot[no markers, red, domain=0:1.27] {8.8656*x*x*x-17.653*x*x+3.6097*x+7.385};
+                \end{axis}
+            \end{tikzpicture}
+        \end{minipage}
+        \newpage
+        \renewcommand\arraystretch{1.5}
+        {\large{\bf Table 6: Centrifugation of Group C\\}}
+        \addcontentsline{lot}{table}{Table 6: Centrifugation of Group C}
+        \vspace{2 mm}
+        \underline{pH:} 1.5\hspace{5mm}\underline{Acid:} Nitric\\
+        \vspace{2 mm}
+        \begin{tabular}{|l c c r|}
+            \hline
+            \textbf{Beaker} & \textbf{Mixing Time (hours)} & \textbf{Concentration (mg/L)} & \textbf{Percent Removed} \\ \hline
+            X-SL     & \multirow{2}{*}{17} & 584  & \multirow{2}{*}{64.1\%} \\
+            X-SN     & & 116  & \\\hline
+            X-SL DUP & \multirow{2}{*}{17} & 677  & \multirow{2}{*}{64.8\%} \\
+            X-SN DUP & & 139  & \\\hline
+            Q-SL     & \multirow{2}{*}{24} & 315  & \multirow{2}{*}{75\%}   \\
+            Q-SN     & & 269  &   \\\hline
+            P-SL     & \multirow{2}{*}{6}  & 469  & \multirow{2}{*}{14.7\%} \\
+            P-SN     & & 180  & \\\hline
+            A-SL     & \multirow{2}{*}{10} & 970  & \multirow{2}{*}{57.9\%} \\
+            A-SN     & & 135  & \\\hline
+            K-SL     & \multirow{2}{*}{13} & 855  & \multirow{2}{*}{55.3\%} \\
+            K-SN     & & 298  & \\\hline
+            S-SL DUP & \multirow{2}{*}{13} & 793  & \multirow{2}{*}{86.3\%} \\
+            K-SN DUP & & 1500 & \\\hline
+            S-SL     & \multirow{2}{*}{17} & 376  & \multirow{2}{*}{46.5\%} \\
+            S-SN     & & 157 & \\\hline
+            S-SL DUP & \multirow{2}{*}{17} & 564  & \multirow{2}{*}{59.1\&} \\
+            S-SN DUP & & 413  & \\\hline
+        \end{tabular}
+        \begin{minipage}{.5\textwidth}
+            \vspace{10mm}
+            \begin{tikzpicture}[baseline=(current bounding box.center)]
+                \addcontentsline{lof}{figure}{Figure 9: Percent Removal vs. Time (Group C)}
+                \begin{axis}[
+                    title={\textbf{Figure 9: Percent Removal vs. Time (C)}},
+                    xlabel={Hours},
+                    ylabel={\%},
+                    xmin=5, xmax=20,
+                    ymin=0, ymax=100,
+                    xtick={5,10,15,20},
+                    ytick={0,20,40,60,80,100},
+                    legend style={cells={anchor=west}, legend pos=north east},
+                    ymajorgrids=true,
+                    grid style=dashed,
+                ]
+                \addlegendentry{Supernatent}
+                \addplot[only marks, red] table [x=hr, y=conc] {c.csv};
+                \addplot[no markers, red, domain=6:17] {-0.1375*x*x+6.1968*x};
+                \end{axis}
+            \end{tikzpicture}
+        \end{minipage}%
+        \begin{minipage}{.5\textwidth}
+            \vspace{10mm}
+            \begin{tikzpicture}[baseline=(current bounding box.center)]
+                \addcontentsline{lof}{figure}{Figure 10: Concentration vs. Time (Group C)}
+                \begin{axis}[
+                    title={\textbf{Figure 10: Concentration vs. Time (C)}},
+                    xlabel={pH},
+                    ylabel={mg/L},
+                    xmin=5, xmax=20,
+                    ymin=0, ymax=2000,
+                    xtick={5,10,15,20},
+                    ytick={0,500,1000,1500,2000},
+                    legend style={cells={anchor=west}, legend pos=north east},
+                    ymajorgrids=true,
+                    grid style=dashed,
+                ]
+                
+                \addplot[only marks, red] table [x=hr, y=sl] {c.csv};
+                \addplot[only marks, blue] table [x=hr, y=sn] {c.csv};
+                \addlegendentry{Sludge}
+                \addlegendentry{Supernatent}
+                % \addplot[no markers, red, domain=0:1.27] {8.8656*x*x*x-17.653*x*x+3.6097*x+7.385};
+                \end{axis}
+            \end{tikzpicture}
+        \end{minipage}
+        \newpage
+        \renewcommand\arraystretch{1.5}
+        {\large{\bf Table 7: Centrifugation of Group D\\}}
+        \addcontentsline{lot}{table}{Table 7: Centrifugation of Group D}
+        \vspace{2 mm}
+        \underline{Mixing Time:} 6 hours\hspace{5mm}\underline{Acid:} Sulfuric\\
+        \vspace{2 mm}
+        \begin{tabular}{|l c c r|}
+            \hline
+            \textbf{Beaker} & \textbf{pH} & \textbf{Concentration (mg/L)} & \textbf{Percent Removed} \\ \hline
+            25-SL & \multirow{2}{*}{1.5} & 840  & \multirow{2}{*}{42.3\%} \\
+            25-SN & & 80.6 & \\\hline
+            21-SL & \multirow{2}{*}{2}   & 1460 & \multirow{2}{*}{35\%}   \\
+            21-SN & & 122  &   \\\hline
+            20-SL & \multirow{2}{*}{2.5} & 1160 & \multirow{2}{*}{32.4\%} \\
+            20-SN & & 104  & \\\hline
+            19-SL & \multirow{2}{*}{3}   & 1350 & \multirow{2}{*}{28.8\%} \\
+            19-SN & & 86.1 & \\\hline
+            18-SL & \multirow{2}{*}{3.5} & 969  & \multirow{2}{*}{26.5\%} \\
+            18-SN & & 163  & \\\hline
+        \end{tabular}
+        \begin{minipage}{.5\textwidth}
+            \vspace{30mm}
+            \begin{tikzpicture}[baseline=(current bounding box.center)]
+                \addcontentsline{lof}{figure}{Figure 11: Percent Removal vs. pH (Group D)}
+                \begin{axis}[
+                    title={\textbf{Figure 11: Percent Removal vs. pH (D)}},
+                    xlabel={pH},
+                    ylabel={\%},
+                    xmin=1, xmax=5,
+                    ymin=0, ymax=50,
+                    xtick={1,2,3,4,5},
+                    ytick={0,10,20,30,40,50},
+                    legend style={cells={anchor=west}, legend pos=north east},
+                    ymajorgrids=true,
+                    grid style=dashed,
+                ]
+                \addlegendentry{Supernatent}
+                \addplot[only marks, red] table [x=ph, y=conc] {d.csv};
+                \addplot[no markers, red, domain=1.5:4] {2.5714*x*x-20.417*x+66.686};
+                \end{axis}
+            \end{tikzpicture}
+        \end{minipage}%
+        \begin{minipage}{.5\textwidth}
+            \vspace{30mm}
+            \begin{tikzpicture}[baseline=(current bounding box.center)]
+                \addcontentsline{lof}{figure}{Figure 12: Concentration vs. pH (Group D)}
+                \begin{axis}[
+                    title={\textbf{Figure 12: Concentration vs. pH (D)}},
+                    xlabel={pH},
+                    ylabel={mg/L},
+                    xmin=1, xmax=4,
+                    ymin=0, ymax=2000,
+                    xtick={1,2,3,4},
+                    ytick={0,500,1000,1500,2000},
+                    legend style={cells={anchor=west}, legend pos=north east},
+                    ymajorgrids=true,
+                    grid style=dashed,
+                ]
+                
+                \addplot[only marks, red] table [x=ph, y=sl] {d.csv};
+                \addplot[only marks, blue] table [x=ph, y=sn] {d.csv};
+                \addlegendentry{Sludge}
+                \addlegendentry{Supernatent}
+                % \addplot[no markers, red, domain=0:1.27] {8.8656*x*x*x-17.653*x*x+3.6097*x+7.385};
+                \end{axis}
+            \end{tikzpicture}
+        \end{minipage}
+    \end{center}

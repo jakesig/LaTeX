@@ -1,0 +1,30 @@
+\documentclass[tikz]{standalone}
+\usepackage{pgfplots}
+\begin{document}
+\pgfplotsset{width=10cm}
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+    \addcontentsline{lof}{figure}{Figure 15: Flow Rate vs. Filtration Height}
+    \begin{axis}[
+        title={\textbf{Figure 15: Flow Rate vs. Filtration Height}},
+        xlabel={Flow Rate (mL/s)},
+        ylabel={Height (cm)},
+        xmin=0, xmax=7,
+        ymin=0, ymax=50,
+        xtick={0,1,2,3,4,5,6,7},
+        ytick={0,10,20,30,40,50},
+        ymajorgrids=true,
+        grid style=dashed,
+        legend pos = north east,
+        legend cell align={left}
+    ]
+    
+    \addplot[only marks, red] table [x=mL/s, y=cm] {7.csv};
+    \addplot[only marks, blue] table [x=mL/s, y=cm] {8.csv};
+    \addlegendentry{Sand Filter}
+    \addlegendentry{GAC Filter}
+    \addplot[smooth, red, domain=0:7] {0.1448*x^2 + 1.0819*x + 11.436};
+    \addplot[smooth, blue, domain=0:7] {1.1797*x^2 + 25.05*x + 9.0775};
+    
+    \end{axis}
+\end{tikzpicture}
+\end{document}

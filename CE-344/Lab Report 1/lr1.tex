@@ -1,0 +1,108 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath, graphicx, tikz, pgfplots, multirow, newlfont, gensymb, indentfirst}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Jacob Sigman\\9/29/22}
+\lhead{CE-344\\Environmental Systems Engineering}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{1.5pt}
+\setlength{\headheight}{22.6pt}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\setlength\parindent{24pt}
+
+\begin{document}
+    \include{cover.tex}
+    \tableofcontents
+    \newpage
+    \listoftables
+    \addcontentsline{toc}{section}{List of Tables}
+    \listoffigures
+    \addcontentsline{toc}{section}{List of Figures}
+    \newpage
+    \section{Purpose of the Experiment}
+    The purpose of this experiment is to determine the best method of recovering metal from sludge. The first goal is to determine the best method for separating water from sludge. The three methods to be analyzed are freeze/thaw, acidification, and centrifugation. The second goal is to compare the titration curves of various acid samples to determine which acid is the most efficient in lowering the pH of sludge. The third goal is to observe mixing times for samples with varying acids and levels of pH and determine the optimal mixing time and acid for removing lead. This experiment will provide all necessary and optimal aspects of recovering metals from sludge.
+    \newpage
+    \section{Procedure}
+    \subsection{Freeze/Thaw}
+    The separation of water from sludge is done in three ways: freeze/thaw, acidification, and centrifugation. The original water sample used contains 2\% solid and 98\% water, as seen in \textit{Figure 1}. After each process, the percentages of solid and water will be recalculated. In the freeze/thaw process, the solids are removed by freezing the sample. As the water freezes, the solids will separate from the water since water has a lower freezing point. As the solution thaws, since water has a higher melting point, the water will melt first, and will be left with substantially less solids remaining.
+    \subsection{Acidification}
+    In the acidification process, three different acids are used from three different labeled beakers. The three acids are sulfuric acid, nitric acid, and acetic acid. The acid is titrated into each beaker, and at various levels of concentration, the pH is recorded. Acid is added until the sample reached a pH of approximately 1.5 or if the normalization is too high to continue.
+    \subsection{Centrifugation}
+    In the centrifugation process, four groups are analyzed. Group A uses sulfuric acid with a pH of 1.5 at various mixing times. Group B uses sulfuric acid with a pH of 2 at various mixing times. Group C uses nitric acid with a pH of 1.5 at various mixing times. Group D uses sulfuric acid with a mixing time of six hours with various pH levels. These four groups are centrifuged and the percent removal of lead is recorded.
+    \newpage
+    \section{Data and Results}
+    \input{tables.tex}
+    \newpage
+    \section{Sample Calculations}
+    \subsection{Percentages in Reductions}
+    \[\%_{\text{Freeze}}=\frac{V_\text{Solid}}{V_\text{Total}}\times 100\]
+    \[\text{Sample Calculation: }\%_{\text{Freeze}}=\frac{10\text{ mL}}{100\text{ mL}}\times 100=10\%\]
+    \[\%_{\text{Centrifuge}}=\frac{V_\text{Centrate}}{V_\text{Centrate}+V_\text{Sludge}}\times 100\]
+    \[\text{Sample Calculation: }=\frac{25\text{ mL}}{25\text{ mL}+75\text{ mL}}\times 100=25\%\]
+    \subsection{Normalization}
+    \[N=\frac{V_\text{Acid}}{V_\text{Total}}\times100\]
+    \[\text{Sample Calculation: }N=\frac{0.1\text{ mL/L}\times100\text{ mL}}{155\text{ mL}}\times100=14.9\%\]
+    \subsection{Relative Proportions}
+    \[\%_{\text{SN}}=\frac{\text{Concentration}_\text{SN}}{\text{Concentration}_\text{SN}+\text{Concentration}_\text{SL}}\times 100\]
+    \[\text{Sample Calculation: }\%_{\text{SN}}=\frac{\text{10\text{ mg/L}}}{\text{10\text{ mg/L}}+\text{40\text{ mg/L}}}\times 100=20\%\]
+    \[\%_{\text{SL}}=\frac{\text{Concentration}_\text{SL}}{\text{Concentration}_\text{SN}+\text{Concentration}_\text{SL}}\times 100\]
+    \[\text{Sample Calculation: }\%_{\text{SL}}=\frac{\text{40\text{ mg/L}}}{\text{10\text{ mg/L}}+\text{40\text{ mg/L}}}\times 100=80\%\]
+    \newpage
+    \section{Discussion}
+    \subsection{Theory}
+    \indent This experiment determines the percentage of lead removed from a municipal wastewater sample. This metric is crucial to public health since lead is one of seven toxic metals that are encountered in municipal wastewater. The encounter of these metals is disconcerting, but important, especially since they have effects that can devastate various species. After this metal is found, it can be treated in a wastewater facility. It's very important to treat wastewater as these metals will remain in the wastewater otherwise. Processes used to treat wastewater include reduction, conditioning, and dewatering.\\
+    \indent Up to this point in the course, the importance of chemical and biological processes were emphasized. Both types of processes were crucial to this experiment. Acidification involves the chemical process of titration. The water is separated from the chemicals and the solids are digested. Freeze/thaw, acidification, and centrifugation are all chemical processes crucial to determining the percentage of lead removed from municipal sludge.\\
+    \indent Overall, the three processes analyzed in this experiment are crucial to wastewater treatment facilities today. Today, America has more than 16,000 publicly-owned wastewater treatment facilities. All methods used in this experiment are used in every single one of those facilities, showing why these processes are crucial to the lives of every American.
+    \subsection{Experimental}
+    \indent As shown in \textit{Figure 1}, the municipal sludge went through three different processes. The first of the three was freeze/thaw. Originally, the sludge contained 98\% water and 2\% solids. After the freeze/thaw process, 65\% of the supernatant was poured off, which contained 99.6\% water and 0.4\% solids. The sludge sample that remained contained 94.9\% water and 5.1\% solids. The next process was acidification. After the acidification process, 55\% of the supernatant was poured off, which contained 96.4\% water and 3.6\% solids. The sludge sample that remained contained 91.7\% water and 8.3\% solids. The next and final process was centrifugation. After the centrifugation process, 75\% of the supernatant was poured off, which contained 76\% water and 24\% solids. The final remaining sludge was 3.9\% of the original sample, which can be disposed of safely following neutralization.\\
+    \indent The next component of the experiment is acidification. Three acids were used to acidify the sludge sample: sulfuric acid, nitric acid, and acetic acid. The primary objective is to determine what acids are successful in reducing the pH of the sludge sample to 1.5. It's very important to lower the pH of municipal sludge as it makes the metals easier to be removed. The sulfuric acid was able to reduce the pH from 7.7 to 1.6 and the nitric acid was able to reduce the pH from 7.1 to 1.45. However, the acetic acid was unsuccessful in lowering the pH. The normalization became too high and the lowest the pH was throughout the titration was 3.6. It has been determined that acetic acid is not a candidate for the acidification process.\\
+    \indent The final component of the experiment is centrifugation. There were four groups analyzed. Group A had the highest percentage removal of lead of 83.8\% at a mixing time of 20 hours with sulfuric acid with a pH of 1.5. Group D had the highest percentage removal of lead of 42.3\% at a mixing time of 6 hours with sulfuric acid with a pH of 1.5. From these results it is seen that a pH of 1.5 is most effective in the removal of lead.
+    \newpage
+    \section{Conclusions}
+    \indent Following the treatment of the sludge, the sludge must be neutralized, since it has a pH of 1.5 and can harm the environment. The supernatant must also follow a similar treatment process. Neutralization allows for hte pH of any solution to be brought up to the pH of water (approximately 7) by titrating it with a basic chemical.\\
+    \indent It has been determined from the experiment that the three processes of freeze/thaw, acidification, and centrifugation are all effective methods of treating municipal sludge. The freeze/thaw process allowed for 65\% of the supernatant to be poured off, the acidification process allowed for 55\% of the supernatant to be poured off, and the centrifugation process allowed for 75\% of the supernatant to be poured off. 3.9\% of the original sample remained and was made of 76\% water and 24\% solids.\\
+    \indent It was shown in the acidification data that sulfuric acid and nitric acid are effective in reducing the pH of sludge to 1.5. acetic acid is not effective in doing so.\\ 
+    \indent It was shown in the centrifugation data that the most effective method of removing lead was in Group A, with a mixing time of 20 hours and sulfuric acid with a pH of 1.5. It is also shown in Group D that 1.5 is an effective pH in removing lead. Using the three processes of freeze/thaw, acidification with either sulfuric or nitric acid, and centrifugation with a 1.5 pH sample of sulfuric acid are effective in removing metals from municipal sludge.
+    \newpage
+    \section{Questions}
+    \begin{enumerate}
+        \item Differentiate between and list systems of sludge management and ultimate sludge disposal.
+        \\\rule{5cm}{1pt}
+        \\\\Sludge management involves removing potentially reusable and recyclable materials from processed sludge. The systems include dewatering, digestion, and thickening. Ultimate sludge disposal involves discharging sludge that has already been treated. The systems include incineration, landfilling, and recycling.
+        \item List all heavy metals that may be encountered in anaerobically digested municipal sludge and explain briefly why they are of concern and need to be removed to a larger or lesser extent.
+        \\\rule{5cm}{1pt}
+        \\\\The metals that may be encountered in anaerobically digested municipal sludge are Cadmium, Chromium, Copper, Mercury, Nickel, lead, and Zinc. These metals must be removed as they are harmful to humans if ingested. There are many affects, such as nausea, vomiting, and stomach pain. It also increases the risk of cancer.
+        \item Assume that you have a 1\% by weight solution of a chemical. How do you prepare a 100 mg/L solution of this using distilled water and a 100-mL graduated cylinder? If you add 1 mL of this latter solution to a beaker with 200 mL of sample, what would the concentration of the chemical be, assuming there is not a trace of this chemical in the sample?
+        \\\rule{5cm}{1pt}
+        \[1\%=10000\text{ mg/L}=10\text{ mg/mL}\]
+        \[\boxed{\text{To prepare a 100 mg/L solution, add 1 mL of solution to a 100 mL beaker of distilled water.}}\]
+        \[\frac{1 \text{ mL}}{200 \text{ mL}}\times\frac{100 \text{ mL}}{1 \text{ L}}=\boxed{0.5 \text{ mg/L}}\]
+        \item Say that you mix 100 mL of a 0.02\% solution of a chemical with 50 mL of a 500 mg/L solution of the same chemical. How many mL of the final solution do you need to add in 1 L of distilled water in order to produce a concentration of 1.5 mg/L?
+        \\\rule{5cm}{1pt}
+        \[0.02\%\times100\text{ mL}\times 10\text{ mg/mL}+50\text{ mL}\times 500\text{ mg/L}\times\frac{1\text{ L}}{1000\text{ mL}}=45\text{ mg}\]
+        \[\frac{45\text{ mg}}{150\text{ mL}}=0.3\text{ mg/mL}=300\text{ mg/L}\]
+        \[\frac{1.5\text{ mg/L}}{300\text{ mg/L}}\times1000\text{ mL}=\boxed{5\text{ mL}}\]
+        \item You need to prepare a series of chlorine concentrations in 200-mL beakers of water samples to study the chlorine demand. What you have available is a bottle of commercial CLOROX (5.25\% by weight chlorine content) and several 100-mL graduated cylinders. To reduce the error, you want to make consecutive 100X or less dilutions, so that the last prepared solution will contain 1 mg/mL of chlorine. Describe the procedure and show your calculations.
+        \\\rule{5cm}{1pt}
+        \[0.0525\times x\text{ g CLOROX}\div 100\text{ mL H}_2\text{O}=1\text{ mg/mL}\]
+        \[x=1904\text{ mg CLOROX}\]
+        1904 mg CLOROX is needed to obtain a 1 mg/mL solution of chlorine. Add 1.9 mg of CLOROX to a 100 mL beaker of distilled water.
+    \end{enumerate}
+    \newpage
+    \section{References}
+    \begin{enumerate}
+        \item McCarthy, P., and Sawyer, C. N., 1981, \underline{Chemistry for Environmental Engineers and Scientists}, 4th Ed., pp. 244-45, McGraw-Hill Book Company, New York, N.Y.
+        \item Jones, J., Brown, K., and Hirsch, R., 1985, ``The Role of Phosphorus in Lake Eutrophication in New South Wales'', Water Research \underline{22} (2) 142.
+        \item Prof. C. Yapijakis, Lecture Notes, CE-344: The Cooper Union School of Engineering.
+        \item Adler, R.J., Jones, K.F., and Pappas, E.H. (1987). ``Sludge Disposal by Use of Pyrolysis'', J. Wat. Poll. Control Fed., \underline{58}, 6, pp. 3-12.
+    \end{enumerate}
+    
+    \newpage
+    
+    
+\end{document}

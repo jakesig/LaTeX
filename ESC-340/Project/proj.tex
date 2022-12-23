@@ -1,0 +1,71 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath, graphicx, tikz, pgfplots, multirow, newlfont, gensymb, indentfirst, bm}
+\usepackage[usestackEOL]{stackengine}
+\usepackage[export]{adjustbox}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Dr. Sluice\\12/13/22}
+\lhead{ESC-340\\Fluid Mechanics and Flow Systems}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{1.5pt}
+\setlength{\headheight}{22.6pt}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\setlength\parindent{24pt}
+
+\begin{document}
+\include{cover.tex}
+\newpage
+\tableofcontents
+\newpage
+\addcontentsline{toc}{section}{List of Tables}
+\listoftables
+\addcontentsline{toc}{section}{List of Figures}
+\listoffigures
+\newpage
+
+\section{Introduction}
+\par In this report, Beaver Creek, a body of water located near Kentwood, Louisiana, is analyzed. This specific location sees a bridge crossing along Louisiana State Route 1049 arching over Beaver Creek near the center of this reach. Here, field data from the United States Geological Survey (USGS) was used to develop a model under and around the bridge crossing, to evaluate possible floods, as well as evaluate a previous flood that occurred May 22, 1974, where the river experienced a flow of 14,000 cfs. The analysis initially uses pressure/weir flow methods to determine water surface profiles, and then uses energy methods. It evaluates the bridge contraction and expansion reach lengths, adjusted the location of certain cross sections, and calibrated with the observed water surface elevation data. From this calibrated project file, Manning's coefficients and flow rates were changed to test their impact on the behavior of the reach. 
+\newpage
+\section{Methods}
+\par In analyzing the behavior of Beaver Creek, provided values for flow rate and Manning's numbers were used. Of the stations listed in the project, five were chosen as locations of interest at which the impact from changing Manning's numbers and flow rates would be observed; these stations were 5.065, 5.21, 5.39, 5.76, and 5.99. These locations were chosen because their locations were of significance in some way: stations 5.065 and 5.99 are the start and end, respectively, of the creek as described in the project file; stations 5.21 and 5.76 were each near a bend in the creek, which could cause interesting behavior; and 5.39 was immediately before the bridge that crosses the creek, which again could cause interesting behavior. 
+\par Initial Manning's ($n$) values were recorded at every station in the project and changed by a coefficient globally applied to all Manning's values in the creek. We chose to halve and double the initial values to observe impact. It is expected that increased Manning's values will decrease the flow rate, as Manning's n represents higher conduit friction. Intuitively, higher friction will tend to slow flow, while the inverse is true for decreased Manning's numbers. However, since flow is fixed at a particular value, the change in Manning's number will impact water surface levels, with a tendency toward higher water surfaces for higher Manning's numbers. 
+\par For each station of interest, \emph{Section 3.1} contains tables showing fill, ground, levee, bank station, water surface, energy grade line, and critical level values at each set of Manning's values (initial, halved, and doubled). Similarly, cross sections showing the water level at each station in comparison with the initial energy grade line, water surface, and critical level at each set of Manning's values. 
+\par Flow rates were changed as well, to observe its impact. Manning's numbers were kept at initial values, and the flow changed to 1,000 cfs and 10,000 cfs from the initial project value of 5,000 cfs. A table for each station showing levee, bank station, and initial, lowered, and raised for each of the water surfaces, energy grade lines, and critical levels is shown in \emph{Section 3.2} as well as a single graph depicting the same. The use of a single graph is to make comparison between water surface levels for initial, raised, and lowered flow rates visually simple. We expected a higher water surface level for a raised flow rate, and similarly, a lower water surface with a decreased flow rate. 
+
+\newpage
+
+\include{tables.tex}
+\section{Discussion}
+\subsection{Altering the Manning's Coefficient}
+\noindent To see how the water surface elevation of an open channel changes as the Manning's coefficient changes, while keeping all other variables constant, we can look at Manning's equation for open channel flow. \\\\
+Manning's equation for open channel flow is written as:
+\[V=\frac{R_h^{\frac{2}{3}}S_0^{\frac{1}{2}}}{n}\] 
+and
+\[Q=VA=\frac{\kappa}{n}AR_h^{\frac{2}{3}}S_0^{\frac{1}{2}}\] 
+With $n$ representing the manning resistance coefficient. This roughness coefficient represents the friction that is applied to the flow by the channel, as water passes through.\\\\
+This equation shows, that as the manning coefficient decreases, the open channel flow should increase, as there is less resistance along the wetted perimeter of the channel. \\\\
+When just relating $n$ to $Q$, we cannot immediately say that the change in flow leads to any specific change in water surface elevation. By keeping $\kappa$, $A$, $R_h$, and $S_0$ constant, while changing the Manning's coefficient, we see that the flow would inversely relate. However, when generating the plots through HEC RAS, when halving and doubling the Manning's coefficient, value for flow was also kept constant. Because of this, we look at the relationship between $n$ and $R_h$.\\\\
+The open channel flow equation can be rearranged as follows:  
+\[R_h^{\frac{2}{3}}=\frac{QAn}{\kappa S_0^{\frac{1}{2}}}\] 
+
+\noindent By rearranging the equation, we see that there is a direct relationship between $R_h$ and $n$. $R_h$ is defined as the hydraulic radius of the open channel. In the case of open channel flow, the hydraulic radius is directly related to the water surface elevation in the channel. Because of the direct relationship between $R_h$ and elevation, and the direct relationship between $R_h$ and $n$, we can say that $n$ and elevation are directly related. Therefore, when halving the Manning's coefficient, $n$, the water elevation should decrease, and when doubling the Manning's coefficient, $n$, the water elevation should increase.\\\\
+For the cross-sectional views of the river for our chosen stations (See \emph{Section 3.1}), you can see this direct relationship, where the plots generated from a halved Manning's coefficient displayed a lower fill in elevation of where the water was, and the plots generated from a doubling Manning's coefficient displayed a lower fill in elevation. These results and equation analysis fall in line with our hypotheses that were made in \emph{Section 2} Methods, for how the water surface elevation should change with a change in Manning's coefficient. 
+\newpage
+\subsection{Altering the Flow}
+\noindent To see how the water surface elevation of an open channel changes as the flow through the channel changes, while keeping all other variables constant, we can also look at Manning's equation for open channel flow. \\\\
+Writing Manning's equation for open channel flow as:
+\[Q=VA=\frac{\kappa}{n}AR_h^{\frac{2}{3}}S_0^{\frac{1}{2}}\] 
+\noindent As discussed in \emph{Section 4.1}, we know that the hydraulic radius, $R_h$,is directly related to the surface level elevation. Knowing this direct relationship between $R_h$ and elevation, we can say that $Q$ and elevation are directly related. Therefore, when increasing the flow, while holding all other variables constant, the water surface elevation will increase, and when decreasing flow, the water surface elevation will decrease. \\\\
+For the cross-sectional views of the river for our chosen stations (See \emph{Section 3.2}), you can see this direct relationship, where the plots generated from increasing the channel's flow displayed a higher elevation for where the water was, and the plots generated from a decreasing the channel's flow displayed a higher elevation. These results and equation analysis fall in line with our hypotheses that were made in \emph{Section 2} Methods, for how the water surface elevation should change with a change in flow.  
+\newpage
+
+\section{Conclusion}
+\par Taking a flow rate of 5000 cfs as the default flow value, the two scenarios were analyzed, where flow is decreased to 1000 cfs, and increased to 10000 cfs. As expected, the average water level dropped three feet across the entire river. Interestingly, station 5.21 and station 5.065 have a similar surface level, even when decreasing the flow by one-tenth. However, these two stations are located after the bridge, where the change of width becomes very minuscule. For the increased flow, we have a steady increase of approximately $1.6 \pm 0.2$ ft from the initial flow.
+\par For the changed $n$-values, this analysis took the initial $n$-values presented and multiplied them by 0.5 and 2.0, resulting in three data: original, halved, and doubled. We see decreased values for all halved values but doubled manning $n$-values have varying results. While we have a raised surface level at the beginning of the river, by the next analyzed station, the water surface level, while higher than the halved water surface level, is not as high as the original water surface level. This pattern repeats until the last station, station 5.065, where the pattern reverts to station 5.99, where the doubled manning $n$-values is higher than the initial, and the halved $n$-values have a lowered surface level than the original. 
+
+\newpage
+\end{document}

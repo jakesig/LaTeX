@@ -1,0 +1,29 @@
+\documentclass[tikz]{standalone}
+\usepackage{pgfplots}
+\begin{document}
+\pgfplotsset{width=8cm}
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+    \addcontentsline{lof}{figure}{Figure 2: Color Removal (Plant A)}
+    \begin{axis}[
+        title={\textbf{Figure 2: Color Removal (Plant A)}},
+        xlabel={Ozone Dosage (ppm)},
+        ylabel={Removed (\%)},
+        xmin=0, xmax=2.5,
+        ymin=0, ymax=100,
+        xtick={0,1,1.5,2,2.5},
+        ytick={0,20,40,60,80,100},
+        ymajorgrids=true,
+        grid style=dashed,
+        legend pos = north west,
+        legend cell align={left}
+    ]
+    
+    \addplot[only marks, red] table [x=mg, y=ap_r] {1.csv};
+    \addplot[only marks, blue] table [x=mg, y=tr_r] {1.csv};
+    \addplot[smooth, red, domain=0:2.5] {(0.0137*x^(3) - 0.1958*x^(2) + 0.6815*x + 0.0013)*100};
+    \addplot[smooth, blue, domain=0:2.5] {(0.1064*x^(3) - 0.5607*x^(2) + 1.069*x + 0.0061)*100};
+    \addlegendentry{Apparent}
+    \addlegendentry{True}
+    \end{axis}
+\end{tikzpicture}
+\end{document}

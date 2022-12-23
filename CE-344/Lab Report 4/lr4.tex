@@ -1,0 +1,76 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath, graphicx, tikz, pgfplots, multirow, newlfont, gensymb, indentfirst, bm}
+\usepackage[usestackEOL]{stackengine}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Jacob Sigman\\12/12/22}
+\lhead{CE-344\\Environmental Systems Engineering}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{1.5pt}
+\setlength{\headheight}{22.6pt}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\setlength\parindent{24pt}
+
+\begin{document}
+    \include{cover.tex}
+    \tableofcontents
+    \newpage
+    \listoftables
+    \addcontentsline{toc}{section}{List of Tables}
+    \listoffigures
+    \addcontentsline{toc}{section}{List of Figures}
+    \newpage
+    \section{Purpose of the Experiment}
+    \indent The purpose of this experiment is to determine the hydrocarbon content of the soil and air samples around 41 Cooper Square, and in New York City. Air samples were measured along Second Avenue and Broadway. Soil Samples were taken in various playgrounds and intersections across the city, along with some around 41 Cooper Square. The samples taken around 41 Cooper Square were tested on-site, while the samples taken around New York City were previously bagged. The collected samples were tested for Total Petroleum Hydrocarbons (TPH) and Polychlorinated Biphenyl (PCBs), to see if they exceeded allowable standard values.
+    \newpage
+    \section{Procedure}
+    \subsection{TPH Testing in Air}
+    \indent A Model 850 Investigator's Aid was used to test the TPH levels in the air. The first step was to calibrate the device immediately after leaving 41 Cooper Square in order to normalize the data samples. Two groups were collected, one along Second Avenue, and one along Broadway. The TPH levels in air were read at each intersection, along with the wind speed and temperature. Additionally, vehicles going through the intersection were counted.
+    \subsection{PCB Testing in Soil}
+    \indent The Clor-N-Soil PCB Screening kit was used to detect the presence of PCBs in local soil samples around 41 Cooper Square. Approximately 10 grams of soil were weighed and added to a tube. Then, extraction solvent was added, and shaken intermittently for approximately one minute. After settling for approximately two minutes, the supernatant was filtered through a drying column. Once approximately 5 mL was filtered out of the sample, a naphthalene solution in diglyme was added to the tube and shaken for approximately ten seconds. In order for the reaction to proceed, a sodium solution in oil was added to the tube and shaken intermittently for approximately one minute. At this point, the color is quickly observed and noted to approximate the concentration of PCBs in the soil. After this, buffer solution is added to neutralize the solution. 
+    \subsection{TPH Testing in Soil}
+    \indent The PetroFLAG analysis kit was used to determine the TPH levels in soils collected throughout New York City. Firstly, roughly ten grams of each sample was weighed and placed in a tube. Then, the samples were shaken intermittently for approximately one minute. After they were shaken, the supernatant was poured into a syringe following settling. The mixture was then shaken for ten seconds and left to settle for approximately ten minutes. Following settling, the PetroFLAG Analyzer was used to measure the TPH levels of methanol for a baseline, then the TPH level was taken for the sample in parts per million.
+    \newpage
+    \section{Data and Results}
+    \input{tables.tex}
+    \newpage
+    \section{Sample Calculations}
+    \subsection{Air Quality}
+    \[\text{Calibration Curve: }y=10.553\,\ln(x)+121.3\]
+    \[x=e^{\frac{y-121.3}{10.553}}\] 
+    \[x=e^{\frac{0.66-121.3}{10.553}}=\boxed{0.00001084\,\frac{\text{mg}}{\text{m}^3}}\] 
+    \subsection{Actual TPH Reading}
+    \[\text{Dilution Factor}=\frac{10\text{ g}}{\text{Sample Mass}}\]
+    \[\text{Actual TPH Reading}=\text{TPH Reading}\times\text{Dilution Factor}=\text{TPH Reading}\times\frac{10\text{ g}}{\text{Sample Mass}}\] 
+    \[\text{Actual TPH Reading}=\text{1263 \text{ ppm}}\times\frac{10\text{ g}}{\text{9.9 \text{ g}}}=\boxed{1250.37 \text{ ppm}}\] 
+    \newpage
+    \section{Discussion}
+    \subsection{Theory}
+    \indent The analysis of hydrocarbon content in soil and air is very important in Environmental Engineering. The soil and air contain many pollutants and toxins that have the potential to harm the environment, significantly affecting the local population. There are many sorts of tests for determining hydrocarbons in air and soil, consisting of both quantitative and qualitative methods.\\
+    \indent The first quantity that was measured was the Total Petroleum Hydrocarbons, or TPH. This is a measure of the hydrocarbons that are commonly found in a popular environmental contaminant, crude oil. Crude oil is used to make many items that are Petroleum-based, which cause a lot of harm to the environment. There are many types of hydrocarbons that count be found in the air. These include, Benzene, Toluene, Ethylbenzene and Xylene. While it is possible for the quantities of each of these hydrocarbons to be measured individually, most measuring devices are geared towards measuring the total of all of these concentrations, which has been proven to be substantially more useful. Hydrocarbons can be a substantial risk to human health. They can have a risk on anything from the immune system, to the cardiovascular system, and even have potential to cause cancer in some humans. Additionally, higher concentrations can damage the eyes and skin. Petroleum hydrocarbons pollute the environment in many ways. While the most common way is spills or leaks of gasoline, jet fuel, other chemical waste, and even mineral oils can pollute the environment. Since all of these sources are very common, TPH pollution is a large issue. It is advised that human exposure to TPH should be no more than 500 parts per million.\\
+    \indent To measure the TPH in air, a Model 850 Investigator's Aid was used. This device works by using an N-type semiconductor of which the resistance changes when exposed to hydrocarbons. This change in resistance gets converted to a percentage of hydrocarbons present in air. To measure the TPH in soil, a PetroFLAG test was used. This uses many indicators to give a reading of TPH in parts per million.\\
+    \indent The second quantity that was measured what the Polychlorinated Biphenyl Chemicals, or PCBs. These are man-made organic chemicals. These predate present day by over twenty years. They were manufactured and pollute the environment significantly, to the point that they were banned. They were used in many common products such as adhesives and oil. PCBs can be a substantial risk to human health. They can have a risk on anything from the immune system, to the reproductive system, and even have potential to cause cancer in some humans. While these chemicals stopped being used, they are still found in the environment since they have an incredibly long lifespan. The Food and Drug Administration limits the exposure of PCBs to 0.5 and 3 parts per million for food. The Environmental Protection Agency limits the PCB content of drinking water to 0.0005 parts per million. These limits are extremely low due to how extremely harmful PCBs are.\\ 
+    \indent To measure the PCB in soil samples, Clor-N-Soil PCB Screening kits were used. This test is qualitative, and involves the approximation of PCB by inspecting the color of the sample that has gone through various chemical reactions. The color is produced from a reaction with liquids containing hydrocarbons along with liquids from the test containing hydrocarbons.
+    \newpage
+    \subsection{Experimental}
+    \indent Testing of the TPH was performed along two avenues. First, along Second Avenue from 13th Street to 6th Street and second, along Broadway from 13th Street to 8th Street. At each intersection, three quantities were measured for three light cycles: wind speed, temperature, and air quality. Additionally, vehicles were counted going through the intersection. It was found that there is no correlation between the TPH level, wind speed, temperature, and the number of vehicles passing. \\
+    \indent The Model 850 Investigator's Aid was calibrated to 48\% for Broadway and 24\% for Second Avenue. It was found that the highest concentration of TPHs was at the intersection of Broadway and 13th Street. This concentration was an 18\% deflection from the calibrated value, resulting in a concentration of 0.00001084 \(\frac{\text{mg}}{\text{m}^3}\). The amount of cars going through this intersection per hour was also close to the highest, with an average of 1540 cars per hour based on a three-minute approximation. The wind speed at this intersection was not as high compared to other intersections. The smallest concentration was at Second Avenue and 12th Street. This concentration had no deflection from the calibrated value, resulting in a concentration of 0.00001048 \(\frac{\text{mg}}{\text{m}^3}\). This intersection had a similar amount of vehicles to that of the maximum measurement, although the wind speed was much higher. Thus, no correlation was found.\\
+    \indent In the analysis of the PCB in soil, the kits were used to determine the local levels of hydrocarbons in the soil. However, PCBs are more dependent on man-made products, not location. However, these are still indicators of dangerous pollutants being searched for. Overall, 4 out of the 17 collected samples had a value at or higher 50 parts per million. The other values were only a bit lower, close to the range for contamination.\\ 
+    \indent In the analysis of TPH in soil, the samples were collected and underwent various reactions, and then were analyzed qualitatively. The samples collected ranged from 96 parts per million, to 1587 parts per million. As stated prior, the limit is 500 parts per million. While there are a wide range of values, these values don't provide a good sense of the levels throughout the city. Overall, 9 out of the 18 collected samples had a TPH level higher than 500 parts per million. \\
+    \newpage
+    \section{Conclusions}
+    \indent The air quality measured along Second Avenue and Broadway did not demonstrate any correlation between the TPH level, wind speed, temperature, and the number of vehicles passing. No area saw a higher trend, but extreme changes in TPH levels along Broadway show that there may be inconsistencies with the data or extensive TPH in localized vicinities.\\
+    \indent The PCB analysis for soil did not show any strong relationship between location and PCB reading. However, the readings were similar since they were all taken in the same region. Overall, 4 out of the 17 collected samples had a value at or higher 50 parts per million. The other values were only a bit lower, close to the range for contamination. This poses a contamination concern for the region.\\
+    \indent For the analysis of the PCB in soil, the data was inconsistent. It was found that most of the playgrounds had low levels of TPH, but some playgrounds were found to have the highest levels. Despite this, the soil used were samples that were not collected recently. The East River showed a significantly higher level of TPHs, over 1200 parts per million. The pollutants are very common in this area.\\
+    \newpage
+    \section{References}
+    \begin{enumerate}
+        \item Prof. C. Yapijakis, Lecture Notes, CE-344: The Cooper Union School of Engineering.
+        \item Mark J. Hammer, \emph{Water and Wastewater Technology}, 7th ed., Pearson, 2015.
+    \end{enumerate}
+    \newpage    
+\end{document}

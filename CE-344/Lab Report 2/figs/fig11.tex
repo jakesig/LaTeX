@@ -1,0 +1,25 @@
+\documentclass[tikz]{standalone}
+\usepackage{pgfplots}
+\begin{document}
+\pgfplotsset{width=8cm}
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+    \addcontentsline{lof}{figure}{Figure 11: Flow Rate vs. Turbidity (GAC Filter)}
+    \begin{axis}[
+        title={\textbf{Figure 11: Flow Rate vs. Turbidity (GAC)}},
+        xlabel={Flow Rate (mL/s)},
+        ylabel={Turbidity (NTU)},
+        xmin=0, xmax=7,
+        ymin=0, ymax=4,
+        xtick={0,1,2,3,4,5,6,7},
+        ytick={0,1,2,3,4},
+        ymajorgrids=true,
+        grid style=dashed,
+        legend pos = north east,
+        legend cell align={left}
+    ]
+    
+    \addplot[only marks, red] table [x=mL/s, y=ntu] {7.csv};
+    \addplot[smooth, red, domain=0:90] {0.0136*x^2 + 0.2493*x + 1.54};
+    \end{axis}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,25 @@
+\documentclass[tikz]{standalone}
+\usepackage{pgfplots}
+\begin{document}
+\pgfplotsset{width=8cm}
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+    \addcontentsline{lof}{figure}{Figure 7: Alum Turbidity Following Coagulation and Flocculation}
+    \begin{axis}[
+        title={\textbf{Figure 7: Alum Turbidity (Coag/Floc) }},
+        xlabel={Dosage (mg/L)},
+        ylabel={Turbidity (NTU)},
+        xmin=10, xmax=70,
+        ymin=0, ymax=30,
+        xtick={10,20,30,40,50,60,70},
+        ytick={0,10,20,30},
+        ymajorgrids=true,
+        grid style=dashed,
+        legend pos = north east,
+        legend cell align={left}
+    ]
+    
+    \addplot[only marks, red] table [x=mg/L, y=ntu] {5.csv};
+    \addplot[smooth, red, domain=0:70] {-0.026*x^2 + 2.291*x - 25.124};
+    \end{axis}
+\end{tikzpicture}
+\end{document}

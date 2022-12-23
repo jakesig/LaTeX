@@ -1,0 +1,30 @@
+\documentclass[tikz]{standalone}
+\usepackage{pgfplots}
+\begin{document}
+\pgfplotsset{width=8cm}
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+    \addcontentsline{lof}{figure}{Figure 16: Color Dilutions}
+    \begin{axis}[
+        title={\textbf{Figure 16: Color Dilutions}},
+        xlabel={Sample Dilution (\%)},
+        ylabel={Color (CU)},
+        xmin=0, xmax=100,
+        ymin=0, ymax=300,
+        xtick={0,20,40,60,80,100},
+        ytick={0,100,200,300},
+        ymajorgrids=true,
+        grid style=dashed,
+        legend pos = north west,
+        legend cell align={left}
+    ]
+    
+    \addplot[only marks, red] table [x=sample, y=cu] {10.csv};
+    \addlegendentry{Experimental}
+    \addplot[dashed,red,domain=0:100] {2.58*x};
+    \addlegendentry{Experimental Fit}
+    \addplot[dashed,blue, domain=0:100] {2.82*x};
+    \addlegendentry{Theoretical Fit}
+    
+    \end{axis}
+\end{tikzpicture}
+\end{document}
