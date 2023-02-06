@@ -1,0 +1,76 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath, graphicx, tikz, pgfplots, multirow, newlfont, gensymb, indentfirst, bm}
+\usepackage[usestackEOL]{stackengine}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Jacob Sigman\\11/22/22}
+\lhead{CE-344\\Environmental Systems Engineering}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{1.5pt}
+\setlength{\headheight}{22.6pt}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\setlength\parindent{24pt}
+
+\begin{document}
+    \include{cover.tex}
+    \tableofcontents
+    \newpage
+    \listoftables
+    \addcontentsline{toc}{section}{List of Tables}
+    \listoffigures
+    \addcontentsline{toc}{section}{List of Figures}
+    \newpage
+    \section{Purpose of the Experiment}
+    \indent The purpose of this experiment is to determine the Biochemical (BOD) and Chemical (COD) Oxygen Demands in various water samples using theoretical and experimental methods. Firstly, Biochemical and Chemical Oxygen Demand values of water samples with various concentrations of sucrose were used to analyze the effect of the sugar on the Biochemical and Chemical Oxygen Demand of the wastewater. Second, wastewater and settled effluent from multiple aeration tanks were tested for Biochemical Oxygen Demand levels. Lastly, the Chemical Oxygen Demand of water samples in the region of 41 Cooper Square were tested to determine the local water quality. Thomas's Method was utilized to determine the Ultimate BOD and to further analyze the BOD values of each sample.
+    \newpage
+    \section{Procedure}
+    \subsection{Biochemical Oxygen Demand Analysis}
+    \indent Various samples were tested for Biochemical Oxygen Demand levels. The samples used included various dilutions of sucrose, raw sewage, and samples from aeration tanks. Each sample consisted of 160 mL of wastewater, minute amounts of nitrogen and phosphorus, and bacteria seeds. Each of the samples was then placed in 450 mL bottles to be tested in. Each sample was stirred thoroughly using magnetic stirrers to ensure that the solution settled in a uniform manner. Following the stirring, a nutrient buffer was added. Once the buffer was added, each bottle was sealed with a silicone top to ensure the samples didn't leak. The samples, now in bottles, were transferred to a machine which slowly stirs the sample and analyzes the Biochemical Oxygen Demand over several days. For the aeration tanks, aerobic bacteria were incubated to monitor the growth of sample bacteria. As the sample bacteria grew, manometer readings were taken to determine Biochemical Oxygen Demand levels. 
+    \subsection{Chemical Oxygen Demand Analysis}
+    \indent Various samples were tested for Chemical Oxygen Demand levels. A Chemical Oxygen Demand reactor set to 150 degrees Celsius and various dilutions (5\%, 10\%, 25\%, 30\%, 50\%, 75\%, and 100\%) of sucrose were used. Additionally, many samples collected from the local area were tested. 2 mL of each sample were transferred into vials using a pipette. The vials are sealed tightly and mixed lightly. The reactor process takes two hours. Following the reactor process the vials are removed from the reactor and tested using a spectrophotometer. 
+    \newpage
+    \section{Data and Results}
+    \input{tables.tex}
+    \newpage
+    \section{Sample Calculations}
+    \subsection{Thomas's Method}
+    \[\text{BOD}_\text{Ult}=\text{BOD}_5\left(\frac{1}{1-10^{-k\,t}}\right)\text{ where }k=2.61\times\frac{B}{A}\]
+    \begin{center}
+        Use the graph of \(\left(\frac{t}{\text{BOD}}\right)^\frac{1}{3}\) vs. \(t\) to obtain the slope (\(B\)) and the \(y\) intercept (\(A\)).
+    \end{center}
+    \[\text{BOD}_\text{Ult}=75\text{ mg/L}\times\left(\frac{1}{1-10^{-0.654\times5}}\right)=\boxed{75.040\text{ mg/L}}\]
+    \subsection{COD Calculation}
+    \[\text{Balanced Reaction: }\text{C}_{12}\text{H}_{22}\text{O}_{11}+12\,\text{O}_2\,\,\rightarrow\,\,12\,\text{CO}_2+11\,\text{H}_2\text{O}\]
+    \[\text{COD}_\text{Raw}=1.14\,\frac{\text{g}}{\text{L}}\,\text{C}_{12}\text{H}_{22}\text{O}_{11}\div342.14\,\frac{\text{g}}{\text{mol}}\,\text{C}_{12}\text{H}_{22}\text{O}_{11}\times\frac{12 \text{ mol O}_2}{1 \text{ mol} \text{ C}_{12}\text{H}_{22}\text{O}_{11}}\times32\,\frac{\text{g}}{\text{mol}}\,\text{O}_2\times\frac{10^3 \text{ mg}}{1 \text{ g}}\]
+    \[\text{COD}_\text{Raw}=1280\,\frac{\text{mg}}{\text{L}}\]
+    \[\text{COD}=\text{COD}_\text{Raw}\times\text{Dilution Factor}\]
+    \[\text{COD}=1280\,\frac{\text{mg}}{\text{L}}\times0.75=\boxed{960\,\frac{\text{mg}}{\text{L}}}\]
+    \subsection{COD Error}
+    \[\%_\text{Error}=\frac{|\text{Actual}-\text{Theoretical}|}{\text{Theoretical}}\times 100\]
+    \[\%_\text{Error}=\frac{|1278.84\,\frac{\text{mg}}{\text{L}}-1552\,\frac{\text{mg}}{\text{L}}|}{1552\,\frac{\text{mg}}{\text{L}}}\times 100=\boxed{21.36\%}\]
+    \newpage
+    \section{Discussion}
+    \subsection{Theory}
+    \indent It's typical for wastewater to be tested for Chemical and Biochemical Oxygen Demand. Overall, both Biochemical and Chemical Oxygen Demands are very important in the analysis of water. These two properties help to determine the most economically efficient ways to treat wastewater. One important component in measuring Biochemical and Chemical Oxygen Demands is the dissolved oxygen. A test for Biochemical Oxygen Demand involves the determination of a value for how much dissolved oxygen is in the sample. As the aerobic bacteria in the sample breaks down, oxygen is released and dissolved oxygen is measured. \\
+    \indent The first type of oxygen demand is Biochemical Oxygen Demand. There are two methods for testing Biochemical Oxygen Demand. The first one involves dilution, seen in \emph{Table 1}. A bacteria seed composed of several microorganisms is diluted with deionized water with several concentrations. Following the dilution, each sample is sealed and kept in a dark place to ensure that the environment doesn't interfere with analysis. After several days the samples are tested for dissolved oxygen from the aerobic bacteria and compared to the initial amount of dissolved oxygen. The difference in the two measurements in the dissolved oxygen is the determined Biochemical Oxygen Demand. The second method involves manometry. This method is similar to the dilution method in the sense that it measures the difference in the dissolved oxygen, however this measurement is done differently. Carbon dioxide is released and the dissolved oxygen is measured over the course of the releasing of the carbon dioxide. The dissolved oxygen is measured using the difference in pressure. Once again, the difference in dissolved oxygen is the determined Biochemical Oxygen Demand. BOD analysis entails the determination of the ultimate BOD and the \(\text{BOD}_5\). The two methods of analysis are Thomas's method and Moore's Method. The first step in the analysis is to determine \(\left(\frac{t}{\text{BOD}}\right)^{1/3}\). These quantities get plotted against their corresponding \(t\) values to determine trendlines for each set of data. The \(y\) intercept and slope of each trendline can be used to calculate the \(k\) value and determine the ultimate BOD.\\
+    \indent The second type of oxygen demand is Chemical Oxygen Demand. Analysis of Chemical Oxygen Demand consists of measuring and determining the substances that react with wastewater at a specific temperature. The reaction is measured in mg/L of oxygen. This means that for substances with lower concentrations of oxygen, organic compounds can become entirely oxidized during testing. Testing for Chemical Oxygen Demand is a proven method of measuring efficiency in a treatment system.
+    \subsection{Experimental}
+    \indent The first component of the experiment was the analysis of Biochemical Oxygen Demand in bottles using various sucrose dilutions. The ultimate BOD and \(\text{BOD}_5\) values were calculated for each dilution. It was found that the ultimate BOD and the \(\text{BOD}_5\) values for each dilution were very similar since the rate of the growth of the Biochemical Oxygen Demand declines significantly over time and the test in the bottles were only done over a few days.\\
+    \indent The second component of the experiment was the analysis of Biochemical Oxygen Demand in aeration tanks. The ultimate BOD and \(\text{BOD}_5\) values were calculated for the front, middle, and rear of the tank. It was found that the ultimate BOD and the \(\text{BOD}_5\) values for each part were very similar since the rate of the growth of the Biochemical Oxygen Demand declines significantly over time and the test in the bottles were only done over a few days. However, the accuracy of the \(\text{BOD}_5\) values is substantially lower since the test was only two days.\\
+    \indent The final component of the experiment was the analysis of Chemical Oxygen Demand. The Chemical Oxygen Demand was calculated using the balanced chemical reaction and compared with the Chemical Oxygen Demand measured from the samples. One important source of error is that the test was not performed for the required 2-hour duration. For lower concentrations it is seen that the error between the measured and calculated Chemical Oxygen Demand is substantially lower.\\
+    \newpage
+    \section{Conclusions}
+    \indent The tests for Biochemical Oxygen Demand for the bottles were pretty similar to the bell curve readings expected. However, for the readings in the aeration tanks, the data was not reflective of the bell curve. This is most likely due to atmospheric effects and leaks from the aeration tanks. As for the results of the measuring of the Chemical Oxygen Demand, the trendline should be linear with a 45-degree angle to both axes on a two-dimensional graph. While the theoretical values don't exactly match the measured values, the trendline remains similar to the expected \(y=x\) relation.\\
+    \indent In comparing the Chemical and Biochemical Oxygen Demands for the sucrose dilutions, it was observed that the values for Chemical Oxygen Demands were much larger than the values for Biochemical Oxygen Demand. Additionally, the Chemical Oxygen Demand was much greater than the ultimate BOD for each sample. It was also seen from the testing of the Chemical Oxygen Demand levels of local water samples that they have very high levels of Chemical Oxygen Demand. The values from the observation of the tea and dirt sample varied greatly as expected.    
+    \newpage
+    \section{References}
+    \begin{enumerate}
+        \item Prof. C. Yapijakis, Lecture Notes, CE-344: The Cooper Union School of Engineering.
+        \item Mark J. Hammer, \emph{Water and Wastewater Technology}, 7th ed., Pearson, 2015.
+    \end{enumerate}
+    \newpage    
+\end{document}

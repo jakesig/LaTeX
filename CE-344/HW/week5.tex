@@ -1,0 +1,144 @@
+\part*{Week 5}
+\addcontentsline{toc}{part}{Week 5}
+\section*{Chapter 6}
+\underline{2-5, 19}
+\addcontentsline{toc}{section}{Chapter 6: 2-5, 19}
+\subsection*{Problem 2}
+Based on demand of 100 gpcd, estimate the maximum daily demand and the mean maximum hourly rate.
+\\\rule{5cm}{1pt}
+\[\text{Maximum daily demand}=1.8\times100=\boxed{180\text{ gpcd}}\]
+\[\text{Mean maximum hourly rate}=3\times100=\boxed{300\text{ gpcd}}\]
+\subsection*{Problem 3}
+What is the range of water pressure recommended in a distribution system? What are the minimum and maximum pressures for residential service connections?
+\\\rule{5cm}{1pt}
+\\\\The range of recommended water pressure in a distribution system is 65 to 75 psi. The minimum and maximum pressures for residential service connections are 40 and 100 psi respectively.
+\subsection*{Problem 4}
+Define needed fire flow. Based on Eq. 4, list the factors taken into consideration in determining NFF.
+\\\rule{5cm}{1pt}
+\\\\Needed fire flow is the rate of water flow required for firefighters to ensure that major fires remain within a block with minimal loss. The factors taken into consideration in determining needed fire flow are: construction type, area of the floor of the building, involvement with other buildings, and occupancy.
+\subsection*{Problem 5}
+A wood-frame building on the first floor is a restaurant with floor dimensions of 30 ft by 75 ft (2250 sq ft). On one end of the second floor is a cabinet-making shop 30 ft by 30 ft (900 sq ft). The building has two sides with exposures to adjacent buildings. Opposite the long side of the restaurant at a distance of 11 ft is building A with two-story masonry walls and semiprotected openings. The length–height measurement is \(120\times2=240\text{ ft}\times\text{stories}\). The second exposure is building B with a width of 28 ft at a distance of 12 ft from the end of the restaurant. The building is constructed of frame walls with two stories for a length–height measurement of \(28\times2=56\text{ ft}\times\text{stories}\). Calculate the NFF for the restaurant-cabinet shop.
+\\\rule{5cm}{1pt}
+\[NFF=C_i\times O_i\times[1.0+(X_i+P_i)]\]
+\[C_i=18F\sqrt{A_i}\text{ where }F=1.5\text{ and } A_i=2250\text{ ft}^2+0.5*900\text{ ft}^2=2700\text{ ft}^2\]
+\[C_i=1400,\,\, O_i=1.15,\,\, X_i=0.18,\,\, P_i=0\]
+\[NFF=\boxed{1900 \text{ gpm}}\]
+\newpage
+\subsection*{Problem 19}
+A new vertical-turbine well pump is being installed to discharge groundwater directly into the pipe network of a small community. Operating head-discharge data based on specifications from the pump manufacturer are 210 gpm discharge at a pump head of 170 ft measured from ground level, 300 gpm at 165 ft, 410 gpm at 150 ft, and 470 gpm at 130 ft. The water pressure at ground level into the pipe network varies from 71 psi to 48 psi, with an average pressure of 64 psi. Plot the head-discharge curve and locate the pressure range and average value. What is the pump discharge against the average pressure of 64 psi?
+\\\rule{5cm}{1pt}
+\begin{center}
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+    \begin{axis}[
+        title={\textbf{Head-Discharge Curve}},
+        xlabel={gpm},
+        ylabel={ft},
+        xmin=200, xmax=500,
+        ymin=130, ymax=170,
+        xtick={200,300,400,500},
+        ytick={130,140,150,160,170},
+        ymajorgrids=true,
+        grid style=dashed,
+    ]
+    
+    \addplot[mark=square, black] table [x=x, y=y] {curve.csv};
+    % \addplot[no markers, red, domain=0:1.27] {8.8656*x*x*x-17.653*x*x+3.6097*x+7.385};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+\[\text{Average: }=\frac{170+165+150+130}{4}=\boxed{150\text{ ft}}\]
+\[\text{Pump Discharge: }=\boxed{400\text{ gpm}}\]
+\newpage
+\section*{Chapter 7}
+\underline{3-5, 13-14, 26-31}
+\addcontentsline{toc}{section}{Chapter 7: 3-5, 13-14, 26-31}
+\subsection*{Problem 3}
+A flocculator designed to treat 10 mgd is 48 ft long, 52 ft wide, and 12 ft deep. Compute the detention time and horizontal flow-through velocity. Do these values satisfy the \textit{Standards for Water Works}?
+\\\rule{5cm}{1pt}
+\[t=\frac{V}{Q}=\frac{48\text{ ft}\times52\text{ ft}\times12\text{ ft}\times7.48\,\frac{\text{gal}}{\text{ft}^3}\times1440\,\frac{\text{minutes}}{\text{day}}}{10000000\,\frac{\text{gal}}{\text{day}}}=\boxed{32\text{ minutes}}\]
+\[v=\frac{L}{t}=\frac{48\text{ ft}}{32\text{ minutes}}=\boxed{1.5\text{ ft/min}}\]
+\begin{center}
+Both of these values satisfy the \textit{Standards for Water Works}.
+\end{center}
+\subsection*{Problem 4}
+Locate the rapid-mixing chambers, flocculation basins, and settling tanks in Figure 4a. If this plant as pictured had been designed for 30 mgd (15 mgd for each side) based on the \textit{Standards for Water Works}, what would be the volumes of the rapid mixers, flocculation basins, and sedimentation tanks?
+\\\rule{5cm}{1pt}
+\[\text{Volume of rapid mixer}=30\text{ seconds}\times30\text{ mgd}\times1000000 \text{ gal}\times\,\frac{1 \text{ day}}{86400 \text{ seconds}}=\boxed{10416 \text{ gal}}\]
+\[\text{Volume of flocculation basin}=30\text{ minutes}\times30\text{ mgd}\times1000000 \text{ gal}\times\,\frac{1 \text{ day}}{1440 \text{ minutes}}=\boxed{625000 \text{ gal}}\]
+\[\text{Volume of sedimentation tank}=4\times30\text{ mgd}\times\frac{1 \text{ day}}{24\text{ hours}}=\boxed{5000000 \text{ gal}}\]
+\subsection*{Problem 5}
+Calculate the detention time and overflow rate for a sedimentation basin with a volume of 1.0 mil gal and surface area of 12,500 sq ft treating 8.0 mgd. 
+\\\rule{5cm}{1pt}
+\[t=\frac{V}{Q}=\frac{1000000\text{ gal}\times24}{8\text{ mgd}}=\boxed{3\text{ hours}}\]
+\[V_0=\frac{Q}{A}=\frac{8\text{ mgd}}{12500\text{ ft}^2}=\boxed{640\text{ gpd/ft}^2}\]
+\newpage
+\subsection*{Problem 13}
+Flocculator-clarifiers similar to the one illustrated in Figure 10 are proposed for precipitation in lime– soda ash softening of a groundwater. The inside diameter of the tank is 40 ft and sidewater depth is 10 ft. The cone-shaped skirt is 12 ft in diameter at the water surface and 24 ft in diameter at the bottom, which is at a depth of 8.0 ft below the water surface. The design flow for each flocculator-clarifier is 750,000 gpd. Does this proposed design meet the \textit{Standards for Water Works} for detention times based on total volume, mixing and flocculation time, and upflow rate based on the open-water surface area? (The cone-shaped shirt can be considered to be the geometric form of a conical basin illustrated in the appendix.)
+\\\rule{5cm}{1pt}
+\[V_\text{tank}=\pi\times20^2\times10=12600\text{ ft}^3=94254\text{ gal}\]
+\[V_\text{skirt}=\frac{1}{3}\times\pi\times8\times(6^2+6\times12+12^2)=2111\text{ ft}^3=15791\text{ gal}\]
+\[t_\text{tank}=\frac{94000\text{ gal}}{750000\text{ gpd}\times\frac{1 \text{ day}}{1440 \text{ hours}}}=3\text{ hours}\]
+\[t_\text{skirt}=\frac{15800}{750000\text{ gpd}\times\frac{1 \text{ day}}{86400 \text{ minutes}}}=30 \text{ minutes}\]
+\[V_0=\frac{750000\text{ gpd}\times\frac{1 \text{ day}}{86400 \text{ minutes}}}{\pi(20^2-6^2)}=0.46\text{ gpm/ft}^2\]
+\begin{center}
+    All of these values satisfy the \textit{Standards for Water Works}.
+\end{center}
+\subsection*{Problem 14}
+The settling velocity of calcium carbonate floc formed during flocculation in a flocculator-clarifier (Figure 10) is 2.1 mm/s. If the detention time in the settling zone is 1.0 hr and upflow rate is 1.75 gpm/sq ft, what is the minimum depth of water required to ensure removal of the floc by gravity settling?
+\\\rule{5cm}{1pt}
+\[\left[\left(2.1\times\frac{1 \text{ mm}}{304.8 \text{ ft}}\right)-\left(1.75\times\frac{1 \text{ gal}}{7.48 \text{ ft}^3}\times\frac{1 \text{ minute}}{60\text{ seconds}}\right)\right]\times3600\text{ seconds}=\boxed{10\text{ ft}}\]
+\subsection*{Problem 26}
+A dosage of 40 mg/L of alum is added in coagulating a water. (a) How many milligrams per liter of alkalinity are consumed? (b) What changes take place in the ionic character of the water? State the ions that change forms and express the amounts in milligrams per liter. (c) What is the effect on the pH of the water?
+\\\rule{5cm}{1pt}
+\begin{description}
+    \item[(a)]
+    \[40\text{ mg/L}\times\frac{50\text{ mg/L CaCO}_3}{100 \text{ mg/L alum}}=\boxed{20\text{ mg/L}}\]
+    \item[(b)]
+    \[\text{Sulfate introduced: }\frac{40\text{ mg/L}\times3\times96\text{ amu}}{600\text{ amu}}=\boxed{19.2\text{ mg/L}}\]
+    \[\text{Bicarbonate destroyed: }\frac{40\text{ mg/L}\times2\times(61\times3)\text{ amu}}{600\text{ amu}}=\boxed{24.4\text{ mg/L}}\]
+    \item[(c)]
+    \[\text{The pH will \underline{decrease}.}\]
+\end{description}
+\subsection*{Problem 27}
+A dosage of 30 mg/L of alum and a stoichiometric amount of soda ash are added in coagulation of a surface water. What changes take place in the ionic character of the water as a result of this chemical treatment?
+\\\rule{5cm}{1pt}
+\\\\Alum is being added to the water, which means that aluminum, and sulfate are added to the water. Soda ash is also being added which means that sodium and carbonate are added to the water. Firstly, the aluminum precipitates out, since. Second, the sulfate and sodium remain in the solution, since they're soluble in water. Lastly, the carbonate is converted to carbon dioxide, which reduces the pH of the solution.
+\subsection*{Problem 28}
+Coagulation of a soft water requires 40 mg/L of alum plus lime to supplement the natural alkalinity for good floc formation. It is desired to react only 10 mg/L (as CaC\(\text{O}_3\)) of the natural alkalinity. What dosage of lime is required?
+\\\rule{5cm}{1pt}
+\[\left[40\text{mg/L}-\left(10\text{ mg/L alum}\times\frac{100 \text{ mg/L alum}}{50\text{ mg/L CaCO}_3}\right)\right]\times\frac{28\text{ mg/L CaO}}{100 \text{ mg/L alum}}=\boxed{5.6 \text{ mg/L}}\]
+\subsection*{Problem 29}
+The removal of Giardia cysts from a soft, cold, lowturbidity water requires 15 mg/L of alum plus 0.10 mg/L of anionic polymer. (a) How many milligrams per liter of natural alkalinity are consumed in the coagulation reaction? How much C\(\text{O}_2\) is released by this reaction? (b) What is the stoichiometric dosage of soda ash required to react with the 15 mg/L of alum? This reduces loss of alkalinity but still produces carbon dioxide. How much C\(\text{O}_2\) is released by this reaction? (c) Would a stoichiometric dosage of lime slurry be better than soda ash? Suggest a reason why lime slurry would not be used. How can C\(\text{O}_2\) be removed from water?
+\\\rule{5cm}{1pt}
+\begin{description}
+    \item[(a)]
+    \[12\text{ mg/L}\times\frac{50\text{ mg/L CaCO}_3}{100 \text{ mg/L alum}}=\boxed{6\text{ mg/L}}\]
+    \[12\text{ mg/L}\times\frac{6\times44\text{ amu}}{600\text{ amu}}=\boxed{5.28\text{ mg/L}}\]
+    \item[(b)]
+    \[12\text{ mg/L}\times\frac{53\text{ mg/L soda ash}}{100 \text{ mg/L alum}}=\boxed{6.36\text{ mg/L}}\]
+    \[12\text{ mg/L}\times\frac{3\times44\text{ amu}}{600\text{ amu}}=\boxed{5.28\text{ mg/L}}\]
+    \item[(c)] A stoichiometric design of lime slurry would be better than soda ash. A reason lime slurry would not be used is because it's more challenging to prepare. C\(\text{O}_2\) can be removed from water using aerators.
+\end{description}
+\newpage
+\subsection*{Problem 30}
+A surface water is coagulated with a dosage of 30 mg/L ferrous sulfate and an equivalent dosage of lime. (a) How many pounds of ferrous sulfate are needed per million gallons of water treated? (b) How many pounds of hydrated lime are required assuming a purity of 70 percent CaO? (c) How many pounds of Fe(O\(\text{H)}_3\) sludge are produced per million gallons of water treated?
+\\\rule{5cm}{1pt}
+\begin{description}
+    \item[(a)]
+    \[30\text{ mg/L}\times\frac{8.34\text{ lbs}}{1000000 \text{ gal}}=\boxed{250 \text{ lb/mgal}}\]
+    \item[(b)]
+    \[\text{FeSO}_4\cdot7\text{H}_2\text{O}+\text{Ca(OH)}_2\hspace{2mm}\rightarrow\hspace{2mm}\text{Fe(OH)}_3\]
+    \[250\text{ lb/mgal}\times\frac{\text{148 lb}}{\text{556 lb}}\times\frac{\text{56 lb}}{\text{74 lb}}=\boxed{72.5 \text{ lb/mgal}}\]
+    \item[(c)] 
+    \[250\text{ lb/mgal}\times\frac{\text{214 lb}}{\text{556 lb}}=\boxed{96 \text{ lb/mgal}}\]
+\end{description}
+\subsection*{Problem 31}
+Write the reaction between ferric chloride and lime slurry that results in precipitation of Fe(O\(\text{H)}_3\). For a dosage of 40 mg/L Fe\(\text{Cl}_3\): (a) What is the required stoichiometric addition of lime expressed as CaO? (b) How many pounds of Fe(O\(\text{H)}_3\) are produced per million gallons of water treated?
+\\\rule{5cm}{1pt}
+\[2\text{FeCl}_3+3\text{Ca(OH)}_2\rightarrow2\text{Fe(OH)}_3+3\text{CaCl}_2\]
+\begin{description}
+    \item[(a)]
+    \[\text{40 mg/L}\times\frac{\text{222 lb}}{\text{324 lb}}\times\frac{\text{56.1 CaO}}{\text{74.1 Ca(OH)}_2}=\boxed{\text{20.7 mg/L}}\]
+    \item[(b)]
+    \[\text{40 mg/L}\times\frac{\text{214 lb}}{\text{324 lb}}\times\frac{8.34\text{ lbs}}{1000000 \text{ gal}}=\boxed{\text{220 lb/mgal}}\]
+\end{description}

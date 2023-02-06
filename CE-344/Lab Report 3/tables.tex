@@ -1,0 +1,343 @@
+\pgfplotsset{width=12cm, compat=1.18}
+\renewcommand\arraystretch{1.5}
+\subsection{BOD from Bottles}
+\begin{center}
+
+\addcontentsline{lot}{table}{Table 1: BOD Test with 1 g/L Sucrose in a 160 mL Sample}
+{\large {\bf Table 1: BOD Test with 1 g/L Sucrose in a 160 mL Sucrose\\}}
+\vspace{2mm}
+\begin{tabular}{|cccc|}
+    \hline
+    \textbf{Time (days)} & \textbf{Sample 1A (mg/L)} & \textbf{Sample 2A (mg/L)} & \textbf{Sample 3A (mg/L)}  \\\hline
+    0                    & 0                         & 0                         & 0                          \\
+    0.101             & 40                        & 50                        & 60                         \\
+    1.132             & 70                        & 90                        & 110                        \\
+    2.069             & 30                        & 60                        & 95                         \\
+    3.007             & 18                        & 100                       & 210                        \\
+    3.944            & 80                        & 140                       & 225                        \\
+    5.222             & 60                        & 180                       & 270                        \\\hline
+    \hline
+    \textbf{Time (days)} & \textbf{Sample 4A (mg/L)} & \textbf{Sample 5A (mg/L)} & \textbf{Sample 6A (mg/L)}  \\\hline
+    0                    & 0                         & 0                         & 0                          \\
+    0.101             & 70                        & 75                        & 75                         \\
+    1.132             & 120                       & 125                       & 130                        \\
+    2.069             & 110                       & 115                       & 120                        \\
+    3.007             & 285                       & 310                       & 330                        \\
+    3.944             & 290                       & 330                       & 350                        \\
+    5.222             & 340                       & 370                       & 395      \\\hline       
+\end{tabular}
+\vspace{5mm}
+\pgfplotsset{width=11cm, compat=1.18}
+
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+    \addcontentsline{lof}{figure}{Figure 1: BOD vs. Time of Test Samples}
+    \begin{axis}[
+        title={\textbf{Figure 1: BOD vs. Time of Test Samples}},
+        xlabel={Time (Days)},
+        ylabel={BOD (mg/L)},
+        xmin=0, xmax=6,
+        ymin=0, ymax=400,
+        xtick={0,1,2,3,4,5,6},
+        ytick={0,100,200,300,400},
+        ymajorgrids=true,
+        grid style=dashed,
+        legend pos = north west,
+        legend cell align={left}
+    ]
+    
+    \addplot[only marks, red] table [x=days, y=1a] {1.csv};
+    \addplot[only marks, blue] table [x=days, y=2a] {1.csv};
+    \addplot[only marks, green] table [x=days, y=3a] {1.csv};
+    \addplot[only marks, orange] table [x=days, y=4a] {1.csv};
+    \addplot[only marks, purple] table [x=days, y=5a] {1.csv};
+    \addplot[only marks, yellow] table [x=days, y=6a] {1.csv};
+    \addplot[dashed, domain=0:6, red] {1.5014*x^3 - 11.98*x^2 + 30.424*x + 21.873};
+    \addplot[dashed, domain=0:6, blue] {1.9929*x^3 - 14.323*x^2 + 51.047*x + 24.561};
+    \addplot[dashed, domain=0:6, green] {-0.7207*x^3 + 3.4129*x^2 + 48.249*x + 28.737};
+    \addplot[dashed, domain=0:6, orange] {-4.891*x^3 + 34.636*x^2 + 16.157*x + 37.916};
+    \addplot[dashed, domain=0:6, purple] {-3.245*x^3 + 22.037*x^2 + 31.867*x + 34.13};
+    \addplot[dashed, domain=0:6, yellow] {-5.2911*x^3 + 37.686*x^2 + 15.854*x + 38.066};
+    \addlegendentry{1A};
+    \addlegendentry{2A};
+    \addlegendentry{3A};
+    \addlegendentry{4A};
+    \addlegendentry{5A};
+    \addlegendentry{6A};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+\newpage
+\begin{center}
+\addcontentsline{lot}{table}{Table 2: Thomas's Method Analysis for BOD Test with Sucrose}
+{\large {\bf Table 2: Thomas's Method Analysis for BOD Test with Sucrose\\}}
+\vspace{2mm}
+\begin{tabular}{|cccc|} 
+    \hline
+    \textbf{Time (days)}                      & \textbf{Sample 1A (mg/L)}                     & \textbf{Sample 2A (mg/L)}                     & \textbf{Sample 3A (mg/L)}                       \\ 
+    \hline
+    0                                         & 0                                             & 0                                             & 0                                               \\
+    0.101                                & 0.136                                         & 0.113                                         & 0.150                                           \\
+    1.132                                 & 0.283                                         & 0.233                                         & 0.266                                           \\
+    2.069                                 & 0.326                                         & 0.266                                         & 0.279                                           \\
+    3.007                                 & 0.350                                         & 0.293                                         & 0.301                                           \\
+    3.944                                  & 0.375                                         & 0.316                                         & 0.325                                           \\
+    5.222                                 & 0.411                                         & 0.342                                         & 0.352                                           \\ 
+    \hline\hline
+    \textbf{Time (days)} & \textbf{Sample 4A (mg/L)} & \textbf{Sample 5A (mg/L)} & \textbf{Sample 6A (mg/L)}  \\ 
+    \hline
+    0                                         & 0                                             & 0                                             & 0                                               \\
+    0.101                                  & 0.178                                            & 0.108                                          & 0.119                                             \\
+    1.132                                 & 0.225                                         & 0.201                                          & 0.185                                           \\
+    2.069                                  & 0.214                                           & 0.210                                           & 0.197                                             \\
+    3.007                                 & 0.219                                          & 0.218                                          & 0.207                                            \\
+    3.944                                  & 0.233                                           & 0.229                                         & 0.220                                            \\
+    5.222                                 & 0.251                                           & 0.246                                           & 0.236                                            \\
+    \hline
+\end{tabular}
+\vspace{5mm}
+
+
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+    \addcontentsline{lof}{figure}{Figure 2: Thomas's Method Analysis for BOD Test with Sucrose}
+    \begin{axis}[
+        title={\textbf{Figure 2: Thomas's Method Analysis for BOD Test with Sucrose}},
+        xlabel={Time (Days)},
+        ylabel={BOD (mg/L)},
+        xmin=0, xmax=6,
+        ymin=0, ymax=0.5,
+        xtick={0,1,2,3,4,5,6},
+        ytick={0,0.1,0.2,0.3,0.4,0.5},
+        ymajorgrids=true,
+        grid style=dashed,
+        legend pos = north west,
+        legend cell align={left}
+    ]
+    
+    \addplot[only marks, red] table [x=days, y=1a] {2.csv};
+    \addplot[only marks, blue] table [x=days, y=2a] {2.csv};
+    \addplot[only marks, green] table [x=days, y=3a] {2.csv};
+    \addplot[only marks, orange] table [x=days, y=4a] {2.csv};
+    \addplot[only marks, purple] table [x=days, y=5a] {2.csv};
+    \addplot[only marks, yellow] table [x=days, y=6a] {2.csv};
+    \addplot[dashed, domain=0:6, red] {0.0477*x+0.1904};
+    \addplot[dashed, domain=0:6, blue] {0.0344*x+0.156};
+    \addplot[dashed, domain=0:6, green] {0.0405*x+0.1901};
+    \addplot[dashed, domain=0:6, orange] {0.0115*x+0.1904};
+    \addplot[dashed, domain=0:6, purple] {0.0223*x+0.1443};
+    \addplot[dashed, domain=0:6, yellow] {0.0201*x+0.1423};
+    \addlegendentry{1A};
+    \addlegendentry{2A};
+    \addlegendentry{3A};
+    \addlegendentry{4A};
+    \addlegendentry{5A};
+    \addlegendentry{6A};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+\newpage
+\begin{center}
+\addcontentsline{lot}{table}{Table 3: Calculated \(\text{BOD}_5\) and \(\text{BOD}_\text{Ult}\) Values with Sucrose Using Thomas's Method}
+{\large {\bf Table 3: Calculated \(\text{BOD}_5\) and \(\text{BOD}_\text{Ult}\) Values with Sucrose Using Thomas's Method\\}}
+\vspace{2mm}
+\begin{tabular}{|cccccc|} 
+    \hline
+    \(\bm{y}\) \textbf{Intercept} & \textbf{Slope} & \(\bm{k}\)     & \(\textbf{BOD}_\textbf{5}\) \textbf{(mg/L)} & \(\textbf{BOD}_\textbf{Ult}\) \textbf{(mg/L)}  & \textbf{Error}    \\ 
+    \hline
+    0.190         & 0.048 & 0.654 & 75      & 75.040   & 0.05\%   \\
+    0.156         & 0.034 & 0.576 & 129.130 & 129.302  & 0.13\%   \\
+    0.190         & 0.041 & 0.556 & 119.130 & 119.328  & 0.17\%   \\
+    0.190         & 0.012 & 0.158 & 326.522 & 390.040  & 19.45\%  \\
+    0.144         & 0.022 & 0.403 & 346.522 & 349.888  & 0.97\%   \\
+    0.142         & 0.020 & 0.369 & 390.652 & 396.337  & 1.46\%   \\
+    \hline
+\end{tabular}
+\end{center}
+\newpage
+\subsection{BOD from Aeration Tanks}
+
+
+\begin{center}
+\addcontentsline{lot}{table}{Table 4: BOD Test of Aeration Tanks}
+{\large {\bf Table 4: BOD Test of Aeration Tanks\\}}
+\vspace{2mm}
+\begin{tabular}{|ccccc|} 
+    \hline
+    \textbf{Time (days)} & \textbf{Front (mg/L)} & \textbf{Middle (mg/L)} & \textbf{End (mg/L)}      & \textbf{Settled Effluent (mg/L)}  \\ 
+    \hline
+    0                    & 0                     & 0                      & 0                        & 0                                 \\
+    0.007                & 5                     & 0                      & 0                        & 0                                 \\
+    0.019                & 27                    & 10                     & 7                        & 0                                 \\
+    0.024                & 40                    & 20                     & 18                       & 0                                 \\
+    0.034                & 55                    & 30                     & 27                       & 1                                 \\
+    0.046                & 60                    & 35                     & 31                       & 2                                 \\
+    0.066                & 65                    & 41                     & 38                       & 3                                 \\
+    0.767                & 200                   & 195                    & 170                      & 12                                \\
+    0.976                & 240                   & 220                    & 196                      & 15                                \\
+    1.958                & 380                   & 350                    & 298                      & 20                                \\
+    \hline
+\end{tabular}
+\vspace{5mm}
+
+
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+    \addcontentsline{lof}{figure}{Figure 3: BOD vs. Time of Aeration Tanks}
+    \begin{axis}[
+        title={\textbf{Figure 3: BOD vs. Time of Aeration Tanks}},
+        xlabel={Time (Days)},
+        ylabel={BOD (mg/L)},
+        xmin=0, xmax=2.5,
+        ymin=0, ymax=400,
+        xtick={0,0.5,1,1.5,2,2.5},
+        ytick={0,100,200,300,400},
+        ymajorgrids=true,
+        grid style=dashed,
+        legend pos = north west,
+        legend cell align={left}
+    ]
+    
+    \addplot[only marks, red] table [x=days, y=front] {3.csv};
+    \addplot[only marks, blue] table [x=days, y=mid] {3.csv};
+    \addplot[only marks, green] table [x=days, y=end] {3.csv};
+    \addplot[only marks, orange] table [x=days, y=settled] {3.csv};
+    \addplot[dashed, domain=0:2.5, red] {-41.098*x^2 + 259.64*x + 28.123};
+    \addplot[dashed, domain=0:2.5, blue] {-50.201*x^2 + 270.5*x + 11.693};
+    \addplot[dashed, domain=0:2.5, green] {-49.449*x^2 + 243.35*x + 10.269};
+    \addplot[dashed, domain=0:2.5, orange] {-4.8664*x^2 + 19.593*x + 0.283};
+    \addlegendentry{Front};
+    \addlegendentry{Middle};
+    \addlegendentry{End};
+    \addlegendentry{Settled Effluent};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+\newpage
+\begin{center}
+\addcontentsline{lot}{table}{Table 5: Thomas's Method Analysis for BOD Test of Aeration Tanks}
+{\large {\bf Table 5: Thomas's Method Analysis for BOD Test of Aeration Tanks\\}}
+\vspace{2mm}
+\begin{tabular}{|ccccc|} 
+    \hline
+    \textbf{Time (days)} & \textbf{Front (mg/L)} & \textbf{Middle (mg/L)} & \textbf{End (mg/L)}        & \textbf{Settled Effluent (mg/L)}  \\ 
+    \hline
+    0                    & 0                     & 0                      & 0                          & 0                                 \\
+    0.007                & 0.112                 & 0                      & 0                          & 0                                 \\
+    0.019                & 0.090                 & 0.125                  & 0.141                      & 0                                 \\
+    0.024                & 0.085                 & 0.107                  & 0.111                      & 0                                 \\
+    0.034                & 0.085                 & 0.104                  & 0.108                      & 0.324                             \\
+    0.046                & 0.091                 & 0.109                  & 0.114                      & 0.284                             \\
+    0.066                & 0.100                 & 0.117                  & 0.120                      & 0.280                             \\
+    0.767                & 0.157                 & 0.158                  & 0.165                      & 0.400                             \\
+    0.976                & 0.160                 & 0.164                  & 0.171                      & 0.402                             \\
+    1.958                & 0.173                 & 0.178                  & 0.187                      & 0.461                             \\
+    \hline
+\end{tabular}
+\vspace{5mm}
+
+
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+    \addcontentsline{lof}{figure}{Figure 4: Thomas's Method Analysis for BOD Test of Aeration Tanks}
+    \begin{axis}[
+        title={\textbf{Figure 4: Thomas's Method Analysis for BOD Test of Aeration Tanks}},
+        xlabel={Time (Days)},
+        ylabel={BOD (mg/L)},
+        xmin=0, xmax=2,
+        ymin=0, ymax=0.2,
+        xtick={0,0.5,1,1.5,2},
+        ytick={0,0.1,0.2},
+        ymajorgrids=true,
+        grid style=dashed,
+        legend pos = north west,
+        legend cell align={left}
+    ]
+    
+    \addplot[only marks, red] table [x=days, y=front] {4.csv};
+    \addplot[only marks, blue] table [x=days, y=mid] {4.csv};
+    \addplot[only marks, green] table [x=days, y=end] {4.csv};
+    \addplot[dashed, domain=0:2, red] {0.0478*x+0.0962};
+    \addplot[dashed, domain=0:2, blue] {0.0383*x+0.1141};
+    \addplot[dashed, domain=0:2, green] {0.0399*x+0.1202}; 
+    \addlegendentry{Front};
+    \addlegendentry{Middle};
+    \addlegendentry{End};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+\newpage
+\begin{center}
+\addcontentsline{lot}{table}{Table 6: Calculated \(\text{BOD}_5\) and \(\text{BOD}_\text{Ult}\) Values of Aeration Tanks Using Thomas's Method}
+{\large {\bf Table 6: Calculated \(\text{BOD}_5\) and \(\text{BOD}_\text{Ult}\) Values of Aeration Tanks Using Thomas's Method\\}}
+\vspace{2mm}
+\begin{tabular}{|cccccc|} 
+    \hline
+    \(\bm{y}\) \textbf{Intercept} & \textbf{Slope} & \(\bm{k}\)     & \(\textbf{BOD}_\textbf{5}\) \textbf{(mg/L)}    & \(\textbf{BOD}_\textbf{Ult}\) \textbf{(mg/L)}   & \textbf{Error}    \\ 
+    \hline
+    0.096 & 0.048 & 1.297 & 839.708 & 839.709 & 0.00003\%  \\
+    0.114 & 0.038 & 0.876 & 745.860 & 745.891 & 0.00416\%  \\
+    0.120 & 0.040 & 0.866 & 624.904 & 624.933 & 0.00466\%  \\
+    \hline
+\end{tabular}
+\end{center}
+
+\newpage
+\subsection{COD Analysis}
+\begin{center}
+\addcontentsline{lot}{table}{Table 7: COD of Diluted Sucrose} 
+{\large {\bf Table 7: COD of Diluted Sucrose\\}}
+\vspace{2mm}
+\begin{tabular}{|cccc|} 
+    \hline
+    \textbf{Sample} & \textbf{Measured COD (mg/L)} & \textbf{Calculated COD (mg/L)} & \textbf{Error}  \\ 
+    \hline
+    Raw             & 1552                  & 1278.838                & 21.36\%         \\
+    75\%            & 932                   & 959.129                 & 2.83\%          \\
+    50\%            & 687                   & 639.419                 & 7.44\%          \\
+    30\%            & 403                   & 383.652                 & 5.04\%          \\
+    25\%            & 277                   & 319.710                 & 13.36\%         \\
+    10\%            & 96                    & 127.884                 & 24.93\%         \\
+    5\%             & 13                    & 63.942                  & 79.67\%         \\
+    \hline
+\end{tabular}
+\vspace{5mm}
+
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+    \addcontentsline{lof}{figure}{Figure 5: Measured vs. Calculated COD of Sucrose}
+    \begin{axis}[
+        title={\textbf{Figure 5: Measured vs. Calculated COD of Sucrose}},
+        xlabel={Calculated COD (mg/L)},
+        ylabel={Measured COD (mg/L)},
+        xmin=0, xmax=1500,
+        ymin=0, ymax=1600,
+        xtick={0,500,1000,1500},
+        ytick={0,400,800,1200,1600},
+        ymajorgrids=true,
+        grid style=dashed,
+        legend pos = north west,
+        legend cell align={left}
+    ]
+    
+    \addplot[only marks, red] table [x=c, y=m] {5.csv};
+    \addplot[dashed, red, domain=0:1500] {1.1052 * x};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+\newpage
+\begin{center}
+\addcontentsline{lot}{table}{Table 8: COD from Tests of Local Water Samples}
+{\large {\bf Table 8: COD from Tests of Local Water Samples\\}}
+\vspace{2mm}
+\begin{tabular}{|cccc|} 
+    \hline
+    \textbf{Sample}       & \textbf{Collection Date} & \textbf{Initials} & \textbf{COD (mg/L)}  \\ 
+    \hline
+    Blank        & 10/25/2022      & HC       & 0    \\
+    Tea and Dirt & 10/25/2022      & HC       & 159  \\
+    Tea and Dirt & 10/25/2022      & JL       & 22   \\
+    Tea and Dirt & 10/25/2022      & DT       & 23   \\
+    Tea and Dirt & 10/25/2022      & SH       & 34   \\
+    Tea and Dirt & 10/25/2022      & AD       & 142  \\
+    East River   & 10/25/2022      & AA       & 125  \\
+    East River   & 10/25/2022      & DT       & 6    \\
+    \hline
+\end{tabular}
+\end{center}
+\newpage
