@@ -1,0 +1,70 @@
+\documentclass{article}
+
+
+\usepackage[english]{babel}
+
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{cancel, fancyhdr, textcomp, subfig, pgfplots}
+\usepackage{bm}
+\pgfplotsset{width=10cm, compat=1.18}
+\usepackage[export]{adjustbox}
+
+\renewcommand{\thesubfigure}{}
+\captionsetup[subfigure]{labelformat=simple, labelsep=colon}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Jacob Sigman\\2/13/23}
+\lhead{CE-331\\Homework}
+\cfoot{\thepage}
+\renewcommand\arraystretch{1.5}
+\renewcommand{\headrulewidth}{1.5pt}
+\setlength{\headheight}{22.6pt}
+\begin{document}
+\subsection*{Question 4.3}
+Below is the flow curve:
+\begin{center}
+    \begin{tikzpicture}[baseline=(current bounding box.center)]
+        \begin{axis}[
+            xlabel={Number of Blows},
+            ylabel={Moisture Content (\%)},
+            xmin=0, xmax=30,
+            ymin=38, ymax=46,
+            xtick={0,10,20,30},
+            ytick={38,42,46},
+            ymajorgrids=true,
+            grid style=dashed,
+            legend pos = north west,
+            legend cell align={left},
+        ]
+
+        \addplot[only marks, red] table [x=N, y=w] {1.csv};
+        \addplot[dashed, red,domain=0:30] {-0.2221*x+45.297};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+The equation of the trendline is $y=-0.2221x+45.297$, found in Excel. The liquid limit was found at $N=x=25$:
+\[LL=y=-0.2221\times 25+45.297=\boxed{39.74}\] 
+The plasticiy index is obtained using the following: 
+\[PI=LL-PL=39.74\%-18.7\%=\boxed{21}\]
+\section*{Question 4.4} 
+Given that the moisture content is 26\%, the liquid and plastic limits from the previous question are used in the following equation: 
+\[LI=\frac{w-PL}{LL-PL}=\frac{26\%-18.7\%}{39.7\%-18.7\%}=\boxed{0.35}\]
+\section*{Question 4.8} 
+Using $d=17\text{ mm}$ and $w=28.5\%$, equation 4.5 is used first: 
+\[LL=\frac{w}{0.77\times\log(d)}=\frac{28.5\%}{0.77\times\log(17\text {mm})}=\boxed{30.08}\]
+Using $d=17\text{ mm}$ and $w=28.5\%$, equation 4.6 is used next: 
+\[LL=\frac{w}{0.65+0.0175\times d}=\frac{28.5\%}{0.65+0.0175\times (17\text {mm})}=\boxed{30.08}\]
+Using $d=17\text{ mm}$ and $w=28.5\%$, equation 4.7 is used last: 
+\[LL=w\times\left(\frac{20}{d}\right)^{0.33}=28.5\%\times\left(\frac{20}{17\text {mm}}\right)^{0.33}=\boxed{30.07}\]
+\section*{Question 4.10} 
+Using $LL=61\%$ and $CF=54\%$, equation 10 is used to determine the plastic limit: 
+\[PL =0.04\times LL+0.26\times CF+10=0.04\times 61\%+0.26\times54\%-10=\boxed{26.48}\]
+Using $LL=61\%$ and $CF=54\%$, equation 11 is used to determine the plastic index: 
+\[PL =0.96\times LL-0.26\times CF-10=0.96\times 61\%-0.26\times54\%-10=\boxed{34.52}\]
+Using $LL=61\%$ and $CF=54\%$, equation 19 is used to determine the activity: 
+\[A=\frac{0.96\times LL-0.26\times CF-10}{CF}=\frac{0.96\times 61\%-0.26\times 54\%-10}{54\%}=\boxed{0.64}\]
+\end{document}

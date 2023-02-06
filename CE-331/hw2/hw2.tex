@@ -1,0 +1,76 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{cancel, fancyhdr, textcomp, subfig}
+\usepackage{bm, pgfplots}
+\usepackage[export]{adjustbox}
+
+\renewcommand{\thesubfigure}{}
+\captionsetup[subfigure]{labelformat=simple, labelsep=colon}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Jacob Sigman\\2/6/23}
+\lhead{CE-331\\Homework}
+\cfoot{\thepage}
+\renewcommand\arraystretch{1.5}
+\renewcommand{\headrulewidth}{1.5pt}
+\setlength{\headheight}{22.6pt}
+\begin{document}
+\subsection*{Question 3.4}
+The moist unit weight is the moist weight ($W$) divided by the volume ($V$).
+\[\rho=\frac{W}{V}=\frac{23\text{ lb}}{0.2\text{ ft}^3}=\boxed{115\,\,\frac{\text{lb}}{\text{ft}^3}}\] 
+The dry unit weight is the dry weight ($W_d$) divided by the volume ($W$).
+\[\rho_d=\frac{W_d}{V}=\frac{(100\%-11\%)\times 23\text{ lb}}{0.2\text{ ft}^3}=\boxed{102.35\,\,\frac{\text{lb}}{\text{ft}^3}}\] 
+The void ratio is calculated using the following equation, with $\rho_w$ being the density of water (62.4 $\frac{\text{lb}}{\text{ft}^3}$), and $G_s$ being the specific gravity of 2.7:
+\[e=\frac{G_s\times\rho_w}{\rho_d}-1=\boxed{0.65}\]
+The porosity is calculated using the following equation: 
+\[n=\frac{e}{1+e}=\boxed{0.39}\]
+The degree of saturation is calculated using the following equation, with $w$ being the moisture content of 11\%: 
+\[S = \frac{w\times G_s}{e}=\boxed{45.97\%}\]
+Lastly, the volume occupied by water is calculated using the following equation: 
+\[V_w=\frac{W-\frac{W}{1+w}}{\rho_w}=\boxed{0.04 \text{ ft}^3}\]
+\subsection*{Question 3.16}
+The equation for bulk density ($\gamma_m$) at a 50\% saturation is as follows, with $G_s$ being the specific gravity, $e$ being the void ratio, and $\rho_w$ being the density of water (62.4 $\frac{\text{lb}}{\text{ft}^3}$). 
+\[\gamma_{m50}=\frac{(G_s+50\%\times e)\times\rho_w}{1+e}=105.73 \,\,\frac{\text{lb}}{\text{ft}^3}\]
+The equation for bulk density ($\gamma_m$) at a 75\% saturation is as follows, with $G_s$ being the specific gravity, $e$ being the void ratio, and $\rho_w$ being the density of water (62.4 $\frac{\text{lb}}{\text{ft}^3}$). 
+\[\gamma_{m75}=\frac{(G_s+75\%\times e)\times\rho_w}{1+e}=112.67 \,\,\frac{\text{lb}}{\text{ft}^3}\]
+Solving the 75\% saturation equation for $G_s$, the following equation is obtained: 
+\[G_s=1.81+1.06\times e\] 
+Solving the 50\% saturation equation for $G_s$, the following equation is obtained: 
+\[G_s=1.69+1.19\times e\]
+Setting both equations equal yields the following: 
+\[1.69+1.19\times e = 1.81+1.06\times e\] 
+\[e=\boxed{0.92}\] 
+Plugging $e$ into the $G_s$ equation yields the following: 
+\[G_s = \boxed{2.79}\]
+\subsection*{Question 3.18}
+First, utilize the void ratio from the borrow pit ($e_1$) to determine the required volume of solids ($V_s$): 
+\[e_{1}=\frac{V_v}{V_s}=\frac{V_1-V_s}{V_s}\] 
+Since the required volume ($V_1$) is 1 cubic foot, we get the following equation: 
+\[e_1=\frac{1\text{ ft}^3-V_s}{V_s}\] 
+\[(1+e_1)\times V_s=1\text{ ft}^3\] 
+Substituting 1.1 for $e_1$ and solving for $V_s$ gives the following: 
+\[V_s = 0.47\text{ ft}^3\] 
+Using the required $V_s$ yields the following required volume, using the equation for the final void ratio. 
+\[e_{2}=\frac{V_v}{V_s}=\frac{V_2-V_s}{V_s}=0.8\] 
+\[\frac{V_2-0.47\text{ ft}^3}{0.47\text{ ft}^3}=0.8\] 
+\[V_2=\boxed{0.86 \text{ ft}^3}\]
+\subsection*{Question 3.24}
+Below is the equation for relative density: 
+\[D_r=\frac{e_\text{max}-e}{e_\text{max}-e_\text{min}}\]
+Solving the equation for $e$ yields the following: 
+\[e=e_\text{max}-D_r\times(e_\text{max}-e_\text{min})=0.9-40\%\times(0.9-0.46)=0.724\] 
+The equation for dry unit weight is: 
+\[\gamma_d = \frac{G_s\times\gamma_w}{1+e}=\frac{2.65\times62.4\,\,\frac{\text{lb}}{\text{ft}^3}}{1+0.724}=\boxed{95.92\,\,\frac{\text{lb}}{\text{ft}^3}}\]
+Determining the void ratio at a relative density of 75\% yields the following: 
+\[e_{75}=e_\text{max}-D_r\times(e_\text{max}-e_\text{min})=0.9-75\%\times(0.9-0.46)=0.57\] 
+The following equation is used to determine the change in thickness: 
+\[\frac{\Delta H}{H}=\frac{\Delta e}{1+e}=\frac{e-e_{75}}{1+e}=\frac{0.724-0.57}{1+0.724}=0.089\]
+\[\Delta H = 0.89\times H = 0.089\times 6 \text{ ft}=\boxed{0.54\text{ ft}}\]
+\end{document}

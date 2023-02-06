@@ -1,0 +1,124 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{cancel, fancyhdr, textcomp, subfig}
+\usepackage{bm, pgfplots}
+\usepackage[export]{adjustbox}
+
+\renewcommand{\thesubfigure}{}
+\captionsetup[subfigure]{labelformat=simple, labelsep=colon}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Jacob Sigman\\1/30/23}
+\lhead{CE-331\\Homework}
+\cfoot{\thepage}
+\renewcommand\arraystretch{1.5}
+\renewcommand{\headrulewidth}{1.5pt}
+\setlength{\headheight}{22.6pt}
+\begin{document}
+\subsection*{Question 2.4}
+The following table can be obtained to determine the percent finer than each sieve.
+\begin{center}
+    \begin{tabular}{|ccccc|} 
+        \hline
+        \textbf{US sieve} & \textbf{Opening (mm)} & \textbf{Retained Mass (g)} & \textbf{Cumulative Mass (g)} & \textbf{Percent Finer}  \\ 
+        \hline
+        4                 & 4.75                  & 0                          & 0                            & 100.00\%                \\
+        6                 & 3.35                  & 30                         & 30                           & 94.00\%                 \\
+        10                & 2                     & 48.7                       & 78.7                         & 84.26\%                 \\
+        20                & 0.85                  & 127.3                      & 206                          & 58.80\%                 \\
+        40                & 0.425                 & 96.8                       & 302.8                        & 39.44\%                 \\
+        60                & 0.25                  & 76.6                       & 379.4                        & 24.12\%                 \\
+        100               & 0.15                  & 55.2                       & 434.6                        & 13.08\%                 \\
+        200               & 0.075                 & 43.4                       & 478                          & 4.40\%                  \\
+        Pan               & -                     & 22                         & 500                          & 0.00\%                  \\
+        \hline
+    \end{tabular}
+\end{center}
+Below is the grain-size distribution curve.
+\begin{center}
+    \pgfplotsset{width=10cm}
+    \begin{tikzpicture}[baseline=(current bounding box.center)]
+        \begin{axis}[
+            %title={\textbf{Stress-Strain Curve}},
+            xlabel={Opening (mm)},
+            ylabel={Percent Finer},
+            xmin=0, xmax=5,
+            ymin=0, ymax=100,
+            xtick={0,1,2,3,4,5},
+            ytick={0,25,50,75,100},
+            ymajorgrids=true,
+            grid style=dashed,
+            legend pos = north west,
+            legend cell align={left},
+            x dir=reverse
+        ]
+        
+        \addplot[smooth, red] table [x=opening, y=finer] {1.csv};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+\(D_{10}\), \(D_{30}\), and \(D_{60}\) can be calculated using linear interpolation (done in Excel).
+\[D_{10}=\boxed{0.12\text{ mm}}\]
+\[D_{30}=\boxed{0.32\text{ mm}}\] 
+\[D_{60}=\boxed{0.9\text{ mm}}\] 
+The uniformity coefficient is calculated as follows.
+\[C_u=\frac{D_{60}}{D_{10}}=\frac{0.9\text{ mm}}{0.12\text{ mm}}=\boxed{7.33}\]
+The coefficient of gradation is calculated as follows.
+\[C_c=\frac{D_{30}^2}{D_{60}\times D_{10}}=\frac{(0.32\text{ mm})^2}{(0.9\text{ mm})\times (0.12\text{ mm})}=\boxed{0.9}\]
+\subsection*{Question 2.8}
+Below is the grain-size distribution curve plotted on a logarithmic scale.
+\begin{center}
+    \pgfplotsset{width=10cm}
+    \begin{tikzpicture}[baseline=(current bounding box.center)]
+        \begin{axis}[
+            %title={\textbf{Stress-Strain Curve}},
+            xlabel={Size (mm)},
+            ylabel={Percent Finer},
+            xmode=log,
+            xmin=0, xmax=1,
+            ymin=0, ymax=100,
+            xtick={0.001,0.01,0.1,1},
+            ytick={0,25,50,75,100},
+            ymajorgrids=true,
+            grid style=dashed,
+            legend pos = north west,
+            legend cell align={left},
+            x dir=reverse
+        ]
+        
+        \addplot[smooth, red] table [x=size, y=finer] {2.csv};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+First, the values according to USDA system are used, these values were calculated using linear interpolation (done in Excel).
+\begin{center}
+    Passing 2 mm: 100\% \hspace{3mm} Passing 0.05 mm: 90.4\% \hspace{3mm} Passing 0.002 mm: 41.2\%
+\end{center}
+The percentages of gravel, sand, slit, and clay are calculated as follows:
+\[\%_\text{Gravel}=100\%-100\%=\boxed{0\%}\] 
+\[\%_\text{Sand}=100\%-90.4\%=\boxed{9.6\%}\] 
+\[\%_\text{Slit}=90.4\%-41.2\%=\boxed{49.3\%}\] 
+\[\%_\text{Clay}=\boxed{41.2\%}\] 
+Next, the values according to AASHTO system are used, these values were calculated using linear interpolation (done in Excel).
+\begin{center}
+    Passing 2 mm: 100\% \hspace{3mm} Passing 0.075 mm: 91.1\% \hspace{3mm} Passing 0.002 mm: 41.2\%
+\end{center}
+The percentages of gravel, sand, slit, and clay are calculated as follows:
+\[\%_\text{Gravel}=100\%-100\%=\boxed{0\%}\] 
+\[\%_\text{Sand}=100\%-91.1\%=\boxed{8.9\%}\] 
+\[\%_\text{Slit}=91.1\%-41.2\%=\boxed{49.9\%}\] 
+\[\%_\text{Clay}=\boxed{41.2\%}\] 
+\newpage
+\subsection*{Question 2.10}
+The \(K\) was determined to be 0.1321 from Table 2.9 for the given specific gravity of 2.6 and the given temperature of 24$^{\circ}$C. Equation 2.9 is used to determine $L$.
+\[L=16.29-0.164\times R=16.29-0.164\times 43=9.238\text{ cm}\] 
+\(D\) is determined using the following equation, using the determined $L$ and $K$ values along with a $t$ value of 60 minutes.
+\[D=K\sqrt{\frac{L}{t}}=0.1321\sqrt{\frac{9.238\text{ cm}}{60\text{ min}}}=\boxed{0.052\text{ mm}}\]
+\end{document}
