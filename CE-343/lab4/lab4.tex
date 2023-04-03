@@ -1,0 +1,231 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath, graphicx, tikz, pgfplots, multirow, newlfont, gensymb, indentfirst, bm, setspace, xurl}
+\usepackage[usestackEOL]{stackengine}
+\usepackage[export]{adjustbox}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Water We Doing\\2/24/23}
+\lhead{CE-343\\Water Resources Engineering}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{1.5pt}
+\setlength{\headheight}{22.6pt}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\setlength\parindent{24pt}
+
+
+\begin{document}
+\include{cover.tex}
+\newpage
+\doublespacing
+\tableofcontents
+\newpage
+\addcontentsline{toc}{section}{List of Tables}
+\listoftables
+\addcontentsline{toc}{section}{List of Figures}
+\listoffigures
+\newpage
+\section{Objective} 
+\par The objective of this lab is to investigate the relationship between impulse, momentum, and force in a fluid mechanics context. This will be done by determining the force exerted by water on a submerged gate using three different methods: manometers on the wall, hydrostatic forces, and control volumes. To achieve this, an experimental apparatus will be set up consisting of a water tank, a gate of known dimensions, and various instruments such as manometers and rulers. Once manometer readings and ruler heights are measured, calculations will be done using each method. Overall, this will provide a comprehensive and hands-on exploration of the principles and techniques used to measure forces in fluid mechanics.
+\newpage
+\section{Experiment}
+\subsection{Apparatus}
+\begin{enumerate}
+    \item Ruler 
+    \item Water Tank with Gate
+    \item Pitot Static Tube
+    \item Nine Manometers
+    \item Stepping Stool or Ladder
+\end{enumerate}
+\subsection{Procedure}
+\par First, fill the water tank to the desired depth, making sure the water level is above the top of the gate. Once the desired water level is reached, install the gate in the desired position within the tank, ensuring that it is positioned vertically and entirely submerged. Adjust the position of the gate as needed to ensure that water flows in a uniform manner around the gate. Ensure that the manometers are properly attached to the water tank, then open the valve to allow water to flow through the gate. Record the water height before and after the gate using a ruler. In addition, take a pitot static tube reading on the side after the gate, where the water level is lower from flowing around the gate. Once the water stabilizes, take the readings at each of the nine manometers. Then, flush the tubing and the manometers with water to remove any excess air bubbles and debris. Repeat the process and take the manometer readings to ensure accurate results.
+
+\newpage
+\section{Theory}
+\par The concepts of impulse and momentum are fundamental to the study of mechanics and has many applications in engineering and physics. Momentum is defined as the product of an object's mass and velocity, and impulse is defined as the change in momentum. In the context of fluid mechanics, the relationship between impulse, momentum, and force is investigated by measuring the force exerted by water on a submerged gate using the three methods mentioned in the objective.
+\par When a fluid is in motion, it exerts a force on any object obstructing flow (in the case of this experiment, the gate). This force is referred to as hydrostatic force, or the force exerted by a fluid at rest on an object, related directly to the pressure and density of the fluid. The magnitude of the hydrostatic force can be determined by integrating the pressure distribution over the surface of the object. At the top of the gate, the pressure distribution is triangular, as shown in Figure 1: 
+\begin{center}
+\includegraphics*{fig1.png}
+\\Figure 1: Triangular Pressure Distribution 
+\addcontentsline{lof}{figure}{Figure 1: Triangular Pressure Distribution}
+\end{center}
+\par The first method used to measure the force exerted by water on the gate was manometers. A manometer measures the pressure difference between two points in a fluid. In the case of this experiment, manometers were used to measure the pressure on either side of the gate. By measuring the difference in height, the pressure can be determined using Equation 1: 
+\begin{equation}
+    P=\gamma\times h
+\end{equation}
+\par With $\gamma$ being the specific weight of water and $h$ being the height measured in the manometer. Once the pressure is obtained the force of the water on the gate can be calculated using the equation for pressure, rearranged in Equation 2: 
+\begin{equation} 
+    F=P\times A
+\end{equation}
+\par Where $P$ is the determined pressure and $A$ is the area between manometers. The second method for measuring the force exerted by water on the gate was hydrostatic forces. In this method, the pressure distribution in \emph{Figure 1} is integrated over the surface to determine the net hydrostatic force exerted by the water. In order to do this, pressure will need to be measured at various points on the gate using the same manometers. The pressure can be found using Equation 3: 
+\begin{equation} 
+    P=\gamma \times (H-y)
+\end{equation} 
+\par With $\gamma$ being the specific weight of water, $H$ being the largest height measured of the manometers, and $y$ being the vertical distance from the surface of the water to the point on the gate being measured, or the ruler height measurement taken after the gate. The third method for measuring the force exerted by water on a submerged gate is control volumes. A control volume is defined and the goal is to measure the net momentum change of water passing through the control volume. This net momentum change is equal to the net force exerted on the gate. This begins with the conservation of mass equation in Equation 4.
+\begin{equation} 
+    \dot{m}=\rho\times Q 
+\end{equation}
+\par Where $\dot{m}$ is the mass flow rate, $\rho$ is the water density, and $Q$ is the flow rate. Additionally, the conservation of momentum equation for the control volume that encloses the gate and extends upstream and downstream, shown in Equation 5.
+
+\begin{equation} 
+    F =\dot{m}\, (V_2 - V_1) + \int_{Y_1}^{Y_2}[\gamma\times h(y)\times w]\, dy
+\end{equation}
+\par Where $h(y)$ is a function representing the height of the water above the gate at a distance $y$ from the bottom of the channel. Following the integration, Equation 6 is used for the determination of the force of the water on the gate.
+\begin{equation} 
+    F=(\rho\times Q)\times(V_2-V_1)+\frac{\gamma\times w}{2}\times(Y_2^2-Y_1^2)
+\end{equation}
+\par Once one velocity is obtained, the other velocity can be obtained using continuity as discussed in the sample calculations. Overall, the control volume method can be more complex than the other methods. However, it can be more accurate, especially in cases like this where the pressure distribution is not uniform.
+\newpage
+\section{Sample Calculations}
+\subsection{Manometer Heights Method}
+\noindent For each manometer read, use the height to calculate the pressure in the following equation: 
+\[P=\gamma\times h\] 
+Where $h$ is the manometer height, and $\gamma$ is the specific weight of water, 62.4 $\text{lb}/\text{ft}^3$. Then, use the pressure to calculate the force in the following equation, with $P$ being the determined pressure and $A$ being the cross-sectional area ($w\times \Delta l$ with $w$ being the channel width and $\Delta l$ being the 0.5 inch spacing between each manometer).
+\[F=P\times A\] 
+After each manometer force is calculated, follow the same procedure to calculate the force at the top of the gate and sum all of the determined forces. The final equation used for the force on each manometer for this method is: 
+\[F=\gamma \times h \times w \times \Delta l\]  
+
+\[F=62.4\text{ lb}/\text{ft}^3 \times 8.25\text{ in}\times\frac{1 \text{ ft}}{12\text{ in}}\times 1\text{ ft}\times 0.5\text{ in}\times\frac{1 \text{ ft}}{12\text{ in}}=\boxed{1.79\text{ lb}}\]
+\subsection{Hydrostatic Forces Method}
+\noindent For this method, the centroidal pressure is found, using the following equation for pressure: 
+\[P=\gamma\times h_c\]
+Where $h_c$ is the height of the water minus the gate opening, and $\gamma$ is the specific weight of water, 62.4 $\text{lb}/\text{ft}^3$. Then, use the pressure to calculate the force in the following equation, with $P$ being the determined pressure and $A$ being the cross-sectional area ($0.5\times w\times h_c$ with $w$ being the channel width).
+\[F=P\times A=0.5\times\gamma\times h_c^2\times w\]
+\[F=62.4\text{ lb}/\text{ft}^3\times \left((11.75\text{ in}-2.125\text{ in})\times\left(\frac{1 \text{ ft}}{12\text{ in}}\right)\right)^2\times 1\text{ ft}=\boxed{20.07\text{ lb}}\] 
+\newpage
+\subsection{Control Volume Method}
+\noindent The final method is the control volumes method. The following equation is used to determine the reaction force: 
+\[F=(\rho\times Q)\times(V_2-V_1)+\frac{\gamma\times w}{2}\times(Y_2^2-Y_1^2)\]
+With $\rho$ being the density of water, $Q$ being the given flow, $V_2$ and $V_1$ being the velocities before and after the gate respectively, $\gamma$ being the specific weight of water, $w$ being the channel width, and $Y_2$ and $Y_1$ being the heights after and before the gate respectively. The first step is to determine the velocities, for determining velocity, the following equation is used: 
+\[V=\sqrt{(2\times g)\times(H-y)}\]
+With $H$ being the final manometer reading, $y$ being the gate opening, and $g$ being the acceleration of gravity.
+\[V=\sqrt{2\times 32.2\text{ ft}/\text{s}^2\times(10.125\text{ in}-2.125\text{ in})\times\left(\frac{1 \text{ ft}}{12\text{ in}}\right)}=6.6\text{ ft}/\text{s}\]
+This will be used as $V_2$ in the original equation, $V_1$ is found using continuity: 
+\[V_1\times A_1 = V_2\times A_2\] 
+\[V_1=\frac{V_2\times A_2}{A_1}\]
+$A_1$ is the area of the channel before the gate and $A_2$ is the area of the channel after the gate. 
+\[V_1=\frac{6.6\text{ ft}/\text{s}\times 11.75\text{ in}\times 1\text{ ft}\times \times\left(\frac{1 \text{ ft}}{12\text{ in}}\right)}{2.125\text{ in}\times 1\text{ ft}\times \times\left(\frac{1 \text{ ft}}{12\text{ in}}\right)}=1.19\text{ ft}/\text{s}\]
+Using the given flow of 0.85 cfs, the force is found as follows: 
+\begin{multline*}
+    F=(1.94\text{ slugs}/\text{ft}^3\times 0.85\text{ cfs})\times(6.6\text{ ft}/\text{s}-1.19\text{ ft}/\text{s})+\\\frac{62.4\text{ lb}/\text{ft}^3\times 1\text{ ft}}{2}\times\left(\left(2.125\text{ in}\times\left(\frac{1 \text{ ft}}{12\text{ in}}\right)\right)^2-\left(11.75\text{ in}\times\left(\frac{1 \text{ ft}}{12\text{ in}}\right)\right)^2\right)=-20.84\text{ lb}
+\end{multline*}
+The force is the absolute value of the reaction force which is $\boxed{20.84\text{ lb}}$.
+\newpage
+\section{Results} 
+\begin{center}
+% Measured Manometer Heights Table
+\addcontentsline{lot}{table}{Table 1: Measured Manometer Heights}
+{\large{\bf Table 1: Measured Manometer Heights\\}}
+\vspace{3mm}
+    \begin{tabular}{|cc|}
+        \hline
+        \textbf{Manometer Number} & \textbf{Measured Height (in)} \\\hline
+        1                         & 10.125                         \\
+        2                         & 10.063                            \\
+        3                         & 10                          \\
+        4                         & 10                          \\
+        5                         & 9.75                         \\
+        6                         & 9.675                           \\
+        7                         & 9.375                            \\
+        8                         & 9.125                             \\
+        9                         & 8.25                          \\\hline
+    \end{tabular}
+    % Measured Distances Table
+    \vspace{10mm}
+    \addcontentsline{lot}{table}{Table 2: Measured Distances}
+    {\large{\bf \\Table 2: Measured Distances\\}}
+    \vspace{3mm}
+    \begin{tabular}{|l|r|} 
+        \hline
+        \textbf{Gate Opening (in)}                                    & 2.125  \\
+        \textbf{Height After Gate (in)}                               & 11.75  \\
+        \textbf{Channel Width (ft)}                                   & 1      \\
+        \textbf{Distance Between Manometers (in)}                     & 0.5    \\
+        \textbf{Distance from First Manometer to Bottom of Gate (in)} & 0.75   \\
+        \hline
+    \end{tabular}
+\end{center}
+\newpage
+\subsection{Manometer Heights Method}
+\begin{center}
+% Manometer Heights Method Table
+\addcontentsline{lot}{table}{Table 3: Manometer Heights Method}
+{\large{\bf Table 3: Manometer Heights Method\\}}
+\vspace{3mm}
+    \begin{tabular}{|cccc|} 
+        \hline
+        \textbf{Location} & \textbf{Height (in)} & \textbf{Pressure (psf)} & \textbf{Force (lb)}  \\ 
+        \hline
+        Top of Gate       & 4.875                & 12.675                  & 5.15                 \\
+        Manometer 1       & 10.125                & 52.65                  & 3.29                 \\
+        Manometer 2       & 10.063                & 52.35                   & 2.18                 \\
+        Manometer 3       & 10                & 52.00                   & 2.17                 \\
+        Manometer 4       & 10                 & 52.00                   & 2.17                 \\
+        Manometer 5       & 9.75                & 50.70                   & 2.11                 \\
+        Manometer 6       & 9.675                 & 50.31                   & 2.10                 \\
+        Manometer 7       & 9.375                & 48.75                   & 2.03                 \\
+        Manometer 8       & 9.125                 & 47.45                   & 1.98                 \\
+        Manometer 9       & 8.25                 & 42.90                   & 1.79                 \\ 
+        \hline
+        \multicolumn{4}{|c|}{\textbf{Total Force:} 24.96 pounds}                                      \\
+        \hline
+    \end{tabular}
+\end{center}
+\subsection{Hydrostatic Forces Method}
+
+\noindent Using the obtained height of the water before the gate of 9.625 inches, the pressure was found to be 50.05 pounds per square foot. The force was taken to be the pressure multiplied by the area of the triangular distributed load. The force determined using hydrostatic forces was found to be $\boxed{20.07\text{ pounds}}$. 
+
+\subsection{Control Volume Method}
+\noindent The determined velocity before the gate was 6.8 feet per second. Using an area of 0.18 square feet, the calculated flow and force can be compared to the given flow and force.
+
+% Table 4
+\begin{center}
+    \addcontentsline{lot}{table}{Table 4: Control Volume Method}
+    {\large{\bf Table 4: Control Volume Method\\}}
+    \vspace{3mm}
+    \begin{tabular}{|cc|cc|} 
+    \hline
+    \multicolumn{2}{|c|}{\textbf{Flow (cfs) }}    & \multicolumn{2}{c|}{\textbf{Force (lb) }}                            \\
+    \textbf{Given} & \textbf{Calculated} & \textbf{Using Given Flow} & \textbf{Using Calculated Flow}  \\ 
+    \hline
+    0.85           & 1.16                & 20.08                     & 16.85                           \\
+    \hline
+    \end{tabular}
+\end{center}
+\newpage
+\section{Conclusion}
+\par The impulse-momentum principle is derived from Newtons Second Law, stating that the rate of change of linear momentum of a body is directly proportional to the external force applied on the body, with the change taking place in the direction of the force applied. In hydraulics, understanding the impulse-momentum principle is important in designing mechanisms such as submerged gates, which are often used for things such as dams. In such design, the impulse-momentum applied to the gate is integral in understanding how the design should be implemented. In the context of fluid mechanics, the body in question is the submerged gate, and the applied forces are due to the fluid contacting the gate. 
+This lab used three methods for measuring the force applied to the gate: manometers, hydrostatic forces, and control volumes. The experiment was conducted in an open channel with a vertical, fully submerged gate. The three methods for impulse-momentum calculations were performed on the same set up, with all readings taken for the same flow and water levels to ensure accurate comparison of the three methods. 
+\par Using the manometers, pressure was considered to be uniform over the area between manometers. In using the method involving hydrostatic forces, centroidal pressure is used, by considering specific weight of water over the full height of the gate. These determined pressures are then multiplied by the area over which they are effective to find the applied force. With control volumes, a reaction force is calculated directly using parameters of water density, flow rate, velocities, specific weight of water, channel width, and water levels, and the applied force acting on the gate is considered to be of the same magnitude in the opposite direction. 
+\par The manometer, hydrostatic forces, and control volume methods produce calculated forces of 24.96 pounds, 20.07 pounds, and 16.85 pounds, respectively. When using the given flow rate to back-calculate the applied force with the control volume method, the determined force is 20.08 pounds. If the force found using the given flow rate is considered to be the true force, the closest, and thus best, method for determining forces when the flow rate is unknown would be the hydrostatic forces method; the percent errors associated with each method are calculated under this assumption. The percent error associated with the manometer method is 24\%, negligible (0.05\%) for the hydrostatic forces method, and 16\% for the control volume method using the calculated flow rate. 
+\par Error in this experiment can occur in a variety of ways. Firstly, the gate is assumed in all three methods to be perfectly vertical; it is possible that the gate is submerged at a slight angle, which would make some calculations somewhat invalid. Instrumental error is introduced with each use of the ruler: measuring water levels before and after the gate, opening below the gate, and readings of each manometer. Human error is also introduced if the ruler is not placed such that it is 'zero-ed' properly; this can happen at each manometer reading, if it is not placed at the same relative height for each of nine manometers, and similarly in measuring water levels before and after gate. In adjusting the pitot static tube and taking its reading, both instrumental and human error are introduced; instrumental error is introduced because of the precision limits involved with the instrument, and human error in the case that the pitot static tube is not adjusted to the half height of the water level. Calculation errors can occur is values are rounded when they should not be. 
+
+
+
+\newpage
+\section{References}
+\begin{description}
+    \item[] Munson, Bruce Roy, et al. \emph{Fundamentals of Fluid Mechanics, 5th Edition}. Wiley, 2009.  
+    \item ``Hydrostatic Force on a Plane Surface'' \emph{eCourses}, \url{https://www.ecourses.ou.edu/cgi-bin/ebook.cgi?topic=fl&chap_sec=02.3&page=theory}.
+\end{description}
+\newpage
+\section{Appendix}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+    \hline
+    \textbf{Manometer Number} & \textbf{Run 1 (in)} & \textbf{Run 2 (in)}  \\\hline
+    1                  & 8          & 8.25        \\\hline
+    2                  & 9          & 9           \\\hline
+    3                  & 9.25       & 10          \\\hline
+    4                  & 9.5        & 9.5         \\\hline
+    5                  & 10         & 10.25       \\\hline
+    6                  & 9.75       & 9.75        \\\hline
+    7                  & 9.75       & 10.5        \\\hline
+    8                  & 9.75       & 10          \\\hline
+    9                  & 9.8375     & 10.75       \\\hline
+\end{tabular}
+\end{center}
+\end{document}

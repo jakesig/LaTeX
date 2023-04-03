@@ -1,0 +1,266 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath, graphicx, tikz, pgfplots, multirow, newlfont, gensymb, indentfirst, bm, setspace, xurl}
+\usepackage[usestackEOL]{stackengine}
+\usepackage[export]{adjustbox}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Water We Doing\\4/3/23}
+\lhead{CE-343\\Water Resources Engineering}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{1.5pt}
+\setlength{\headheight}{22.6pt}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\setlength\parindent{24pt}
+
+
+\begin{document}
+\include{cover.tex}
+\newpage
+\doublespacing
+\tableofcontents
+\newpage
+\addcontentsline{toc}{section}{List of Tables}
+\listoftables
+\addcontentsline{toc}{section}{List of Figures}
+\listoffigures
+\newpage
+\section{Objective} 
+The objective of this study is to develop a hydrologic model of the selected watershed using \emph{HEC-HMS} to simulate precipitation-runoff processes and assess the watershed's response to various storm events. A watershed will be delineated, and different parameters will be calculated based on the characteristics of the basin, which help to generate an initial model. The model will be calibrated using observed hydrologic data to ensure accurate representation of the watershed's behavior. Following this, a sensitivity analysis will be performed on the watershed. The results of this analysis can then be used for flood forecasting, stormwater management, and water resources management.
+\newpage
+\section{Experiment}
+\subsection{Apparatus}
+\begin{enumerate}
+    \item Personal computer capable of performing all necessary tasks. 
+    \item HEC-HMS modeling software. 
+    \item GIS software and accompanying elevation and land use models.
+    \item Meteorological data along with accompanying storm data.
+\end{enumerate}
+\subsection{Procedure}
+\indent The first step in the procedure is to gather necessary data for modeling. This includes GIS data, land use data, and storm data that will eventually be inputted into \emph{HEC-HMS}. The GIS software will be utilized to delineate the selected watershed using contour data, along with outlining the land use data for each sub-basin's area calculation.Use Use the data compiled in GIS to calculate the necessary parameters of impervious area, SCS curve number, time of concentration, storage coefficient, initial discharge, recession constant, and ratio-to-peak. Then, export the GIS data and import the data into \emph{HEC-HMS}, specifying all basins and junctions. Input all the necessary parameters that were calculated. Then, add a meteorological model along with two precipitation gages (one for flow and one for precipitation) inputting all storm data. Once a control and run are added, a simulation run can be done on the model to determine the hydrograph of the junction. Finally, perform a sensitivity analysis and manually adjust the inputted parameters to achieve a close match between the simulated and observed hydrologic response of the watershed for a selected calibration event.
+\newpage
+\section{Theory}
+\emph{HEC-HMS}, or the Hydrologic Engineering Center's Hydrologic Modeling System is a tool that was developed by the United States Army Corps of Engineers. The primary goal is to simulate the precipitation-runoff process in watersheds. There are many aspects that go into creating an HMS model, however, the first one is watershed delineation. This is the process of identifying the geographical boundaries of a watershed, which is an area of land where all surface water drains to a common outlet. In preparation for doing this in \emph{qGIS}, it is important to perform this by hand to obtain a better grasp of it's significance. Once the watershed is delineated into three different watersheds, \emph{qGIS} can be utilized to calculate all necessary areas. \\
+\indent Upon importing GIS data, the basin model is created. This is simply a spatial representation of the watershed that includes sub-basins and junctions. The next component is the input of storm data. \emph{HEC-HMS} allows for various precipitation inputs. Historical storm data from a weather station near Whaley Lake was found and inputted into a meteorological model. It is additionally important to ensure that the storm data is incremented properly before manually inputting it into \emph{HEC-HMS}.\\
+\indent The next step is parameter calculation. The first parameter to calculate is impervious area. The impervious area within a watershed is the portion of the land surface that does not allow water to infiltrate, thus contributing to direct runoff. This parameter is typically expressed as a percentage of the total area and is calculated using land use and land cover data. Understanding land use and land cover data within a watershed is essential for accurate hydrologic modeling. Not only does it influence impervious area, but it can also influence other parameters such as infiltration rates. GIS data, including land use and land cover maps, are used to analyze the spatial distribution of various land cover types in the watershed. The land use classification system used in this experiment was the USGS National Land Cover Database (NLCD). The next parameter calculated was the SCS curve number. The Soil Conservation Service (SCS) Curve Number method is used to estimate the runoff potential of a watershed based on its land use and land cover. Curve numbers are pre-determined based on land type by the United States Army Corps of Engineers, and are found in the HMS reference manual. The curve number can range from 0 to 100, with higher values indicating greater runoff potential. A weighted curve number is calculated to account for different curve numbers within the overall area.\\
+\indent The next parameter is the time of concentration. The time of concentration is the time required for water to travel from the most remote point in the watershed to the outlet. This is a crucial parameter in determining the peak discharge rate and overall runoff response of a watershed. The storage coefficient is then calculated from the time of concentration. The storage coefficient represents the rate at which water is stored within the watershed. \\
+\indent The next parameter is the initial discharge. This is simply the initial flow rate at the beginning of the simulation, however this parameter has a big influence on transforming hydrographs, as it is crucial in the determination of the base flow. The recession constant is a parameter that represents the rate at which the discharge in a channel or stream decreases as the excess runoff from a rainfall event dissipates. This parameter is important for modeling the tail end of hydrographs and for understanding how quickly a watershed returns to base flow conditions after a storm event. Lastly, the ratio-to-peak is a dimensionless parameter used in unit hydrograph methods to represent the time distribution of excess rainfall. It is the ratio of the time from the beginning of excess rainfall to the time of peak discharge.\\ 
+\indent After the initial model is ran, the parameters are adjusted in the process of model calibration. The primary objective of model calibration is to achieve a close match between the simulated and observed hydrologic response of the watershed. Calibration typically involves adjusting parameters such as curve numbers, time of concentration, and initial discharge. While there are algorithms in place that can do this, this experiment involves performing it manually. Different variables, such as percent bias, standard deviation, and the Nash-Sutcliffe efficiency - which HEC-HMS automatically calculates - help to determine how well your model has been calibrated. \\ 
+\indent There are many applications to modeling in \emph{HEC-HMS}. The first application is in flood forecasting. \emph{HEC-HMS} can be used to predict flood events, estimate flood magnitudes, and even to determine flood-prone areas. Other applications include stormwater management and water resources management.
+
+\newpage
+\section{Sample Calculations}
+\subsection{Impervious Area}
+\noindent The impervious area is the area in which fluid cannot pass through. For the HEC-HMS model, the impervious area is required as a percentage. After analyzing the land use, the total area that is not occupied by trees (built area and range area) can be calculated and taken over the total area of each individual shed.
+\[\%_\text{Impervious}=\frac{A_\text{Impervious}}{A_\text{Total}}\]
+\[\%_\text{Impervious}=\frac{112898\text{ m}^2}{6794132\text{ m}^2}=\boxed{1.66\%}\]
+\subsection{Weighted SCS Curve Number}
+\noindent The weighted curve number is calculated by calculating the area of each type of land use (trees, built, and range), and then calculating a weighted average. 
+\[CN=\frac{45\times A_T+59\times A_B+68\times A_R}{A_T+A_B+A_R}\]
+\[CN=\frac{45\times 6681234\text{ m}^2+59\times 5238\text{ m}^2+68\times 107660\text{ m}^2}{6681234\text{ m}^2+5238\text{ m}^2+107660\text{ m}^2}=\boxed{45.38}\]
+\newpage
+\subsection{Time of Concentration}
+\noindent The time of concentration is done in three components. The first component is sheet flow, or the first 100 feet. The slope is determined using GIS elevation data. In the equation below for sheet flow, $n$ is the determined Manning's coefficient, $l$ is the length, $P_2$ is the 2-year, 24-hour rainfall, and $S$ is the slope. 
+\[T_s=\frac{0.007\times (n\times l)^{0.8}}{(P_2)^{0.5}\times(S)^{0.4}}\]
+\[T_s=\frac{0.007\times (0.202\times 100\text{ ft})^{0.8}}{(2\text{ in})^{0.5}\times(0.05)^{0.4}}=1.09\text{ hours}\]
+The next component is shallow flow, the next 1000 feet. The first step is to determine the shallow flow velocity using the following equation (determined from the Manning's coefficient), where $S$ is the slope: 
+\[V=2.516\times(S)^{0.5}\]
+\[V=2.516\times(0.098)^{0.5}=0.789\text{ ft/s}\]
+Calculate the time of concentration for shallow flow using the following equation, where $V$ is the determined shallow flow velocity and $l$ is the length: 
+\[T_c=\frac{l}{3600\times V}\]
+\[T_c=\frac{1000\text{ ft}}{3600\times 0.789\text{ ft/s}}=0.35\text{ hours}\]
+The final component is the open channel flow, the remainder of the flow. Determine the open channel velocity using the following equation, where $R$ is the wetted perimeter, $S$ is the slope, and $n$ is the Manning's coefficient: 
+\[V=\frac{1.49\times(R)^{2/3}\times(S)^{0.5}}{n}\]
+\[V=\frac{1.49\times(0.8\text{ ft})^{2/3}\times(0.05)^{0.5}}{0.202}=1.47\text{ ft/s}\]
+Calculate the time of concentration for open channel flow using the following equation, where $V$ is the determined open channel flow velocity and $l$ is the length:
+\[T_o=\frac{l}{3600\times V}\] 
+\[T_o=\frac{7392\text{ ft}}{3600\times 1.47\text{ ft/s}}=1.39\text{ hours}\]
+To find the total time of concentration, the sum of the three times of concentrations are used: 
+\[T_t = T_s+T_c+T_o\]
+\[T_t =1.09\text{ hours}+0.35\text{ hours}+1.39\text{ hours}=\boxed{2.84\text{ hours}}\]
+\subsection{Storage Coefficient}
+\noindent The storage coefficient $R$, can be determined using the following relationship, with $T_c$ being the time of concentration: 
+\[\frac{R}{T_c+R}=0.5\] 
+Rearranging this equation for $R$, the following is obtained:
+\[R=\frac{0.65}{0.35}\times T_c\] 
+\[R=\frac{0.65}{0.35}\times 2.84\text{ hours}=\boxed{5.28}\] 
+\newpage
+\section{Results}
+\subsection{Initial Run}
+\begin{center}
+{\large{\bf Figure 1 (a): Delineated Shed with Flow Lines\\}}
+\addcontentsline{lof}{figure}{Figure 1 (a): Dilineated Shed with Flow Lines}
+\vspace{3mm}
+\includegraphics*[scale=0.4]{results/fig1.png}
+{\large{\bf \\Figure 1 (b): Delineated Shed with Land Use\\}}
+\addcontentsline{lof}{figure}{Figure 1 (b): Dilineated Shed with Land Use}
+\vspace{3mm}
+\includegraphics*[scale=0.4]{results/fig2.png}
+\newpage
+
+{\large{\bf Figure 2: Subbasin 1 Hydrograph\\}}
+\addcontentsline{lof}{figure}{Figure 2: Subbasin 1 Hydrograph}
+\includegraphics*[scale=0.7, trim = {0 13cm 0 3.1cm}]{results/Shed_1_Results.pdf}
+\vspace{8mm}
+{\large{\bf \\Figure 3: Subbasin 2 Hydrograph\\}}
+\addcontentsline{lof}{figure}{Figure 3: Subbasin 2 Hydrograph}
+\includegraphics*[scale=0.7, trim = {0 12cm 0 3.1cm}]{results/Shed_2_Results.pdf}
+\newpage
+
+{\large{\bf Figure 4: Subbasin 3 Hydrograph\\}}
+\addcontentsline{lof}{figure}{Figure 4: Subbasin 3 Hydrograph}
+\includegraphics*[scale=0.7, trim = {0 12cm 0 3.1cm}]{results/Shed_3_Results.pdf}
+\vspace{8mm}
+{\large{\bf \\Figure 5: Original Junction Hydrograph\\}}
+\addcontentsline{lof}{figure}{Figure 5: Original Junction Hydrograph}
+\vspace{1mm}
+\includegraphics*[scale=0.9, trim = {1.5cm 17cm 0 2.96cm}]{results/Junction_Results.pdf}
+\newpage
+
+{\large{\bf Figure 6: Fitted Junction Hydrograph\\}}
+\addcontentsline{lof}{figure}{Figure 6: Fitted Junction Hydrograph}
+\includegraphics*[scale=0.7, trim = {0 14cm 0 3.1cm}]{results/Basin_1_Hydrograph.pdf}
+{\large{\bf \\Table 1: Parameters\\}}
+\addcontentsline{lot}{table}{Table 1: Parameters}
+\vspace{3mm}
+\begin{tabular}{|l|ccc|ccc|}
+    \hline
+    & \multicolumn{3}{c|}{\textbf{Original}}              & \multicolumn{3}{c|}{\textbf{Modified}}                \\
+    & \textbf{Shed 1} & \textbf{Shed 2} & \textbf{Shed 3} & \textbf{Shed 1} & \textbf{Shed 2} & \textbf{Shed 3}  \\ 
+    \hline
+    \textbf{Impervious Area (\%)}        & 1.66            & 6.4             & 13              & 1.66            & 6.4             & 13               \\
+    \textbf{Weighted Curve Number}       & 45.38           & 45.93           & 46.96           & 45.38           & 45.93           & 46.96            \\
+    \textbf{Time of Concentration (hrs)} & 2.84            & 1.98            & 2.66            & 1.42            & 0.99            & 1.33             \\
+    \textbf{Storage Coefficient}         & 5.28            & 3.69            & 4.95            & 52.82           & 36.85           & 49.45            \\
+    \textbf{Initial Discharge (cfs)}     & 5               & 5               & 5               & 1.15            & 1.15            & 1.15             \\
+    \textbf{Recession Constant}          & 0.5             & 0.5             & 0.5             & 0.18            & 0.18            & 0.18             \\
+    \textbf{Ratio}                       & 2               & 2               & 2               & 0.2             & 0.2             & 0.2              \\\hline
+\end{tabular}
+\vspace{5mm}
+{\large{\bf \\Table 2: Statistics\\}}
+\addcontentsline{lot}{table}{Table 2: Statistics}
+\vspace{3mm}
+\begin{tabular}{|l|r|}
+    \hline 
+    \textbf{Standard Deviation} & 0.3 \\ 
+    \textbf{Nash-Sutcliffe} & 0.888 \\ 
+    \textbf{Percent Bias} & -1.05\% \\\hline
+\end{tabular}
+\end{center}
+\newpage
+\subsection{Sensitivity Analysis}
+\begin{center}
+    {\large{\bf Figure 7: Time of Concentration Multiplied by 10\\}}
+    \addcontentsline{lof}{figure}{Figure 7: Time of Concentration Multiplied by 10}
+    \includegraphics*[scale=0.7, trim = {0 13cm 0 3.1cm}]{results/Basin_1_Hydrograph_-_Time_of_Concentration_Multiplied_by_10.pdf}
+    \vspace{5mm}
+    {\large{\bf \\Figure 8: Time of Concentration Divided by 10\\}}
+    \addcontentsline{lof}{figure}{Figure 8: Time of Concentration Divided by 10}
+    \includegraphics*[scale=0.7, trim = {0 13cm 0 3.1cm}]{results/Basin_1_Hydrograph_-_Time_of_Concentration_Divided_by_10.pdf}
+    \newpage
+    {\large{\bf Figure 9: Initial Discharge Halved\\}}
+    \addcontentsline{lof}{figure}{Figure 9: Initial Discharge Halved}
+    \includegraphics*[scale=0.7, trim = {0 13cm 0 3.1cm}]{results/Basin_1_Hydrograph_-_Initial_Discharge_Halved.pdf}
+    \vspace{5mm}
+    {\large{\bf \\Figure 10: Initial Discharge Doubled\\}}
+    \addcontentsline{lof}{figure}{Figure 10: Initial Discharge Doubled}
+    \includegraphics*[scale=0.7, trim = {0 13cm 0 3.1cm}]{results/Basin_1_Hydrograph_-_Initial_Discharge_Doubled.pdf}
+    \newpage
+    {\large{\bf Figure 11: Impervious Area Halved\\}}
+    \addcontentsline{lof}{figure}{Figure 11: Impervious Area Halved}
+    \includegraphics*[scale=0.7, trim = {0 13cm 0 3.1cm}]{results/Basin_1_Hydrograph_-_Impervious_Area_Halved.pdf}
+    \vspace{5mm}
+    {\large{\bf \\Figure 12: Impervious Area Doubled\\}}
+    \addcontentsline{lof}{figure}{Figure 12: Impervious Area Doubled}
+    \includegraphics*[scale=0.7, trim = {0 13cm 0 3.1cm}]{results/Basin_1_Hydrograph_-_Impervious_Area_Doubled.pdf}
+\end{center}
+\newpage
+\section{Conclusion}
+\indent Modeling watersheds helps us build an understanding of how rain events may affect flow and runoff in the area around a body of water. Running simulations on a properly modeled reservoir can be used to help determine if a reservoir/body of water is well equipped to withstand different types of storms. The different parameters calculated in terms of the surrounding areas of the water body - the watersheds - are impervious area, curve numbers, time of concentration, and storage coefficient. These numbers are based on characteristics of the delineated subbasin, such as area, contour lines, slope, distance from the water body, and curve numbers that are predetermined. \\
+\indent The values that were calculated for these parameters, listed in \emph{Table 1}, when entered into \emph{HEC-HMS}, displayed a much larger peak for the calculated flow than what was displayed as the observed flow from the entered rain data. These numbers were then calibrated, reduced, or increased by a factor when needed so that the observed flow and the calculated flow match. After the calibration, the times of concentrations were halved from the originally calculated, where the calculated values were 2.84, 1.98, and 2.66 hrs, and the modified values were 1.42, 0.99, and 1.33 hrs for sheds 1, 2, and 3 respectively. The storage coefficients were multiplied by 10 from the originally calculated, where the calculated values were 5.28, 3.69, and 4.95, and the modified values were 52.82, 36.85, and 49.45, for sheds 1, 2, and 3 respectively. The initial discharge was decreased to 1.15 cfs matching the initial discharge of the observed flow. \\
+\indent Once the junction hydrograph was calibrated, the percent bias, standard deviation, and Nash-Sutcliffe Efficiency were determined in \emph{HEC-HMS}. The percent bias was -1.05\%, the standard deviation was 0.3, and the Nash-Sutcliffe Efficiency was 0.888. Because the percent bias was below a magnitude of 10 to 15\%, the standard deviation was low, and the Nash-Sutcliffe Efficiency was above 0.8, it can reasonably be concluded that our model was well-calibrated. \\
+\indent How we delineated our watersheds may explain why we had to modify our parameters. Depending on where we started our path lines for determining the times of concentrations, the slopes could be different. When choosing the path from the end of each basin, we followed the contours in the tomography map perpendicularly. If we had chosen a different starting point, the contour lines may have been closer together, implying a larger slope over a shorter distance. The slope is incorporated into the equation for time of concentration for sheet flow, shallow flow, and open channel flow. Therefore, if the slope can change relative to the path, the adjustment of the times of concentrations for each basin in our model is warranted. In addition, we estimated the Manning's coefficient based on a description of ``forest'' land, because, according to our land use data map, the majority of our basin's area was trees. We kept this coefficient constant, however, some sections of our watershed were built-up areas, which would affect the Manning's coefficient. Therefore, this also may also have affected the total calculated time of concentration for each basin. The storage coefficient is related to the time of concentration, which explains why, in addition to the times of concentration, the storage coefficients also had to be adjusted to complete our model. \\
+\indent A properly calibrated model, using past precipitation, is useful for modeling future storms. For the chosen body of water, the two gauges for measuring precipitation and inflow were far from each other. Therefore, we had to determine when each gauge had a record of the same storm. The differences in measured magnitude from different locations around the water body may have had an effect on the observed hydrograph that was generated from our storm data. This would mean that the observed hydrograph has inherent error, despite how well the parameters are calibrated. \\
+\indent Once our hydrograph was calibrated, we preformed a sensitivity analysis. Three different parameters were changed two times each to determine how the hydrograph reacts. As shown in \emph{Figure 7} and \emph{Figure 8}, the time of concentration was multiplied by 10, and divided by 10, respectively. When multiplying the times of concentration by 10, the calculated flow dips down below the observed peak. This is because the time for the rain water to flow from the outskirts of the delineated watershed is longer, therefore the velocity is slower and the flow is lower. When dividing the times of concentration by 10, the calculated flow shifts slightly to the left, however it is not significantly changed. This  may be because the times of concentrations were already calibrated to be low, so the general shape of the hydrograph for a short time of concentration is already met. As shown in \emph{Figure 9} and \emph{Figure 10}, the initial discharge was halved and doubled, respectively. When halving the initial discharge, the calculated flow dips down below the observed peak. However, the shape of the curve is preserved. This is because the initial flow is decreased, however the same storm data is being run, so the relative increase in flow stays the same. The same phenomenon happens when the initial discharge is doubled. The curve falls above the observed hydrograph, but like before the shape of the curve is generally preserved. \\
+\indent As shown in \emph{Figure 11} and \emph{Figure 12}, the impervious area was halved and doubled, respectively. When the impervious area is halved, that means less area within the watershed allows for water to infiltrate the ground. When more water is allowed to enter the ground, there is less water that goes towards flow. This is demonstrated, where when the impervious area is halved, the calculated flow decreases, as more water is allowed to soak into the ground. When the impervious area is doubled, less water is allowed to enter the ground, therefore more water goes towards the flow. This is reflected, where the calculated flow increases with doubled impervious area, in \emph{Figure 12}. 
+\newpage
+\section{References}
+\begin{description}
+    \item[]  USGS Water Data. \url{https://waterdata.usgs.gov/monitoring-location/01374598/#parameterCode=00060&startDT=2022-06-05&endDT=2022-06-12}.
+    \item[]  Weather Underground. \url{https://www.wunderground.com/dashboard/pws/KNYHOLME11/table/2022-06-8/2022-06-8/daily}.
+    \item[]  Esri, \emph{Sentinel-2 Land Cover Explorer}. \url{https://livingatlas.arcgis.com/landcoverexplorer/#mapCenter=-74.216%2C42.894%2C13&mode=step&timeExtent=2017%2C2022&year=2022&downloadMode=true}.
+    \item[]  HEC-HMS Technical Reference Manual, \emph{Curve Number Tables}. \url{https://www.hec.usace.army.mil/confluence/hmsdocs/hmstrm/cn-tables}.
+    \item[]  Iowa Statewide Urban Design and Specifications, \emph{Time of Concentration}. \url{https://intrans.iastate.edu/app/uploads/sites/15/2020/03/2B-3.pdf}.
+\end{description}
+\newpage
+\section{Appendix}
+\begin{center}
+{\large{\bf Table 3: Curve Numbers\\}}
+\addcontentsline{lot}{table}{Table 3: Curve Numbers}
+\vspace{3mm}
+\begin{tabular}{|l|lll|} 
+    \hline
+    \textbf{Cover Type}     & \textbf{Hydrologic Condition} &  & \textbf{Curve Number}                  \\
+    \hline
+    Pasture, grassland, or range - continuous & Poor                 &  & 68                                                         \\ 
+
+    forage for graving                        & Fair                 &  & 49                                                          \\ 
+
+                                              & Good                 &  & 39                                                           \\ 
+
+                                              &                      &  &                                                               \\ 
+
+    Meadow - continuous grass, protected from &                      &  & 30                                                            \\ 
+
+    grazing and generally mowed for hay.      &                      &  &                                                               \\ 
+
+                                              &                      &  &                                                               \\ 
+
+    Brush - brush-weed mixture with brush     & Poor                 &  & 48                                                            \\ 
+
+    the major element                         & Fair                 &  & 35                                                            \\ 
+
+                                              & Good                 &  & 30                                                          \\ 
+
+                                              &                      &  &                                                            \\ 
+
+    Woods - grass combination (orchard        & Poor                 &  & 57                                                        \\ 
+
+    or tree farm)                        & Fair                 &  & 43                                                      \\ 
+
+                                              & Good                 &  & 32                                                  \\ 
+
+                                              &                      &  &                                                \\ 
+
+    Woods                                  & Poor                 &  & 45                                                    \\ 
+
+                                              & Fair                 &  & 36                                                        \\ 
+
+                                              & Good                 &  & 30                                                \\ 
+
+                                              &                      &  &                                                          \\ 
+
+    Farmsteads - buildings, lanes, driveways, &                      &  & 59                                                  \\ 
+
+    and surrounding lots.                     &                      &  &                                           \\\hline
+\end{tabular}
+\newpage 
+{\large{\bf Table 4: Manning's and Velocity Values\\}}
+\addcontentsline{lot}{table}{Table 4: Manning's and Velocity Values}
+\vspace{3mm}
+\begin{tabular}{|l c c c|}
+    \hline
+    \textbf{Flow Type} & \textbf{$\bm{d}$} & \textbf{$\bm{n}$} & \textbf{Velocity}\\\hline
+    Pavement and small upland gullies & 0.2 & 0.025 & $V=20.238(s)^{0.5}$\\
+    Grassed waterways (and unpaved urban areas) & 0.4 & 0.050 & $V=16.135(s)^{0.5}$\\
+    Nearly bare and untilled (overland flow); and alluvial fans & 0.2 & 0.051 & $V=9.965(s)^{0.5}$\\
+    Cultivated straight row crops & 0.2 & 0.058 & $V=8.762(s)^{0.5}$\\
+    Short-grass prairie & 0.2 & 0.073 & $V=6.962(s)^{0.5}$\\
+    Minimum tillage cultivation, contour or strip-cropped, and woodlands & 0.2 & 0.101 & $V=5.032(s)^{0.5}$\\
+    Forest with heavy ground litter and hay meadows & 0.2 & 0.202  &$V=2.516(s)^{0.5}$ \\\hline
+\end{tabular}
+\end{center}
+\end{document}

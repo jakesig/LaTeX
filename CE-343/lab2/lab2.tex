@@ -1,0 +1,218 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath, graphicx, tikz, pgfplots, multirow, newlfont, gensymb, indentfirst, bm, setspace, xurl}
+\usepackage[usestackEOL]{stackengine}
+\usepackage[export]{adjustbox}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Water We Doing\\2/6/23}
+\lhead{CE-343\\Water Resources Engineering}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{1.5pt}
+\setlength{\headheight}{22.6pt}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\setlength\parindent{24pt}
+
+\begin{document}
+\include{cover.tex}
+\newpage
+\doublespacing
+\tableofcontents
+\newpage
+\addcontentsline{toc}{section}{List of Tables}
+\listoftables
+\addcontentsline{toc}{section}{List of Figures}
+\listoffigures
+\newpage
+\section{Objective} 
+\par The objective of the Reynolds Apparatus experiment is to gain a comprehensive understanding on fluid flow behavior and the transitions between laminar, transitional, and turbulent flow. The experiment seeks to study the interplay of fluid velocity, fluid density, fluid viscosity, and tube diameter on fluid flow and to determine the Reynolds number, which indicates the relative importance of inertial forces and viscous forces in the fluid. By studying the behavior of fluid flows in a controlled setting, the experiment provides insights into real-world applications, such as in pipes, channels, and hydraulic systems, and helps to improve the design and performance of these systems. The experiment ultimately aims to deepen the understanding of fluid dynamics and contribute to the advancement of various industries and fields. 
+\newpage
+\section{Experiment}
+\subsection{Apparatus}
+\begin{enumerate}
+    \item Osborne Reynold's Apparatus
+    \begin{itemize}
+        \item The Osborne Reynolds Apparatus is an instrument that allows for a visual representation fof laminar, transitional, and turbulent flow. The apparatus consists of a tank above a test tube, in which water enters the tube through a bell mouth, ensuring uniform flow upon entry. The test tube is held vertically, allowing the flow to be observed clearly.
+    \end{itemize}
+    \item Graduated Cylinder 
+    \item Timer
+\end{enumerate}
+\subsection{Procedure}
+\par Begin by opening the water valve to start a steady flow of water through the Osborne Reynolds apparatus. Place the tube that is leaving the apparatus into a graduated cylinder,
+timing how long it takes for the water to fill the graduated cylinder to 500 mL. Record the time. This will be used to calculate the flow rate of the water through the apparatus. Once the time is recorded, squirt dye into the top reservoir to go through the bell mouth and into the observation tube. Observe how the dye flows down the tube. A dark, defined line indicates laminar flow, parabolic waves forming from a straight line indicates transitional flow, and turbulent flow is indicated when the dye mixes fully throughout the tube. After recording your observation, make sure that all of the dye has flowed through and out of the apparatus. Repeat the procedure 5-6 more times, adjusting the water valve in between each trial, trying to increase and decrease the flow to observe different types of flow. The flow rates and dye observations will be compared to establish a relationship between flow rate and type of flow through Reynolds number.
+
+\newpage
+\section{Theory}
+\noindent The Reynold's number ($Re$) is a dimensionless quantity used to determine whether a fluid flow is laminar, turbulent, or transient. It is defined as the ratio of inertial forces to viscous forces in a fluid and is calculated using Equation 1. 
+\begin{equation}
+    Re=\frac{v\times D}{\nu}
+\end{equation}
+With $v$ being the velocity of the fluid, $D$ being the tube diameter in the case of the Reynold's apparatus, and $\nu$ being the kinematic viscosity of the fluid. Typically, laminar flow occurs with a Reynold's number less than 2000. Laminar flow means that the viscous forces are dominant, causing smooth and orderly flow. When the Reynold's number is larger than 2000, flow is seen as turbulent. Turbulent flow means that the flow is rapid and unsteady. Typically, it is found that flow may not be entirely laminar or entirely turbulent. Streaks of calm flow mixed with streaks of rapid, unsteady flow is called transient flow. \\\\
+In the Reynold's Apparatus experiment, different flow regimes can be observed as the flow rate gradually increases. This flow is observed using dye. At low flow rates, the flow of the dye is smooth and orderly. The dye particles follow parallel paths and do not mix. As the flow rate is increased, the flow of the dye becomes more chaotic and begins to exhibit characteristics of both laminar and turbulent flow. This is known as the transitional flow region. At high flow rates, the fluid flow is fully turbulent. The fluid particles mix with the dye, leading to a chaotic and highly mixed flow. \\\\
+Using the observed data, it was found that laminar flow occurs with a Reynold's number of 1000, transitional flow was between 1000 and 2300, and turbulent flow was greater than 2300. This is incredibly important in calculation as the friction factor varies directly based on the Reynold's number. The friction factor in hydraulic systems is a dimensionless value that represents the resistance to flow caused by the roughness of the pipe wall and the fluid flowing through it. Equation 2 is used if the Reynold's number is less than 2300 and Equation 3 is used otherwise, with $Re$ being the Reynold's number: 
+\begin{equation} 
+    f=\frac{64}{Re}
+\end{equation}
+\begin{equation} 
+    f=\frac{0.316}{Re^{0.25}}
+\end{equation}
+Wall shear is a term used in hydraulic systems to describe the friction force between a fluid and a solid boundary. It is the tangential stress at the wall caused by the fluid flow. Overall, the wall shear stress affects the resistance to fluid flow in pipes and can significantly impact the formation of boundary layers and turbulence. In hydraulic systems, understanding and controlling wall shear is important for optimizing fluid flow and preventing damage to pipes and other components. Wall shear is calculated using Equation 4. 
+\begin{equation} 
+    \tau_w=\frac{\rho\times f\times v^2}{8}
+\end{equation}
+With $\rho$ being the density of the fluid, $f$ being the friction factor determined using equation 2 or 3, and $v$ being the velocity of the particle.
+\newpage
+\section{Sample Calculations}
+\subsection{Flow}
+\[Q=\frac{V}{t}\] 
+\[Q=\frac{500\text{ mL}}{13.13\text{ s}}=\boxed{3.81\times 10^{-5}\, \frac{\text{m}^3}{\text{s}}}\]
+\subsection{Velocity} 
+\[v=\frac{Q}{A}=\frac{Q}{\frac{\pi}{4}\times d^2}\]  
+\[v=\frac{3.81\times 10^{-5}\, \frac{\text{m}^3}{\text{s}}}{\frac{\pi}{4}\times (0.01012\text{ m})^2}=\boxed{0.473\, \frac{\text{m}}{\text{s}}}\]
+\subsection{Reynold's Number} 
+\[Re=\frac{v\times D}{\nu}\] 
+\[Re=\frac{0.473\, \frac{\text{m}}{\text{s}}\times 0.01012\text{ m}}{1.52\times 10^{-6}\,\frac{\text{m}^2}{\text{s}}}=\boxed{3152.04}\] 
+\subsection{Friction Factor} 
+\noindent There are two cases for friction factor, if the Reynold's number is greater than 2300, the friction factor is as follows: 
+\[f=\frac{64}{Re}\] 
+Otherwise, the friction factor is: 
+\[f=\frac{0.316}{Re^{0.25}}\] 
+Since 3152.04 is greater than 2300, the friction factor is found as follows: 
+\[f=\frac{64}{3152.04}=\boxed{0.0422}\] 
+\subsection{Wall Shear}
+\[\tau_w=\frac{\rho\times f\times v^2}{8}\] 
+\[\tau_w=\frac{\left(1000\,\frac{\text{kg}}{\text{m}^3}\right)\times (0.0422)\times \left(0.473\, \frac{\text{m}}{\text{s}}\right)^2}{8}=\boxed{1.18\text{ Pa}}\]
+\newpage
+\section{Results} 
+\begin{center}
+
+    \addcontentsline{lot}{table}{Table 1: Measured Values}
+    {\large{\bf Table 1: Measured Values\\}}
+    \vspace{3mm}
+    \begin{tabular}{|ccc|} 
+        \hline
+        \textbf{Volume (mL)} & \textbf{Time (s)} & \textbf{Observed Flow Type}  \\ 
+        \hline
+        500                  & 13.13             & Turbulent                      \\
+        500                  & 55.02             & Transient                      \\
+        200                  & 90.02             & Laminar                        \\
+        200                  & 66.99             & Laminar                        \\
+        500                  & 13.92             & Turbulent                      \\
+        500                  & 35.78             & Transient/Turbulent            \\
+        500                  & 52.58             & Transient                      \\\hline
+        \multicolumn{3}{|c|}{\textbf{Temperature: } $5^{\circ}$C}\\
+        \hline
+    \end{tabular}
+    \vspace{10mm}
+
+    
+    \addcontentsline{lot}{table}{Table 2: Calculated Values}
+    {\large{\bf Table 2: Calculated Values\\}}
+    \vspace{3mm}
+    \begin{tabular}{|ccc|} 
+        \hline
+        \textbf{Flow ($\textbf{m}^\textbf{3}$/s)}   & \textbf{Velocity (m/s)} & \textbf{Reynold's Number}       \\ 
+        \hline
+        0.00003808               & 0.47                    & 3152.04                         \\
+        0.00000909               & 0.11                    & 752.20                          \\
+        0.00000222               & 0.03                    & 183.90                          \\
+        0.00000299               & 0.04                    & 247.12                          \\
+        0.00003592               & 0.45                    & 2973.15                         \\
+        0.00001397               & 0.17                    & 1156.69                         \\
+        0.00000951               & 0.12                    & 787.11                          \\ 
+        \hline
+        \textbf{Friction Factor} & \textbf{Wall Shear (Pa)}     & \textbf{Calculated Flow Type}  \\ 
+        \hline
+        0.04                     & 1.18                    & Turbulent                       \\
+        0.09                     & 0.14                    & Transient                       \\
+        0.35                     & 0.03                    & Laminar                         \\
+        0.26                     & 0.04                    & Laminar                         \\
+        0.04                     & 1.07                    & Turbulent                       \\
+        0.06                     & 0.21                    & Transient                       \\
+        0.08                     & 0.14                    & Laminar                         \\
+        \hline
+    \end{tabular}
+    \newpage
+    \pgfplotsset{width=13cm}
+    \addcontentsline{lof}{figure}{Figure 1: Friction Factor vs. Reynold's Number}
+    {\large{\bf Figure 1: Friction Factor vs. Reynold's Number\\}}
+    \begin{tikzpicture}[baseline=(current bounding box.center)]
+        \begin{axis}[
+            %title={\textbf{Figure 1: Hydraulic and Energy Grade Lines}},
+            xlabel={Reynold's Number ($Re$)},
+            ylabel={Friction Factor ($f$)},
+            xmin=0, xmax=4000,
+            ymin=0, ymax=0.5,
+            xtick={0,1000,2000,3000,4000},
+            ytick={0,0.1,0.2,0.3,0.4,0.5},
+            ymajorgrids=true,
+            grid style=dashed,
+            legend pos = north east,
+            legend cell align={left},
+            error bars/y dir = both,
+            error bars/y explicit = true,
+        ]
+
+        \addplot+[only marks, blue] table [x=Re, y=f, y error index = 2] {1.csv};
+        \addplot[dotted, blue, smooth, domain=145:3152] {14.295*x^(-0.747)};
+        %\addplot[blue] table [x=strain, y=stress_th] {1.csv};
+        
+        \end{axis}
+    \end{tikzpicture}
+    \newpage
+    \addcontentsline{lof}{figure}{Figure 2: Turbulent Flow}
+    {\large{\bf Figure 2: Turbulent Flow\\}}
+    \vspace{3mm}
+    \includegraphics*[scale=0.3]{fig1.png}
+    \vspace{-2mm}
+    \addcontentsline{lof}{figure}{Figure 3: Transient Flow}
+    {\large{\bf \\Figure 3: Transient Flow\\}}
+    \vspace{3mm}
+    \includegraphics*[scale=0.3]{fig2.png}
+    \vspace{-2mm}
+    \addcontentsline{lof}{figure}{Figure 4: Laminar Flow}
+    {\large{\bf \\Figure 4: Laminar Flow\\}}
+    \vspace{3mm}
+    \includegraphics*[scale=0.37]{fig3.png}
+\end{center}
+\newpage
+\section{Conclusion}
+\par In designing a fluid flow system, it is crucial to understand fluid flow behavior. To accurately model fluid flows in computational fluid dynamics, it is important to understand flow paths and velocities. Laminar flows, which are most often observed in viscous or low-velocity fluids, have a smooth and streamlined nature of fluid motion; at each point in the flow, the velocity and pressure remain constant. If a flow path is divided into several layers, the layers remain parallel to each other and do not mix. Such flow is advantageous in air circulations systems such as in medical or pharmaceutical labs, and industrial warehouses, as it ensures smooth ventilation and prevents bacteria and particulate matter from accumulating. Turbulent flow, in contrast, is apparently erratic, with fluid layers mixing, and the flow experiences continuous change in magnitude and direction. In turbulent flows, eddies and swirls are often present, and analysis of such flows is difficult. Because most flows are turbulent (river flow, smoke from exhaust pipes, turbulence experienced in aircraft etc.), analysis of turbulent flow is important despite the challenges, and can help in designing effective fluid distribution or mixing systems, support analysis of structures such as bridges or wind tunnels and help in designing fuel-efficient vehicles and aircraft. 
+\par Predicting turbulence can be done to some extent with the use of Reynold's number, a dimensionless parameter that identifies the behavior of a fluid-based properties such as viscosity, density, and velocity, and calculated as $Re=\frac{\rho vD}{\mu}=\frac{vD}{\nu}$. In laminar flows, Reynold's number is below 2000, between 2000-4000 for transitional flows, and above 4000 for turbulent flows. This experiment sought to determine the type of flow occurring at a particular flow rate through observing how dye behaved when injected into the flow tank. To confirm the flow type, Reynold's number was calculated at each flow rate. In addition to Reynold's number, the wall shear force was calculated for each flow; wall shear force affects the resistance to fluid flow in a pipe and affects the formation of boundary layers and turbulence. When wall shear is high, the flow tends to be more turbulent. 
+\par Of seven flows observed in this experiment, observed flow types were the same as calculation-based flow types for six flows.  Flow 6 was observed to be transient/turbulent, and the calculations yielded a transient flow type; this is considered to be a matched result, as it was difficult to determine by observation alone the flow type. Flow 7 was observed to be a transient flow, and calculations determined it to be a laminar flow; this discrepancy can be attributed to the lack of clear distinction between laminar and transient flow. 
+\par Error involved in this experiment is largely human error but can also include instrumental error. Because velocity was determined by recorded times and volumes, error may have been introduced in reading the volumes and/or in starting and stopping the stopwatch; the stopwatch may be started or stopped early or late, and this may not be consistent across all observed flows, and volumes may have been approximated. Error can also be introduced with the injection of dye: if the dye was injected with its own velocity that was significantly different that the flow velocity, it may have been observed at a different flow type than was calculated for the flow rate. Additionally, if the dye was injected such that it was not parallel to the layers in the flow, it may have mixed with the layers in a way that would not be expected by the flow type found by flow rate and Reynold's number. 
+\par The results of this lab indicate that, generally, flow can be accurately classified by type on an observational basis; detailed analysis may require classification based on a calculated Reynold’s number, which can be achieved through observation of flow rates used to determine velocities. 
+
+\newpage
+\section{References}
+\begin{description}
+    \item[] Munson, Bruce Roy, et al. \emph{Fundamentals of Fluid Mechanics, 5th Edition}. Wiley, 2009.  
+    \item[] ``The Differences Between Laminar vs. Turbulent Flow.'' \emph{Cadence CFD Solutions}, 2022, \url{https://resources.system-analysis.cadence.com/blog/msa2022-the-differences-between-laminar-vs-turbulent-flow}.
+\end{description}
+\newpage
+\section{Appendix}
+\begin{center}
+    \begin{tabular}{|c|c|c|c|} 
+        \hline
+        \textbf{Run Number} & \textbf{Volume (mL)} & \textbf{Time (s)} & \textbf{Flow Region}  \\ 
+        \hline
+        1                   & 500                  & 13.13             & Turbulent             \\ 
+        \hline
+        2                   & 500                  & 55.02             & Transient             \\ 
+        \hline
+        3                   & 200                  & 90.02             & Laminar               \\ 
+        \hline
+        4                   & 200                  & 66.99             & Laminar               \\ 
+        \hline
+        5                   & 500                  & 13.92             & Turbulent             \\ 
+        \hline
+        6                   & 500                  & 35.78             & Transient/Turbulent   \\ 
+        \hline
+        7                   & 500                  & 52.58             & Transient             \\
+        \hline
+    \end{tabular}
+\end{center}
+\end{document}

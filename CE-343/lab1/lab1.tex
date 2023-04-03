@@ -1,0 +1,299 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath, graphicx, tikz, pgfplots, multirow, newlfont, gensymb, indentfirst, bm, setspace, xurl}
+\usepackage[usestackEOL]{stackengine}
+\usepackage[export]{adjustbox}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Water We Doing\\1/30/23}
+\lhead{CE-343\\Water Resources Engineering}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{1.5pt}
+\setlength{\headheight}{22.6pt}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\setlength\parindent{24pt}
+
+\begin{document}
+\include{cover.tex}
+\newpage
+\doublespacing
+\tableofcontents
+\newpage
+\addcontentsline{toc}{section}{List of Tables}
+\listoftables
+\addcontentsline{toc}{section}{List of Figures}
+\listoffigures
+\newpage
+\section{Objective} 
+\indent The objective of this experiment is to compare the theoretical and experimental head losses of a pipe system to verify that the summation of head losses encountered in any flow path is equivalent to the friction losses and minor losses. During this experiment, various groups of students took measurements of manometer and pipe elevations to determine the experimental head loss using the pressure gradient. The theoretical head loss, consisting of the head loss due to friction and the minor head loss, was calculated using an iterative approach. Once the experimental and theoretical head loss were determined, the two were compared to verify that the summation of head losses encountered in any flow path is equivalent to the friction losses and minor losses. Minor head losses can be due to elbows, bends, flanges, contractions, expansions, entrances, and exits. However, the only type of minor head loss relevant to this experiment was minor loss due to elbows, since the diameter of the pipe was constant. The experiment was conducted in the Water Resources Engineering Lab at the Cooper Union (room LL222).
+\newpage
+\section{Experiment}
+\subsection{Apparatus}
+\begin{enumerate}
+    \item The given pipe system (shown in \emph{Figure 1}).
+    \item Five manometers located throughout the pipe system.
+    \item A stepping stool or ladder.
+    \item A tape measure or meter stick. 
+
+\end{enumerate}
+\begin{center}
+    \addcontentsline{lof}{figure}{Figure 1: Pipe System Drawing}
+    {\large{\bf Figure 1: Pipe System Drawing\\}}
+    \includegraphics*[scale=0.55]{dwg.pdf}
+\end{center}
+\subsection{Procedure}
+\par Begin by ensuring that water is running through the pipe system. Water may remain in the manometers from previous runs so it is important to ensure that fresh water is flowing to the manometers that measurements are being taken from. For each of the five manometers, measure the level of the water in the manometer by using a set of meter sticks or a tape measure. A stepping stool or ladder may be required. Following measuring the water level, the elevations of the pipe system are determined at each location. The elevation of the pipe system is expected to remain constant.  
+\newpage
+\section{Theory}
+\noindent Understanding how fluids flow through pipes is essential for how the world around us operates. Pipes are most notably used for transporting water throughout cities. They help provide water for our bathrooms and kitchens, as well as for air quality, through pipes and ducts that help with heating and cooling in our homes. Different types of pipe systems are designed with the idea of fluid mechanics, understanding different types of flow, especially how pipe materials, corners, elbows, valves, and other system characteristics may affect the behavior of fluids. The fluid flow present within pipes is dictated by how the characteristics may add or take away energy from the fluid.\\
+
+\noindent For open-channel flow, gravity is the driving force. However, for pipe flow, although gravity can have an effect if the pipe is vertical, the driving force is hydrostatic pressure. This energy that is created by a change in pressure is expressed by Bernoulli's equation. The change in pressure between two sections of a pipe is what forces the fluid through the pipe. Viscous effects are what provide a resistant force on the fluid that prevents constant pressure throughout the pipe. The following Bernoulli's equation helps to relate the results of viscous effects to the pressure change within the pipe, and how that effects the velocity in the pipe.
+
+\[\frac{P_1}{\gamma}+\frac{V_1^2}{2g}+z_1=\frac{P_2}{\gamma}+\frac{V_2^2}{2g}+z_2+\sum H_{L1-2}\]
+
+\noindent The velocity of the fluid in a pipe is directly related to the type of flow the fluid experiences, laminar, transitional, or turbulent, as the Reynolds number.
+
+\[Re=\frac{VD}{\nu}\]
+
+\noindent Fluid flow can switch between laminar and turbulent conditions randomly. This transition from laminar to turbulent can be caused by vibrations in the pipe, the roughness of the entrance region and inside the pipe, as well as any fittings throughout the pipe system that cause resistance. The loss in energy that results from this resistance is quantified as head loss. These head losses are used in the Bernoulli's energy equation for fluid flow analysis. \\
+
+\noindent The overall head loss for the pipe system consists of the head loss due to viscous effects, which is called major loss, as well the head loss from the different pipe components (valves, elbows, etc.), which is called minor loss.\\
+
+\noindent Major head loss is dependent on the wall shear stress between the fluid and pipe surface. For turbulent flow, the pressure drop is dependent on the roughness of the pipe. If a typical wall roughness extends far into a viscous sublayer that forms in the fluid near the pipe wall, the properties of the sublayer will be different than if the walls were smooth. This means that for turbulent flow, the pressure drop is directly related to the wall roughness, $\varepsilon$, of the pipe, which is determined by the material of the pipe. The relative roughness, $\varepsilon/D$, is used in conjunction with the Reynolds number, Re. The functional dependence between the relative roughness and Reynolds number is shown through the Moody Chart, which helps to find the friction factor in the pipe.\\
+
+\noindent The friction factor, $f$, also known as the Darcy friction factor, is a dimensionless quantity that allows us to obtain a variety of information regarding pipe flow.
+
+\[h_f=f\frac{L}{D}\frac{V^2}{2g}\]
+
+\noindent The friction factor is directly related to the major head losses, also considered to be the friction losses, experienced in a pipe.
+
+\[h_m=K\frac{V^2}{2g}\]
+
+\noindent Minor head losses, $h_m$ , are caused by the different components in a pipe system that obstructs $m$ plain straight flow. These minor losses are dependent on a loss coefficient, $K$. Different components, such as an elbow, a change in diameter, a valve, a diffuser, an entrance, or an exit, all have different loss coefficients. The presence all components in a pipe system is considered and t contributes to the total minor head loss.
+
+\[\sum H_{L1-2}=\sum H_{f_\text{over the reach}}+\sum H_{m_\text{within the reach}}\]
+
+\noindent The summation of all types of head losses appears in the Bernoulli's equation, giving more definition to the way energy is transferred in pipe flow.\\
+
+\noindent Bernoulli's equation and all of its components can be further interpreted through the use of the hydraulic grade line (HGL) and the energy grade line (EGL).  These two lines are a geometrical interpretation of flow. The energy line represents the total head available to the fluid (elevation head) in the pipe. The hydraulic grade line is the profile of the fluid within the pipe. If the hydraulic grade line is above the centerline of the pipe then that means the pressure in the pipe is positive. The EGL is always above the HGL by $\frac{v^2}{2g}$. Together, the HGL and EGL are used to interpret the energy loss in the liquid over the pipe system.
+
+\newpage
+\section{Sample Calculations}
+\subsection{Theoretical Head Loss}
+\noindent The first step is to simplify Bernoulli's equation with major and minor head losses. Bernoulli's equation is below. 
+\[\frac{P_1}{\gamma}+\frac{V_1^2}{2g}+z_1=\frac{P_2}{\gamma}+\frac{V_2^2}{2g}+z_2+\frac{V_2^2}{2g}\,\left(f\frac{L}{D}+\sum k \right)\]
+Since the elevation and pipe diameter don't change, \(z_1=z_2\) and \(V_1=V_2\), leaving the remaining equation: 
+\[\frac{P_1}{\gamma}=\frac{P_2}{\gamma}+\frac{V_2^2}{2g}\,\left(f\frac{L}{D}+\sum k \right)\]
+For this sample calculation, the pipe between manometers 1 and 2 are taken. Since there are no elbows between the two manometers the equation becomes the following: 
+\[\frac{P_1}{\gamma}=\frac{P_2}{\gamma}+\frac{fLV_2^2}{2gD}\]
+\(\frac{P}{\gamma}\) is the elevation of the manometer. Substituting for the manometer elevation, pipe diameter, gravity, and length the following equation is obtained: 
+\[7.50\text{ ft}=6.88\text{ ft}+\left(\frac{f\times V_2^2\times7.25\text{ ft}}{2\times \left(32.2 \frac{\text{ft}}{\text{s}^2}\right)\times \left(\frac{4}{12}\text{ ft}\right)}\right)\]
+The next objective is to obtain a reasonable guess for the friction factor. A guess of 0.014 is used. Plugging this in for $f$ and solving for $V_2$ yields $11.5\,\frac{\text{ft}}{\text{s}}$. Following this, the Reynold's Number is calculated using the following equation: 
+\[Re=\frac{VD}{\nu}=\frac{\left(11.5\,\frac{\text{ft}}{\text{s}}\right)\times \left(\frac{4}{12}\text{ ft}\right)}{\left(1.41\times10^{-5}\,\frac{\text{ft}^2}{\text{s}}\right)}=271800\]
+This value is then checked against the moody diagram. The value for the friction factor was found to be 0.0147, which does not match with the guess. This means that an iteration is required. Plugging this in for $f$ and solving for $V_2$ yields $11.22\,\frac{\text{ft}}{\text{s}}$. Following this, the Reynold's Number is calculated: 
+\[Re=\frac{VD}{\nu}=\frac{\left(11.22\,\frac{\text{ft}}{\text{s}}\right)\times \left(\frac{4}{12}\text{ ft}\right)}{\left(1.41\times10^{-5}\,\frac{\text{ft}^2}{\text{s}}\right)}=265249\]
+This value is then checked against the moody diagram. The value for the friction factor was found to be 0.148, which does not match with the guess. This means that another iteration is required. Plugging this in for $f$ and solving for $V_2$ yields $11.18\,\frac{\text{ft}}{\text{s}}$. Following this, the Reynold's Number is calculated: 
+\[Re=\frac{VD}{\nu}=\frac{\left(11.18\,\frac{\text{ft}}{\text{s}}\right)\times \left(\frac{4}{12}\text{ ft}\right)}{\left(1.41\times10^{-5}\,\frac{\text{ft}^2}{\text{s}}\right)}=264352\]
+After checking the moody diagram, this value matches the guessed friction factor of 0.0148. The head loss due to friction is then calculated using the following equation, plugging in the obtained value of $V_2$ and the determined friction factor: 
+\[H_f=\frac{fLV_2^2}{2gD}=\frac{(0.0148)\times(7.25\text{ ft})\times\left(11.18\,\frac{\text{ft}}{\text{s}}\right)^2}{2\times \left(32.2 \frac{\text{ft}}{\text{s}^2}\right)\times \left(\frac{4}{12}\text{ ft}\right)}=\boxed{0.625 \text{ ft}}\]
+\subsection{Measured Head Loss}
+%\noindent Measured head loss is calculated using the pressure gradient: 
+\[H_f=\frac{P_1}{\gamma}-\frac{P_2}{\gamma}\] 
+\[H_f=7.5\text{ ft}-6.875\text{ ft}=\boxed{0.625\text{ ft}}\] 
+\subsection{Hydraulic Grade Line}
+%\noindent The hydraulic grade line consists of a set of points from the following equation: 
+\[HGL = \frac{P}{\gamma}+z\] 
+\[HGL = 7.5\text{ ft}+8.13\text{ ft}=\boxed{15.63\text{ ft}}\]
+\subsection{Energy Grade Line}
+%\noindent The energy grade line consists of a set of points from the following equation: 
+\[EGL = HGL +\frac{V^2}{2\times g}\] 
+\[EGL = 15.63\text{ ft} + \frac{\left(11.18\,\frac{\text{ft}}{\text{s}}\right)^2}{2\times\left(32.2 \frac{\text{ft}}{\text{s}^2}\right)}=\boxed{17.57\text{ ft}}\]
+\subsection{Percent Error} 
+\[\%_\text{Error}=\frac{\left|H_{f\,\text{Experimental}}-H_{f\,\text{Theoretical}}\right|}{H_{f\,\text{Theoretical}}}\times 100\] 
+\[\%_\text{Error}=\frac{|0.625\text{ ft}-0.625\text{ ft}|}{0.625\text{ ft}}\times 100=\boxed{0\%}\]
+\newpage
+\section{Results} 
+\begin{center}
+
+    \addcontentsline{lot}{table}{Table 1: Measured Data}
+    {\large{\bf Table 1: Measured Data\\}}
+    \vspace{3mm}
+
+    \begin{tabular}{|ccc|} 
+        \hline
+        \textbf{Manometer Number} & \textbf{Pipe Elevation (in)} & \textbf{Manometer Level (in)}  \\ 
+        \hline
+        1                         & 98                           & 85                             \\
+        2                         & 97                           & 88                             \\
+        3                         & 96                           & 86                             \\
+        4                         & 96                           & 86                             \\
+        5                         & 98                           & 85                             \\
+        \hline
+    \end{tabular}
+
+    \vspace{10mm}
+    \addcontentsline{lot}{table}{Table 2: Adjusted Data}
+    {\large{\bf Table 2: Adjusted Data\\}}
+    \vspace{3mm}
+
+    \begin{tabular}{|ccc|} 
+        \hline
+        \textbf{Manometer Number} & \textbf{Pipe Elevation (in)} & \textbf{Manometer Level (in)}  \\ 
+        \hline
+        1                         & 97.5                         & 90                             \\
+        2                         & 97.5                         & 82.5                           \\
+        3                         & 97.5                         & 76                             \\
+        4                         & 97.5                         & 75.5                           \\
+        5                         & 97.5                         & 48.5                           \\
+        \hline
+    \end{tabular}
+
+    \vspace{10mm}
+    \addcontentsline{lot}{table}{Table 3: Pipe Section Lengths}
+    {\large{\bf Table 3: Pipe Section Lengths\\}}
+    \vspace{3mm}
+
+    \begin{tabular}{|cc|} 
+        \hline
+        \textbf{Pipe Section} & \textbf{Length (ft)}  \\ 
+        \hline
+        Manometers 1 - 2      & 7.25                  \\
+        Manometers 2 - 3      & 14.42                 \\
+        Manometers 3 - 4      & 6.83                  \\
+        Manometers 4 - 5      & 32.63                 \\
+        \hline
+    \end{tabular}
+
+    \vspace{10mm}
+    \addcontentsline{lot}{table}{Table 4: Calculated Values}
+    {\large{\bf Table 4: Calculated Values\\}}
+    \vspace{3mm}
+
+    \begin{tabular}{|cccc|} 
+        \hline
+        \textbf{Pipe Section} & \textbf{Friction Factor} & \textbf{Velocity (ft/s)} & \textbf{Reynold's Number}  \\ 
+        \hline
+        Manometers 1 - 2      & 0.0148                   & 11.18                    & 264352                     \\
+        Manometers 2 - 3      & 0.0172                   & 6.85                     & 161887                     \\
+        Manometers 3 - 4      & 0.0159                   & 2.87                     & 67830                      \\
+        Manometers 4 - 5      & 0.0151                   & 7.65                     & 180780                     \\
+        \hline
+    \end{tabular}
+
+    \newpage
+
+    \addcontentsline{lot}{table}{Table 5: Theoretical Head Losses}
+    {\large{\bf Table 5: Theoretical Head Losses\\}}
+    \vspace{3mm}
+
+    \begin{tabular}{|ccc|} 
+        \hline
+        \textbf{Pipe Section} & \textbf{Head Loss Due to Friction (ft)} & \textbf{Minor Head Loss (ft)}  \\ 
+        \hline
+        Manometers 1 - 2      & 0.63                                    & 0                              \\
+        Manometers 2 - 3      & 0.54                                    & 0                              \\
+        Manometers 3 - 4      & 0.04                                    & 0                              \\
+        Manometers 4 - 5      & 1.34                                    & 0.91                           \\
+        \hline
+    \end{tabular}
+
+    \vspace{10mm}
+    \addcontentsline{lot}{table}{Table 6: Measured and Theoretical Head Losses}
+    {\large{\bf Table 6: Measured and Theoretical Head Losses\\}}
+    \vspace{3mm}
+
+    \begin{tabular}{|ccc|} 
+        \hline
+        \textbf{Pipe Section} & \textbf{Measured Head Loss (ft)} & \textbf{Total Theoretical Head Loss (ft)}  \\ 
+        \hline
+        Manometers 1 - 2      & 0.63                             & 0.63                                       \\
+        Manometers 2 - 3      & 0.54                             & 0.54                                       \\
+        Manometers 3 - 4      & 0.04                             & 0.04                                       \\
+        Manometers 4 - 5      & 2.25                             & 2.25                                       \\
+        \hline
+    \end{tabular}
+
+    \vspace{10mm}
+    \addcontentsline{lot}{table}{Table 7: Hydraulic and Energy Grade Lines}
+    {\large{\bf Table 7: Hydraulic and Energy Grade Lines\\}}
+    \vspace{3mm}
+
+    \begin{tabular}{|ccc|} 
+        \hline
+        \textbf{Manometer Number} & \textbf{Hydraulic Grade (ft)} & \textbf{Energy Grade (ft)}  \\ 
+        \hline
+        1                         & 15.63                         & 17.57                       \\
+        2                         & 15.00                         & 15.73                       \\
+        3                         & 14.46                         & 14.59                       \\
+        4                         & 14.42                         & 15.32                       \\
+        5                         & 12.17                         & 12.17                       \\
+        \hline
+    \end{tabular}
+
+    \newpage
+    \pgfplotsset{width=13cm}
+    \addcontentsline{lof}{figure}{Figure 2: Hydraulic and Energy Grade Lines}
+    {\large{\bf Figure 2: Hydraulic and Energy Grade Lines\\}}
+    \begin{tikzpicture}[baseline=(current bounding box.center)]
+        \begin{axis}[
+            %title={\textbf{Figure 1: Hydraulic and Energy Grade Lines}},
+            xlabel={Manometer Number},
+            ylabel={Grade (ft)},
+            xmin=1, xmax=5,
+            ymin=10, ymax=20,
+            xtick={1,2,3,4,5},
+            ytick={10,15,20},
+            ymajorgrids=true,
+            grid style=dashed,
+            legend pos = north east,
+            legend cell align={left},
+        ]
+
+        \addplot[blue] table [x=mano, y=egl] {1.csv};
+        \addplot[red] table [x=mano, y=hgl] {1.csv};
+        
+        %\addplot[blue] table [x=strain, y=stress_th] {1.csv};
+        \addlegendentry{Energy Grade Line}
+        \addlegendentry{Hydraulic Grade Line}
+        
+        \end{axis}
+    \end{tikzpicture}
+
+\end{center}
+\newpage
+\section{Conclusion}
+\par Head losses represent the reduction in total head (pressure) of the fluid as it flows through a system, as well as representing the energy used in overcoming friction caused by pipe walls and other equipment within the system, and is dependent on flow velocity, pipe diameter, length, friction factors, and Reynolds number. In real moving fluids, head losses are unavoidable, due to the friction between adjacent fluids moving relative to one another; such friction is greater in more turbulent flows than in laminar flows. While being a measure of energy loss, head losses are not representative of a loss of total energy; head losses due to friction increase the internal energy of the fluid by generating heat and raising the temperature. Total head loss in a flow is the combined total of friction and minor losses; minor losses arise from valves, elbows, piping entrances, fittings, and tees. These losses are combined to arrive at total head losses. \\
+\par This experiment set out to prove that major and minor losses account for all head losses. To do so, an elevated pipe system with water flowing through it was set up in the Water Resources laboratory; manometers are located at five points along the pipe, and two elbows are included in the configuration as well. The pipe is made with copper, which has an absolute roughness of 0.000005, and has a diameter of 4 inches consistent throughout. A friction factor is arrived at through an iterative process involving Reynold's number and the Moody chart. Because the pipe diameter is unchanging, the velocity is constant through the full pipe length, and in using Bernoulli's equation, elevation cancels as it is constant through the length of pipe considered in the experiment; velocity terms thus appear only in calculating head losses. Between manometers, 1, 2, 3 and 4, there are no elbows, so K factors are zero; between manometers 4 and 5, there are two elbows, each with a factor of 0.5. \\
+\par Experimentally, total head loss was 0.63 feet between manometers 1 and 2, 0.54 feet between manometers 2 and 3, 0.04 feet between manometers 3 and 4, and 2.25 between manometers 4 and 5; the only section experiencing minor losses is the section between manometers 4 and 5, at 0.91 feet with friction losses in being 1.34 feet. Compared with theoretical calculations, percent error is so small as to be negligible, effectively proving that total head loss is equal to the sum of major (friction) and minor losses. \\
+\par Hydraulic Grade and Energy Grade Lines were graphed from experimental data and demonstrate the change in elevation and pressure head and total head at each manometer, and visually represent the losses along the flow in the pipe. HGL and EGL should be parallel to each other, but our graph does not depict such a relationship; this can likely be attributed to error in conducting the experiment. Procedural as well as human error may have been introduced in measuring heights of water in manometers: tape measures and meter sticks were used to take lengths, and may not have been held perpendicularly to the ground and/or pipe. Instrumental and human error may have been involved in reading the heights. Similar error is introduced in taking the lengths between manometers. Additionally, there were more manometers installed along the pipe length that were not at full function and may have introduced losses that were not accounted for, and potentially impacted effective cross-sectional area, which would introduce non-parallel properties to the grade lines. \\
+\par Overall, this experiment achieved its stated objective of proving that total head loss equals the sum of major and minor losses, with negligible percent error from experimental to theoretical values. 
+\newpage
+\section{References}
+\begin{description}
+    \item[] Munson, Bruce Roy, et al. \emph{Fundamentals of Fluid Mechanics, 5th Edition}. Wiley, 2009.  
+    \item[] ``Energy and Hydraulic Grade Line.'' \emph{Engineering ToolBox}, 2003, \url{https://www.engineeringtoolbox.com/energy-hydraulic-grade-line-d_613.html}.
+    \item[] ``Head Loss.'' \emph{Engineering Library}. \url{https://engineeringlibrary.org/reference/head-loss-fluid-flow-doe-handbook}.
+\end{description}
+\newpage
+\section{Appendix}
+\begin{center}
+    \begin{tabular}{|c|c|c|} 
+        \hline
+        \textbf{Manometer Number} & \textbf{\(\bm{z}\) (ft)} & \textbf{\(\bm{\frac{P}{\gamma}}\) (ft)}  \\ 
+        \hline
+        1                         & 8.17              & 7.08                     \\ 
+        \hline
+        2                         & 8.08              & 7.33                     \\ 
+        \hline
+        3                         & 8              & 7.17                     \\ 
+        \hline
+        4                         & 8              & 7.17                     \\ 
+        \hline
+        5                         & 8.17              & 7.08                     \\
+        \hline
+    \end{tabular}
+\end{center}
+\end{document}

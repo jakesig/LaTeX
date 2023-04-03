@@ -1,0 +1,210 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath, graphicx, tikz, pgfplots, multirow, newlfont, gensymb, indentfirst, bm, setspace, xurl}
+\usepackage[usestackEOL]{stackengine}
+\usepackage[export]{adjustbox}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Water We Doing\\2/13/23}
+\lhead{CE-343\\Water Resources Engineering}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{1.5pt}
+\setlength{\headheight}{22.6pt}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\setlength\parindent{24pt}
+
+\begin{document}
+\include{cover.tex}
+\newpage
+\doublespacing
+\tableofcontents
+\newpage
+\addcontentsline{toc}{section}{List of Tables}
+\listoftables
+\addcontentsline{toc}{section}{List of Figures}
+\listoffigures
+\newpage
+\section{Objective} 
+\par The objective of the hydraulic jump experiment is to study the behavior of fluid flow and to observe and understand the phenomenon of a hydraulic jump. The hydraulic jump is a crucial phenomenon in fluid mechanics, as it plays an important role in many practical applications, such as water treatment plants and sewage treatment systems. In order to conduct this experiment, first, the conditions under which a hydraulic jump occurs will be determined. Next, the height and length of the jump will be measured. Using this data, the effect of different parameters such as slope, channel area, and fluid conditions will be analyzed. Overall, as a deeper understanding is gained, this experiment serves to offer greater insight into how the design and performance of various hydraulic systems can be improved. 
+
+\newpage
+\section{Experiment}
+\subsection{Apparatus}
+\begin{enumerate}
+    \item Ruler 
+    \item Measuring Tape
+    \item Hydraulic Jump Apparatus
+    \begin{itemize}
+        \item The Hydraulic Jump Apparatus is an instrument that allows for a visual representation of a hydraulic jump in an enclosed chamber. The apparatus consists of a chamber with a gate to allow the hydraulic jump to occur under a controlled environment so that it can be clearly observed.
+    \end{itemize}
+    \item Pitot Static Tube 
+    \item Stepping Stool or Ladder
+\end{enumerate}
+\subsection{Procedure}
+\par Begin by filling the tank with water to the desired length and setting the slope of the flow using the crank attached to the apparatus. Record the slope for the calculation of the uniform flow velocity. Additionally, record the height and width of the tank. Once these values are recorded, begin the water flow and gradually raise the gate until a hydraulic jump forms. Once the jump forms, measure and record the height and length of the jump. This will be used in the calculation of the flow rate. Repeat the process at different heights of uniform flow by allowing more water in the chamber before fully beginning the water flow.
+
+\newpage
+\section{Theory}
+\noindent A hydraulic jump is a sudden increase in fluid depth and decrease in fluid velocity that occurs in an open channel flow. It is a classic example of an unsteady, non-uniform flow in fluid mechanics and is characterized by the abrupt transition from supercritical to subcritical flow. A hydraulic jump occurs when a high-velocity fluid stream, such as water in an open channel, encounters a constriction or a change in slope that causes the velocity of the fluid to decrease. This decrease in velocity results in an increase in fluid depth, which generates an abrupt change in the flow pattern.\\
+
+\noindent The hydraulic jump is a crucial aspect of hydraulic engineering, as it has significant implications for the design and operation of hydraulic systems, such as canals, irrigation systems, and dams. Understanding the dynamics of hydraulic jumps is crucial for engineers and designers, as it can help them predict the behavior of fluid flows in these systems and prevent adverse consequences such as erosion, sedimentation, and overtopping.\\
+
+\noindent Regarding flow before the jump, the normal depth is used to design channels with uniform flow. Manning's Equation can predict the velocity of uniform flow, which is shown in Equation 1. 
+
+\begin{equation}
+    v=\frac{1.49}{n}\times R^{\frac{2}{3}}\times\sqrt{S}
+\end{equation}
+
+\noindent Where $n$ is the Manning's Roughness Coefficient, $R$ is the hydraulic radius, and $S$ is the slope of the hydraulic grade line. The theory of hydraulic jumps can be analyzed using the principle of energy conservation. According to this principle, the total energy of a fluid system remains constant, and any changes in the velocity of the fluid will result in corresponding changes in the fluid's pressure and height. In the case of a hydraulic jump, the decrease in velocity results in an increase in fluid height, which generates a jump in the flow. The velocity of non-uniform flow is calculated using Equation 2: 
+
+\begin{equation}
+    v=\sqrt{2\times g\times (H-y)}
+\end{equation}
+
+\noindent With $g$ being the acceleration of gravity, $H$ being the height of the manometer, and $y$ being the pitot tube reading. Another key parameter in the theory of hydraulic jumps is the Froude number, which is a dimensionless parameter that describes the relative importance of inertial and gravitational forces in a fluid system. The Froude number is a useful tool for understanding the behavior of hydraulic jumps, as it can be used to predict the type and stability of the jump. The Froude number is calculated using Equation 3. 
+
+\begin{equation}
+    Fr=\frac{v}{\sqrt{g\times y}}
+\end{equation}
+
+\noindent Where $v$ is the calculated velocity, $g$ is the acceleration of gravity, and $y$ is the pitot tube reading. A Froude number of less than 1 is indicative of a subcritical flow, while a Froude number of greater than 1 is indicative of a supercritical flow. In the case of a hydraulic jump, the Froude number decreases from greater than 1 to less than 1, indicating the transition from supercritical to subcritical flow. Subcritical flow is most common in flat streams, while supercritical flow is most common in steep streams.
+\newpage
+\section{Sample Calculations}
+\singlespacing
+\subsection{Flow Velocity}
+
+\subsubsection{Uniform}
+\noindent Velocity for uniform flow is calculated using the following equation: 
+\[v=\frac{1.49}{n}\times R^{\frac{2}{3}}\times\sqrt{S}\] 
+Where $n$ is the roughness coefficient, $S$ is the slope, and $R$ is as follows: 
+\[R=\frac{\text{Area}}{\text{Wetted Perimeter}}=\frac{h\times w}{w+2\times h}\]
+\[v=\frac{1.49}{0.01}\times\left(\frac{\frac{1.625\text{ in}}{12}\times1\text{ ft}}{1\text{ ft}+2\times\frac{1.625\text{ in}}{12}}\right)^\frac{2}{3}\times\sqrt{0.125}=\boxed{3.74\text{ ft/s}}\]
+\subsubsection{Non-Uniform}
+\noindent Velocity for non-uniform flow is calculated using the following equation: 
+\[v=\sqrt{2\times g\times (H-y)}\] 
+Where $g$ is gravity, $H$ is the manometer reading, and $y$ is the reading of the pitot tube.
+\[v=\sqrt{2\times 32.2\text{ ft/s}^2\times \left(\frac{3\text{ in}}{12}-0.076\text{ ft}\right)}=\boxed{2.72\text{ ft/s}}\] 
+\subsection{Flow Rate}
+\[Q=v\times A\] 
+\[Q=2.72\text{ ft/s}\times 0.135\text{ ft}^2=\boxed{0.37\text{ ft}^3\text{/s}}\]
+\subsection{Froude Number}
+\[Fr=\frac{v}{\sqrt{g\times y}}\]
+\[Fr=\frac{2.72\text{ ft/s}}{\sqrt{32.2\text{ ft/s}^2\times0.135\text{ ft}}}=\boxed{0.9}\]
+\doublespacing
+\newpage
+\section{Results} 
+\begin{center}
+
+    \addcontentsline{lot}{table}{Table 1: Apparatus}
+    {\large{\bf Table 1: Apparatus\\}}
+    \vspace{3mm} 
+    \begin{tabular}{|l|r|}
+        \hline 
+        \textbf{Channel Width} & 1 ft \\ 
+        \textbf{Pitot Tube Calibration} & 0.7 ft \\ 
+        \textbf{Hydraulic Grade Line Slope} & 1 in 80 \\ 
+        \textbf{Manning's Roughness Coefficient} & 0.01 \\
+        \hline
+    \end{tabular}
+    \vspace{10mm}
+    \addcontentsline{lot}{table}{Table 2: Measured Values}
+    {\large{\bf \\Table 2: Measured Values\\}}
+    \vspace{3mm}
+    \begin{tabular}{|cccc|} 
+        \hline
+        \textbf{Height (in)} & \textbf{Pitot Tube Reading (ft)} & \textbf{Manometer Reading (in)} & \textbf{Jump Length (in)}  \\ 
+        \hline
+        1.63                 & 0.78                             & -                        & -                          \\
+        3.38                 & 0.84                             & 3                      & 78                         \\
+        7.50                 & 1.05                             & 6.5                        & -                          \\
+        2.50                 & 0.79                             & -                         & -                          \\
+        6.75                 & 0.99                             & 6.5                         & 188                        \\
+        11.25                & 1.32                             & 11                         & -                          \\
+        \hline
+    \end{tabular}
+    \vspace{10mm}
+    \addcontentsline{lot}{table}{Table 3: Calculated Values}
+    {\large{\bf Table 3: Calculated Values\\}}
+    \vspace{3mm}
+    \begin{tabular}{|ccc|} 
+        \hline
+        \textbf{Flow Velocity $\left(\bm{\frac{\textbf{ft}}{\textbf{s}}}\right)$} & \textbf{Flow Rate $\left(\bm{\frac{\textbf{ft}^3}{\textbf{s}}}\right)$} & \textbf{Froude Number}  \\ 
+        \hline
+        3.74                     & 0.51                    & 1.79                    \\
+        2.72                     & 0.37                    & 0.90                    \\
+        3.54                     & 1.23                    & 0.79                    \\
+        4.64                     & 0.97                    & 1.79                    \\
+        4.03                     & 1.17                    & 0.95                    \\
+        4.36                     & 2.71                    & 0.79                    \\
+        \hline
+    \end{tabular}
+    \vspace{10mm}
+    \pgfplotsset{width=13cm}
+    \newpage
+    \addcontentsline{lof}{figure}{Figure 1: Flow Velocity vs. Pitot Tube Height}
+    {\large{\bf Figure 1: Flow Velocity vs. Pitot Tube Height\\}}
+    \begin{tikzpicture}[baseline=(current bounding box.center)]
+        \begin{axis}[
+            %title={\textbf{Figure 1: Hydraulic and Energy Grade Lines}},
+            xlabel={Flow Velocity (ft/s)},
+            ylabel={Pitot Tube Height (ft)},
+            xmin=0, xmax=10,
+            ymin=0, ymax=1,
+            xtick={0,2,4,6,8,10},
+            ytick={0,0.25,0.5,0.75,1},
+            ymajorgrids=true,
+            grid style=dashed,
+            legend pos = north east,
+            legend cell align={left},
+        ]
+
+        \addplot+[only marks, blue] table [x=v, y=h] {1.csv};
+        %\addplot[blue] table [x=strain, y=stress_th] {1.csv};
+        
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+\newpage
+\section{Conclusion}
+\par Open channel hydraulics, the study of the behavior of water with a free surface, is a field essential to civil engineering, as structures often cannot be tested at scale; it is necessary to predict how a hydraulic structure will perform before construction, and as such, it is necessary to study the phenomena that occur in full scale structures in controlled laboratory environments to gain an understanding of the mechanisms at work. 
+\par In a flow, the profile may naturally change from subcritical to supercritical (subcritical flow is slow and tranquil, with waves traveling counter to the flow direction, while supercritical flow is fast moving and waves cannot propagate upstream). This transition can occur when a channel changes suddenly to a steeper slope or a cliff; when this change is such that the flow transitions from supercritical to subcritical flow, a hydraulic jump occurs. 
+\par This phenomenon can be observed naturally in streams or tides when supercritical flow crashes into rocks and/or changing slopes, causing whitewater and hydraulic jumps. An engineer may design for a hydraulic jump to occur as a mechanism for energy dissipation, such as in spillways. Jumps can play an important role in the design of water and sewage treatment plants.  Artificial rapids in whitewater courses and kayak parks are most often formed by designed hydraulic jumps. 
+\par This laboratory experiment was designed to provide insight and understanding of an important mechanism in the design of hydraulic systems; to that end, a controlled jump is produced, and the height and length of the jump recorded, and flow rate determined for each jump produced. The effect of parameters such as channel area and fluid conditions were analyzed as well. 
+\par In observing two hydraulic jumps, it was noticeable that as the gate was close, the water level rose. As expected, flow velocity decreased after causing the jump and the Froude numbers decreased from above 1 to below 1, confirming the change in flow from supercritical to subcritical. Upon closing the gate fully, the Froude number is further decreased, while velocity is slightly increased; the flow moved more quickly, but the increase in depth was sufficient to keep the Froude number below, indicating that subcritical flow was maintained despite the higher velocity. In the first run, flow rate initially decreased after the jump, and the increased upon fully closing the gate, while in the second run, it increased both after inducing the jump and after closing the gate. Because flow rate is the product between velocity and area, large enough increase in depth would affect area such that the rate would increase by a significant amount even as velocity decreased (or increased slightly). 
+\par For each jump produced, the Froude numbers before and after inducing the jump and the after fully closing the gate are approximately the same, despite the runs having different initial uniform flow velocities and depths. This is because parameters such as channel width, hydraulic grade line slope, and Manning's roughness coefficient stayed consistent between both runs, causing velocities and heights of the flow to be proportional. 
+\par Error may be introduced in this experiment in several ways. Instrumental error is introduced through the readings for pitot tube, water depth, and jump length; this error is due to the precision of the instruments used for measurements, as well as the calibration of the pitot tube which was not to a reading of 0.00 ft, but to 0.7 ft. Human error is introduced in reading the pitot tube, as the tube may not have been adjusted to the true center of the flow, and in reading the jump length as the measuring tape may not have been held straight when reading measurements. Further, manometer readings are crucial for determining flow velocity in non-uniform flows, which constitute two readings in each run, but were not recorded at the time of the experiment; this is due to the manometers not operating at the time. As such, the laboratory professor provided values for manometer readings afterward; these values may not be accurate but do still indicate the change from supercritical to subcritical flow. 
+\par Overall, results from this experiment confirm that a hydraulic jump occurs with the sudden change of a flow from supercritical to subcritical flow, which can happen when flow is suddenly restricted such as with the closing of a gate as happened in this experiment. Froude numbers can be used to confirm if the changes observed in a flow mean that the flow changed from super- to subcritical, which can be essential in the design of hydraulic systems. 
+
+
+\newpage
+\section{References}
+\begin{description}
+    \item Munson, Bruce Roy, et al. \emph{Fundamentals of Fluid Mechanics, 5th Edition}. Wiley, 2009.  
+    \item Iowa Statewide Urban Design and Specifications. \emph{Design Manual}. 2013.
+    \item ``What is a Hydraulic Jump?'' \emph{Practical Engineering}, 2019, \url{https://practical.engineering/blog/2019/3/9/what-is-a-hydraulic-jump}.
+\end{description}
+\newpage
+\section{Appendix}
+\begin{center}
+\begin{tabular}{|c|c|c|c|} 
+    \hline
+    \textbf{Run Number} & \textbf{Ruler Reading (in)} & \textbf{Pitot Tube Reading (in)} & \textbf{Jump Length (in)}  \\ 
+    \hline
+    1            & 1.63                        & 0.78                             & -                          \\ 
+    \hline
+    2            & 3.38                        & 0.84                             & 78                         \\ 
+    \hline
+    3            & 7.50                        & 1.05                             & -                          \\ 
+    \hline
+    4            & 2.50                        & 0.79                             & -                          \\ 
+    \hline
+    5            & 6.75                        & 0.99                             & 188                        \\ 
+    \hline
+    6            & 11.25                       & 1.32                             & -                          \\
+    \hline
+\end{tabular}
+\end{center}
+\end{document}
