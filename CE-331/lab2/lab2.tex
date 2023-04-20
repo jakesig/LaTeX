@@ -1,0 +1,116 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath, graphicx, tikz, pgfplots, multirow, newlfont, gensymb, indentfirst, bm, setspace, xurl}
+\usepackage[usestackEOL]{stackengine}
+\usepackage[export]{adjustbox}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Experiments 6-7\\4/14/23}
+\lhead{CE-331\\Group 2}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{1.5pt}
+\setlength{\headheight}{22.6pt}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\setlength\parindent{24pt}
+
+\begin{document}
+\include{cover.tex}
+\newpage
+\doublespacing
+\tableofcontents
+\newpage
+% \addcontentsline{toc}{section}{List of Tables}
+% \listoftables
+\addcontentsline{toc}{section}{List of Figures}
+\listoffigures
+\newpage
+\section{Overview} 
+\section{Results}
+The variable head test indicates, with a  $k_p=2.036\times10^{-5}$ at 20$^\circ$C that the soil has low to very low permeability. The absolute permeability is so small as to be of magnitude on the order $10^{-10}$ ($\bar{K}=3.27\times10^{-10}$), which indicates a degree of permeability that is so low as to be practically impermeable.
+The constant head test at all temperatures at which the readings were taken produces a permeability coefficient of $k_T=0.021=2.1\times 10^{-2}$, which is a medium degree of permeability. At 20$^\circ$C, the coefficient is $k_{20}=0.0196=1.96\times10^{-2}$, indicating a medium degree of permeability as well. The absolute permeability is on the order of magnitude of $10^{-7}$, ($\bar{K}=3.16\times10^{-7}$), indicating very low permeability. 
+\subsection{Constant Head}
+\begin{center}
+    \pgfplotsset{width=10cm}
+    \begin{tikzpicture}[baseline=(current bounding box.center)]
+        \begin{axis}[
+            xlabel={Hydraulic Gradient},
+            ylabel={Velocity (cm/s)},
+            xmin=0, xmax=2,
+            ymin=0, ymax=0.02,
+            xtick={0, 1, 2},
+            ytick={0.01, 0.02},
+            ymajorgrids=true,
+            grid style=dashed,
+            legend pos = north east,
+            legend cell align={left},
+        ]
+        \addplot[only marks, red] table [x=h, y=v] {1.csv};
+        \addplot[dashed, red, domain=0:2] {0.01*x-0.0004};
+        \end{axis}
+    \end{tikzpicture}
+    \vspace{3mm}
+    \addcontentsline{lof}{figure}{Figure 1: Hydraulic Gradient vs. Velocity at 20$^\circ$C}
+    \emph{\\Figure 1: Hydraulic Gradient vs. Velocity at 20$^\circ$C\\}
+\end{center}
+\newpage
+\subsection{Variable Head}
+\begin{center}
+    \pgfplotsset{width=10cm}
+    \begin{tikzpicture}[baseline=(current bounding box.center)]
+        \begin{axis}[
+            xlabel={Elapsed Time (s)},
+            ylabel={$\ln\left(\frac{h_o}{h_1}\right)$},
+            xmin=0, xmax=2500,
+            ymin=0, ymax=0.5,
+            xtick={0, 500, 1000, 1500, 2000, 2500},
+            ytick={0.1, 0.2, 0.3, 0.4, 0.5},
+            ymajorgrids=true,
+            grid style=dashed,
+            legend pos = north east,
+            legend cell align={left},
+        ]
+        \addplot[only marks, red] table [x=t, y=h] {2.csv};
+        \addplot[dashed, red, domain=0:2500] {0.0002*x+0.0034};
+        \end{axis}
+    \end{tikzpicture}
+    \vspace{3mm}
+    \addcontentsline{lof}{figure}{Figure 2: Time vs. $\ln\left(\frac{h_o}{h_1}\right)$}
+    \emph{\\Figure 2: Time vs. $\ln\left(\frac{h_o}{h_1}\right)$\\}
+\end{center}
+\newpage
+\section{Sample Calculations} 
+\subsection{Hydraulic Gradient}
+\[HG=\frac{h}{L}\] 
+\[HG=\frac{4.199}{37.15}=\boxed{0.237}\] 
+\subsection{Velocity} 
+\[V=\frac{q}{A\times t}\] 
+\[V=\frac{25}{62.02\times 180}=\boxed{0.00224\text{ cm/s}}\]
+\subsection{Coefficient of Permeability}
+\[k_T=\frac{q\times L}{h\times A\times t}\] 
+\[k_T=\frac{25\times 37.15}{4.199\times 62.02\times 180}=\boxed{0.0198}\] 
+\subsection{Coefficient of Permeability at 20$^\circ$C} 
+\[k_{20}=k_T\left(\frac{\sigma_T}{\sigma_{20}}\right)\left(\frac{\gamma_{20}}{\gamma_T}\right)\]
+\[k_{20}=0.0198\left(\frac{0.0009159}{0.0010005}\right)\left(\frac{62.3}{62.26}\right)=\boxed{0.018145}\]
+\subsection{Relative Density} 
+\[D_fr=\frac{\frac{1}{\gamma_{d min}}-\frac{1}{\gamma_{d nat}}}{\frac{1}{\gamma_{d min}}-\frac{1}{\gamma_{d max}}}\]
+\[D_f=\frac{\frac{1}{88.4}-\frac{1}{89}}{\frac{1}{88.4}}-\frac{1}{99.6}=\boxed{6\%}\]
+\subsection{Darcy Coefficient of Permeability} 
+\[k=2.303\left(\frac{a\times L}{A\times t}\right)\log_{10}\left(\frac{h_1}{h_2}\right)\]
+\[k=2.303\left(\frac{0.063\times 11.7}{78.54\times 2100}\right)\log_{10}\left(\frac{1131.2}{734.2}\right)=\boxed{1.9\times 10^{-6}}\]
+\subsection{Absolute Permeability}
+\[\bar{K}=\frac{\eta}{\gamma_w}\left(\frac{\eta_T}{\eta_{20}}\right)k\]
+\[\bar{K}=\frac{0.001005}{62.3}\times \left(\frac{0.001005}{0.01056}\right)\times 1.9\times 10^{-6}=\boxed{3.29\times 10^{-10}}\]
+\section{Appendix}
+\begin{center}
+\includegraphics*[scale=0.7]{constant_head_datasheet.pdf}
+\newpage
+\includegraphics*[scale=0.7]{constant_head_datasheet_2.pdf}
+\newpage 
+\includegraphics*[scale=0.7]{variable_head_datasheet.pdf}
+\newpage
+\includegraphics*[scale=1]{Properties_of_distilled_water.PNG}
+\end{center}
+\end{document}

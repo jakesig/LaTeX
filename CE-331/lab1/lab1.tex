@@ -39,12 +39,12 @@
     \textbf{Coefficient of Gradation, $\bm{C_c}$} & 0.075\\\hline 
     \textbf{Liquid Limit} & 26.84\%\\\hline 
     \textbf{Plastic Limit} & 34.6\%\\\hline 
-    \textbf{Dry Unit Weight} & 0\\\hline 
+    \textbf{Dry Unit Weight} & 96.13 pcf\\\hline 
     \textbf{Optimum Moisture Content} & 8.55\%\\\hline 
-    \textbf{Dry Unit Weight @ 75\% Relative Density} &0 \\\hline 
-    \textbf{Moisture Content @ 75\% Relative Density} & 0\\\hline 
-    \textbf{CBR} & 0\\\hline 
-    \textbf{Soaked CBR} & 0\\\hline
+    \textbf{Dry Unit Weight @ 75\% Relative Density} & 110.7 g \\\hline 
+    \textbf{Moisture Content @ 75\% Relative Density} & 14.6\%\\\hline 
+    \textbf{CBR} & 32.24\\\hline 
+    \textbf{Soaked CBR} & 20.94\\\hline
 \end{tabular}
 \vspace{3mm}
 \addcontentsline{lot}{table}{Table 1: Overview}
@@ -140,48 +140,48 @@
     \addcontentsline{lof}{figure}{Figure 1: Grain Size Distribution - Logarithmic Scale}
     \emph{\\Figure 1: Grain Size Distribution - Logarithmic Scale\\}
     \vspace{5mm}
-    \begin{tikzpicture}[baseline=(current bounding box.center)]
-        \begin{axis}[
-            xlabel={Grain Size (mm)},
-            ylabel={Percent Finer (\%)},
-            xmin=0, xmax=40,
-            ymin=0, ymax=100,
-            x dir = reverse,
-            xtick={10, 0.001},
-            ytick={25, 50, 75, 100},
-            ymajorgrids=true,
-            grid style=dashed,
-            legend pos = north east,
-            legend cell align={left},
-        ]
-        \addplot[smooth, red] table [x=x, y=y] {2.csv};
-        \end{axis}
-    \end{tikzpicture}
-    \vspace{3mm}
-    \addcontentsline{lof}{figure}{Figure 2: Grain Size Distribution - Linear Scale}
-    \emph{\\Figure 2: Grain Size Distribution - Linear Scale}
-    \begin{tikzpicture}[baseline=(current bounding box.center)]
-        \begin{axis}[
-            xlabel={Grain Size (mm)},
-            ylabel={Percent Finer (\%)},
-            xmin=0, xmax=100,
-            ymin=0, ymax=100,
-            x dir = reverse,
-            xmode = log,
-            xtick={100, 10, 1, 0.1, 0.01},
-            ytick={25, 50, 75, 100},
-            ymajorgrids=true,
-            grid style=dashed,
-            legend pos = north east,
-            legend cell align={left},
-        ]
-        \addplot[smooth, red] table [x=d, y=p] {7.csv};
-        \end{axis}
-    \end{tikzpicture}
-    \vspace{3mm}
-    \addcontentsline{lof}{figure}{Figure 3: Grain Size Distribution - Sieve Analysis}
-    \emph{\\Figure 3: Grain Size Distribution - Sieve Analysis\\}
-    \vspace{5mm}
+    % \begin{tikzpicture}[baseline=(current bounding box.center)]
+    %     \begin{axis}[
+    %         xlabel={Grain Size (mm)},
+    %         ylabel={Percent Finer (\%)},
+    %         xmin=0, xmax=40,
+    %         ymin=0, ymax=100,
+    %         x dir = reverse,
+    %         xtick={10, 0.001},
+    %         ytick={25, 50, 75, 100},
+    %         ymajorgrids=true,
+    %         grid style=dashed,
+    %         legend pos = north east,
+    %         legend cell align={left},
+    %     ]
+    %     \addplot[smooth, red] table [x=x, y=y] {2.csv};
+    %     \end{axis}
+    % \end{tikzpicture}
+    % \vspace{3mm}
+    % \addcontentsline{lof}{figure}{Figure 2: Grain Size Distribution - Linear Scale}
+    % \emph{\\Figure 2: Grain Size Distribution - Linear Scale}
+    % \begin{tikzpicture}[baseline=(current bounding box.center)]
+    %     \begin{axis}[
+    %         xlabel={Grain Size (mm)},
+    %         ylabel={Percent Finer (\%)},
+    %         xmin=0, xmax=100,
+    %         ymin=0, ymax=100,
+    %         x dir = reverse,
+    %         xmode = log,
+    %         xtick={100, 10, 1, 0.1, 0.01},
+    %         ytick={25, 50, 75, 100},
+    %         ymajorgrids=true,
+    %         grid style=dashed,
+    %         legend pos = north east,
+    %         legend cell align={left},
+    %     ]
+    %     \addplot[smooth, red] table [x=d, y=p] {7.csv};
+    %     \end{axis}
+    % \end{tikzpicture}
+    % \vspace{3mm}
+    % \addcontentsline{lof}{figure}{Figure 3: Grain Size Distribution - Sieve Analysis}
+    % \emph{\\Figure 3: Grain Size Distribution - Sieve Analysis\\}
+    % \vspace{5mm}
     \begin{tikzpicture}[baseline=(current bounding box.center)]
         \begin{axis}[
             xlabel={Distance (cm)},
@@ -205,8 +205,8 @@
         \end{axis}
     \end{tikzpicture}
     \vspace{3mm}
-    \addcontentsline{lof}{figure}{Figure 4: Hydrometer Calibration Graph}
-    \emph{\\Figure 4: Hydrometer Calibration Graph}
+    \addcontentsline{lof}{figure}{Figure 2: Hydrometer Calibration Graph}
+    \emph{\\Figure 2: Hydrometer Calibration Graph}
 \end{center}
 \newpage
 \subsection{Atterberg Limits}
@@ -247,14 +247,14 @@
         
         \addplot +[blue, mark=none] coordinates {(25, 24) (25, 30)};
         \addplot[only marks, red] table [x=nb, y=mc] {1.csv};
-        \addplot[dashed, red, domain=20:49] {33.322*(2.718281828)^(-0.006*x)};
+        \addplot[dashed, red, domain=20:49] {-5.341*ln(x)+45.715};
         \addlegendentry{$x=25$ blows}
         
         \end{axis}
     \end{tikzpicture}
     \vspace{3mm}
-    \addcontentsline{lof}{figure}{Figure 5: Flow Index}
-    \emph{\\Figure 5: Flow Index}
+    \addcontentsline{lof}{figure}{Figure 3: Flow Index}
+    \emph{\\Figure 3: Flow Index}
 \end{center}
 \par In the first experiment, results and data calculated the Liquid Limit to be 26.84, meaning that, starting with the sample, if the soil becomes 27\% liquid, the sample will behave as a liquid more than a solid. This result was achieved during laboratory experiments, by using a Casagrande grooving tool, as well as precise measurements of the soil sample's weights, both wet and dry, as well as giving proper attention to the varying weights of the containers used.  
 \par Following the first experiment, the second experiment identified the Plastic Limit as 34.6. By using the Liquid Limit and subtracting it with the Plastic Limit, we obtained the Plastic Index, and this calculation resulted in a negative value. For Plastic Index, since it cannot be a negative value, when the resulted value is less than zero, Plastic Index equals zero. This makes this sample's degree of plasticity non-plastic. Furthermore, the Activity value of this sample is also zero, due to both the Plastic Index and amount of clay to be both zero.  
@@ -275,11 +275,11 @@
         \hline
         \textbf{Maximum Density (lb/ft$\bm{^3}$)}               & 104.85       \\ 
         \hline
-        \textbf{Minimum Density (lb/ft$\bm{^3}$)}   & 0       \\ 
+        \textbf{Minimum Density (lb/ft$\bm{^3}$)}   & 80.92       \\ 
         \hline
-        \textbf{Relative Density at 75\%}  & 0       \\ 
+        \textbf{Dry Unit Weight at 75\% Relative Density (g)}  & 110.7       \\ 
         \hline
-        \textbf{Moisture Content at 75\%}          & 0       \\ 
+        \textbf{Moisture Content at 75\%}          & 14.6\%       \\ 
         \hline
         \textbf{CBR Design Value}          & 20.94       \\ 
         \hline
@@ -303,31 +303,48 @@
             legend cell align={left},
         ]
         
-        \addplot[only marks, red] table [x=x, y=porosity] {3.csv};
-        \addplot[only marks, blue] table [x=x, y=dry] {3.csv};
-        \addplot[only marks, green] table [x=x, y=wet] {3.csv};
-        \addplot[only marks, orange] table [x=x, y=100] {3.csv};
-        \addplot[only marks, purple] table [x=x, y=80] {3.csv};
-        \addplot +[only marks, black, mark options={fill=black}] coordinates {(8.55, 104.85)};
-        \addlegendentry{Porosity};
-        \addlegendentry{Dry Unit Weight};
-        \addlegendentry{Wet Unit Weight};
-        \addlegendentry{Theoretical Dry Unit Weight at $S=100$};
-        \addlegendentry{Theoretical Dry Unit Weight at $S=80$};
-        \addlegendentry{Optimum Moisture Content and Maximum Density}
-        \addplot[red, domain=8:39] {0.0158*x^2-0.2708*x+39.239};
+        
+        \addplot[only marks, blue] table [x=x, y=dry] {3.csv}; \label{d_u_w}
+        \addplot[only marks, green] table [x=x, y=wet] {3.csv}; \label{w_u_w}
+        \addplot[only marks, orange] table [x=x, y=100] {3.csv}; \label{t_d_w}
+        \addplot[only marks, purple] table [x=x, y=80] {3.csv}; \label{t_d_w_80}
+        \addplot +[only marks, black, mark options={fill=black}] coordinates {(8.55, 104.85)}; \label{o}
+        
+        % \addlegendentry{Dry Unit Weight};
+        % \addlegendentry{Wet Unit Weight};
+        % \addlegendentry{Theoretical Dry Unit Weight at $S=100$};
+        % \addlegendentry{Theoretical Dry Unit Weight at $S=80$};
+        % \addlegendentry{Optimum Moisture Content and Maximum Density};
+        
         \addplot[purple, domain=8:39] {0.0372*x^2-3.6758*x+159.83};
         \addplot[blue, domain=8:39] {-0.0268*x^2+0.4585*x+102.89};
         \addplot[orange, domain=8:39] {0.0307*x^2-3.2656*x+163.01};
         \addplot[green, domain=8:39] {-0.0392*x^2+1.7855*x+101.53};
         \addplot +[black, mark=none, dashed] coordinates {(8.55, 104.85) (8.55, 0)};
         \addplot +[black, mark=none, dashed] coordinates {(8.55, 104.85) (0, 104.85)};
-       
+        \end{axis}
+        \begin{axis}[
+            xmin=0, xmax=50,
+            ymin=0, ymax=80,
+            hide x axis,
+            axis y line*=right,
+            ylabel={Porosity},
+            ylabel near ticks,
+            legend cell align={left},
+          ]
+          \addplot[only marks, red] table [x=x, y=porosity] {3.csv};
+          \addlegendentry{Porosity};
+          \addlegendimage{/pgfplots/refstyle=d_u_w}\addlegendentry{Dry Unit Weight};
+          \addlegendimage{/pgfplots/refstyle=w_u_w}\addlegendentry{Wet Unit Weight};
+          \addlegendimage{/pgfplots/refstyle=t_d_w}\addlegendentry{Theoretical Dry Unit Weight at $S=100$};
+          \addlegendimage{/pgfplots/refstyle=t_d_w_80}\addlegendentry{Theoretical Dry Unit Weight at $S=80$};
+          \addlegendimage{/pgfplots/refstyle=o}\addlegendentry{Optimum Moisture Content and Maximum Density};
+          \addplot[red, domain=8:39] {0.0158*x^2-0.2708*x+39.239};
         \end{axis}
     \end{tikzpicture}
     \vspace{3mm}
-    \addcontentsline{lof}{figure}{Figure 6: Standard Proctor Test Results}
-    \emph{\\Figure 6: Standard Proctor Test Results\\}
+    \addcontentsline{lof}{figure}{Figure 4: Standard Proctor Test Results}
+    \emph{\\Figure 4: Standard Proctor Test Results\\}
     \vspace{5mm}
     \pgfplotsset{width=10cm}
     \begin{tikzpicture}[baseline=(current bounding box.center)]
@@ -349,8 +366,8 @@
         \end{axis}
     \end{tikzpicture}
     \vspace{3mm}
-    \addcontentsline{lof}{figure}{Figure 7: First Determination}
-    \emph{\\Figure 7: First Determination\\}
+    \addcontentsline{lof}{figure}{Figure 5: First Determination}
+    \emph{\\Figure 5: First Determination\\}
     \vspace{5mm}
     \pgfplotsset{width=10cm}
     \begin{tikzpicture}[baseline=(current bounding box.center)]
@@ -372,8 +389,8 @@
         \end{axis}
     \end{tikzpicture}
     \vspace{3mm}
-    \addcontentsline{lof}{figure}{Figure 8: Second Determination}
-    \emph{\\Figure 8: Second Determination\\}
+    \addcontentsline{lof}{figure}{Figure 6: Second Determination}
+    \emph{\\Figure 6: Second Determination\\}
     \vspace{5mm}
     \pgfplotsset{width=10cm}
     \begin{tikzpicture}[baseline=(current bounding box.center)]
@@ -397,8 +414,8 @@
         \end{axis}
     \end{tikzpicture}
     \vspace{3mm}
-    \addcontentsline{lof}{figure}{Figure 9: Third Determination}
-    \emph{\\Figure 9: Third Determination}
+    \addcontentsline{lof}{figure}{Figure 7: Third Determination}
+    \emph{\\Figure 7: Third Determination}
 \end{center}
 \par The California Bearing Ratio (CBR) can be determined from the plots of the compression load results by plotting stress versus penetration depth. The CBR value of a soil sample is one characteristic used to determine its overall strength as it is correlated to the penetration resistance of a soil. In this experiment, the soil sample analyzed yielded a CBR of approximately 20.94 which corresponds to expected values of more coarse soil. Depending on the soil composition, a CBR value in the range of 15 to 50 can be indicative of well graded soil. Having a higher CBR value also correlates to the smaller required thickness of the subgrade level in pavement design. 
 \newpage
@@ -429,7 +446,7 @@
         Silt and Clay & 11.74\% & 11.74\%\\\hline
     \end{tabular}
     \vspace{3mm}
-    \addcontentsline{lot}{table}{Table 10: AASHTO and USCS Descriptions}
+    \addcontentsline{lot}{table}{Table 6: AASHTO and USCS Descriptions}
     \emph{\\Table 6: AASHTO  and USCS Descriptions\\}
 \end{center}
 \par For both AASHTO and USCS, clay is described as any particles less than 0.002 mm. In our experiment, we did not use a sieve smaller than No. 200. Therefore, we cannot determine, with certainty, what percent of our soil sample is clay using particle size analysis. 
@@ -444,7 +461,7 @@
         Silt and Clay & 11.74\% \\\hline
     \end{tabular}
     \vspace{3mm}
-    \addcontentsline{lot}{table}{Table 11: FAA Description}
+    \addcontentsline{lot}{table}{Table 7: FAA Description}
     \emph{\\Table 7: FAA Description\\}
 \end{center}
 \newpage
@@ -538,28 +555,35 @@
 \begin{equation}\label{a}A=\frac{PI}{\%_\text{Clay}}\end{equation} 
 \[A=\frac{0\%}{0\%}=\boxed{\text{Undefined}}\]
 \subsubsection{Compaction Test}
+\noindent The \underline{dry weight at a specific relatvie density} is calculated using \emph{Equation \ref{reld}}. 
+\begin{equation}\label{reld}D_r=\frac{\frac{1}{\gamma_{d min}}-\frac{1}{\gamma_{d}}}{\frac{1}{\gamma_{d min}}-\frac{1}{\gamma_{d max}}}\end{equation}
+\[0.75=\frac{\frac{1}{96.13}-\frac{1}{\gamma_{d}}}{\frac{1}{96.13}-\frac{1}{116.6}}\]
+\[\gamma_d = \boxed{110.7}\]
+\noindent The \underline{moisture content at a specific relative density} is calculated using \emph{Equation \ref{mcsr}}.
+\begin{equation}\label{mcsr}w=\frac{\frac{sG_s\gamma_w}{\gamma_d-s}}{G_s}\times 100\end{equation}
+\[w=\frac{\frac{0.75\times 2.71\times 62.4}{110.71}-0.75}{2.71}\times 100=\boxed{14.6\%}\]
 \subsection{Soil Classifications}
 \begin{center}
 \includegraphics*[scale=0.5]{fig1.png}
-\addcontentsline{lof}{figure}{Figure 10: FAA Classification Table}
-\emph{\\Figure 10: FAA Classification Table\\}
+\addcontentsline{lof}{figure}{Figure 8: FAA Classification Table}
+\emph{\\Figure 8: FAA Classification Table\\}
 \vspace{5mm}
 \includegraphics*[scale=0.5]{fig2.png}
-\addcontentsline{lof}{figure}{Figure 11: Plasticity Chart}
-\emph{\\Figure 11: Plasticity Chart\\}
+\addcontentsline{lof}{figure}{Figure 9: Plasticity Chart}
+\emph{\\Figure 9: Plasticity Chart\\}
 \vspace{10mm}
 \includegraphics*[scale=0.5]{fig3.png}
-\addcontentsline{lof}{figure}{Figure 12: AASHTO Classification Table}
-\emph{\\Figure 12: AASHTO Classification Table\\}
+\addcontentsline{lof}{figure}{Figure 10: AASHTO Classification Table}
+\emph{\\Figure 10: AASHTO Classification Table\\}
 \includegraphics*[scale=0.8]{fig4.png}
-\addcontentsline{lof}{figure}{Figure 13: USCS Classification Table}
-\emph{\\Figure 13: USCS Classification Table\\}
+\addcontentsline{lof}{figure}{Figure 11: USCS Classification Table}
+\emph{\\Figure 11: USCS Classification Table\\}
 \includegraphics*[scale=0.7]{fig5.png}
-\addcontentsline{lof}{figure}{Figure 14: Flow Chart for Group Names}
-\emph{\\Figure 14: Flow Chart for Group Names\\}
+\addcontentsline{lof}{figure}{Figure 12: Flow Chart for Group Names}
+\emph{\\Figure 12: Flow Chart for Group Names\\}
 \includegraphics*[scale=0.8]{fig6.png}
-\addcontentsline{lof}{figure}{Figure 15: Flow Chart for Group Names of Inorganic Silty and Clayey Soils}
-\emph{\\Figure 15: Flow Chart for Group Names of Inorganic Silty and Clayey Soils\\}
+\addcontentsline{lof}{figure}{Figure 13: Flow Chart for Group Names of Inorganic Silty and Clayey Soils}
+\emph{\\Figure 13: Flow Chart for Group Names of Inorganic Silty and Clayey Soils\\}
 \end{center}
 \newpage
 

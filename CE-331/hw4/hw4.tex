@@ -1,0 +1,49 @@
+\documentclass{article}
+
+
+\usepackage[english]{babel}
+
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{cancel, fancyhdr, textcomp, subfig, pgfplots}
+\usepackage{bm}
+\pgfplotsset{width=10cm, compat=1.18}
+\usepackage[export]{adjustbox}
+
+\renewcommand{\thesubfigure}{}
+\captionsetup[subfigure]{labelformat=simple, labelsep=colon}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Jacob Sigman\\2/27/23}
+\lhead{CE-331\\Homework}
+\cfoot{\thepage}
+\renewcommand\arraystretch{1.5}
+\renewcommand{\headrulewidth}{1.5pt}
+\setlength{\headheight}{22.6pt}
+\begin{document}
+\section*{Question 5.2}
+The group index is calculated using equation 5.1: 
+\[GI=(F_{200}-35)(0.2+0.005(LL-40))+0.01(F_{200}-15)(PI-10)\] 
+I made a table of all the group indexes and classifications according to table 5.1: 
+\begin{center}
+\begin{tabular}{|cccc|}
+    \hline
+    \textbf{Soil} & \textbf{Group Index} & $\bm{LL-30}$ & \textbf{AASHTO Classification} \\\hline
+    A&16	&22	&A-7-5\\
+    B&5	&8	&A-6\\
+    C&8	&11	&A-7-6\\
+    D&9	&2	&A-6\\
+    E&2	&0	&A-6\\\hline
+\end{tabular}
+\end{center}
+The soil type for soil A is $\boxed{\text{A-7-5 (16)}}$. The soil type for soil B is $\boxed{\text{A-6 (8)}}$. The soil type for soil C is $\boxed{\text{A-7-6 (11)}}$. The soil type for soil D is $\boxed{\text{A-6 (2)}}$. The soil type for soil E is $\boxed{\text{A-6 (0)}}$.
+\section*{Question 5.6} 
+Table 5.2 in the book is used for this one. The soil is coarse-grained since 11\% passes the No. 200 sieve. The soil is also a sand since 9\% is retained in the No. 4 sieve. The next step is to calculate $C_u$ and $C_c$.
+\[C_u=\frac{D_{60}}{D_{10}}=\frac{1.9\text{ mm}}{0.1\text{ mm}}=19\hspace{8mm}C_c=\frac{(D_{30})^2}{D_{60}\times D_{10}}=\frac{(0.8\text{ mm})^2}{1.9\text{ mm}\times 0.1\text{ mm}}=3.37\]
+Additionally, the A-Line is determined as follows: 
+\[0.73\times (LL-20)=8.76\] 
+Since $C_c$ is greater than 3, one of the group symbols is SP. Additionally, a plasticity index of 5 means that it plots below the A-Line, meaning that another group symbol is SM. The group symbol is $\boxed{\text{SP-SM}}$. According to figure 5.3, since the percentage of gravel (a.k.a. the percentage retained in the No. 4 sieve) is less than 15\%, the group name is $\boxed{\text{poorly graded sand with silt}}$.
+\end{document}

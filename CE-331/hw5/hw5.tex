@@ -1,0 +1,62 @@
+\documentclass{article}
+
+
+\usepackage[english]{babel}
+
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{cancel, fancyhdr, textcomp, subfig, pgfplots}
+\usepackage{bm}
+\pgfplotsset{width=10cm, compat=1.18}
+\usepackage[export]{adjustbox}
+
+\renewcommand{\thesubfigure}{}
+\captionsetup[subfigure]{labelformat=simple, labelsep=colon}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Jacob Sigman\\3/20/23}
+\lhead{CE-331\\Homework}
+\cfoot{\thepage}
+\renewcommand\arraystretch{1.5}
+\renewcommand{\headrulewidth}{1.5pt}
+\setlength{\headheight}{22.6pt}
+\begin{document}
+\section*{Question 6.3}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+    \hline
+    \textbf{Weight (lb)} & \textbf{Moisture Ratio} & \textbf{Moist Unit Weight (lb/$\bm{\textbf{ft}^3}$)} & \textbf{Dry Unit Weight (lb/$\bm{\textbf{ft}^3}$)}  \\\hline
+    3.26          & 8.4\%                           & 97.8                                             & 90.2           \\\hline
+    4.15          & 10.2\%                          & 124.5                                            & 112.9           \\\hline
+    4.67          & 12.3\%                          & 140.1                                            & 124.8             \\\hline
+    4.02          & 14.6\%                          & 120.6                                            & 105.2            \\\hline
+    3.63          & 16.8\%                          & 108.9                                            & 93.2    \\\hline 
+\end{tabular}
+\end{center}
+\vspace{3mm}
+The moist unit weight was obtained by dividing by the volume of the proctor mold. The dry unit was obtained using the following equation: 
+\[\gamma_d=\frac{\gamma_w}{1+\frac{w}{100}}\] 
+$w$ being the moisture ratio and $\gamma_w$ being the moist unit weight. The maximum dry unit weight is $\boxed{124.8 \text{ lb}/\text{ft}^3}$ and the corresponding optimum moisture content is $\boxed{12.3\%}$.
+
+\section*{Question 6.4}
+\[e=\frac{G_s\times \gamma_\text{water}}{\gamma_{\text{dry max}}}=\frac{2.72\times 62.4\text{ lb}/\text{ft}^3}{124.8\text{ lb}/\text{ft}^3}=0.36=\boxed{36\%}\]
+\[S=\frac{G_s\times w_\text{opt}}{e}=\frac{2.72\times 12.3\%}{0.36}=0.93=\boxed{93\%}\]
+\section*{Question 6.8}
+Calculate the total dry unit weight (independent of $G_s$) using the following equation: 
+\[\gamma_d=V\times \frac{\gamma_\text{water}}{1+e}=8000\text{ m}^3\times\frac{62.4\text{ lb}/\text{ft}^3}{1+0.7}=293647.1\]
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        \textbf{Pit} & \textbf{Void Ratio} & \textbf{Cost per $\bm{\textbf{m}^3}$} & \textbf{Excavated Volume ($\bm{\text{m}^3}$)} & \textbf{Total Cost}  \\\hline
+        A   & 0.82                  & \$11                        & 8564.701                   & \$94211.76                  \\\hline
+        B   & 1.1                   & \$8                          & 9882.35                   & \$79058.82                  \\\hline
+        C   & 0.9                   & \$9                       & 8941.18                   & \$80470.59                  \\\hline
+        C   & 0.78                  & \$10                       & 8376.47                   & \$83764.71                 \\\hline
+    \end{tabular}
+\end{center}
+\vspace{3mm} 
+The excavated volume is calculated by taking the total dry unit weight and dividing it by $\frac{\gamma_\text{water}}{1+e}$ for each pit. The total cost is taken by multiplying the excavated volume by the cost per unit meter. From this table, the pit that minimizes the cost is $\boxed{\text{borrow pit B}}$.
+\end{document}

@@ -1,0 +1,91 @@
+\documentclass{article}
+
+
+\usepackage[english]{babel}
+
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{cancel, fancyhdr, textcomp, subfig, pgfplots}
+\usepackage{bm}
+\pgfplotsset{width=10cm, compat=1.18}
+\usepackage[export]{adjustbox}
+
+\renewcommand{\thesubfigure}{}
+\captionsetup[subfigure]{labelformat=simple, labelsep=colon}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Jacob Sigman\\3/27/23}
+\lhead{CE-331\\Homework}
+\cfoot{\thepage}
+\renewcommand\arraystretch{1.5}
+\renewcommand{\headrulewidth}{1.5pt}
+\setlength{\headheight}{22.6pt}
+\begin{document}
+\section*{Question 7.2}
+Use the following equation to determine the hydraulic conductivity: 
+\[k=\frac{QL}{Aht}=\frac{620\text{ cm}^3\times 30\text{ cm}}{175\text{ cm}^2\times 50\text{ cm}\times 180\text{ sec}}=\boxed{0.012\text{ cm/s}}\] 
+Use the following equation to determine seepage velocity: 
+\[v_s=\frac{kh}{L}\left(\frac{1+e}{e}\right)=0.012\text{ cm/s}\times \frac{50\text{ cm}}{30\text{ cm}}\times\left(\frac{1+0.58}{0.58}\right)=\boxed{0.054\text{ cm/s}}\]
+\section*{Question 7.4}
+Use the following equation to determine the hydraulic conductivity: 
+\[k=\frac{L\times A_\text{soil}}{t\times A_\text{pipe}}\times \ln\left(\frac{h_1}{h_2}\right)=\frac{50\text{ cm}\times 1.3\text{ cm}^2}{10\text{ min}\times 26\text{ cm}^2}\times \ln\left(\frac{760\text{ mm}}{300\text{ mm}}\right)=\boxed{0.23\text{ cm/min}}\]
+Use the following relationship to determine the height at the desired $t$.
+\[\ln\left(\frac{h_1}{h_t}\right)=\ln\left(\frac{h_t}{h_2}\right)\]
+\[h_t=\sqrt{h_1\times h_3}=\sqrt{76\text{ cm}\times 30\text{ cm}}=\boxed{47.75\text{ cm}}\]
+\section*{Question 7.8} 
+First, define the hydraulic gradient, $i$. $\Delta h$ is defined as the head loss which is the unknown length (defined as $L$) multiplied by the tangent of the given angle.
+\[i=\frac{\Delta h}{l}=\frac{L\tan\alpha}{\frac{L}{\cos\alpha}}=\sin\alpha\] 
+The area is defined as the height multiplied by the cosine of the given angle. $k$ is given as $5.2\times 10^{-6} \text{ m/s}$. $H$ is given as 3.8 m, and $\alpha$ is given as 12 degrees. Therefore, the following applies: 
+\[Q = k\times i\times A= k\times \sin\alpha \times h\times \cos\alpha=4.02\times 10^{-6} \text{ m}^3\text{/s/m}=\boxed{0.014 \text{ m}^3\text{/hr/m}}\] 
+\section*{Question 7.16} 
+First, determine the horizontal equivalent hydraulic conductivity: 
+\[k_{H(eq)}=\frac{1}{H}\left(H_1k_1+H_2k_2+H_3k_3\right)=\frac{1}{7}\left(1.5\times 10^{-5}+2.5\times 3\times 10^{-3}+3\times 3.5\times 10^{-5}\right)=0.00109 \text{ cm/s}\]
+Next, determine the vertical equivalent hydraulic conductivity: 
+\[k_{V(eq)}=\frac{H}{\left(\frac{H_1}{k_1}\right)+\left(\frac{H_2}{k_2}\right)+\left(\frac{H_3}{k_3}\right)}=\frac{7}{\left(\frac{1.5}{10^{-5}}\right)+\left(\frac{2.5}{3\times 10^{-3}}\right)+\left(\frac{3}{3.5\times 10^{-5}}\right)}=2.96\times 10^{-5} \text{ cm/s}\]
+Now, the ratio of the two: 
+\[k_{H(eq)}/k_{V(eq)}=\boxed{36.79}\]
+\newpage 
+\section*{Question 7.18} 
+First, calculate hydraulic conductivity, note that all the $Z$ values are the same (200 mm). Using the given $k$ values, the following is obtained.
+\[k=\frac{Z_1k_1+Z_2k_2+Z_3k_3}{Z_1+Z_2+Z_3}=0.00016 \text{ m/s}\] 
+Next, calculate the cross-sectional area using the given diameter of 150 mm: 
+\[A=\frac{\pi}{4}D^2=0.01767 \text{ m}^2\]
+Next, calculate the hydraulic gradient: 
+\[i=\frac{\Delta h}{l}=\frac{470}{600}=0.78\]
+Now use the following equation: 
+\[Q= k\times i \times A = 2.19\times 10^{-6} \text{ m}^3\text{/s/m}=\boxed{0.0079\text{ m}^3\text{/hr/m}}\]
+The elevation head is 220 mm below the defined axis, or $\boxed{220\text{ mm}}$. The pressure head at the entrance of Soil II is defined as the head loss. 
+\[i=\frac{\Delta h}{l}\]
+\[0.78=\frac{\Delta h}{200}\] 
+\[\Delta h = \boxed{156.67\text{ mm}}\]
+The total head at the entrance of soil II is the difference between the elevation head and the pressure head, or $\boxed{-63.34\text{ mm}}$. The pressure head at the exit of soil II is a bit different: 
+\[i=\frac{\Delta h}{l}\]
+\[0.78=\frac{\Delta h}{200+200}\] 
+\[\Delta h = \boxed{313.33\text{ mm}}\]
+The total head at the exit of soil II is the difference between the elevation head and the pressure head, or $\boxed{93.33\text{ mm}}$. The pressure head at the exit of soil III is a bit different.
+\[i=\frac{\Delta h}{l}\]
+\[0.78=\frac{\Delta h}{200+200+200}\] 
+\[\Delta h = \boxed{470\text{ mm}}\]
+The total head at the exit of soil III is the difference between the elevation head and the pressure head, or $\boxed{250\text{ mm}}$. Now for discharge and seepage velocities of each soil: 
+\[V_i = k_i\times i\hspace{7mm}V_{si}=\frac{V_i}{n_i}\]
+\[V_1 = 0.00392\text{ cm/s}\hspace{7mm}V_{s1}=0.00783\text{ cm/s}\]
+\[V_2 = 0.0329\text{ cm/s}\hspace{7mm}V_{s2}=0.05483\text{ cm/s}\]
+\[V_3 = 0.00039\text{ cm/s}\hspace{7mm}V_{s3}=0.00093\text{ cm/s}\]
+The variation of discharge velocity and seepage velocity is approximately the same. Everything is plotted below with the purple line being the pressure head, the green line being the elevation head, the red line being the total head, and the orange line being the discharge/seepage velocities.
+\begin{center}
+\includegraphics*[scale=0.8]{fig1.png}
+\end{center}
+The final component is the piezometer heights.
+\[q=k_1\times i_1\times A\]
+\[0.0079=\frac{k_1}{100}\times \frac{\Delta h_1}{200\times 10^{-3}}\times A\]
+\[\Delta h_1 = 49.5\text{ mm}\] 
+\[q=k_2\times i_2\times A\]
+\[0.0079=\frac{k_2}{100}\times \frac{\Delta h_2}{400\times 10^{-3}}\times A\]
+\[\Delta h_2 = 5.9\text{ mm}\] 
+The piezometric heights are calculated by subtracting the elevation head and pressure head from the constant-head difference:
+\[H_A=470-49.5+220=\boxed{640.5\text{ mm}}\] 
+\[H_B=470-49.5-5.9+220=\boxed{634.6\text{ mm}}\]
+\end{document}

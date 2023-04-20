@@ -1,0 +1,58 @@
+\documentclass{article}
+
+
+\usepackage[english]{babel}
+
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{cancel, fancyhdr, textcomp, subfig, pgfplots}
+\usepackage{bm}
+\pgfplotsset{width=10cm, compat=1.18}
+\usepackage[export]{adjustbox}
+
+\renewcommand{\thesubfigure}{}
+\captionsetup[subfigure]{labelformat=simple, labelsep=colon}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Jacob Sigman\\4/3/23}
+\lhead{CE-331\\Homework}
+\cfoot{\thepage}
+\renewcommand\arraystretch{1.5}
+\renewcommand{\headrulewidth}{1.5pt}
+\setlength{\headheight}{22.6pt}
+\begin{document}
+\section*{Question 8.2}
+Below is the flow net (noted by the orange lines) for seepage around a single row a sheet piles.
+\begin{center}
+\includegraphics*[scale=0.7]{fig1.png}
+\end{center}
+The seepage loss per meter length of the sheet pile is calculated as follows, with $N_f$ being 3, $N_d$ being 6, $H_2$ being 3 m, $H_1$ being 0.5 m and $k$ being as defined. 
+\[q=k\times\frac{(H_2-H_1)\times N_f}{N_d}=\boxed{5\times 10^{-6}\text{ m}^3\text{/s/m}}\]
+\section*{Question 8.6}
+Below is the flow net (noted by the orange lines).
+\begin{center}
+    \includegraphics*[scale=0.5]{fig2.png}
+\end{center}
+The seepage loss per meter length of the sheet pile is calculated as follows, with $N_f$ being 4, $N_d$ being 14, $H_2$ being 10 m, $H_1$ being 1.5 m and $k$ being as defined. 
+\[q=k\times\frac{(H_2-H_1)\times N_f}{N_d}=\boxed{2.4\times 10^{-5}\text{ m}^3\text{/s/m}}\]
+\newpage
+\section*{Question 8.8}
+First determine $\Delta$ using $\alpha_1$: 
+\[\Delta = \frac{H}{\tan\alpha_1}=\frac{7\text{ m}}{\tan 35^\circ}=10 \text{ m}\]
+Now determine $d$:
+\[d=H_1\cot \alpha_2+L_1+(H_1-H)\cot \alpha_1+0.3\Delta=24.2\text{ m}\]
+Now determine $L$:
+\[L=\frac{d}{\cos\alpha_2}-\sqrt{\frac{d^2}{\cos^2\alpha_2}-\frac{H^2}{\sin^2\alpha_2}}=1.94\text{ m}\]
+Lastly, determine the seepage rate:
+\[q=kL\tan\alpha_2\sin\alpha_2=3.13\times 10^{-6}\text{ m}^3\text{/s/m}=\boxed{0.271\text{ m}^3\text{/day/m}}\]
+\section*{Question 8.9}
+Using $d$ from 8.8, $d/H$ must be calculated.
+\[\frac{d}{H}=3.46\text{ m}\] 
+Eyeballing Figure 8.17, $m$ is 0.25. Now calculate L:
+\[L=\frac{m\times H}{\sin\alpha_2}=2.72\text{ m}\] 
+Now use the following equation for seepage: 
+\[q=kL\sin^2\alpha_2=3.37\times 10^{-6} \text{ m}^3\text{/sec/m}=\boxed{0.292\text{ m}^3\text{/sec/m}}\]
+\end{document}
