@@ -1,0 +1,530 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath, graphicx, tikz, pgfplots, multirow, newlfont, gensymb, indentfirst, bm, setspace, xurl}
+\usepackage[usestackEOL]{stackengine}
+\usepackage[export]{adjustbox}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Part 2\\5/3/23}
+\lhead{CE-331\\Group 2}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{1.5pt}
+\setlength{\headheight}{22.6pt}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\setlength\parindent{24pt}
+
+\begin{document}
+\include{cover.tex}
+\newpage
+\doublespacing
+\tableofcontents
+\newpage
+\addcontentsline{toc}{section}{List of Tables}
+\listoftables
+\addcontentsline{toc}{section}{List of Figures}
+\listoffigures
+\newpage
+\section{Summary}
+\newpage
+\section{Most Economical Design}
+\begin{center}
+    \begin{tabular}{|l|r|}
+    \hline
+    \textbf{Base Soil Chosen}                               & -  \\
+    \textbf{Subbase Soil Chosen}                              & -  \\
+    \textbf{CBR}                                              & -  \\
+    \textbf{Asphalt Modulus (psi)}                            & -  \\
+    \textbf{Base Modulus (psi)}                               & -  \\
+    \textbf{Subbase Modulus (psi)}                            & -  \\
+    \textbf{Asphalt Flexural Coefficient}                     & -  \\
+    \textbf{Asphalt Modifying Structural Layer Coefficient} & -  \\
+    \textbf{Subbase Flexural Coefficient}                     & -  \\
+    \textbf{Subbase Modifying Structural Layer Coefficient} & -  \\
+    \textbf{Base Flexural Coefficient}                        & -  \\
+    \textbf{Base Modifying Structural Layer Coefficient}  & -  \\
+    \textbf{Thickness (in)}                                   & - \\\hline
+    \end{tabular}
+    \vspace{3mm}
+    \addcontentsline{lot}{table}{Table 1: Final Design Properties}
+    \emph{\\Table 1: Final Design Properties\\}
+    \vspace{10mm}
+    \begin{tabular}{|cc|cc|}
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Range of Dry Densities (pcf)}}      & \multicolumn{2}{|c|}{\textbf{Range of Water Content(\%)}}          \\\hline
+        $\bm{\gamma_\textbf{max}}$ & $\bm{\gamma \text{ at } D_r=75\%}$ & \textbf{Optimum} & $\bm{\omega \textbf{ at } D_r=75\%}$ \\
+        - & - & - & - \\\hline 
+    \end{tabular}
+    \vspace{3mm}
+    \addcontentsline{lot}{table}{Table 2: Subgrade Compaction Control}
+    \emph{\\Table 2: Subgrade Compaction Control\\}
+    \vspace{10mm}
+    \begin{tabular}{|l|r|}
+        \hline
+        \textbf{Maximum Dry Density (pcf)}                & -  \\
+        \textbf{Minimum Dry Density (pcf)}                  & -  \\
+        \textbf{Natural Dry Density in Borrow Area (pcf)} & -  \\
+        \textbf{Bulked Dry Density (pcf)}                   & - \\\hline
+    \end{tabular}
+    \vspace{3mm}
+    \addcontentsline{lot}{table}{Table 3: Unit Weights of Base and Sub-Base Course Material}
+    \emph{\\Table 3: Unit Weights of Base and Sub-Base Course Material}
+    \newpage 
+    \begin{tabular}{|l|r|}
+        \hline
+        \textbf{Compacting Cost $\left(\bm{\textbf{\$/yd}^3}\right)$}    & -  \\
+        \textbf{Hauling Cost $\left(\bm{\textbf{\$/yd}^3}\right)$}       & -  \\
+        \textbf{Volume of Borrow Area, $\bm{V_b}$}           & -  \\
+        \textbf{Volume in Hauling Vehicle, $\bm{V_{hv}}$}    & -  \\
+        \textbf{Excavation and Compaction Costs (\$)}          & -  \\
+        \textbf{Total Hauling Volume $\left(\bm{\textbf{yd}^3}\right)$} & -  \\
+        \textbf{Number of Trucks}                              & -  \\
+        \textbf{Net Hauling Cost $\left(\bm{\textbf{\$/yd}}\right)$}     & -  \\\hline
+    \end{tabular}
+    \vspace{3mm}
+    \addcontentsline{lot}{table}{Table 4: Cost Estimate for Hauling and Compacting Sub-Base and Base Course materials Based on 1 $\text{yd}^3$ of Compacted Sub-Base and Base Course}
+    \emph{\\Table 4: Cost Estimate for Hauling and Compacting Sub-Base and Base Course materials Based on 1 $\text{yd}^\emph{\,3}$ of Compacted Sub-Base and Base Course}
+\end{center}
+\newpage
+\section{Data and Calculations}
+\begin{center}
+
+    \begin{tabular}{|c|c|ccccc|}
+        \hline
+        & \textbf{Soil \#} & \textbf{CBR @ 90\% $\bm{D_r}$} & $\bm{E}$ \textbf{(ksi)} & $\bm{A_i}$ & $\bm{M_i}$ & $\bm{SN_i}$  \\\hline
+        Asphalt               & N/A     & -        & -       & -    & -    & -      \\
+        \multirow{5}{*}{Base} & 1       & -          & -       & -    & -    & -      \\
+        & 1a      & -          & -       & -    & -    & -      \\
+        & 2       & -          & -       & -    & -    & -      \\
+        & 3       & -          & -       & -    & -    & -      \\
+        & 3a      & -          & -       & -    & -    & -      \\
+        Subgrade              & -       & -          & -       & -    & -    & -     \\\hline
+    \end{tabular}
+    \vspace{3mm}
+    \addcontentsline{lot}{table}{Table 5: Soil Properties of Used Asphalt, Base, and Subgrade}
+    \emph{\\Table 5: Soil Properties of Used Asphalt, Base, and Subgrade\\}
+    \vspace{7mm}
+    \begin{tabular}{|c|ccc|}
+        \hline
+        &&&\\
+        \textbf{Base Soil \#} & \shortstack[c]{\textbf{Asphalt Thickness}\\ \textbf{$\bm{D_1}$ (in)}} & \shortstack[c]{\textbf{Base Thickness}\\ \textbf{$\bm{D_2}$ (in)}} & \textbf{Base Thickness with Geogrid (in)}  \\\hline
+        1              & -                            & -                         & -                                 \\
+        1a             & -                            & -                          & -                                 \\
+        2              & -                            & -                          & -                                 \\
+        3              & -                            & -                          & -                                 \\
+        3a             & -                            & -                         & -                                 \\\hline
+        \end{tabular}
+    \vspace{3mm}
+    \addcontentsline{lot}{table}{Table 6: Calculated Thickness Values for Asphalt}
+    \emph{\\Table 6: Calculated Thickness Values for Asphalt}
+    \newpage
+
+
+
+    \begin{spacing}{1.6}
+
+
+        % Subbase Round 1
+
+        \begin{tabular}{|c|ccccccc|}
+            \hline    
+            \multicolumn{1}{|l}{}                     & \multicolumn{7}{c|}{\textbf{Base Soil Number 1}}                                              \\\hline
+            &&&&&&&\\
+             \shortstack[c]{\textbf{Subbase}\\\textbf{Soil \#}} & $\bm{SN_2}$ & $\bm{A_2}$ & $\bm{M_2}$ & \textbf{Calculated $\bm{D_2}$ (in)} & \textbf{Min. $\bm{D_2}$ (in)} & \textbf{$\bm{D_2}$ (in)} & $\bm{SN_2^*}$  \\\hline
+                                            1       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            1a      & -     & -    & -    & -                    & -              & -         & -       \\
+                                            2       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            3       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            3a      & -     & -    & -    & -                    & -              & -         & -       \\
+                                            4       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            5       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            6       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            7       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            9       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            9a      & -     & -    & -    & -                    & -              & -         & -       \\
+                                            10      & -     & -    & -    & -                    & -              & -         & -       \\\hline
+        \end{tabular}
+        \vspace{3mm}
+        \addcontentsline{lot}{table}{Table 7: Calculated Thickness Values for Base Soil Number 1 using Each Subbase}
+        \emph{\\Table 7: Calculated Thickness Values for Base Soil Number 1 using Each Subbase\\}
+        \vspace{7mm}
+        \begin{tabular}{|c|ccccccc|}
+            \hline    
+            \multicolumn{1}{|l}{}                     & \multicolumn{7}{c|}{\textbf{Base Soil Number 1a}}                                              \\\hline
+            &&&&&&&\\
+             \shortstack[c]{\textbf{Subbase}\\\textbf{Soil \#}} & $\bm{SN_2}$ & $\bm{A_2}$ & $\bm{M_2}$ & \textbf{Calculated $\bm{D_2}$ (in)} & \textbf{Min. $\bm{D_2}$ (in)} & \textbf{$\bm{D_2}$ (in)} & $\bm{SN_2^*}$  \\\hline
+                                            1       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            1a      & -     & -    & -    & -                    & -              & -         & -       \\
+                                            2       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            3       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            3a      & -     & -    & -    & -                    & -              & -         & -       \\
+                                            4       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            5       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            6       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            7       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            9       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            9a      & -     & -    & -    & -                    & -              & -         & -       \\
+                                            10      & -     & -    & -    & -                    & -              & -         & -       \\\hline
+        \end{tabular}
+        \vspace{3mm}
+        \addcontentsline{lot}{table}{Table 8: Calculated Thickness Values for Base Soil Number 1a using Each Subbase}
+        \emph{\\Table 8: Calculated Thickness Values for Base Soil Number 1a using Each Subbase}
+        \begin{tabular}{|c|ccccccc|}
+            \hline    
+            \multicolumn{1}{|l}{}                     & \multicolumn{7}{c|}{\textbf{Base Soil Number 2}}                                              \\\hline
+            &&&&&&&\\
+             \shortstack[c]{\textbf{Subbase}\\\textbf{Soil \#}} & $\bm{SN_2}$ & $\bm{A_2}$ & $\bm{M_2}$ & \textbf{Calculated $\bm{D_2}$ (in)} & \textbf{Min. $\bm{D_2}$ (in)} & \textbf{$\bm{D_2}$ (in)} & $\bm{SN_2^*}$  \\\hline
+                                            1       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            1a      & -     & -    & -    & -                    & -              & -         & -       \\
+                                            2       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            3       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            3a      & -     & -    & -    & -                    & -              & -         & -       \\
+                                            4       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            5       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            6       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            7       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            9       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            9a      & -     & -    & -    & -                    & -              & -         & -       \\
+                                            10      & -     & -    & -    & -                    & -              & -         & -       \\\hline
+        \end{tabular}
+        \vspace{3mm}
+        \addcontentsline{lot}{table}{Table 9: Calculated Thickness Values for Base Soil Number 2 using Each Subbase}
+        \emph{\\Table 9: Calculated Thickness Values for Base Soil Number 2 using Each Subbase\\}
+        \vspace{7mm}
+        \begin{tabular}{|c|ccccccc|}
+            \hline    
+            \multicolumn{1}{|l}{}                     & \multicolumn{7}{c|}{\textbf{Base Soil Number 3}}                                              \\\hline
+            &&&&&&&\\
+             \shortstack[c]{\textbf{Subbase}\\\textbf{Soil \#}} & $\bm{SN_2}$ & $\bm{A_2}$ & $\bm{M_2}$ & \textbf{Calculated $\bm{D_2}$ (in)} & \textbf{Min. $\bm{D_2}$ (in)} & \textbf{$\bm{D_2}$ (in)} & $\bm{SN_2^*}$  \\\hline
+                                            1       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            1a      & -     & -    & -    & -                    & -              & -         & -       \\
+                                            2       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            3       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            3a      & -     & -    & -    & -                    & -              & -         & -       \\
+                                            4       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            5       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            6       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            7       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            9       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            9a      & -     & -    & -    & -                    & -              & -         & -       \\
+                                            10      & -     & -    & -    & -                    & -              & -         & -       \\\hline
+        \end{tabular}
+        \vspace{3mm}
+        \addcontentsline{lot}{table}{Table 10: Calculated Thickness Values for Base Soil Number 3 using Each Subbase}
+        \emph{\\Table 10: Calculated Thickness Values for Base Soil Number 3 using Each Subbase}
+        \newpage
+        \begin{tabular}{|c|ccccccc|}
+            \hline    
+            \multicolumn{1}{|l}{}                     & \multicolumn{7}{c|}{\textbf{Base Soil Number 3a}}                                              \\\hline
+            &&&&&&&\\
+             \shortstack[c]{\textbf{Subbase}\\\textbf{Soil \#}} & $\bm{SN_2}$ & $\bm{A_2}$ & $\bm{M_2}$ & \textbf{Calculated $\bm{D_2}$ (in)} & \textbf{Min. $\bm{D_2}$ (in)} & \textbf{$\bm{D_2}$ (in)} & $\bm{SN_2^*}$  \\\hline
+                                            1       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            1a      & -     & -    & -    & -                    & -              & -         & -       \\
+                                            2       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            3       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            3a      & -     & -    & -    & -                    & -              & -         & -       \\
+                                            4       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            5       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            6       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            7       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            9       & -     & -    & -    & -                    & -              & -         & -       \\
+                                            9a      & -     & -    & -    & -                    & -              & -         & -       \\
+                                            10      & -     & -    & -    & -                    & -              & -         & -       \\\hline
+        \end{tabular}
+        \vspace{3mm}
+        \addcontentsline{lot}{table}{Table 11: Calculated Thickness Values for Base Soil Number 3a using Each Subbase}
+        \emph{\\Table 11: Calculated Thickness Values for Base Soil Number 3a using Each Subbase\\}
+        \vspace{7mm}
+
+        % Subbase Round 2
+
+        \begin{tabular}{|c|cccccc|}
+            \hline    
+            \multicolumn{1}{|l}{}                     & \multicolumn{6}{c|}{\textbf{Base Soil Number 1}}                                              \\\hline
+            &&&&&&\\
+             \shortstack[c]{\textbf{Subbase}\\\textbf{Soil \#}} & $\bm{A_3}$ & $\bm{M_3}$  & \textbf{Calculated $\bm{D_3}$ (in)} & \textbf{Min. $\bm{D_3}$ (in)} & \textbf{$\bm{D_3}$ (in)} & $\bm{SN_3^*}$  \\\hline
+                                            1       & -     & -    & -    & -                    & -              & -               \\
+                                            1a      & -     & -    & -    & -                    & -              & -               \\
+                                            2       & -     & -    & -    & -                    & -              & -               \\
+                                            3       & -     & -    & -    & -                    & -              & -               \\
+                                            3a      & -     & -    & -    & -                    & -              & -               \\
+                                            4       & -     & -    & -    & -                    & -              & -               \\
+                                            5       & -     & -    & -    & -                    & -              & -               \\
+                                            6       & -     & -    & -    & -                    & -              & -               \\
+                                            7       & -     & -    & -    & -                    & -              & -               \\
+                                            9       & -     & -    & -    & -                    & -              & -               \\
+                                            9a      & -     & -    & -    & -                    & -              & -               \\
+                                            10      & -     & -    & -    & -                    & -              & -               \\\hline
+        \end{tabular}
+        \vspace{3mm}
+        \addcontentsline{lot}{table}{Table 12: Calculated Thickness Values for Base Soil Number 1 using Each Subbase}
+        \emph{\\Table 12: Calculated Thickness Values for Base Soil Number 1 using Each Subbase}
+        \newpage
+        \begin{tabular}{|c|cccccc|}
+            \hline    
+            \multicolumn{1}{|l}{}                     & \multicolumn{6}{c|}{\textbf{Base Soil Number 1a}}                                              \\\hline
+            &&&&&&\\
+             \shortstack[c]{\textbf{Subbase}\\\textbf{Soil \#}} & $\bm{A_3}$ & $\bm{M_3}$  & \textbf{Calculated $\bm{D_3}$ (in)} & \textbf{Min. $\bm{D_3}$ (in)} & \textbf{$\bm{D_3}$ (in)} & $\bm{SN_3^*}$  \\\hline
+                                            1       & -     & -    & -    & -                    & -              & -               \\
+                                            1a      & -     & -    & -    & -                    & -              & -               \\
+                                            2       & -     & -    & -    & -                    & -              & -               \\
+                                            3       & -     & -    & -    & -                    & -              & -               \\
+                                            3a      & -     & -    & -    & -                    & -              & -               \\
+                                            4       & -     & -    & -    & -                    & -              & -               \\
+                                            5       & -     & -    & -    & -                    & -              & -               \\
+                                            6       & -     & -    & -    & -                    & -              & -               \\
+                                            7       & -     & -    & -    & -                    & -              & -               \\
+                                            9       & -     & -    & -    & -                    & -              & -               \\
+                                            9a      & -     & -    & -    & -                    & -              & -               \\
+                                            10      & -     & -    & -    & -                    & -              & -               \\\hline
+        \end{tabular}
+        \vspace{3mm}
+        \addcontentsline{lot}{table}{Table 13: Calculated Thickness Values for Base Soil Number 1a using Each Subbase}
+        \emph{\\Table 13: Calculated Thickness Values for Base Soil Number 1a using Each Subbase\\}
+        \vspace{7mm}
+        \begin{tabular}{|c|cccccc|}
+            \hline    
+            \multicolumn{1}{|l}{}                     & \multicolumn{6}{c|}{\textbf{Base Soil Number 2}}                                              \\\hline
+            &&&&&&\\
+             \shortstack[c]{\textbf{Subbase}\\\textbf{Soil \#}} & $\bm{A_3}$ & $\bm{M_3}$  & \textbf{Calculated $\bm{D_3}$ (in)} & \textbf{Min. $\bm{D_3}$ (in)} & \textbf{$\bm{D_3}$ (in)} & $\bm{SN_3^*}$  \\\hline
+                                            1       & -     & -    & -    & -                    & -              & -               \\
+                                            1a      & -     & -    & -    & -                    & -              & -               \\
+                                            2       & -     & -    & -    & -                    & -              & -               \\
+                                            3       & -     & -    & -    & -                    & -              & -               \\
+                                            3a      & -     & -    & -    & -                    & -              & -               \\
+                                            4       & -     & -    & -    & -                    & -              & -               \\
+                                            5       & -     & -    & -    & -                    & -              & -               \\
+                                            6       & -     & -    & -    & -                    & -              & -               \\
+                                            7       & -     & -    & -    & -                    & -              & -               \\
+                                            9       & -     & -    & -    & -                    & -              & -               \\
+                                            9a      & -     & -    & -    & -                    & -              & -               \\
+                                            10      & -     & -    & -    & -                    & -              & -               \\\hline
+        \end{tabular}
+        \vspace{3mm}
+        \addcontentsline{lot}{table}{Table 14: Calculated Thickness Values for Base Soil Number 2 using Each Subbase}
+        \emph{\\Table 14: Calculated Thickness Values for Base Soil Number 2 using Each Subbase\\}
+        \newpage
+        \begin{tabular}{|c|cccccc|}
+            \hline    
+            \multicolumn{1}{|l}{}                     & \multicolumn{6}{c|}{\textbf{Base Soil Number 3}}                                              \\\hline
+            &&&&&&\\
+             \shortstack[c]{\textbf{Subbase}\\\textbf{Soil \#}} & $\bm{A_3}$ & $\bm{M_3}$  & \textbf{Calculated $\bm{D_3}$ (in)} & \textbf{Min. $\bm{D_3}$ (in)} & \textbf{$\bm{D_3}$ (in)} & $\bm{SN_3^*}$  \\\hline
+                                            1       & -     & -    & -    & -                    & -              & -               \\
+                                            1a      & -     & -    & -    & -                    & -              & -               \\
+                                            2       & -     & -    & -    & -                    & -              & -               \\
+                                            3       & -     & -    & -    & -                    & -              & -               \\
+                                            3a      & -     & -    & -    & -                    & -              & -               \\
+                                            4       & -     & -    & -    & -                    & -              & -               \\
+                                            5       & -     & -    & -    & -                    & -              & -               \\
+                                            6       & -     & -    & -    & -                    & -              & -               \\
+                                            7       & -     & -    & -    & -                    & -              & -               \\
+                                            9       & -     & -    & -    & -                    & -              & -               \\
+                                            9a      & -     & -    & -    & -                    & -              & -               \\
+                                            10      & -     & -    & -    & -                    & -              & -               \\\hline
+        \end{tabular}
+        \vspace{3mm}
+        \addcontentsline{lot}{table}{Table 15: Calculated Thickness Values for Base Soil Number 3 using Each Subbase}
+        \emph{\\Table 15: Calculated Thickness Values for Base Soil Number 3 using Each Subbase\\}
+        \vspace{7mm}
+        \begin{tabular}{|c|cccccc|}
+            \hline    
+            \multicolumn{1}{|l}{}                     & \multicolumn{6}{c|}{\textbf{Base Soil Number 3a}}                                              \\\hline
+            &&&&&&\\
+             \shortstack[c]{\textbf{Subbase}\\\textbf{Soil \#}} & $\bm{A_3}$ & $\bm{M_3}$  & \textbf{Calculated $\bm{D_3}$ (in)} & \textbf{Min. $\bm{D_3}$ (in)} & \textbf{$\bm{D_3}$ (in)} & $\bm{SN_3^*}$  \\\hline
+                                            1       & -     & -    & -    & -                    & -              & -               \\
+                                            1a      & -     & -    & -    & -                    & -              & -               \\
+                                            2       & -     & -    & -    & -                    & -              & -               \\
+                                            3       & -     & -    & -    & -                    & -              & -               \\
+                                            3a      & -     & -    & -    & -                    & -              & -               \\
+                                            4       & -     & -    & -    & -                    & -              & -               \\
+                                            5       & -     & -    & -    & -                    & -              & -               \\
+                                            6       & -     & -    & -    & -                    & -              & -               \\
+                                            7       & -     & -    & -    & -                    & -              & -               \\
+                                            9       & -     & -    & -    & -                    & -              & -               \\
+                                            9a      & -     & -    & -    & -                    & -              & -               \\
+                                            10      & -     & -    & -    & -                    & -              & -               \\\hline
+        \end{tabular}
+        \vspace{3mm}
+        \addcontentsline{lot}{table}{Table 16: Calculated Thickness Values for Base Soil Number 3a using Each Subbase}
+        \emph{\\Table 16: Calculated Thickness Values for Base Soil Number 3a using Each Subbase\\}
+    \end{spacing}
+    \newpage 
+    \begin{tabular}{|c|ccccccc|}
+        \hline
+        \textbf{Base Soil \#} & $\bm{SN_2^{**}}$ & $\bm{A_2}$ & $\bm{M_2}$ & \textbf{Calculated $\bm{D_2}$ (in)} & \textbf{Min. $\bm{D_2}$ (in)} & $\bm{D_2}$ & $\bm{SN_2^*}$  \\\hline
+        1            & -      & - & - & -                   & -             & - & -      \\
+        1a           & -      & -  & -  & -                    & -              & -  & -      \\
+        2            & -      & -  & -  & -                    & -              & -  & -      \\
+        3            & -      & -  & -  & -                    & -              & -  & -      \\
+        3a           & -      & - & - & -                   & -             & - & -     \\\hline
+    \end{tabular}
+    \vspace{3mm}
+    \addcontentsline{lot}{table}{Table 17: Recalculated Thickness Values for Base Soils Using Subgrade as the Subbase}
+    \emph{\\Table 17: Recalculated Thickness Values for Base Soils Using Subgrade as the Subbase\\}
+    \vspace{7mm}
+    \begin{tabular}{|c|ccc|}
+        \hline
+        \textbf{Base Soil \#} & \textbf{Volume of Base Soil ($\textbf{yd}^3$)} & \textbf{Volume Hauled ($\textbf{yd}^3$)} & \textbf{Truck Loads}  \\\hline
+        1              & -                             & -                      & -           \\
+        1a             & -                            & -                       & -           \\
+        2              & -                            & -                       & -           \\
+        3              & -                            & -                       & -           \\
+        3a             & -                            & -                      & -            \\\hline
+    \end{tabular}
+    \vspace{3mm}
+    \addcontentsline{lot}{table}{Table 18: Base Course Soil Volume Required (without Geogrid)}
+    \emph{\\Table 18: Base Course Soil Volume Required (without Geogrid)\\}
+    \vspace{7mm}
+    \begin{tabular}{|c|ccc|}
+        \hline
+        \textbf{Base Soil \#} & \textbf{Volume of Base Soil ($\textbf{yd}^3$)} & \textbf{Volume Hauled ($\textbf{yd}^3$)} & \textbf{Truck Loads}  \\\hline
+        1              & -                             & -                      & -           \\
+        1a             & -                            & -                       & -           \\
+        2              & -                            & -                       & -           \\
+        3              & -                            & -                       & -           \\
+        3a             & -                            & -                      & -            \\\hline
+    \end{tabular}
+    \vspace{3mm}
+    \addcontentsline{lot}{table}{Table 19: Base Course Soil Volume Required (with Geogrid)}
+    \emph{\\Table 19: Base Course Soil Volume Required (with Geogrid)\\}
+
+    \vspace{7mm}
+    \begin{tabular}{|c|cccccccc|}
+        \hline
+        &&&&&&&&\\
+        \textbf{Soil \#} & \shortstack[c]{\textbf{$\bm{\gamma_{d\text{ max}}}$}\\\textbf{(pcf)}} & \shortstack[c]{\textbf{$\bm{\gamma_{d\text{ min}}}$}\\\textbf{(pcf)}} & \shortstack[c]{\textbf{$\bm{\gamma_{d\text{ nat}}}$}\\\textbf{(pcf)}} & \shortstack[c]{\textbf{$\bm{\gamma_{d\text{ bulk}}}$}\\\textbf{(pcf)}} & \shortstack[c]{\textbf{$\bm{\gamma_{d\text{ 90}}}$}\\\textbf{(pcf)}} & $\bm{V_b}$ & $\bm{V_{hv}}$ & \shortstack[c]{\textbf{Compaction Cost}\\ \textbf{(\$/yd$\bm{^3}$)}}  \\\hline
+        1               & -                                          & -                                          & -                                          & -                                           & -                                         & -            & -               & -                                         \\
+        1a              & -                                          & -                                          & -                                          & -                                           & -                                         & -            & -               & -                                         \\
+        2               & -                                          & -                                          & -                                          & -                                           & -                                         & -            & -               & -                                         \\
+        3               & -                                          & -                                          & -                                          & -                                           & -                                         & -            & -               & -                                         \\
+        3a              & -                                          & -                                          & -                                          & -                                           & -                                         & -            & -               & -                               \\\hline         
+    \end{tabular}
+    \vspace{3mm}
+    \addcontentsline{lot}{table}{Table 20: Calculations of Volume in Borrow Area and Volume in Hauling Vehicle}
+    \emph{\\Table 20: Calculations of Volume in Borrow Area and Volume in Hauling Vehicle\\}
+
+
+    \newpage
+    \begin{tabular}{|l|r|}
+        \hline
+        \textbf{Highway Length (miles)}                               & 10  \\
+        \textbf{Highway Width (ft)}                                      & 50  \\
+        \textbf{Standard Deviation, $\bm{S_0}$}                   & 0.35  \\
+        \textbf{Design Servicability Loss, $\bm{\Delta PSI}$}                            & 1.7  \\
+        \textbf{Standard Deviate, $\bm{Z_R}$}                               & -1.282  \\
+        \textbf{18-kip ESAL, $\bm{W_{18}}$}                            & 31425018  \\
+        \textbf{Cost of Asphalt (\$/yd$\bm{^3}$)}                     & 80  \\
+        \textbf{Cost of Geogrid (\$/yd$\bm{^2}$)}                 & 1.8 \\\hline
+    \end{tabular}
+    \vspace{3mm}
+    \addcontentsline{lot}{table}{Table 21: Given Parameters}
+    \emph{\\Table 21: Given Parameters\\}
+    \vspace{7mm}
+    \begin{tabular}{|c|ccc|}
+        \hline
+        \textbf{Soil \#} & \textbf{Asphalt Thickness (in)} & \textbf{Asphalt Volume (yd$\bm{^3}$)} & \textbf{Asphalt Cost (\$)}  \\\hline
+        1       & -                      & -                        & -                  \\
+        1a      & -                      & -                         & -                  \\
+        2       & -                      & -                         & -                  \\
+        3       & -                      & -                         & -                  \\
+        3a      & -                      & -                        & -                   \\\hline
+    \end{tabular}
+    \vspace{3mm}
+    \addcontentsline{lot}{table}{Table 22: Necessary Volume and Cost of Asphalt}
+    \emph{\\Table 22: Necessary Volume and Cost of Asphalt\\}
+    \vspace{7mm}
+    \begin{tabular}{|c|cccc|}
+        \hline
+        \textbf{Base Soil \#} & \textbf{Excavation (\$)} & \textbf{Hauling (\$)} & \textbf{Asphalt (\$)} & \textbf{Total (\$)} \\\hline
+        1              & -                             & -                      & -   &-         \\
+        1a             & -                            & -                       & -   &-        \\
+        2              & -                            & -                       & -   &-        \\
+        3              & -                            & -                       & -   &-        \\
+        3a             & -                            & -                      & -    &-        \\\hline
+    \end{tabular}
+    \vspace{3mm}
+    \addcontentsline{lot}{table}{Table 23: Total Costs (without Geogrid)}
+    \emph{\\Table 23: Total Costs (without Geogrid)\\}
+    \newpage
+    \begin{tabular}{|c|ccccc|}
+        \hline
+        \textbf{Base Soil \#} & \textbf{Excavation (\$)} & \textbf{Hauling (\$)} & \textbf{Asphalt (\$)} & \textbf{Geogrid (\$)} & \textbf{Total (\$)} \\\hline
+        1              & -                             & -                      & -   &-      &-         \\
+        1a             & -                            & -                       & -   &-      &-  \\
+        2              & -                            & -                       & -   &-      &-  \\
+        3              & -                            & -                       & -   &-      &-  \\
+        3a             & -                            & -                      & -    &-     &-  \\\hline
+    \end{tabular}
+    \vspace{3mm}
+    \addcontentsline{lot}{table}{Table 24: Total Costs (with Geogrid)}
+    \emph{\\Table 24: Total Costs (with Geogrid)\\}
+\end{center}
+\newpage
+\section{Sample Calculations}
+\subsection{Structure Number}
+\noindent The \underline{structure number} is calculated using \emph{Equation \ref{sn}}.
+\begin{equation}\label{sn}\log(W_{18})=Z_R\times S_0+9.36\times\log(SN+1)-0.2+\frac{\log\left(\frac{\Delta PSI}{4.2-2.5}\right)}{0.4+\frac{1094}{(SN+1)^{5.19}}}+2.32\times\log(M_R)-8.07\end{equation}
+\[\log(W_{18})=Z_R\times S_0+9.36\times\log(SN+1)-0.2+\frac{\log\left(\frac{\Delta PSI}{4.2-2.5}\right)}{0.4+\frac{1094}{(SN+1)^{5.19}}}+2.32\times\log(M_R)-8.07\]
+\subsection{Dry Weight at a Relative Density of 90\%}
+\noindent The \underline{dry weight at a relative density of 90\%} is calculated using \emph{Equation \ref{dwrd}}.
+\begin{equation}\label{dwrd}\gamma_{d\,90}=\frac{\gamma_{d\text{ max}}\times \gamma_{d\text{ min}}}{\gamma_{d\text{ max}}-D_r(\gamma_{d\text{ max}}-\gamma_{d\text{ min}})}\end{equation}
+\[\gamma_{d\,90}=\frac{\gamma_{d\text{ max}}\times \gamma_{d\text{ min}}}{\gamma_{d\text{ max}}-D_r(\gamma_{d\text{ max}}-\gamma_{d\text{ min}})}\]
+\subsection{Asphalt Layer}
+\subsubsection{Thickness}
+\noindent The \underline{thickness} of the asphalt layer is calculated using \emph{Equation \ref{a_t}}.
+\begin{equation}\label{a_t}D_1=\frac{SN_1}{A_1}\end{equation}
+\[D_1=\frac{SN_1}{A_1}\]
+\subsubsection{Design Structure Number} 
+\noindent The \underline{design structure number} of the asphalt layer is calculated using \emph{Equation \ref{a_dsn}}.
+\begin{equation}\label{a_dsn}SN_1^*=A_1\times D_1\end{equation}
+\[SN_1^*=A_1\times D_1\]
+\subsubsection{Cost}
+\noindent The \underline{cost of the asphalt layer} ($C_{at}$) is calculated using \emph{Equation \ref{c_a_l}}, where $C_a$ is the asphalt cost.
+\begin{equation}\label{c_a_l}C_{at}=A\times D_1\times C_a\end{equation}
+\[C_{at}=A\times D_1\times C_a\]
+\subsection{Base Layer}
+\subsubsection{Thickness}
+\noindent The \underline{thickness} of the base layer is calculated using \emph{Equation \ref{b_t}}.
+\begin{equation}\label{b_t}D_2=\frac{SN_2-SN_1^*}{A_2\times M_2}\end{equation}
+\[D_2=\frac{SN_2-SN_1^*}{A_2\times M_2}\]
+\subsubsection{Design Structure Number} 
+\noindent The \underline{design structure number} of the base layer is calculated using \emph{Equation \ref{b_dsn}}.
+\begin{equation}\label{b_dsn}SN_2^*=A_2\times D_2\times M_2\end{equation}
+\[SN_2^*=A_2\times D_2\times M_2\]
+\subsubsection{Volume of Borrow Area} 
+\noindent The \underline{volume of borrow area} is calculated using \emph{Equation \ref{vb}}.
+\begin{equation}\label{vb}V_b=\frac{\gamma_{d\,90}}{\gamma_{d\text{ nat}}}\end{equation}
+\[V_b=\frac{\gamma_{d\,90}}{\gamma_{d\text{ nat}}}\]
+\subsubsection{Hauling Vehicle Volume} 
+\noindent The \underline{hauling vehicle volume} is calculated using \emph{Equation \ref{vhv}}.
+\begin{equation}\label{vhv}V_{hv}=\frac{\gamma_{d\,90}}{\gamma_{d\text{ bulk}}}\end{equation}
+\[V_{hv}=\frac{\gamma_{d\,90}}{\gamma_{d\text{ bulk}}}\]
+\subsubsection{Excavation Cost} 
+\noindent The \underline{excavation cost} ($C_e$) is calculated using \emph{Equation \ref{ec}}, where $C_c$ is the compacting cost.
+\begin{equation}\label{ec}C_e=A\times D_2\times C_c\end{equation}
+\[C_e=A\times D_2\times C_c\] 
+\subsubsection{Total Hauling Cost}
+\noindent The \underline{total hauling cost} ($C_{ht}$) is calculated using \emph{Equation \ref{hc}}, where $C_h$ is the hauling cost.
+\begin{equation}\label{hc}C_{ht}=A\times D_2\times V_{hv}\times C_h\end{equation}
+\[C_{ht}=A\times D_2\times V_{hv}\times C_h\]
+\subsubsection{Total Number of Trucks}
+\noindent The \underline{total number of trucks} ($N_{t}$) is calculated using \emph{Equation \ref{nt}}.
+\begin{equation}\label{nt}N_{t}=A\times D_2\times V_{hv}\times \frac{1}{10}\end{equation}
+\[N_{t}=A\times D_2\times V_{hv}\times \frac{1}{10}\]
+\subsection{Subbase Layer}
+\subsubsection{Thickness}
+\noindent The \underline{thickness} of the subbase layer is calculated using \emph{Equation \ref{sb_t}}.
+\begin{equation}\label{sb_t}D_2=\frac{SN_2-(SN_2^*+SN_1^*)}{A_3\times M_3}\end{equation}
+\[D_2=\frac{SN_2-(SN_2^*+SN_1^*)}{A_3\times M_3}\]
+\subsubsection{Design Structure Number} 
+\noindent The \underline{design structure number} of the subbase layer is calculated using \emph{Equation \ref{sb_dsn}}.
+\begin{equation}\label{sb_dsn}SN_3^*=A_3\times D_3\times M_3\end{equation}
+\[SN_3^*=A_3\times D_3\times M_3\]
+\subsection{Total Cost}
+\noindent The \underline{total cost} ($C_t$) is calculated using \emph{Equation \ref{tot}}.
+\begin{equation}\label{tot}C_t = C_e+C_{ht}+C_{at}\end{equation}
+\[C_t = C_e+C_{ht}+C_{at}\]
+
+\end{document}
