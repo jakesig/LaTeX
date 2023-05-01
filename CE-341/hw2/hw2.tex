@@ -1,0 +1,117 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{cancel, fancyhdr, textcomp, subfig}
+\usepackage{bm, pgfplots}
+\usepackage[export]{adjustbox}
+
+\renewcommand{\thesubfigure}{}
+\captionsetup[subfigure]{labelformat=simple, labelsep=colon}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Jacob Sigman\\2/8/23}
+\lhead{CE-341\\Homework}
+\cfoot{\thepage}
+\renewcommand\arraystretch{1.5}
+\renewcommand{\headrulewidth}{1.5pt}
+\setlength{\headheight}{22.6pt}
+\begin{document}
+\section*{Question 3.2-3}
+The yield strength for A572 steel is 50 ksi and the ultimate tensile strength is 65 ksi. For C8 x 11.5, the area is 3.37 $\text{in}^2$, and the web thickness is 0.22 inches. First, the yield strength is determined. The equation is as follows: 
+\[P_n = 0.9 \times F_y \times A_g=0.9\times 50\text{ ksi}\times3.37 \text{ in}^2=151.65\text{ kips}\]
+Next, the rupture strength is determined. The net area of the holes is found by adding 1/8 to the 7/8 inch diameter and getting a net effective area of the following: 
+\[A_e = 0.85\times\left(3.37\text{ in}^2-(2\times0.22\text{ in}\times 1\text{ in})=2.93\text{ in}^2\right)=0.85\times2.93\text{ in}^2=2.49\text{ in}^2\]
+This area is used to determine rupture strength: 
+\[P_n=0.75\times F_u \times A_e=0.75\times65\text{ ksi}\times2.49\text{ in}^2=121.39\text{ kips}\]
+Using a load combination and the fact that $L=3D$, the following equation is obtained: 
+\[1.2D+1.6L=1.2D+4.8D=6D=121.39\text{ kips}\] 
+\[D = 20.23\text{ kips}\] 
+Now that the dead load is obtained, sum the dead load and live load to get service load capacity: 
+\[D+L =D+3D= 20.23\text{ kips} + 60.69\text{ kips} = \boxed{80.92\text{ kips}}\]
+\section*{Question 3.2-6}
+The yield strength for A36 steel is 36 ksi and the ultimate tensile strength is 58 ksi. For L3 x 2 x 1/4, the area is 1.2 $\text{in}^2$, and the web thickness is 0.25 inches, however there are two angles, which will be accounted for by doubling the yield strength, which is: 
+\[P_n=2\times 0.9\times F_y\times A_g = 2\times 0.9\times 36\text{ ksi}\times 1.2\text{ in}^2 = 77.76\text{ kips}\] 
+Next, the rupture strength is determined. The net area of the holes is found by adding 1/8 to the 3/4 inch diameter and getting a net effective area of the following: 
+\[A_e=0.85\times\left(1.2\text{ in}^2-(0.25\text{ in}\times \frac{7}{8}\text{ in})=2.93\text{ in}^2\right)=0.85\times0.98\text{ in}^2=0.83\text{ in}^2\] 
+This area is used to determine rupture strength: 
+\[P_n=2\times 0.75\times F_u \times A_e=2\times0.75\times58\text{ ksi}\times0.83\text{ in}^2=72.57\text{ kips}\]
+It is given that the dead load is 12 kips and the live load is 36 kips, checking both load combinations yield the following: 
+\[1.4D = 1.4\times 12\text{ kips}=16.8\text{ kips}\] 
+\[1.2D+1.6L=1.2\times12\text{ kips}+1.6\times36\text{ kips}=72\text{ kips}\] 
+Since both combinations are less than both the yield and rupture strengths, $\boxed{\text{the member has enough strength}}$.
+\newpage
+\section*{Question 3.3-1}
+For part (a), the gross area is 5.9$\text{ in}^2$. The reduction factor and net effective area are calculated as follows: 
+\[U = 1-\frac{\bar{x}}{L}=1-\frac{1.47\text{ in}}{5\text{ in}}=0.706\]  
+\[A_e=U\times A_g=5.9\text{ in}^2\times 0.706 = \boxed{4.17\text{ in}^2}\]  
+For part (b), table D3.1 is used. According to section 4, plates where the tension load is transmitted by longitudinal welds when $1.5w\geq l\geq w$ (which is the determined case), $U=0.75$. Since it's a plate, the net effective area is found as follows: 
+\[A_e=0.75\times \frac{3}{8}\text{ in}\times 4\text{ in}= \boxed{1.13 \text{ in}^2}\] 
+For part (c), transverse welds have a $U$ of 1, which makes the net effective area as follows: 
+\[A_e=\frac{5}{8}\text{ in}\times 5\text{ in}= \boxed{3.13 \text{ in}^2}\] 
+For part (d), the diameter of the bolts is adjusted by 1/8 inch since the diameter is less than 1 inch. Additionally, since the plate is bolted, $U=1$. The thickness is 1/2 inch and the net effective area is found as follows: 
+\[A_e=1\times0.5\text{ in}\times 5.5\text{ in}-\left(0.5\text{ in}\times\left(\frac{3}{4}\text{ in}+\frac{1}{8}\text{ in}\right)\right)=\boxed{2.31\text{ in}^2}\]
+For part (e), the diameter of the bolts is adjusted by 1/8 inch since the diameter is less than 1 inch. Additionally, since the plate is bolted, $U=1$. The thickness is 5/8 inch and the net effective area is found as follows: 
+\[A_e=1\times\frac{5}{8}\text{ in}\times 6\text{ in}-\left(\frac{5}{8}\text{ in}\times\left(\frac{7}{8}\text{ in}+\frac{1}{8}\text{ in}\right)\right)=\boxed{3.13\text{ in}^2}\]
+\section*{Question 3.4-2}
+The yield strength for A36 steel is 36 ksi and the ultimate tensile strength is 58 ksi. The diameter of the bolts is adjusted by 1/8 inch since the diameter is less than 1 inch. Additionally, since the plate is bolted, $U=1$. The yielding strength is found as follows: 
+\[P_n=0.9\times F_y\times A_g=0.9\times 36\text{ ksi}\times 10\text{ in}^2=324\text{ kips}\] 
+After looking at the diagram, the critical section for failure was found from 4 to 3 to 5 (see below): 
+\begin{center}
+    \includegraphics*[scale=0.3]{fig1.png} 
+\end{center}
+With three holes, a pitch of 2 inches, and a gage of 3 inches, the net effective area can be found using the following equation, with $d$ being the adjusted diameter, $n$ being the number of holes, $s$ being the pitch, $t$ being the thickness, and $g$ being the gage: 
+\[A_n = A_g-t\times\left(n\times d- 2\times \frac{s^2}{4\times g}\right)=10\text{ in}^2-0.5\text{ in}\times\left(3\times \frac{7}{8}\text{ in}- 2\times \frac{(2\text{ in})^2}{4\times 3\text{ in}}\right)=8.04\text{ in}^2\]
+Using the equation for rupture, the following equation is used: 
+\[P_n=0.75\times F_u\times A_n=0.75\times58\text{ ksi}\times 8.04\text{ in}^2=349.74 \text{ kips}\]
+The nominal strength is the smaller value of the two, or $\boxed{324\text { kips}}$.
+\section*{Question 3.5-2}
+The block shear section is shown below: 
+\begin{center}
+    \includegraphics*[scale=0.3]{fig2.png} 
+\end{center}
+The yield strength for A36 steel is 36 ksi and the ultimate tensile strength is 58 ksi. The gross area of the section is calculated as follows, with $t$ being the thickness and $L$ being the shear length: 
+\[A_{gv}=t\times L\times 2=0.5\text{ in}\times 6\text{ in}\times2=6\text{ in}^2\] 
+Since there are 1.5 diameters in the shear area, the net shear effective area is found as follows, with $t$ being the thickness, $L$ being the shear length, $d$ being the adjusted diameter, and $n$ being the number of diameters: 
+\[A_{nv}=t\times(L-n\times d)\times 2=0.5\text{ in}\times\left(6\text{ in}-\frac{9}{8}\text{ in}\times 1.5 \right)\times 2=4.31\text{ in}^2\] 
+Since there is 1 diameter in the tension  area, the net tension effective area is found as follows, with $t$ being the thickness, $L$ being the tension length, $d$ being the adjusted diameter, and $n$ being the number of diameters: 
+\[A_{nt}=t\times(L-n\times d)=0.5\text{ in}\times\left(3.5\text{ in}-\frac{9}{8}\text{ in}\right)=1.19\text{ in}^2\] 
+The following equations are then used for block shear, with $U_{bs}$ being 1: 
+\[R_n = 0.6\times F_u\times A_{nv}+U_bs\times F_u\times A_{nt}=0.6\times 58\text{ ksi}\times4.31\text{ in}^2+58\text{ ksi}\times 1.19\text{ in}^2=219.01\text{ kips}\] 
+\[R_n=0.6\times F_y\times A_{gv}+U_bs\times F_u\times A_{nt}=0.6\times 36\text{ ksi}\times 6\text{ in}^2+58\text{ ksi}\times 1.19\text{ in}^2=198.62\text{ kips}\]
+The smaller value is used, which is $\boxed{198.62\text{ kips}}$.
+\newpage
+\section*{Question 3.6-6}
+The first step is to calculate the design load as per LRFD using the following equation: 
+\[P_n = 1.2\times D+1.6\times L=1.2\times 100 \text{ kips}+1.6\times50\text{ kips}=200\text{ kips}\]
+The yield strength for A36 steel is 36 ksi and the ultimate tensile strength is 58 ksi. The required gross area can now be calculated by rearranging the yielding equation: 
+\[P_n=0.9\times F_y\times A_g\] 
+\[A_g=\frac{P_n}{0.9\times F_y}=\frac{200\text{ kips}}{0.9\times 36\text{ ksi}}=6.17\text{ in}^2\] 
+The required net effective area can now be calculated by rearranging the failure equation: 
+\[P_n=0.75\times F_u\times A_e\] 
+\[A_e=\frac{P_n}{0.75\times F_u}=\frac{200\text{ kips}}{0.75\times 58\text{ ksi}}=4.6\text{ in}^2\] 
+The required radius of gyration is calculated as follows, with $L$ being the length of the member in inches: 
+\[r=\frac{L}{300}=\frac{20\text{ ft}\times 12}{300}=0.8\text{ in}\]
+Using Table 1-5, the lightest section that satisfies both the required gross area and the required radius of gyration ($r$ on the Y-Y axis) is C15 X 33.9, however, the net effective area must be checked to confirm.
+\[A_n=10\text{ in}^2-0.4\text{ in}\times\left(\frac{9}{8}\text{ in}\times 2\right)=9.1\text{ in}^2\]
+Lastly, use the reduction factor to finish calculating the net effective area, with $\bar{x}$ being the centroid from Table 1-5 and $L$ being the length of the connection: 
+\[U=1-\frac{\bar{x}}{L}=1-\frac{0.788\text{ in}}{6\text{ in}}=0.87\] 
+\[A_e=U\times A_n=0.87\times9.1\text{ in}^2=7.9\text{ in}^2\] 
+Since this value meets the requirement for net effective area, the lightest channel for this case is $\boxed{\text{C15 X 33.9}}$.
+\section*{Question 3.7-4}
+First, the angle between AC and BC is calculated: 
+\[\theta=\tan^{-1}\left(\frac{20\text{ ft}}{40\text{ ft}}\right)=26.57^\circ\] 
+The design case used is $1.0W$ for LRFD, which means the loading is 10 kips. The force in the member AC (using joint C) is found as follows: 
+\[\sum F_x=10\text{ kips}-P_{u}\times\cos(26.57^\circ)=0\]
+\[P_{u}=11.18\text{ kips}\] 
+The yield strength for A36 steel is 36 ksi and the ultimate tensile strength is 58 ksi. The required area can be calculated using the following equation: 
+\[A_b=\frac{P_u}{0.75\times(0.75\times F_u)}=\frac{11.18\text{ kips}}{0.75\times(0.75\times 58\text{ ksi})}=0.343\text{ in}^2\] 
+The required diameter is calculated as follows: 
+\[A_b=\frac{\pi}{4}D^2\hspace{5mm}D=\sqrt{\frac{4}{\pi}\times A_b}=\sqrt{\frac{4}{\pi}\times 0.343\text{ in}^2}=0.66\text{ in}\]
+In accordance with Table J3.3, the diameter of the rod should be $\boxed{\frac{11}{16}\text{ in}}$.
+\end{document}

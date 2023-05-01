@@ -1,0 +1,176 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{cancel, fancyhdr, textcomp, subfig}
+\usepackage{bm, pgfplots}
+\usepackage[export]{adjustbox}
+
+\renewcommand{\thesubfigure}{}
+\captionsetup[subfigure]{labelformat=simple, labelsep=colon}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Jacob Sigman\\3/1/23}
+\lhead{CE-341\\Homework}
+\cfoot{\thepage}
+\renewcommand\arraystretch{1.5}
+\renewcommand{\headrulewidth}{1.5pt}
+\setlength{\headheight}{22.6pt}
+\begin{document}
+\section*{Question 4.3-6}
+The first step is to calculate the slenderness ratio using the following formula: 
+\[\frac{K\times L}{r}\]
+Using Table 1-1, $r$ is found to be 2.69 inches. Since one end is fixed and the other end is pinned, $K$ is taken as 0.8. Therefore the slenderness ratio is: 
+\[\frac{0.8\times 12\text{ ft}\times 12}{2.69\text{ in}}=42.82\]
+The buckling stress is calculated using the following formula with 29,000 ksi for $E$: 
+\[F_e=\frac{\pi^2E}{\left(\frac{KL}{r}\right)^2}=\frac{\pi^2\times29000\text{ ksi}}{42.82^2}=156.1\text{ ksi}\]
+The next equation that needs to be determined to decide whether to use equation E3-2 or E3-3 is: 
+\[4.71\sqrt{\frac{E}{F_y}}=4.71\times\sqrt{\frac{29000\text{ ksi}}{50\text{ ksi}}}=113.4\] 
+Which is \underline{greater than} $KL/r$. Therefore, equation E3-2 is used: 
+\[F_{cr}=\left[0.658^{\frac{F_y}{F_e}}\right]F_y=\left[0.658^{\frac{50\text{ ksi}}{156.1\text{ ksi}}}\right](50\text{ ksi})=43.72\text{ ksi}\]
+The nominal strength is calculated using the formula below, with $A_g$ being found as 35.1 $\text{in}^2$ in Table 1-1: 
+\[P_n=F_{cr}\times A_g=43.72\text{ ksi}\times 35.1\text{ in}^2=1534.8\text{ kips}\] 
+The design strength for LRFD is calculated by multiplying this by 0.9 (yielding equation): 
+\[P_u=0.9\times1534.8\text{ kips}=\boxed{1381.3\text{ kips}}\]
+Using Table 4-14, the critical stress for the member is 39.3 kips. The design strength is calculated by multiplying that number by $A_g$. 
+\[P_u=39.3\text{ kips}\times 35.1\text{ in}^2=\boxed{1379.43\text{ kips}}\]
+\newpage
+\section*{Question 4.4-1}
+The first step is to calculate the slenderness ratio using the following formula: 
+\[\frac{K\times L}{r}\]
+Using Table 1-1, $r$ is found to be 3.28 inches. Since one end is fixed-free and the other end is pinned, $K$ is taken as 2. Therefore the slenderness ratio is: 
+\[\frac{2\times 12\text{ ft}\times 12}{3.28\text{ in}}=87.8\]
+The buckling stress is calculated using the following formula with 29,000 for $E$: 
+\[F_e=\frac{\pi^2E}{\left(\frac{KL}{r}\right)^2}=\frac{\pi^2\times29000\text{ ksi}}{87.8^2}=156.1\text{ ksi}=37.13\text{ ksi}\]
+The next equation that needs to be determined to decide whether to use equation E3-2 or E3-3 is: 
+\[4.71\sqrt{\frac{E}{F_y}}=4.71\times\sqrt{\frac{29000\text{ ksi}}{46\text{ ksi}}}=118.26\] 
+Which is \underline{greater than} $KL/r$. Therefore, equation E3-2 is used: 
+\[F_cr=\left[0.658^{\frac{F_y}{F_e}}\right]F_y=\left[0.658^{\frac{46\text{ ksi}}{37.13\text{ ksi}}}\right](46\text{ ksi})=27.36\text{ ksi}\]
+The nominal strength for LRFD is calculated by multiplying this by $A_g$, which was found to be 6.06 $\text{ in}^2$. 
+\[P_n=27.36\text{ ksi}\times6.06\text{ in}^2\]
+The next step is to determine $\frac{b}{t}$ which is 43 from Table 1-11. Next is to determine the following: 
+\[1.4\sqrt{\frac{E}{f}}=1.4\sqrt{29000\text{ ksi}}\times46\text{ ksi}=35.15\] 
+Where $f$ is 46 ksi and $E$ is 29,000 ksi. This value is less than $\frac{b}{t}$ which means equation E7-18 can be used to determine the effective width with the $t$ being determined at 0.174\text{ in} from Table 1-11: 
+\[b_e=1.92t\sqrt{\frac{E}{f}}\left[1-\frac{0.38}{\frac{b}{t}}\sqrt{\frac{E}{f}}\right]=6.527\text{ in}\]
+The loss in area of each of the two base sides is calculated as follows: 
+\[2\times(8\text{ in}-2\times1.5\times0.174\text{ in}-6.527\text{ in})\times(0.174\text{ in})=0.33\text{ in}^2\]
+Next, the effective width is calculated for the height, with $\frac{h}{t}$ being determined to be 54.5 from Table 1-11: 
+\[b_e=1.92t\sqrt{\frac{E}{f}}\left[1-\frac{0.38}{\frac{h}{t}}\sqrt{\frac{E}{f}}\right]=6.527\text{ in}=6.92\text{ in}\]
+The loss in area of each of the two base sides is calculated as follows: 
+\[2\times(10\text{ in}-2\times1.5\times0.174\text{ in}-6.92\text{ in})\times(0.174\text{ in})=0.89\text{ in}^2\] 
+The gross area was found to be 6.06 $\text{ in}^2$ from Table 1-11. The effective area is calculated as follows: 
+\[A_e=6.06\text{ in}^2-0.33\text{ in}^2-0.89\text{ in}^2=4.84\text{ in}^2\] 
+$Q$ is taken as the ratio of net effective area to area: 
+\[Q=\frac{A_e}{A}=\frac{4.84\text{ in}^2}{6.06\text{ in}^2}=0.81\] 
+Now, it must be determined whether to use equation E7-2 or E7-3. The following quantity is calculated: 
+\[4.71\sqrt{\frac{E}{QF_y}}=4.71\times\sqrt{\frac{29000\text{ ksi}}{0.81\times46\text{ ksi}}}=131.6\]
+Which is still greater than the slenderness ratio, therefore, equation E7-2 is used: 
+\[F_{cr}=Q\left[0.658^{\frac{QF_y}{F_e}}\right]F_y=0.81\left[0.658^{\frac{0.81\times46\text{ ksi}}{37.13\text{ ksi}}}\right](46\text{ ksi})=30.22\text{ ksi}\] 
+The nominal strength for LRFD is calculated by multiplying this by $A_g$. 
+\[P_n=24.44\text{ ksi}\times6.06\text{ in}^2=\boxed{148\text{ kips}}\]
+\newpage
+\section*{Question 4.7-9}
+The moment of inertia for W18X50 is 800 $\text{in}^4$. The moment of inertia for W18X97 is 1750 $\text{in}^4$. The moment of inertia for W18X130 is 2460 $\text{in}^4$. Since joint A is fixed, the stiffness ratio is 1. The stiffness ratio for joint B is calculated using the following equation: 
+\[G_B=\frac{\sum\frac{I_c}{L_c}}{\sum\frac{I_g}{L_g}}=\frac{\frac{1750\text{ in}^4}{13\text{ in}}+\frac{2460\text{ in}^4}{13\text{ in}}}{\frac{800\text{ in}^4}{25\text{ in}}}=10.1\]
+Using the alignment chart as depicted below, the effective length factor is 1.9.
+\begin{center}
+    \includegraphics*[scale=0.5]{fig1.png}
+\end{center}
+Next, the factored load is calculated using the following equation for LRFD. 
+\[P_u=1.2D+1.6L=1.2\times204\text{ kips}+1.6\times408\text{ kips}=897.6\text{ kips}\] 
+Stress is taken as force over area (38.2 $\text{in}^2$ from Table 1-1): 
+\[\sigma=\frac{P_u}{A_g}=\frac{897.6\text{ kips}}{38.2\text{ in}^2}=23.5\text{ ksi}\]
+Using Table 4-21, the stiffness reduction factor is as follows: 
+\[\frac{0.934+0.913}{2}=0.924\] 
+Multiplying this by the original calculated stiffness for B the following is obtained: 
+\[0.924\times 10.1=9.3\]
+Using the alignment chart above, the effective length is approximately $\boxed{1.85}$.
+\newpage
+\section*{Question 4.8-2}
+Using an $r$ of 0.762 in from Table 1-5 and a K of 0.65 from Table C-A-7.1, the slenderness ratio is: 
+\[\frac{KL}{r}=\frac{0.65\times12\text{ in}\times12}{0.762\text{ in}}=122.8\] 
+The buckling stress is: 
+\[F_e=\frac{\pi^2E}{\left(\frac{KL}{r}\right)^2}=\frac{\pi^2\times29000\text{ ksi}}{122.8^2}=18.98\text{ ksi}\]
+The next equation that needs to be determined to decide whether to use equation E3-2 or E3-3 is: 
+\[4.71\sqrt{\frac{E}{F_y}}=4.71\times\sqrt{\frac{29000\text{ ksi}}{50\text{ ksi}}}=113.4\]
+Which is less than the slenderness ratio, so equation E3-3 is used: 
+\[F_{cr}=0.877\times F_e=0.877\times18.98\text{ ksi}=16.65\text{ ksi}\]
+The nominal compressive strength is as follows, using 8.81 $\text{in}^2$ for $A_g$, as found in Table 1-5. 
+\[P_n=16.65\text{ ksi}\times 8.81\text{ in}^2=147\text{ kips}\] 
+Repeat all the above calculations for the $y$ axis. 
+\[\frac{KL}{r}=\frac{0.65\times12\text{ in}\times12}{4.29\text{ in}}=21.82\] 
+\[F_e=\frac{\pi^2E}{\left(\frac{KL}{r}\right)^2}=\frac{\pi^2\times29000\text{ ksi}}{21.82^2}=601.2\text{ ksi}\] 
+Now buckling must be calculated for the $z$ axis. However,, since the shape is singly symmetrical, Equation E4-7 is used. 
+\[F_{e}=\left[\frac{\pi^2EC_w}{\left(L_{cz}\right)^2}+GJ\right]\frac{1}{A_g \bar{r}_0^2}\]
+Well, we know $E$ is 29000 ksi, $L_{cz}$ is the effective length which is $0.65\times 12\text{ in}\times 12$, $C_w$ is in Table 1-5 as 151 $\text{in}^6$, J is in the table as 0.861 $\text{in}^4$, $\bar{r}_0$ is 4.54 inches. G was found in the textbook to be 11200 ksi for structural steel. 
+\[F_{e}=\left[\frac{\pi^2\times29000\text{ ksi}\times151\text{ in}^6}{\left(0.65\times 12\text{ in}\times 12\right)^2}+11200\text{ ksi} \times 0.861\text{ in}^4\right]\frac{1}{8.81\text{ in}^2\times(4.54\text{ in})^2}=80.27\text{ ksi}\] 
+From here, add this to the buckling stress I found for the $y$ axis. 
+\[80.27\text{ ksi}+601.2\text{ ksi}=681.47\text{ ksi}\]
+Now, use equation E4-3 to determine the flexural-torsional buckling strength: 
+\[F_e=\frac{F_{ey}+F_{ez}}{2H}\left[1-\sqrt{1-\frac{4F_{ey}F_{ez}H}{\left(F_{ey}+F_{ez}\right)^2}}\right]\]
+$H$ is found to be 0.919 in from Table 1-5. The rest we should know: 
+\[F_e=\frac{681.47\text{ ksi}}{2\times 0.919\text{ in}}\left[1-\sqrt{1-\frac{4\times601.2\text{ ksi}\times 80.27\text{ ksi}\times0.919\text{ in}}{\left(681.47\text{ ksi}\right)^2}}\right]=79.29\text{ ksi}\]
+Now we compare $F_e$ to $F_y$: 
+\[0.44\times F_y=22\text{ ksi}<79.29\text{ ksi}\] 
+Therefore, Equation E3-2 is used: 
+\[F_{cr}=\left[0.658^{\frac{F_y}{F_e}}\right]F_y=\left[0.658^{\frac{50\text{ ksi}}{79.29\text{ ksi}}}\right](50\text{ ksi})=38.4\text{ ksi}\]
+The nominal strength is calculated as follows: 
+\[P_n=F_{cr}\times A_g=38.4\text{ ksi}\times 8.81\text{ in}^2=\boxed{338.3\text{ kips}}\]
+\section*{Question 4.9-10}
+\noindent Equations 1-3 show various required calculations, with all needed values determined from Table 1-7: 
+\begin{equation}
+    \frac{L_c}{r_x}=\frac{KL}{r_x}=\frac{18\text{ ft}\times 12}{1.89\text{ in}}=114.3
+\end{equation}
+% \begin{equation} 
+%     0.45\sqrt{\frac{E}{F_y}}=0.45\sqrt{\frac{29000\text{ ksi}}{50\text{ kips}}}=10.84
+% \end{equation}
+% \begin{equation} 
+%     \frac{b}{t}=\frac{6\text{ in}}{5/8\text{ in}}=9.6
+% \end{equation}
+\begin{equation} 
+    F_e=\frac{\pi^2E}{\left(\frac{KL}{r}\right)^2}=\frac{\pi^2\times29000\text{ ksi}}{114.3^2}=21.91\text{ ksi}
+\end{equation}
+\begin{equation} 
+    4.71\sqrt{\frac{E}{F_y}}=4.71\sqrt{\frac{29000\text{ ksi}}{50\text{ kips}}}=113.4
+\end{equation}
+The value of equation 3 is less than the value of equation 1, equation E3-3 is used: 
+\[F_{cr}=0.877\times F_e=0.877\times 21.91\text{ ksi}=19.22\text{ ksi}\]
+The nominal compressive strength is calculated as follows: 
+\[P_n=F_{cr}\times A_g=19.22\text{ ksi}\times 11.7\text{ in}^2=224.9\text{ kips}\] 
+Now we use table 1-15 and calculate 3/4 of the slenderness ratio: 
+\[\frac{3}{4}\frac{L_c}{r_y}=\frac{3}{4}\frac{18\text{ ft}\times12}{1.66\text{ in}}=97.59\]
+Two fully tightened bolts mean that there are three spaces. The spacing of the connectors is: 
+\[a=\frac{L_c}{3}=\frac{18\text{ ft}\times 12}{3}=72\text{ in}\]
+The modified slenderness ratio is: 
+\[\frac{a}{r_z}=\frac{72\text{ in}}{0.859\text{ in}}\]
+The next step is to calculate the separation ratio according to section E6 of the manual: 
+\[\alpha = \frac{h}{2r_y}=\frac{2\times \bar{x} +3/8\text{ in}}{2\times r_y}=\frac{2\times 1.03\text{ in} +3/8\text{ in}}{2\times 1.13\text{ in}}=1.08\] 
+The modified slenderness ratio is calculated in equation 4 according to equation E6-2: 
+\begin{equation}
+    \sqrt{\left(\frac{KL}{r_y}\right)^2+0.82\frac{\alpha^2}{1+\alpha^2}\times\left(\frac{a}{r_y}\right)^2}=\sqrt{\left(\frac{18\text{ ft}\times 12}{1.66\text{ in}}\right)^2+0.82\frac{1.08^2}{1+1.08^2}\times\left(\frac{72\text{ in}}{1.13\text{ in}}\right)^2}=136.8
+\end{equation} 
+The remaining calculations are done in equations 5 and 6: 
+\begin{equation} 
+    F_e=\frac{\pi^2E}{\left(\frac{KL}{r}\right)^2}=\frac{\pi^2\times29000\text{ ksi}}{136.8^2}=15.29\text{ ksi}
+\end{equation}
+\begin{equation} 
+    4.71\sqrt{\frac{E}{F_y}}=4.71\sqrt{\frac{29000\text{ ksi}}{50\text{ kips}}}=113.4
+\end{equation}
+The value of equation 6 is less than the value of equation 4, equation E3-3 is used: 
+\[F_{cr}=0.877\times F_e=0.877\times 15.29\text{ ksi}=13.41\text{ ksi}\]
+Now we look at equation E4-2: 
+\[F_{cr}=\left(\frac{F_{cry}+F_{crz}}{2H}\right)\left[1-\sqrt{1-\frac{4F_{cry}F_{crz}H}{(F_{cry}+F_{crz})^2}}\right]\]
+$F_{crz}$ is calculated using equation E4-3, using all values obtained from Table 1-15 along with 11200 ksi for $G$: 
+\[F_{crz}=\frac{GJ}{A_g\bar{r}_0^2}=\frac{11200\text{ ksi}\times (0.775\text{ in}\times 2)}{11.7\text{ in}^2\times (3.05\text{ in})^2}=159.5\text{ ksi}\]
+Now, using 13.41 ksi for $F_{cry}$ and 0.684 in for $H$ (from Table 1-15), we can solve equation E4-2: 
+\[F_{cr}=\left(\frac{13.41 \text{ ksi}+159.5\text{ ksi}}{2\times(0.684\text{ in})}\right)\left[1-\sqrt{1-\frac{4(13.41 \text{ ksi})\times(159.5\text{ ksi})\times(0.684\text{ in})}{(13.41 ksi+159.5\text{ ksi})^2}}\right]=13.04\text{ ksi}\]
+Nominal strength is calculated as follows: 
+\[P_n=13.04\text{ ksi}\times 11.7\text{ in}^2=152.6\text{ kips}\]
+Multiply this by 0.9 to get the LRFD design strength: 
+\[0.9\times 152.6\text{ kips}= \boxed{137.3\text{ kips}}\]
+\end{document}

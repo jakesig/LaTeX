@@ -1,0 +1,93 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{cancel, fancyhdr, textcomp, subfig}
+\usepackage{bm, pgfplots}
+\usepackage[export]{adjustbox}
+
+\renewcommand{\thesubfigure}{}
+\captionsetup[subfigure]{labelformat=simple, labelsep=colon}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Jacob Sigman\\3/22/23}
+\lhead{CE-341\\Homework}
+\cfoot{\thepage}
+\renewcommand\arraystretch{1.5}
+\renewcommand{\headrulewidth}{1.5pt}
+\setlength{\headheight}{22.6pt}
+\begin{document}
+\section*{Question 5.2-2}
+\begin{center}
+\includegraphics*[scale=0.4]{fig1.png}
+\end{center}
+Determine the areas of each section:
+\[A_1 = 6\text{ in}^2\hspace{4mm}A_2=6\text{ in}^2\hspace{4mm}A_3=3.5\text{ in}^2\] 
+Determine the centers of gravity of each section relative to the base:
+\[y_1 = 16.75\text{ in}\hspace{4mm}y_2=8.5\text{ in}\hspace{4mm}y_3=0.25\text{ in}\] 
+Determine the moments of inertia about the $y$-axis of each section: 
+\[I_1=\frac{1}{12}\times 0.5\text{ in}\times(7\text{ in})^3=14.29\text{ in}^4\hspace{4mm}I_2=\frac{1}{12}\times 16\text{ in}\times(0.375\text{ in})^3=0.0703\text{ in}^4\] 
+\[I_3=\frac{1}{12}\times 0.5\text{ in}\times(12\text{ in})^3=72\text{ in}^4\]
+Now determine the net center of gravity: 
+\[\bar{y}=\frac{\sum A_iy_i}{\sum A_i}=9.83\text{ in}\]
+Area of net compression zone and area of net tension zone are the same (7.75 $\text{in}^2$). Now determine the plastic neutral axis: 
+\[7\text{ in}\times 0.5\text{ in}+0.375\text{ in}\times (PNA-0.5\text{ in})=7.75 \text{in}^2\] 
+\[PNA=11.83\text{ in}\]
+The distance from the top of the shape to the plastic neutral axis is $17 \text{ in}-11.83 \text{ in}$ which is $\boxed{5.17\text{ in}}$. Now determine the plastic modulus: 
+\[S_x=3.5\text{ in}\times (11.83\text{ in}-0.25\text{ in})+6\text{ in}\times (11.83\text{ in}-8.5\text{ in})+6\text{ in}\times(5.17\text{ in}-0.25\text{ in})=90\text{ in}^3\] 
+The plastic moment is determined as follows: 
+\[M_p=F_y\times S_x=50\text{ ksi}\times 90\text{ in}^3=\boxed{4500\text{ kip-in}}\]
+Now take the plastic modulus about the minor axis, with $I$ being the sum of the moments of inertia and $\bar{x}$ being 6 inches. 
+\[Z=\frac{I}{\bar{x}}=\frac{86.4\text{ in}^4}{6\text{ in}}=\boxed{14.4\text{ in}^3}\] 
+\section*{Question 5.5-3}
+Determine adjusted loads using LRFD.
+\[P_y = 1.2D+1.6L=1.2\times 1\text{ kip/ft}+1.6\times 2\text{ kip/ft}=4.4\text{ kip/ft}\]
+\[P_u = 1.2D=1.2\times 40\text{ kips}=48\text{ kips}\]
+Determine the vertical reaction at the left support and use to solve for the moment.
+\[\sum M_R=0=48\times25+4.4\times \frac{40^2}{2}- R_L\times 40\]
+\[R_L=118 \text{ kips}\] 
+\[M_u=118\times 15-4.4\times 15\times 7.5=1275\text{ kip-ft}\]
+According to Table 3-2, $\phi_bM_{px}$ is 1300 kip-ft, which is larger than the moment, therefore it is $\boxed{\text{adequate}}$.
+\section*{Question 5.5-12} 
+From Table 3-2, $L_p$ is 6.36 feet, $L_r$ is 17.3 feet. $L_b$ is given as 10 ft. This corresponds with the second case in section F2, therefore equation F2-2 is used. 
+\[M_n=C_b\left[M_p-(M_p-0.7F_y\times S_x)\times\left(\frac{L_b-L_p}{L_r-L_p}\right)\right]\]
+Since there will be five supports laterally, evenly spaced out, from Table 3-1, $C_b$ is 1.12. From Table 3-2, $Z_x$ is 160 $\text{in}^3$. Therefore, the plastic moment is: 
+\[M_p=50\text{ ksi}\times 160 \text{ in}^3=8000\text{ kip-in}\]
+From Table 1-1, $S_x$ is 140 $\text{in}^3$. Now plug everything into equation F2-2 above to obtain 7804.78 kip-in, which is 650.39 kip-ft. The design moment is:
+\[M_d=0.9\times M_n=0.9\times 650.39\text{ kip-ft}=585.35\text{ kip-ft}\]
+We know that this moment is equivalent to one eighth of the distributed load multiplied by the length squared. 
+\[585.35\text{ kip-ft}=\frac{wL^2}{8}=\frac{50^2\times w}{8}\] 
+\[w=1.87\text{ kips/ft}=1.2D+1.6L\]
+We know that the dead load is 68 lbs/ft from Table 1-1. Therefore: 
+\[1.87\text{ kips/ft}-1.2\times \frac{68\text{ lbs/ft}}{1000}=1.6L\] 
+\[L=\boxed{1.11\text{ kips/ft}}\]
+\newpage
+\section*{Question 5.6-4}
+The first step is to check for compactness: 
+\[\lambda_p=0.38\times\sqrt{\frac{E}{F_y}}=0.38\times\sqrt{\frac{29000 \text{ ksi}}{50\text{ ksi}}}=9.15\] 
+\[\lambda =\frac{b_f}{2t_f}=\frac{16\text{ in}}{2\times \frac{3}{4}\text{ in}}=10.67\] 
+\[\lambda_r=0.95\times \sqrt{\frac{k_c\times E}{F_L}}\]
+\[k_c=\frac{4}{\sqrt{\frac{h}{t_w}}}=\frac{4}{\sqrt{\frac{40\text{ in}}{0.5\text{ in}}}}=0.4472\hspace{5mm}F_L=0.7F_y=35\text{ ksi}\] 
+\[\lambda_r=0.95\times \sqrt{\frac{0.4472\times 29000\text{ ksi}}{35\text{ ksi}}}=18.29\] 
+The flange is not compact since $\lambda_p<\lambda<\lambda_r$. The width to thickness ratio of the web is 80. Now check if the web is compact: 
+\[\lambda_p=3.76\times \sqrt{\frac{E}{F_y}}=3.76\times\sqrt{\frac{29000 \text{ ksi}}{50\text{ ksi}}}=90.55\] 
+Since the width to thickness ratio is less, the web is compact. Now calculate half the area of the entire section: 
+\[A=0.75\text{ in}\times 16\text{ in}+\frac{1}{2}\times 0.5\text{ in}\times 40\text{ in}=22\text{ in}^2\] 
+Now calculate the centroid: 
+\[\bar{y}=\frac{\sum A_iy_i}{\sum A_i}=\frac{12\text{ in}\times (20\text{ in}+3/8\text{ in})+10\text{ in}\times 10\text{ in}}{22\text{ in}^2}=15.66\text{ in}\]
+\[Z=\frac{A}{2}\times a = \frac{A}{2}\times 2\bar{y} = 344.5\text{ in}^3\]
+The plastic moment is this value multiplied by 50 ksi. 
+\[M_p=50\text{ ksi}\times 344.5\text{ in}^3=17225\text{ kip-in}\]
+Now calculate the moment of inertia about the $x$-axis. 
+\[I_x=\frac{1}{12}b\times h^3+ 2\left[\frac{1}{12}b\times h^3+b\times d^2\right]\]
+\[I_x=\frac{1}{12}(0.5\text{ in})\times (40\text{ in})^3+2\left[\frac{1}{12}(16\text{ in})\times (0.75\text{ in})^3+(\text{12 in})\left(20\text{ in} + \frac{3}{8}\text{ in}\right)^2\right]=12631.17\text{ in}^4\]
+Now use the moment of inertia to calculate the section modulus.
+\[S_x=\frac{I_x}{c}=\frac{I_x}{\frac{h_w}{2}+t_f}=\frac{12630\text{ in}^4}{20\text{ in}+0.75\text{ in}}=608.7\text{ in}\]
+This corresponds with the second case in section F2, therefore equation F2-2 is used. Substituting the calculated plastic moment for $M_p$, 1 for $C_b$, the calculated section modulus for $S_x$, 50 ksi for $F_y$, 10.67 for $\lambda$, 9.15 for $\lambda_p$ and 18.29 for $\lambda_r$.
+\[M_n=C_b\left[M_p-(M_p-0.7F_y\times S_x)\times\left(\frac{\lambda-\lambda_p}{\lambda_r-\lambda_p}\right)\right]=18038.76\text{ kip-in}=\boxed{1503.23\text{ kip-ft}}\]
+\end{document}

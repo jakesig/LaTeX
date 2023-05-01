@@ -1,0 +1,175 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{cancel, fancyhdr, textcomp, subfig}
+\usepackage{bm, pgfplots}
+\usepackage[export]{adjustbox}
+
+\renewcommand{\thesubfigure}{}
+\captionsetup[subfigure]{labelformat=simple, labelsep=colon}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Jacob Sigman\\4/19/23}
+\lhead{CE-341\\Homework}
+\cfoot{\thepage}
+\renewcommand\arraystretch{1.5}
+\renewcommand{\headrulewidth}{1.5pt}
+\setlength{\headheight}{22.6pt}
+\begin{document}
+\section*{Question 6.2-2}
+From Table 6-2, $\phi M_n=552$ kip-ft and $\phi P_n=619$ kips. The total load is as follows: 
+\[1.2D + 1.6L = 44\text{ kips}\] 
+Since $\frac{P}{P_n}<0.2$, the following interaction equation can be used. 
+\[\frac{P}{\phi P_n}+\frac{M}{\phi M_n}=1\]
+\[\frac{44}{619}+\frac{M}{552}=1\]
+\[M=512.8\text{ kip-ft}=\frac{wL^2}{8}=\frac{400w}{8}\] 
+\[w=\boxed{10.3 \text{ kip/ft}}\]
+\section*{Question 6.6-2}
+Compute the buckling load:
+\[P=\frac{\pi^2EI}{L^2}=\frac{\pi^2\times 29000\times 1530}{(20\times 12)^2}=7602.67\text{ kips}\]
+Calculate the LRFD load (also established in previous question): 
+\[1.2D + 1.6L = 44\text{ kips}\]
+Now, calculate the moment amplification factor: 
+\[B_1=\frac{C_m}{1-\left(\alpha\frac{P_r}{P_e}\right)}\] 
+Using LRFD, $\alpha=1$ and for transversely loaded members, $C_m=1$.
+\[B_1=\frac{1}{1-\left(1\times\frac{44}{1130}\right)}=\boxed{1.04}\]  
+\section*{Question 6.6-4}
+Let's find the design loading and moment by LRFD:
+\[1.2*0.3*P+1.6*0.7*P=1.2*0.3*120+1.6*0.7*120=177.6\text{ kips}\] 
+\[1.2*0.3*M+1.6*0.7*M=1.2*0.3*67+1.6*0.7*67=99.16\text{ kips (bottom)}\]
+\[1.2*0.3*M+1.6*0.7*M=1.2*0.3*135+1.6*0.7*135=199.8\text{ kips (top)}\]
+From the steel manual, using $\text{F}_y$ as 50 ksi and a length of 16 feet, $\phi P_n=499$ kips and $\phi M_n=283$ kip-ft. Now calculate the modification factor.
+\[C_m=0.6-0.4\left[\frac{M_B}{M_T}\right]=0.6-0.4\left[\frac{99.16}{199.8}\right]=0.4\]
+Compute the buckling load: 
+\[P=\frac{\pi^2EI}{L^2}=\frac{\pi^2\times 29000\times 475}{(0.9\times 16\times 12)^2}=4553\text{ kips}\]
+Compute the amplification factor: 
+\[B_1=\frac{C_m}{1-\left(\alpha\frac{P_r}{P_e}\right)}=\frac{0.4}{1-\left(\frac{177.6}{4553}\right)}=0.42\] 
+Since it's less than 1, we'll just take the amplification factor as 1. The amplified moment is the same as the moment at the top. Since $\frac{P}{P_n}>0.2$ the following equation is used: 
+\[\frac{P}{\phi P_n}+\frac{8}{9}\left(\frac{M_{ux}}{\phi M_{nx}}+\frac{M_{uy}}{\phi M_{ny}}\right)\leq 1\]
+\[\frac{177.6}{499}+\frac{8}{9}\left(\frac{199.8}{\phi M_{nx}}\right)\leq 1\]
+The nominal strength should be equivalent to the plastic moment since the value of $C_b$ will make the value of the nominal strength greater than that of the plastic moment. From the manual, $\phi M_p=324$ kip-ft. Solving below it is seen that $\boxed{\text{the equation is satisfied}}$.
+\[\frac{177.6}{499}+\frac{8}{9}\left(\frac{199.8}{324}\right)\leq 1\]
+\[0.9 \leq 1\]
+\section*{Question 6.6-7}
+Determine design parameters according to LRFD: 
+\[P_1=1.2*D+1.6*L=356\text{ kips}\] 
+\[P_2=1.2*D+1.6*L=37.2\text{ kips}\]
+\[w=1.2*D+1.6*L=7.6\text{ kips/ft}\] 
+The moment strength is calculated as follows (using $L=16$): 
+\[M=\frac{wL^2}{8}+\frac{P_2L}{4}=385.6\text{ kip-ft}\]
+Compute the buckling load: 
+\[P=\frac{\pi^2EI}{L^2}=\frac{\pi^2\times 29000\times 716}{(16\times 12)^2}=5559\text{ kips}\]
+Compute the amplification factor: 
+\[B_1=\frac{C_m}{1-\left(\alpha\frac{P_r}{P_e}\right)}=\frac{1}{1-\left(\frac{356}{5559}\right)}=1.068\] 
+Now calculate the amplified moment: 
+\[M_u=B_1\times 385.6=411.9\text{ kip-ft}\]
+Now calculate the following two values: 
+\[\frac{K_xL}{r_x/r_y}=\frac{16}{1.74}=9.2\text{ ft}\]
+\[K_yL=1\times 8=8\text{ ft}\]
+Using 9.2 ft, $\phi P_n=1170$ kips. 
+\[\frac{P_u}{\phi P_n}=\frac{356}{1170}=0.3\] 
+Since this value is greater than 0.2, the following equation is used: 
+\[\frac{P}{\phi P_n}+\frac{8}{9}\left(\frac{M_{ux}}{\phi M_{nx}}+\frac{M_{uy}}{\phi M_{ny}}\right) \leq 1\]
+\[0.3+\frac{8}{9}\left(\frac{411.8}{511}\right)=1.02\]
+This value is \emph{just} above 1 so it is $\boxed{\text{not satisfactory}}$.
+\section*{Question 6.7-1}
+The first step is to calculate the following two values: 
+\[\frac{K_\text{sway}L}{r_x/r_y}=\frac{1.7\times 14}{6.05/2.48}=9.75\text{ ft}\]
+\[K_\text{non-sway}L=1\times 14=14\text{ ft}\]
+Using a $KL$ of 14 feet, $\phi P_n=701$ kips. Now calculate the following: 
+\[\frac{P_u}{\phi P_n}=\frac{400}{701}=0.5706\] 
+Since this value is greater than 0.2, $C_m$ is calculated as follows: 
+\[C_m=0.6-0.2\left(\frac{M_1}{M_2}\right)=0.6-0.2\left(\frac{24}{45}\right)=0.39\]
+Now calculate buckling load: 
+\[P=\frac{\pi^2EI}{L^2}=\frac{\pi^2\times 29000\times 881}{(14\times 12)^2}=8934\text{ kips}\]
+Compute the amplification factors: 
+\[B_{1x}=\frac{C_m}{1-\left(\alpha\frac{P_r}{P_e}\right)}=\frac{0.39}{1-\left(\frac{400}{8934}\right)}=0.405\] 
+\[B_2=\frac{C_m}{1-\left(\alpha\frac{P_r}{P_e}\right)}=\frac{1}{1-\left(\frac{6000}{40000}\right)}\]
+Now calculate the moments at the top and bottom: 
+\[M_T=1\times 45 + 1.176\times 40 = 92 \text{ kip-ft}\] 
+\[M_B=1\times 24+1.176\times 95 = 135.7\text{ kip-ft}\] 
+We know that $\phi M_p=479$ kip-ft, and since $\frac{P_u}{\phi P_n}$ is greater than 0.2, use the following equation: 
+\[\frac{P}{\phi P_n}+\frac{8}{9}\left(\frac{M_{ux}}{\phi M_{nx}}+\frac{M_{uy}}{\phi M_{ny}}\right) \leq 1\]
+\[0.5706+\frac{8}{9}\left(\frac{135.7}{479}\right)=0.82\]
+Since the value is less than one, this member $\boxed{\text{satisfies the provisions}}$.
+\section*{Question 6.7-2}
+The first step is to calculate the following two values: 
+\[\frac{K_xL}{r_x/r_y}=\frac{1.2\times 16}{2.44}=7.87\text{ ft}\]
+\[K_yL=1\times 16=16\text{ ft}\]
+Using a $KL$ of 16 feet, $\phi P_n=698$ kips. Now calculate the following: 
+\[P_n = 1.2D+1.6L=1.2\times 128 + 1.6\times 240=528 \text{ kips}\] 
+\[M_T = 1.2D+1.6L = 1.2\times 15+1.6\times 40=82\text{ kip-ft}\] 
+\[M_B = 1.2D+1.6L = 1.2\times 18+1.6\times 48=98.4\text{ kip-ft}\] 
+Now calculate $C_m$ and the critical buckling load: 
+\[C_m=0.6-0.4\left(\frac{M_1}{M_2}\right)=0.6-0.4\left(\frac{82}{98.4}\right)=0.27\]
+\[P=\frac{\pi^2EI}{L^2}=\frac{\pi^2\times 29000\times 881}{(9.6)^2}=9467\text{ kips}\] 
+Compute the amplification factor:
+\[B_{1}=\frac{C_m}{1-\left(\alpha\frac{P_r}{P_e}\right)}=\frac{0.27}{1-\left(\frac{528}{9467}\right)}=0.29\] 
+Since it's less than 1, we'll just take the amplification factor as 1. The amplified moment is the same as the moment at the bottom. Now calculate the following: 
+\[\frac{P_u}{\phi P_n}=\frac{528}{697}=0.8\] 
+The nominal strength should be equivalent to the plastic moment since the value of $C_b$ will make the value of the nominal strength greater than that of the plastic moment. From the manual, $\phi M_p=473$ kip-ft. This is greater than 0.2, so the following is used: 
+\[\frac{P}{\phi P_n}+\frac{8}{9}\left(\frac{M_{ux}}{\phi M_{nx}}+\frac{M_{uy}}{\phi M_{ny}}\right) \leq 1\]
+\[0.8+\frac{8}{9}\left(\frac{98.4}{473}\right)=0.985\]
+Now check the braced condition: 
+\[P_n=1.2D+0.5L=1.2\times 120+0.5\times 240=264\text{ kips}\] 
+\[M_T=1.2D+0.5L=1.2\times 15+0.5\times 40=38\text{ kip-ft}\] 
+\[M_B=1.2D+0.5L=1.2\times 18+0.5\times 48=45.6\text{ kip-ft}\] 
+Now calculate $C_m$ and the critical buckling load:
+\[C_m=0.6-0.4\left(\frac{M_1}{M_2}\right)=0.6-0.4\left(\frac{38}{45.6}\right)=0.27\]
+\[P=\frac{\pi^2EI}{L^2}=\frac{\pi^2\times 29000\times 881}{(1.2\times 16\times 12)^2}=4750\text{ kips}\]
+Now compute both amplification factors, accounting for the wind load as 30 kips:
+\[B_{1x}=\frac{C_m}{1-\left(\alpha\frac{P_r+P_W}{P_e}\right)}=\frac{0.27}{1-\left(\frac{264+30}{9467}\right)}=0.275\] 
+\[B_2=\frac{1}{1-\left(\alpha\frac{P_r}{P_e}\right)}=\frac{1}{1-\left(\frac{264}{4750}\right)}=1.059\]
+$B_1$ is used as 1. The amplified moment is as follows (accounting for the wind moment as 130 kip-ft): 
+\[M_u=B_1M_B+B_2M_W=45.6+1.059\times 130=183.3\text{ kip-ft}\] 
+Since $\frac{P_u}{\phi P_n}$ is greater than 0.2, use the following equation: 
+\[\frac{P}{\phi P_n}+\frac{8}{9}\left(\frac{M_{ux}}{\phi M_{nx}}+\frac{M_{uy}}{\phi M_{ny}}\right) \leq 1\]
+\[0.424+\frac{8}{9}\left(\frac{183.3}{473}\right)=0.77\]
+The member is $\boxed{\text{adequate}}$.
+\section*{Question 6.8-2}
+Let's start by calculating $C_b$. Below is the equation: 
+\[C_b=\frac{12.5M_{max}}{2.5M_{max}+3M_a+4M_b+3M_c}\]
+$M_a$ is the moment at 1/4 of the unbraced length. Since the moment diagram is a straight line, linearization can be used:
+\[M_a=M_T-\frac{M_T-M_B}{L}\times L_a=182-\frac{182-42}{12}\times 9=150.5\text{ kip-ft}\] 
+Now repeat with $M_b$ (1/2 unbraced length) and $M_c$ (3/4 unbraced length). 
+\[M_b=M_T-\frac{M_T-M_B}{L}\times L_b=182-\frac{182-42}{12}\times 6=161\text{ kip-ft}\] 
+\[M_c=M_T-\frac{M_T-M_B}{L}\times L_c=182-\frac{182-42}{12}\times 3=171.5\text{ kip-ft}\] 
+We know that the maximum moment is 182 kip-ft, so $C_b$ can now be calculated: 
+\[C_b=\frac{12.5\times 182}{2.5\times 182+3\times 150.5+4\times 161+3\times 171.5}=1.1\]
+Here are the details we're looking for before I pick my test shape: 
+\[P_u=400 \text{ kips}\] 
+\[M_u=182\text{ kip-ft}\]
+\[KL=12\text{ ft}\]
+It seems that the most comfort is with a W10X77. Let's modify this with our $C_b$.
+\[\phi_b M_{nx}\times C_b=355\times 1.1=390.5\text{ kip-ft}\]
+Now calculate $\frac{P_u}{\phi P_n}$ for the interaction equation: 
+\[\frac{P_u}{\phi P_n}=\frac{400}{816}\]
+\[\frac{P}{\phi P_n}+\frac{8}{9}\left(\frac{M_{ux}}{\phi M_{nx}}+\frac{M_{uy}}{\phi M_{ny}}\right) \leq 1\]
+\[0.49+\frac{8}{9}\left(\frac{182}{390.5}\right)=0.9\]
+I'm happy with this, but I will check the lighter shape (W10X68) just in case.
+\[\phi_b M_{nx}\times C_b=309\times 1.1=339.9\text{ kip-ft}\]
+\[\frac{P_u}{\phi P_n}=\frac{400}{564}\]
+\[\frac{P}{\phi P_n}+\frac{8}{9}\left(\frac{M_{ux}}{\phi M_{nx}}+\frac{M_{uy}}{\phi M_{ny}}\right) \leq 1\]
+\[0.71+\frac{8}{9}\left(\frac{182}{339.9}\right)=1.18\]
+Well I'm satisfied, $\boxed{\text{W10X77}}$ is my section of choice.
+\section*{Question 6.8-8}
+The ultimate moment is 300 kip-ft and the ultimate load is 75 kips. Looking at Table 6-2, W12X65 makes the most sense. Let's calculate the critical buckling load. 
+\[P_{sway}=\frac{\pi^2EI}{L^2}=\frac{\pi^2\times 29000\times 553}{(2\times 16\times 12)^2}=1035.7\text{ kips}\]
+\[P_{brace}=\frac{\pi^2EI}{L^2}=\frac{\pi^2\times 29000\times 553}{(1\times 16\times 12)^2}=4136.3\text{ kips}\]
+Now calculate the amplification factors: 
+\[B_{1x}=\frac{C_m}{1-\left(\alpha\frac{P_r+P_W}{P_e}\right)}=\frac{0.6}{1-\left(\frac{75}{4136.3}\right)}=0.611\] 
+\[B_2=\frac{1}{1-\left(\alpha\frac{P_r}{P_e}\right)}=\frac{1}{1-\left(\frac{75}{1035.7}\right)}=1.078\]
+Now calculate the amplified moment:
+\[M_u=1\times 270 + 1.078\times 30 = 302.34\text{ kip-ft}\] 
+Now calculate $\frac{P_u}{\phi P_n}$ for the interaction equation: 
+\[\frac{P_u}{\phi P_n}=\frac{300}{640}\]
+\[\frac{P}{\phi P_n}+\frac{8}{9}\left(\frac{M_{ux}}{\phi M_{nx}\times C_b}+\frac{M_{uy}}{\phi M_{ny}}\right) \leq 1\]
+\[0.47+\frac{8}{9}\left(\frac{302.34}{334\times 1.67}\right)=0.95\]
+The section $\boxed{\text{W12X65}}$ is my section of choice.
+\end{document}

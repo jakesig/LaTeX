@@ -1,0 +1,168 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{cancel, fancyhdr, textcomp, subfig}
+\usepackage{bm, pgfplots}
+\usepackage[export]{adjustbox}
+
+\renewcommand{\thesubfigure}{}
+\captionsetup[subfigure]{labelformat=simple, labelsep=colon}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Jacob Sigman\\5/3/23}
+\lhead{CE-341\\Homework}
+\cfoot{\thepage}
+\renewcommand\arraystretch{1.5}
+\renewcommand{\headrulewidth}{1.5pt}
+\setlength{\headheight}{22.6pt}
+\begin{document}
+\section*{Question 7.4-6}
+Calculate the nominal shear capacity of a bolt.
+\[A=\frac{\pi}{4}\times d^2=\frac{\pi}{4}\times (7/8)^2 = 0.6013\text{ in}^2\] 
+\[R_{nv}=54\text{ ksi}\times 0.6013\text{ in}^2=64.94\text{ kips}\] 
+Calculate the adjusted diameter: 
+\[h=7/8+1/16=15/16\text{ in}\] 
+Calculate $l_c$: 
+\[l_c=l_e-\frac{h}{2}=2-15/32=1.53\text{ in}\] 
+Now calculate the nominal tensile strength: 
+\[R_{nl}=1.2\times l_c\times t\times F_u=1.2\times 1.53\times\frac{3}{8}\times 58=39.96\text{ kips}\]  
+Now compute the upper limit: 
+\[2.4\times d\times t\times F_u = 2.4\times \frac{7}{8}\times \frac{3}{8}\times 58=45.68\text{ kips}\] 
+Now do the same for an edge bolt: 
+\[l_c=s-h=3-15/16=2.06\text{ in}\] 
+\[R_{nl}=1.2\times l_c\times t\times F_u=1.2\times 2.06\times\frac{3}{8}\times 58=53.84\text{ kips}\]  
+
+The smaller value will control for the edge bolt, since the upper limit remains unchanged. The total strength is as follows: 
+\[39.93+4\times 45.68=222.7\text{ kips}\] 
+Now we just use LRFD: 
+\[\phi R_n=0.75\times 222.7 = 167\text{ kips}\] 
+\[P= 1.2D+1.6L=1.2\times 40+1.6\times 100=208\text{ kips}\] 
+The load is too large. Therefore, there is $\boxed{\text{not enough capacity for bearing}}$.
+\section*{Question 7.7-2}
+We gotta do two load combos to see which one controls: 
+\[P=1.2D+1.6L=1.2\times 50+1.6\times 100=220\text{ kips}\] 
+\[P=1.2D+1W+0.5L=1.2\times 50+1\times 45+0.5\times 100=155\text{ kips}\] 
+Now use the following equation: 
+\[R_n=\mu D_u h_f T_b n_s=0.3\times 1.13\times 1\times T_b\times 1\] 
+Now, $T_b$ will vary based on the size of the bolt, but I think the best deal will be using $1\frac{1}{4}$ bolts. The required number of bolts is found using the design strength and the value of $T_b$ from Table J3-1.
+\[R_n=\mu D_u h_f T_b n_s=0.3\times 1.13\times 1\times 71\times 1=24.07\text{ kips}\] 
+\[\frac{220}{24.07}=10\text{ bolts}\]
+Now we need a new design strength. 
+\[\phi R_n=10\times 24.07=240.7\text{ kips}\] 
+Now we need gross area and the corresponding effective area: 
+\[A_g=\frac{P}{0.9F_y}=\frac{220}{0.6\times 36}=6.79\text{ in}^2\] 
+\[A_e=\frac{P}{0.75F_u}=\frac{220}{0.75\times 58}=5.06\text{ in}^2\] 
+Now, let's pick a good angle, first, by coming up with a goal radius of gyration: 
+\[r=\frac{L}{300}=\frac{20\times 12}{300}=0.8\text{ in}\] 
+From the manual, it looks like the most effective section that meets all the area and radius of gyration requirements is $\boxed{\text{LX8X6X5/8}}$. Now we calculate the net area. 
+\[A_n=A_g-A_h=8.41-2\times (1.25+0.125)\times \frac{5}{8}=6.69\text{ in}^2\] 
+Since there are 4 bolts, multiply this by a factor of 0.8. 
+\[A_n=0.8\times 6.69=5.35\text{ in}^2\] 
+Now determine the minimum spacing: 
+\[2\times \frac{2}{3}\times \frac{5}{4}=3.33\text{ in}\] 
+I'll round this up and use a spacing of 4 inches. Now we check the bearing, using an edge distance of 2.5 inches (from Table J3-4) and a corresponding load of 70.1 kips/in from Table 7-6: 
+\[\phi r_n=0.375\times 70.1=26.3\text{ kips}\] 
+Now check the case for the inner bolts, for a load of 104 kips/in (from Table 7-5). 
+\[\phi r_n=0.375\times 104=39 \text{ kips}\] 
+Now we have to check block shear. First use the shear length multiplied by thickness to get the shear area. 
+\[A_{gv}=0.375\times (2.5+4\times 4)\times 2=13.88\text{ in}^2\]
+\[A_{nv}=0.375\times (18.5-4.5\times 1.375)\times 2=9.23\text{ in}^2\]
+Now we need net area in tension. 
+\[A_{nt}=0.375\times (3-1.375)=0.61\text{ in}^2\]
+Now we just use the equations below:
+\[R_n=0.6F_uA_{nv}+U_{bs}F_uA_{nt}=0.6\times 58\times 9.23+58\times 0.61=356.7\text{ kips}\]
+Now check upper limit: 
+\[0.6F_yA_{gv}+U_{bs}F_uA_{nt}=0.6\times 36\times13.88+58\times 0.61=335.2\text{ kips}\] 
+The upper limit controls. Multiply by 0.75 for design strength.
+\[0.75\times 335.2=251\text{ kips}\]  
+This is greater than the factored load. Figure is below of $\boxed{\text{ten bolts of }1\frac{1}{4}\text{ inch diameter}}$.
+\begin{center}
+    \includegraphics*[scale=0.4]{fig1.png}
+\end{center}
+\section*{Question 7.8-2} 
+Begin by calculating constants $a$ and $b$. 
+\[a=\frac{b_f-5.375}{2}=\frac{4+4+\frac{3}{8}-5.5}{2}=1.5\text{ in}\] 
+\[b=\frac{5.375-t_w}{2}=\frac{5.375-\frac{3}{8}-\frac{5}{8}}{2}=2.188\text{ in}\] 
+Calculate modified values: 
+\[a'=a+\frac{d}{2}=1.5+0.25=1.75\text{ in}\] 
+\[b'=b-\frac{d}{2}=2.188-0.25=1.94\text{ in}\] 
+\[d'=0.5+0.125=0.625\text{ in}\]  
+With an available length of 7 inches, but only two connections available, $p$ will be taken as 3.5 inches. Let's check the upper limit: 
+\[2b=2\times 2.188=4.376\] 
+Which is greater than $p$, so $p$ controls. Now calculate $\delta$. 
+\[\delta=1-\frac{d'}{p}=1-\frac{0.625}{3.5}=0.82\text{ in}\]
+Now, calculate the area of the bolts: 
+\[A_b=\frac{\pi}{4}d^2=\frac{\pi}{4}\times 0.5^2=0.1963\text{ in}^2\] 
+Now, calculate design strength: 
+\[B=0.75\times F_{nt}\times A_b=0.75\times 90\times 0.1963=13.25\text{ kips}\] 
+Obtain the factored load using LRFD: 
+\[1.2D+1.6L=1.2\times 6+1.6\times 15=31.2\text{ kips}\] 
+Calculate the external factored load: 
+\[T_b=\frac{31.2}{4}=7.8\text{ kips/bolt}\]
+Now we want to see if 1 will control for $\alpha$. Let's calculate it below: 
+\[\alpha= \frac{\left(\frac{B}{T}-1\right)\frac{a'}{b'}}{\delta\left(1-\left(\frac{B}{T}-1\right)\frac{a'}{b'}\right)}=\frac{\left(\frac{13.25}{7.8}-1\right)\frac{1.75}{1.9638}}{0.8214\left(1-\left(\frac{13.25}{7.8}-1\right)\frac{1.75}{1.938}\right)}=2.081\]  
+This is larger than 1, so 1 will control. Last thing we have to check is the required flange thickness. 
+\[t_f=\sqrt{\frac{4Tb'}{\phi_bpF_u(1+\delta\alpha)}}=\sqrt{\frac{4Tb'}{\phi_bpF_u(1+\delta\alpha)}}=\sqrt{\frac{4\times 7.8\times 1.938}{0.9\times 3.5\times 58(1+0.8214)}}=0.426\text{ in}\]
+Since the actual flange thickness of 5/8 inch is greater, this section is $\boxed{\text{adequate}}$.
+\section*{Question 7.9-4}
+Compute total factored load: 
+\[P=1.2D+1.6L=1.2\times 0.25\times 120 + 1.6\times 0.75\times 120=180\text{ kips}\]
+Calculate design shear capacity: 
+\[A=\frac{\pi}{4}d^2=\frac{\pi}{4}\times (0.875)^2=0.601\text{ in}^2\]
+\[\phi R_n=0.75\times F_{nv}\times A = 0.75\times 60\times 0.601 = 54.1\text{ kips/bolt}\] 
+Now calculate the bearing strength: 
+\[0.75\times 2.4\times d\times t\times F_u= 0.75\times 2.4\times \frac{7}{8} \times \frac{7}{8} \times 58=79.9\text{ kips/bolt}\]
+Now we have to use the same equation we used a few questions ago: 
+\[R_n=\mu D_u h_f T_b n_s=0.35\times 1.13\times 1\times 49\times 2=38.76\text{ kips}\] 
+Now we use this to get the number of required bolts: 
+\[\frac{P}{R_n}=\frac{188}{38.76}=4.64\] 
+So we are going to need five bolts. I will now calculate the tensile force based off of the diagram:
+\[T_u=\frac{180}{\sqrt{2}}=127.3\text{ kips}\] 
+Now we can get the reduction factor: 
+\[k_s=1-\frac{T_u}{D_u\times T_b\times N_b}=1-\frac{127.3}{1.13\times 49\times N_b}\]
+\[N_b=\frac{T_v}{R_n\times k_s}=\frac{127.3}{38.76\times \left(1-\frac{127.3}{1.13\times 49}\right)}\]
+\[N_b=\frac{127.3}{38.76}+\left(\frac{127.3}{1.13\times 49\times N_b}\right)=5.58\]
+Now calculate minimum spacing: 
+\[s=2\times \frac{2}{3}\times d=2\times \frac{2}{3}\times \frac{7}{8}=2.33\text{ in}\]
+Now for spacing stuff:
+\[h=d+\frac{1}{16}=0.9375\text{ in}\]
+\[\text{Edge: }l_c=l_e-\frac{h}{2}=1.5-\frac{15}{32}=1.03\text{ in}\] 
+\[\text{Other: }l_c=s-h=2.5-0.9375=1.56\text{ in}\] 
+Now let's work with the edge length first: 
+\[0.75\times 1.2\times l_c\times t\times F_u \leq 0.75\times 2.4\times d\times t\times F_u\] 
+\[0.75\times 1.2\times 1.03\times \frac{3}{8}\times 58 \leq 0.75\times 2.4\times \frac{7}{8}\times \frac{3}{8}\times 58\] 
+This checks out. Now we work with other bolts. 
+\[0.75\times 1.2\times l_c\times t\times F_u=0.75\times 1.2\times 1.56\times \frac{7}{8}\times 58=71.4\text{ kips}\] 
+Shear force per bolt is 180/5 which is 36 kips, all these values are greater than 36 so it'll all check out. Hence $\boxed{5}$ bolts are required. Below is an approximate drawing, according to manual specifications of edge distances and spacings. 
+\begin{center}
+    \includegraphics*[scale=0.4]{fig2.png}
+\end{center}
+\section*{Question 7.11-8}
+Let's determine yield strength first: 
+\[\phi_t P_n=0.9\times A_g\times F_y= 0.9\times 1.94\times 36=62.86\text{ kips}\]
+Shear lag is 0.8, calculate the net-cross sectional area using this: 
+\[A_e=0.8\times A_g=0.8\times 1.94=1.55\text{ in}^2\] 
+Now calculate rupture: 
+\[\phi_t P_n=0.75\times A_g\times F_u= 0.75\times 1.94\times 58=67.5\text{ kips}\] 
+Yield strength controls. Determine weld thickness. The minimum size from table J2-4 is 1/8 for thicknesses of 1/4. The maximum thickness is: 
+\[w_{max}=\frac{1}{4}-\frac{1}{16}=\frac{3}{16}\text{ in}\]
+Now divide this value by 1/16 to get an $N$ value of 3. Now calculate the weld strength per unit member: 
+\[\phi R_n=1.392\times N=4.176 \text{kips/in}\]
+Compute shear yield and rupture strength: 
+\[V_y= 0.6\times F_y\times t= 0.6\times 36\times 0.25= 5.4\text{ kips/in}\] 
+\[V_r=0.45\times F_u\times t=0.45\times 58\times 0.25 = 6.56\text{ kips/in}\]
+Weld strength per unit member controls. Calculate required length: 
+\[L=\frac{P_u}{\phi R_n}=\frac{62.86}{4.176}=15.05\text{ in}\] 
+Now calculate shear lag factor ($\bar{x}$ found as the centroid on the X-X axis): 
+\[U=1-\frac{\bar{x}}{l}=1-\frac{1.08}{8}=0.87\]
+This checks out, therefore, use $\boxed{3/16\text{ inch fillet weld}}$.
+\begin{center}
+    \includegraphics*[scale=0.5]{fig3.png}
+\end{center}
+\end{document}
