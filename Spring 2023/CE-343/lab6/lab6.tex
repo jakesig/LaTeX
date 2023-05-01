@@ -1,0 +1,322 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath, graphicx, tikz, pgfplots, multirow, newlfont, gensymb, indentfirst, bm, setspace, xurl}
+\usepackage[usestackEOL]{stackengine}
+\usepackage[export]{adjustbox}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Water We Doing\\4/14/23}
+\lhead{CE-343\\Water Resources Engineering}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{1.5pt}
+\setlength{\headheight}{22.6pt}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\setlength\parindent{24pt}
+\pgfplotsset{width=12cm}
+
+\begin{document}
+\include{cover.tex}
+\newpage
+\doublespacing
+\tableofcontents
+\newpage
+\addcontentsline{toc}{section}{List of Tables}
+\listoftables
+\addcontentsline{toc}{section}{List of Figures}
+\listoffigures
+\newpage
+\section{Objective} 
+\par The objective of this experiment is to create a scaled-down model of a nuclear power plant discharging heated water into Lake Ontario, in order to analyze the behavior and impacts of the thermal plume on the surrounding aquatic environment. The model that we create will be scaled using ratios in order to understand the effects of the original prototype. By examining the temperature distribution and flow characteristics of the thermal plume, the model will help to gain a better understanding of the interactions between power plant operations and heat transfer in larger bodies of water. Overall, thermal effects on large bodies of water play a substantial role in the management of water resources.
+\newpage
+\section{Experiment}
+\subsection{Apparatus}
+\begin{enumerate} 
+    \item Main tank
+    \item Discharge structure
+    \item Six ``ELF'' instant hot water heaters manufactured by IMI STANTON LTD.
+    \item Rotameter bank - 2 Brooks Model 1110 "Full View" rotameters
+    \item Electronic data acquisition and recording system
+    \item Time-elapsed photography system
+    \item Temperature probes - Yellow Springs Instrument Co. series 427 thermistor probes
+    \item Measuring tank 
+    \item Dye
+    \item Stopwatch
+\end{enumerate}
+\subsection{Procedure}
+\par The first step of the procedure is to measure the ambient temperature of the water. This is the starting temperature of the water in the model. Next, turn on the computer and insert the proper discs for data recording. Once the computer is ready to record data, turn on the water and set it to the proper flow rate. Then, turn the heaters on to the proper value, making sure that the fan is blowing on the panel box. The water elevation in the model and the thermometer probes have been preset, and distances are known. Be sure to measure the water depth in the discharge channel. After determining the dimensions of the discharge channel, insert the heated water into the discharge channel. While doing this, make sure that the discharge valves in the back of the model have been opened and start the computer to record the data. The next step in the procedure is to insert yellow dye into the discharge flow and blue dye into the lake at various assigned locations. Carefully draw the streaklines that the dye patterns make in the model. Be sure to draw all of the dye patterns, as you are responsible for all of the flow rates. Once the dye patterns have been recorded, take the heated water out of the discharge and close the discharge valves to conclude the experiment.
+\newpage
+\section{Theory}
+\par Thermal Plumes occur when, simply put, hot water is discharges into colder water. This occurs frequently around thermal power plants. Heated condenser water from the thermal power plants enters natural bodies of water.  A common method of disposing of the heated effluent from these cooling systems is by means of a channel, discharging at the waters surface. How bodies of water are affected by thermal plume are classified by region or distance. The body of water is effected differently at the point of discharge than farther away. The channel size, shape, and velocity all effect the temperature distribution of the receiving water once the discharge occurs. The water in a heated discharge will eventually reach a distance where it is no longer affected by the discharge conditions, and becomes subjected to ambient conditions. The extent at which thermal plumes affect the bodies of water they enter is important to undterstand as they can ruin the ecosystem of the ocean. The change in temperature can decrease the solubility of oxygen in thw water, making the water more susceptible to parasites and diseases. Scaled-down models of these prototypes - in this case a power plant - are used to study the effects of thermal plume with respect to time and distance.
+\par The theory behind creating a scaled-down model of a nuclear power plant discharging heated water into Lake Ontario is based on similitude, which involves the use of various dimensionless ratios to ensure that the relationships between various variables affecting the behavior of the thermal plume are preserved. By maintaining these ratios, it is possible to accurately study and predict the impacts of the heated water discharge on the lake.
+\par There are three dimensionless ratios that were considered in developing the scale model. The first is the Froude Number, the ratio of inertial to gravitational forces and is used to assess the effects of buoyancy on the flow of the thermal plume. By maintaining the same Froude Number in both the model and the real-world simulation, the behavior of the plume in terms of its rise and dispersion can be accurately modeled. The second is the Reynold's Number, the ratio of inertial forces to viscous forces and is important for predicting the onset of turbulence and mixing in the thermal plume. From the second experiment performed in this class, it was demonstrated how the Reynold's Number can be used to determine if flow is laminar, turbulent, or transitional. By keeping the Reynold's Number constant, the model can accurately simulate the fluid dynamics and mixing behavior of the heated water discharge in the lake. Lastly, the densiometric Froude Number, the ratio of inertial to buoyant forces, is used to describe the behavior of buoyant flows where density difference plays a significant role. As the temperature of the water changes, so does it's density, therefore, the Froude Number might not be the most accurate measurement of the dynamics of the flow. By keeping the densiometric Froude Number constant, the thermal plume can be even more accurately represented.
+\par In addition to the three dimensionless ratios that were calculated, five scale factors were used to ensure that the scale model was similar to Lake Ontario. The first scale factor is the velocity ratio. This is used to scale the characteristic velocities between the model and the real-world scenario. Maintaining the same velocity ensures that the inertial forces are properly represented in the model. The next scale factor is the time ratio. This is used to scale the time intervals between the model and the real-world scenario. This scaling factor is important in representing the transient behavior of the thermal plume. The next scale factor is the flow ratio. This is used to scale the flow rates of the heated water discharge between the model and the real-world scenario. Maintaining the same flow rate ratio ensures that the volume of the heated water being discharged into the model is proportionate to the real-world scenario. The next scale factor is the density ratio. This is used to scale the density differences between the heated water discharge and the surrounding lake water in the model and the real-world scenario. Maintaining the same density ratio ensures that the buoyancy forces are accurately represented in the model. Lastly, the Reynold's Number scaling factor ensures that the turbulence in both the model and real-world scenario remain similar. 
+\par In the creation of an accurate scaled-down model, it is crucial to choose the appropriate scaling factors for various aspects of the system. The model should maintain the same dimensionless ratios as the real-world scenario to ensure that the behavior of the thermal plume and its impacts on Lake Ontario are accurately represented. 
+
+\newpage
+\section{Sample Calculations}
+\subsection{Velocity}
+\[V=\frac{Q}{A}\]
+\[V=\frac{0.011\text{ ft}^3\text{/s}}{10\text{ in}^2\times \frac{1\text{ ft}^2}{144\text{ in}^2}}=\boxed{0.16\text{ ft/s}}\]
+\subsection{Froude Number}
+\[N_F=\frac{V}{\sqrt{g\times L}}\]
+\[N_F=\frac{0.16 \text{ ft/s}}{\sqrt{32.2\text{ ft/s}^2\times 2\text{ in}\times \frac{1\text{ ft}}{12\text{ in}}}}=\boxed{0.069}\]
+\subsection{Densiometric Froude Number}
+\[N_{Fd}=\frac{V}{\sqrt{\frac{\Delta\rho}{\rho}\times g\times L}}\]
+\[N_{Fd}=\frac{0.16 \text{ ft/s}}{\sqrt{\frac{0.437\text{ lb/ft}^3}{62.4\text{ lb/ft}^3}\times 32.2\text{ ft/s}^2\times 2\text{ in}\times \frac{1\text{ ft}}{12\text{ in}}}}=\boxed{0.83}\]
+\subsection{Reynold's Number}
+\[N_R=\frac{4\times V\times R}{\nu}\]
+\[N_R=\frac{4\times 0.16 \text{ ft/s}\times 0.08\text{ ft}}{1.347\times 10^{-5} \text{ ft}^2\text{/s}}=\boxed{3801.04}\]
+\newpage
+\section{Results}
+\begin{center}
+\addcontentsline{lot}{table}{Table 1: Discharge Channel Parameters} 
+{\bf {\large Table 1: Discharge Channel Parameters\\}}
+\vspace{3mm}
+\begin{tabular}{|l|r|}
+\hline
+\textbf{Temperature ($\bm^\circ$C)}             & 39    \\
+\textbf{Flow (gpm)}                   & 5     \\
+\textbf{Length (in)}                    & 2     \\
+\textbf{Hydraulic Radius (ft)}       & 0.08  \\
+\textbf{Discharge channel Width (in)}   & 4     \\
+\textbf{Discharge Channel Height (in)} & 2     \\
+\textbf{Area, (in$\bm{^2}$)}                 & 10    \\\hline
+\end{tabular}
+\vspace{5mm}
+\addcontentsline{lot}{table}{Table 2: Discharge Channel Values} 
+{\bf {\large \\Table 2: Discharge Channel Values\\}}
+\vspace{3mm}
+\begin{tabular}{|l|r|}
+    \hline
+    $\bm{\nu_\textbf{initial}}$ ($\bm{\textbf{ft}^2/\textbf{s}}$) & $7.23\times 10^{-6}$   \\
+    $\bm{\rho_\textbf{initial}}$ ($\bm{\textbf{lb}/\textbf{ft}^3}$) & 61.97  \\
+    $\bm{\Delta\rho}$ ($\bm{\textbf{lb}/\textbf{ft}^3}$)   & 0.44\\\hline 
+\end{tabular}
+\vspace{5mm}
+\addcontentsline{lot}{table}{Table 3: Discharge Channel Calculations} 
+{\bf {\large \\Table 3: Discharge Channel Calculations\\}}
+\vspace{3mm}
+\begin{tabular}{|l|r|}
+    \hline
+    \textbf{$\bm{V_\textbf{initial}}$ (ft/s)} & 0.16  \\
+    \textbf{N\_F}              & 0.067  \\
+    \textbf{F}                 & 0.83  \\
+    \textbf{N\_R}              & 7103.98 \\\hline
+\end{tabular}
+\vspace{5mm}
+\addcontentsline{lot}{table}{Table 4: Model to Prototype Ratio Calculations} 
+{\bf {\large \\Table 4: Model to Prototype Ratio Calculations\\}}
+\vspace{3mm}
+\begin{tabular}{|l|ccc|}
+    \hline
+    ~                & \textbf{Model}      & \textbf{Ratio}   & \textbf{Prototype} \\\hline
+    \textbf{V (ft/s)}         & 0.16 & 0.1     & 1.6                         \\
+    \textbf{Q (gpm)}          & 5          & 0.00001 & 500000                         \\
+    \textbf{$\bm{\rho}$ ($\bm{\textbf{lb}/\textbf{ft}^3}$)} & 61.97 & 1       & 61.97   \\
+    $\bm{N_R}$          & 7103.98 & 0.001   & 7103976.38                  \\
+    \textbf{Time (s)} &180 &0.1 &1800\\\hline
+\end{tabular}
+\newpage 
+
+\addcontentsline{lot}{table}{Table 5: Temperatures at Each Beam for Varying Depths} 
+{\bf {\large Table 5: Temperatures at Each Beam for Varying Depths\\}}
+
+\singlespacing
+\begin{tabular}{|c|ccccccc|}
+    \hline
+    & & & & & & & \\
+    \textbf{Beam \#} & \textbf{Depth (ft)} & \textbf{Distance (ft)} & \textbf{$\bm{T_\textbf{outflow}}$} & \textbf{$\bm{T_\textbf{ambient}}$} & \textbf{$\bm{T_\textbf{i}}\,\bm{(^\circ\textbf{C})}$} & \textbf{$\bm{\Delta T}\,\bm{(^\circ\textbf{C})}$} & \textbf{$\bm{\Delta T_o}\,\bm{(^\circ\textbf{C})}$} \\
+    & & & & & & & \\\hline
+    \multirow{ 5}{*}{1}     & 0.25  & \multirow{ 5}{*}{7.75}       & \multirow{ 5}{*}{39 $^\circ$C}       & \multirow{ 5}{*}{11 $^\circ$C}        & 29.56 & 18.56   & 9.44        \\
+           & 0.75  &      &         &         & 27.2  & 16.2    & 11.8        \\
+           & 1.25  &      &         &        & 19.99 & 8.99    & 19.01       \\
+           & 1.75  &      &         &         & 17    & 6       & 22          \\
+           & 2.25  &      &         &        & 10.74 & -0.26   & 28.26       \\\hline
+    \multirow{ 5}{*}{2}        & 0.25  & \multirow{ 5}{*}{5.25}          & \multirow{ 5}{*}{39 $^\circ$C}        & \multirow{ 5}{*}{10 $^\circ$C}         & 28.07 & 18.07   & 10.93       \\
+           & 0.75  &      &         &         & 26.93 & 16.93   & 12.07       \\
+           & 1.25  &      &         &        & 25.1  & 15.1    & 13.9        \\
+           & 1.75  &      &         &         & 18.23 & 8.23    & 20.77       \\
+           & 2.25  &      &         &         & 10.8  & 0.8     & 28.2        \\\hline
+    \multirow{ 5}{*}{3}        & 0.25  & \multirow{ 5}{*}{11.5}          & \multirow{ 5}{*}{39 $^\circ$C}        & \multirow{ 5}{*}{10 $^\circ$C}         & 25.42 & 15.42   & 13.58       \\
+           & 0.75  &      &         &         & 19.45 & 9.45    & 19.55       \\
+           & 1.25  &     &         &         & 17.41 & 7.41    & 21.59       \\
+           & 1.75  &      &         &         & 15.36 & 5.36    & 23.64       \\
+           & 2.25  &      &         &         & 13.15 & 3.15    & 25.85       \\\hline
+    \multirow{ 5}{*}{4}        & 0.25  & \multirow{ 5}{*}{13.75}         & \multirow{ 5}{*}{39 $^\circ$C}        & \multirow{ 5}{*}{8.8 $^\circ$C}        & 21    & 12.2    & 18          \\
+           & 0.75  &     &         &        & 17.7  & 8.9     & 21.3        \\
+           & 1.25  &     &         &        & 14.35 & 5.55    & 24.65       \\
+           & 1.75  &     &         &       & 11.38 & 2.58    & 27.62       \\
+           & 2.25  &     &         &        & 11.99 & 3.19    & 27.01       \\\hline
+    \multirow{ 5}{*}{5}        & 0.25  & \multirow{ 5}{*}{12}            & \multirow{ 5}{*}{39 $^\circ$C}        & \multirow{ 5}{*}{8.6 $^\circ$C}        & 19.42 & 10.82   & 19.58       \\
+           & 0.75  &        &         &        & 15.9  & 7.3     & 23.1        \\
+           & 1.25  &        &         &        & 14.56 & 5.96    & 24.44       \\
+           & 1.75  &       &         &        & 12.19 & 3.59    & 26.81       \\
+           & 2.25  &        &         &       & 11.92 & 3.32    & 27.08       \\\hline
+    \multirow{ 5}{*}{6}        & 0.25  & \multirow{ 5}{*}{12.75}        & \multirow{ 5}{*}{39 $^\circ$C}        & \multirow{ 5}{*}{9 $^\circ$C}          & 17.99 & 8.99    & 21.01       \\
+           & 0.75  &     &         &          & 16    & 7       & 23          \\
+           & 1.25  &     &         &         & 13.9  & 4.9     & 25.1        \\
+           & 1.75  &     &         &          & 11.9  & 2.9     & 27.1        \\
+           & 2.25  &     &         &          & 11.6  & 2.6     & 27.4        \\\hline
+    \multirow{ 5}{*}{7}        & 0.25  & \multirow{ 5}{*}{12.5}          & \multirow{ 5}{*}{39 $^\circ$C}        & \multirow{ 5}{*}{10 $^\circ$C}         & 17.7  & 7.7     & 21.3        \\
+           & 0.75  &      &         &         & 15.74 & 5.74    & 23.26       \\
+           & 1.25  &      &         &         & 13.23 & 3.23    & 25.77       \\
+           & 1.75  &      &         &         & 11.94 & 1.94    & 27.06       \\
+           & 2.25  &      &         &         & 11.45 & 1.45    & 27.55       \\\hline
+    \multirow{ 5}{*}{8}        & 0.25  & \multirow{ 5}{*}{24.5}          & \multirow{ 5}{*}{39 $^\circ$C}        & \multirow{ 5}{*}{9.5 $^\circ$C}        & 16.29 & 6.79    & 22.71       \\
+           & 0.75  &      &         &        & 14.45 & 4.95    & 24.55       \\
+           & 1.25  &      &         &        & 12.67 & 3.17    & 26.33       \\
+           & 1.75  &      &         &        & 11.69 & 2.19    & 27.31       \\
+           & 2.25  &      &         &        & 11.3  & 1.8     & 27.7         \\\hline
+\end{tabular}
+\newpage
+\doublespacing
+\addcontentsline{lot}{table}{Table 6: Hot and Cold Distances - Model} 
+{\bf {\large Table 6: Hot and Cold Distances\\}}
+\vspace{3mm}
+\begin{tabular}{|ccc|}
+    \hline
+    \textbf{Time (sec)} & \textbf{Cold Distance (ft)} & \textbf{Hot Distance (ft)}  \\\hline
+    30           & 6.25               & 5                  \\
+    60           & 12                 & 6.25               \\
+    90           & 15                 & 7                  \\
+    120          & 16.5               & 9                  \\
+    150          & 18                 & 10                 \\
+    180          & 19                 & 11                \\\hline
+\end{tabular}
+\vspace{10mm}
+\addcontentsline{lot}{table}{Table 7: Hot and Cold Distances - Prototype} 
+{\bf {\large \\ Table 7: Hot and Cold Distances - Prototype\\}}
+\vspace{3mm}
+\begin{tabular}{|ccc|}
+    \hline
+    \textbf{Time (min)} & \textbf{Cold Distance (ft)} & \textbf{Hot Distance (ft)}\\\hline
+    5                        & 625                              & 500                              \\
+    10                       & 1200                             & 625                              \\
+    15                       & 1500                             & 700                              \\
+    20                       & 1650                             & 900                              \\
+    25                       & 1800                             & 1000                             \\
+    30                       & 1900                             & 1100                            \\\hline
+\end{tabular}
+\newpage
+\addcontentsline{lof}{figure}{Figure 1: Velocity vs. Time} 
+{\bf {\large Figure 1: Velocity vs. Time\\}}
+\vspace{3mm}
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+    \begin{axis}[
+        xlabel={Time (s)},
+        ylabel={Velocity (ft/s)},
+        xmin=0, xmax=200,
+        ymin=0, ymax=0.3,
+        xtick={50,100,150,200},
+        ytick={0.1,0.2,0.3},
+        ymajorgrids=true,
+        grid style=dashed,
+        legend pos = north east,
+        legend cell align={left},
+    ]
+
+    \addplot[blue, only marks] table [x=t, y=v] {1.csv};
+    
+    \end{axis}
+\end{tikzpicture}
+\vspace{10mm}
+\addcontentsline{lof}{figure}{Figure 2: Distance vs. Time} 
+{\bf {\large \\Figure 2: Distance vs. Time\\}}
+\vspace{3mm}
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+    \begin{axis}[
+        xlabel={Time (s)},
+        ylabel={Distance (ft)},
+        xmin=0, xmax=200,
+        ymin=0, ymax=20,
+        xtick={50,100,150,200},
+        ytick={5,10,15,20},
+        ymajorgrids=true,
+        grid style=dashed,
+        legend pos = north east,
+        legend cell align={left},
+    ]
+
+    \addplot[blue, only marks] table [x=t, y=h] {1.csv};
+    \addplot[red, only marks] table [x=t, y=c] {1.csv};
+    \addlegendentry{Cold};
+    \addlegendentry{Hot};
+    
+    \end{axis}
+\end{tikzpicture}
+\newpage
+\addcontentsline{lof}{figure}{Figure 3: Change in Temperature vs. Distance} 
+{\bf {\large Figure 3: Change in Temperature vs. Distance\\}}
+\vspace{3mm}
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+    \begin{axis}[
+        xlabel={Distance (ft)},
+        ylabel={Change in Temperature ($^\circ$C)},
+        xmin=0, xmax=30,
+        ymin=-5, ymax=20,
+        xtick={10,20,30},
+        ytick={-5,0,5,10,15,20},
+        ymajorgrids=true,
+        grid style=dashed,
+        legend pos = north east,
+        legend cell align={left},
+    ]
+
+    \addplot[red, only marks] table [x=dd1, y=t1] {2.csv};
+    \addplot[blue, only marks] table [x=dd2, y=t2] {2.csv};
+    \addplot[green, only marks] table [x=dd3, y=t3] {2.csv};
+    \addplot[purple, only marks] table [x=dd4, y=t4] {2.csv};
+    \addplot[orange, only marks] table [x=dd5, y=t5] {2.csv};
+    \addlegendentry{Depth of 0.25 ft};
+    \addlegendentry{Depth of 0.75 ft};
+    \addlegendentry{Depth of 1.25 ft};
+    \addlegendentry{Depth of 1.75 ft};
+    \addlegendentry{Depth of 2.25 ft};
+    
+    \end{axis}
+\end{tikzpicture}
+
+\end{center}
+\newpage
+\section{Conclusion}
+\par In designing facilities such as nuclear power plants, which discharge heated water into surrounding water bodies such as nearby lakes, it is important to consider the ramifications this may have on the ecosystems and aquatic life in the area. A constant discharge of warm water into naturally colder water can decrease oxygen solubility and creates a greater susceptibility to parasites and diseases.  
+\par In designing nuclear power plants, it has been found that preferred locations are coastal zones, due to the abundance of seawater available for cooling purposes. However, the completion of the cooling cycle returns water to the sea at increased temperature causing thermal plumes which create thermal pollution in the sea. These thermal plumes cause an imbalance in marine life, increasing the metabolic rate and reducing the amount of dissolved oxygen in the water. Additionally, the natural flow in the water body is altered, which can change the environment and inhibit proper feeding of some marine species; this is typical in bodies where normal conditions see low Reynolds numbers, and the introduction of the plant and subsequently thermal plumes can produce phenomena typical of more turbulent flow (i.e., raking or stirring). Studying existing thermal plumes is usually done by taking field measurements using thermistor chains, multiparameter meters, and CTDs (conductivity, temperature, and depth).  
+\par Thermal plume modeling is used as an aid in plant design and evidence for regulatory compliance. It is helpful for determining how discharge will dissipate in the receiving water body under varying ambient conditions and different outlet configurations. The objective in this lab experiment was to establish a thermal plume model to analyze the behavior of a discharge from the Ginna Nuclear Power Plant at Lake Ontario. The plant consists of a closed-cycle, pressurized, lightwater-mode-rated nuclear steam-supplu system, a turbine-condenser system, and auxiliary equipment. At full power, water is removed from the lake at a rate of 400,000 gpm, heating it approximately 20o F above ambient lake temperature, and is returned as surface discharge through a trapezoidal open channel. The model is designed to closely imitate the conditions at the nuclear plant; as such, the trapezoidal open channel is designed for surface discharge, as in the prototype. The model was created at particular ratios to the original prototype to ensure that the effects analyzed are reflective of the actual scenario. These ratios, Froude number, Reynolds number, and densiometric Froude number, are dimensionless ratios used to establish similitude to ensure the preservation of the relationships between variables affecting thermal plume behavior. Similitude also required the used of scale factors for velocity ratio, time ratio, flow ratio, density ratio, and Reynolds number.  
+\par Calculations performed on the discharge channel in the model found an initial velocity of 0.16 ft/s, a Froude number of 0.067, densiometric Froude number of 0.83, and Reynolds number of 7103.98. Knowing that the model has a flow of 5 gpm, and the density of water is 61.97 lb/ft$^3$, and using ratios of 0.1 for velocity, 0.00001 for flow, 1 for density, and 0.001 for Reynolds number, the prototype is found to have a velocity of 1.6 ft/s, flow of 500000 gpm, density of 61.97 lb/ft$^3$, and a Reynolds number of 7103976.38.  A Reynolds number that high is indicative of highly turbulent flow; entrainment and mixing are greatly increased.  
+\par In reviewing patterns seen in the raw data, the ambient temperature is coldest at beams 4 and 5, which are near the center of the tank, and warmer at the two ends. After the discharge is initiated and temperatures read at each beam and at varying depths, Ti is warmest near the outlet and coolest near the edge of the tank and is also warmer at the water surface than at lower depths; this is as expected, since the construction of the tank is such that the discharge occurs near the surface of the water, warming the surface and waters closest to the outlet first, and heat dispersing over time throughout the water body. As such, it is intuitive that water at lower depths would have a greater deviation in temperature from the discharge water than water at the surface, as reflected in the raw data. The change in temperature as it varies by distance from the discharge point is also depicted in \emph{Figure 3}, for easier visualization of the phenomena described here.  
+\par \emph{Figure 1} shows how, over time, the velocity of the plume increases. As time advances, the spread of the warmer temperatures is faster than at the beginning of the discharge. This is reasonable, as the volume of warm water as well as the distance it reaches increases as the discharge of warm water continues. This would suggest that long discharges are mor impactful and harmful to the aquatic environment and could also create greater turbulence (greater velocity means greater Reynolds numbers), which further impacts the environment by disrupting feeding patterns. \emph{Figure 2} shows the relationship between the distances of the hot and cold water over time, as the discharge in the model was allowed to continue; these distances were used in determining the velocities depicted in \emph{Figure 1} and indicate the reach of the plume as the discharge continues. The times and distances used to create \emph{Figure 2} can be used to determine how long and how far a similar plume would reach in Lake Ontario, as seen in \emph{Table 7} . A thermal plume at the plant location would take several minutes to create the impacts seen in the model, rather than a few seconds, but relative to the lifespan of aquatic animals, this is short and can still devastate their environment.  
+\par If analysis of the field conditions of the nuclear plant on Lake Ontario indicates that the model was incorrect, it would be important to determine sources of error in the model, so that they may be corrected for future models. Firstly, ambient temperatures were taken at a single depth, approximately half-depth of the tank; it may be better suited to the prototype to read ambient conditions at another depth. There may also be instrumental error in reading the temperatures if the probes and computer program are not properly calibrated. Human error and instrumental error can be involved in measuring the tank and discharge channel dimensions, and in setting discharge temperature and flow rate. The streaklines and flow patterns observed in the model may spread differently than they do at the prototype location, as the prototype location can be impacted by winds and other conditions in the water that are not replicated in the model. Overall, the model provides an accurate representation of the thermal phenomena observed by discharges from nuclear power plants into nearby waterways.  
+\newpage
+\section{References}
+
+\begin{description}
+    \item[] ``Analysis of Thermal Plume Dispersion into the Sea by Remote Sensing and Numerical Modeling'', \emph{MDPI Journal of Marine Science and Engineering}, 15 December 2021. \url{https://www.mdpi.com/2077-1312/9/12/1437}.
+    \item[] ``Thermal Plume Modeling'', \emph{Apercu Consultants Inc.}. \url{https://apercu.biz/services/thermal-plume-modeling/}.
+\end{description}
+
+\newpage
+\begin{center}
+\addcontentsline{lof}{figure}{Figure 4: Outfall Configuration for Ginna Nuclear Power Plant} 
+{\bf {\large Figure 4: Outfall Configuration for Ginna Nuclear Power Plant\\}}
+\vspace{3mm}
+\includegraphics*[scale=0.7]{fig4.jpg}
+\vspace{5mm}
+
+\addcontentsline{lof}{figure}{Figure 5: Schematic of Laboratory Model Layout} 
+{\bf {\large Figure 5: Schematic of Laboratory Model Layout\\}}
+\vspace{3mm}
+\includegraphics*[scale=0.7]{fig5.jpg}
+\vspace{5mm}
+
+\newpage
+\addcontentsline{lof}{figure}{Figure 6: Isotherm Contours with Depth (in) vs. Distance from Discharge (ft)} 
+{\bf {\large Figure 6: Isotherm Contours with Depth (in) vs. Distance from Discharge (ft)\\}}
+\vspace{3mm}
+\includegraphics*[scale=0.7]{fig6.jpg}
+
+\end{center}
+
+\end{document}

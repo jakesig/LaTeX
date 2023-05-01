@@ -1,0 +1,79 @@
+\documentclass{article}
+
+
+\usepackage[english]{babel}
+
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{cancel, fancyhdr, textcomp, subfig, pgfplots}
+\usepackage{bm}
+\pgfplotsset{width=10cm, compat=1.18}
+\usepackage[export]{adjustbox}
+
+\renewcommand{\thesubfigure}{}
+\captionsetup[subfigure]{labelformat=simple, labelsep=colon}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Jacob Sigman\\4/24/23}
+\lhead{CE-331\\Homework}
+\cfoot{\thepage}
+\renewcommand\arraystretch{1.5}
+\renewcommand{\headrulewidth}{1.5pt}
+\setlength{\headheight}{22.6pt}
+\begin{document}
+\section*{Question 10.2}
+\[\sigma_x=-36\text{ kN/m}^2\hspace{5mm}\sigma_y=-19\text{ kN/m}^2\]
+\[\tau_{xy}=14\text{ kN/m}^2\hspace{5mm}\phi=45^\circ\]  
+\[\sigma_1=\frac{\sigma_x+\sigma_y}{2}+\sqrt{\left(\frac{\sigma_x-\sigma_y}{2}\right)^2+\tau_{xy}^2}=\boxed{-11.12\text{ kN/m}^2}\]
+\[\sigma_2=\frac{\sigma_x+\sigma_y}{2}-\sqrt{\left(\frac{\sigma_x-\sigma_y}{2}\right)^2+\tau_{xy}^2}=\boxed{-43.88\text{ kN/m}^2}\]
+\[\sigma_n=\frac{\sigma_x+\sigma_y}{2}+\frac{\sigma_x-\sigma_y}{2}\cos(2\phi)+\tau_{xy}\sin(2\phi)=\boxed{-13.5\text{ kN/m}^2}\]
+\[\tau_{AB}=\frac{\sigma_x-\sigma_y}{2}\sin(2\phi)+\tau_{xy}\cos(2\phi)=\boxed{-8.5 \text{ kN/m}^2}\]
+\section*{Question 10.4}
+\begin{center}
+    \includegraphics*[scale=0.4]{fig1.png} 
+\end{center}
+The center of the circle is:
+\[\frac{\sigma_x+\sigma_y}{2}=\frac{-50-75}{2}=-62.5\]
+The radius is: 
+\[\sqrt{\left(\frac{\sigma_x-\sigma_y}{2}\right)^2+\tau_{xy}^2}=\sqrt{\left(\frac{-50+75}{2}\right)^2+30^2}=32.5\]
+\[\sigma_1=-62.5+32.5=\boxed{-30 \text{ kN/m}^2}\] 
+\[\sigma_2=-62.5-32.5=\boxed{-95 \text{ kN/m}^2}\]
+\[\tau_{max}=\boxed{32.5\text{ kN/m}^2}\]
+\[\theta_1=\tan^{-1}\left(\frac{50}{30}\right)=30.96^\circ\]
+\[\theta_2=180-80-\theta_1=69.04^\circ\]
+\[\sigma_{AB}=\sigma_1-R-R\cos(\theta_2)=-30-32.5-32.5\times\cos(69.04)=\boxed{-94.9\text{ kN/m}^2}\] 
+\[\tau_{AB}=-R\sin(\theta_2)=-32.5\sin(69.04)=\boxed{-30.42\text{ kN/m}^2}\]
+\section*{Question 10.16}
+$r/R$ is zero, so the first column in tables 10.9 and 10.10 are used. This requires a lot of linear interpolation, which was done in excel. Once $A'$ and $B'$ are obtained, the following equation is used: 
+\[\Delta q_z=q(A'+B')\]
+Below are tabulated values. (We know from the question that $q=200\text{ kN/m}^2$)
+\begin{center}
+\begin{tabular}{|ccccc|}
+    \hline
+    \textbf{Depth (m)} & $\bm{z/R}$ & \textbf{$\bm{A'}$} & \textbf{$\bm{B'}$} & \textbf{$\bm{\Delta\sigma_z}\,(\textbf{kN/m}^2)$}  \\\hline
+    1.5 & 0.375                   & 0.64962                & 0.348368               & 199.5975               \\
+    3 & 0.75                    & 0.400925               & 0.38289                & 156.763                \\
+    6 & 1.5                     & 0.16795                & 0.25602                & 84.794                 \\
+    9 & 2.25                    & 0.088545               & 0.15348                & 48.405                 \\
+    12 & 3                       & 0.05132                & 0.09487                & 29.238                \\\hline
+\end{tabular}
+\end{center}
+\section*{Question 10.18}
+\begin{center}
+    \includegraphics*[scale=0.4]{fig2.png} 
+\end{center}
+The amount of elements enclosed is approximately 65. Now use the following equation: 
+\[\Delta\sigma_z=(IV)qM=0.005\times 300\times 65=\boxed{97.5\text{ kN/m}^2}\]
+\newpage
+\section*{Question 10.20}
+We need to calculate a bunch of values to calculate $I_4$.
+\[m_1=\frac{L}{B}=\frac{4}{2}=2\] 
+\[b=\frac{B}{2}=1\]
+\[n_1=\frac{z}{b}=3.5\]
+I just took an average from the two values in table 10.12. 
+\[I_4=\frac{2.93+0.19}{2}=0.242\] 
+\[\Delta\sigma_z=100\times0.242=\boxed{24.2\text{ kN/m}^2}\]
+\end{document}

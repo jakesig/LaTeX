@@ -1,0 +1,89 @@
+\documentclass{article}
+
+
+\usepackage[english]{babel}
+
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{cancel, fancyhdr, textcomp, subfig, pgfplots}
+\usepackage{bm}
+\pgfplotsset{width=10cm, compat=1.18}
+\usepackage[export]{adjustbox}
+
+\renewcommand{\thesubfigure}{}
+\captionsetup[subfigure]{labelformat=simple, labelsep=colon}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Jacob Sigman\\5/1/23}
+\lhead{CE-331\\Homework}
+\cfoot{\thepage}
+\renewcommand\arraystretch{1.5}
+\renewcommand{\headrulewidth}{1.5pt}
+\setlength{\headheight}{22.6pt}
+\begin{document}
+\section*{Question 11.2}
+Determine the pressures in each layer:
+\[\Delta\sigma_1=\frac{P}{B_1^2}=\frac{87000}{15^2\times 144}=2.69\text{ psi}\] 
+\[\Delta\sigma_2=\frac{P}{B_2^2}=\frac{87000}{41^2\times 144}=0.36\text{ psi}\]
+\[\Delta\sigma_3=\frac{P}{B_3^2}=\frac{87000}{73^2\times 144}=0.11\text{ psi}\]  
+Now estimate the settlement of each layer using equation 11.14 (and 0.95 for $I_f$): 
+\[Se_1=\frac{\Delta\sigma_1\times B(1-\mu_1^2)\times I_f}{E_1}=\frac{2.69 \times (5\times 12)(1-0.4^2)\times 0.95}{2200}=0.059\text{ in}\] 
+\[Se_2=\frac{\Delta\sigma_2\times B(1-\mu_2^2)\times I_f}{E_2}=\frac{0.36 \times (5\times 12)(1-0.4^2)\times 0.95}{980}=0.018\text{ in}\]
+\[Se_3=\frac{\Delta\sigma_3\times B(1-\mu_3^2)\times I_f}{E_3}=\frac{0.11 \times (5\times 12)(1-0.4^2)\times 0.95}{9100}=0.0006\text{ in}\]  
+\[Se=Se_1+Se_2+Se_3=\boxed{0.0776\text{ in}}\]
+\section*{Question 12.2}
+The graph is below, after sketching it out, I found the intersection to be at the dashed red line, at which the log is approximately 0.5. This means that the preconsolidation pressure is approximately $\sqrt{10}=\boxed{3.235\text{ ton/ft}^2}$
+\begin{center}
+    \begin{tikzpicture}[baseline=(current bounding box.center)]
+        \begin{axis}[
+            xlabel={$\log\sigma'$},
+            ylabel={$e$},
+            xmin=-1, xmax=1.5,
+            ymin=0, ymax=1.5,
+            xtick={-1,-0.5,0,0.5,1,1.5},
+            ytick={0, 0.5, 1, 1.5},
+            ymajorgrids=true,
+            grid style=dashed,
+            legend pos = north west,
+            legend cell align={left},
+        ]
+        
+        \addplot[smooth, blue] table [x=log,y=e] {1.csv};
+        \addplot[dashed, red] coordinates {(0.5, 0) (0.5, 1.5)};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+\[C_c=\frac{\Delta e}{\log(\sigma_1)-\log(\sigma_2)}=\frac{0.79-0.63}{\log(16)-\log(8)}=\boxed{0.53}\]
+\section*{Question 12.6} 
+\[C_c=0.009(LL-10)=0.009\times 45=0.405\] 
+\[\gamma_\text{d sand}=\frac{G_s\times \gamma_w}{1+e_s}=\frac{2.65\times 9.81}{1.64}=15.85\text{ kN/m}^3\]
+\[\gamma_\text{sat sand}=\frac{(G_s+e_s)\times \gamma_w}{1+e_s}=\frac{(2.65+0.64)\times 9.81}{1.64}=19.68\text{ kN/m}^3\] 
+\[\gamma_\text{sat clay}=\frac{(G_s+e_c)\times \gamma_w}{1+e_c}=\frac{(2.75+0.9)\times 9.81}{1.9}=18.85\text{ kN/m}^3\] 
+\[\sigma_o'=\gamma_\text{d sand}H_1+(\gamma_\text{sat sand}-\gamma_w)H_2+(\gamma_\text{sat clay}-\gamma_w)\frac{H_3}{2}\] 
+\[\sigma_o'=15.85\times 2.5 + (19.68-9.81)(2.5)+(18.85-9.81)(1.5)=77.87\text{ kN/m}^3\]
+\[S_c=\frac{C_cH_3}{1+e_c}\log\left(\frac{\sigma_o'+\Delta\sigma'}{\sigma_o'}\right)\]
+\[S_c=\frac{0.405\times 3}{1.9}\log\left(\frac{77.87+100}{77.87}\right)=\boxed{0.229\text{ m}}\]
+\section*{Question 12.10} 
+\[T_v=\frac{c_v\times t}{H_{dr}^2}\]
+\[t=\frac{T_v\times H_{dr}^2}{c_v}\] 
+$T_v$ determined to be 0.286 from table. $H_{dr}$ is the maximum drainage path of 3/2.
+\[t=\frac{0.286\times 1.5^2}{2.8\times 10^{-6}}=229821\text{ min}=\boxed{159.6 \text{ days}}\]
+\section*{Question 12.14}
+\[a_v=\frac{\Delta e}{4000}=\frac{1.21-0.96}{4000}=6.25\times 10^{-5}\]
+\[e_{av}=\frac{1.21+0.96}{2}=1.085\] 
+\[m_v=\frac{a_v}{1+e_{av}}=\frac{6.25\times 10^{-5}}{1+1.085}=29.98\times 10^{-6} \text{ ft}^2\text{/lb}\] 
+\[c_v=\frac{k}{m_v\gamma_w}=\frac{1.8\times 10^{-4}}{29.98\times 10^{-6}\times 62.4}=0.0962\text{ ft}^2\text{/day}\]
+\[T_v=\frac{c_v\times t}{H_{dr}^2}\]
+\[t=\frac{T_v\times H_{dr}^2}{c_v}\] 
+$T_v$ determined to be 0.286 from table. $H_{dr}$ is the maximum drainage path of 9 ft.
+\[t=\frac{0.286\times 9^2}{0.0962}=\boxed{240.8 \text{ days}}\]
+Settlement at 60\% is calculated as follows: 
+\[S_c=0.6\times \frac{\Delta e\times H_{dr}}{1+e_o}=0.6\times \frac{0.25\times 9}{1+1.21}=\boxed{0.612\text { ft}}\] 
+\section*{Question 12.16}
+\[\frac{t_\text{lab}}{H_\text{dr lab}^2}=\frac{t_\text{field}}{H_\text{dr field}^2}\]
+\[\frac{225}{0.5\times 25\times 10^{-3}}=\frac{t_\text{field}}{4}\] 
+\[t_\text{field}=5760000\text{ s}=\boxed{66.67\text{ days}}\]
+\end{document}
